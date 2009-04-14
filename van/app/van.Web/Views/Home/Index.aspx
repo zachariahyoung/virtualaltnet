@@ -3,7 +3,7 @@
 <%@ Import Namespace="van.Web.Controllers" %>
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <h1 class="first">Virtual Alt.Net</h1>
+    <h1 class="first">Mission Statement</h1>
     <h2>The Beginnings</h2>
 <p>What is Virtual ALT.NET (VAN)?&nbsp; In this blog I’m going to explain the purpose
 of VAN.&nbsp; The history of VAN is very short.&nbsp; Another alt.netter <a href="http://www.lostechies.com/blogs/chad_myers">Chad Myers</a> and<a href="http://www.zachariahyoung.com"> I </a>started
