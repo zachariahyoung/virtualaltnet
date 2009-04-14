@@ -1,0 +1,45 @@
+11:45:51 AM	MoveCommonAssemblyInfoToRoot: Moving CommonAssemblyInfo.cs from C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\SolutionItemsContainer\CommonAssemblyInfo.cs to root at C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\CommonAssemblyInfo.cs
+11:45:51 AM	MoveSolutionItemsToLib: Moving solution items from C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\SolutionItemsContainer\Solution Items to lib at C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\lib
+11:45:52 AM	MoveSolutionItemsToToolsLib: Moving tools solution items from C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\ToolsSolutionItemsContainer\Solution Items to tools lib at C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\tools\lib
+11:45:54 AM	MoveProjectTo: Removing van.Core from solution
+11:45:55 AM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\van.Core\van.Core.csproj
+11:45:55 AM	MoveProjectTo: Moving van.Core from C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\van.Core to target location at C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Core
+11:45:55 AM	MoveProjectTo: Adding van.Core to solution
+11:45:56 AM	CaptureProjectGuidOf: Does C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Core\van.Core.csproj exist? True
+11:45:56 AM	CaptureProjectGuidOf: About to open C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Core\van.Core.csproj
+11:45:56 AM	CaptureProjectGuidOf: Captured the GUID {1AADF674-DD89-4434-9C21-40DA2270F0D0} for van.Core
+11:45:56 AM	MoveProjectTo: Removing van.ApplicationServices from solution
+11:45:57 AM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\van.ApplicationServices\van.ApplicationServices.csproj
+11:45:57 AM	MoveProjectTo: Moving van.ApplicationServices from C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\van.ApplicationServices to target location at C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.ApplicationServices
+11:45:57 AM	MoveProjectTo: Adding van.ApplicationServices to solution
+11:45:58 AM	CaptureProjectGuidOf: Does C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.ApplicationServices\van.ApplicationServices.csproj exist? True
+11:45:58 AM	CaptureProjectGuidOf: About to open C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.ApplicationServices\van.ApplicationServices.csproj
+11:45:58 AM	CaptureProjectGuidOf: Captured the GUID {EDA02190-7EB8-41FC-B488-38207A7E658A} for van.ApplicationServices
+11:45:58 AM	MoveProjectTo: Removing van.Data from solution
+11:45:59 AM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\van.Data\van.Data.csproj
+11:45:59 AM	MoveProjectTo: Moving van.Data from C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\van.Data to target location at C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Data
+11:45:59 AM	MoveProjectTo: Adding van.Data to solution
+11:46:00 AM	CaptureProjectGuidOf: Does C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Data\van.Data.csproj exist? True
+11:46:00 AM	CaptureProjectGuidOf: About to open C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Data\van.Data.csproj
+11:46:00 AM	CaptureProjectGuidOf: Captured the GUID {2809B046-D341-4CFE-B385-F9A3631CC2AE} for van.Data
+11:46:02 AM	MoveProjectTo: Removing van.Web.Controllers from solution
+11:46:02 AM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\van.Web.Controllers\van.Web.Controllers.csproj
+11:46:02 AM	MoveProjectTo: Moving van.Web.Controllers from C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\van.Web.Controllers to target location at C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web.Controllers
+11:46:02 AM	MoveProjectTo: Adding van.Web.Controllers to solution
+11:46:04 AM	CaptureProjectGuidOf: Does C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web.Controllers\van.Web.Controllers.csproj exist? True
+11:46:04 AM	CaptureProjectGuidOf: About to open C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web.Controllers\van.Web.Controllers.csproj
+11:46:04 AM	CaptureProjectGuidOf: Captured the GUID {A6AAC06B-9E6E-4130-AE65-0CB6A692B64C} for van.Web.Controllers
+11:46:06 AM	MoveProjectTo: Removing van.Tests from solution
+11:46:06 AM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\van.Tests\van.Tests.csproj
+11:46:06 AM	MoveProjectTo: Moving van.Tests from C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\van.Tests to target location at C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\tests\van.Tests
+11:46:06 AM	MoveProjectTo: Adding van.Tests to solution
+11:46:11 AM	MoveProjectTo: Removing van.Web from solution
+11:46:12 AM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\van.Web\van.Web.csproj
+11:46:12 AM	MoveProjectTo: Moving van.Web from C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\van.Web to target location at C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web
+11:46:12 AM	MoveProjectTo: Adding van.Web to solution
+11:46:14 AM	MoveProjectTo: Removing CrudScaffolding from solution
+11:46:15 AM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\CrudScaffolding\CrudScaffolding.csproj
+11:46:15 AM	MoveProjectTo: Moving CrudScaffolding from C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\CrudScaffolding to target location at C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\tools\CrudScaffolding
+11:46:15 AM	MoveProjectTo: Adding CrudScaffolding to solution folder C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\tools\CrudScaffolding
+11:46:15 AM	ExcludeProjectFromBuildProcess: Setting build to false for project van\tools\CrudScaffolding\CrudScaffolding.csproj within the Debug configuration
+11:46:15 AM	ExcludeProjectFromBuildProcess: Setting build to false for project van\tools\CrudScaffolding\CrudScaffolding.csproj within the Release configuration

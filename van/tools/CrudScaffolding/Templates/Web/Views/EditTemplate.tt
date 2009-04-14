@@ -1,0 +1,21 @@
+﻿<#+
+public class EditTemplate : BaseTemplate
+{
+	public EditTemplate(string solutionName, EntityScaffoldingDetails entityScaffoldingDetails) 
+		: base(solutionName, entityScaffoldingDetails) { }
+
+	protected override void RenderCore()
+	{
+#>
+<%@ Page Title="Edit <#= EntityScaffoldingDetails.EntityName #>" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
+	Inherits="System.Web.Mvc.ViewPage<<#= AppendNamespaceHierarchyTo(SolutionName + ".Core") #>.<#= EntityScaffoldingDetails.EntityName #>>" %>
+
+<asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+	<h2>Edit <#= EntityScaffoldingDetails.EntityName #></h2>
+
+	<% Html.RenderPartial("<#= EntityScaffoldingDetails.EntityName #>Form", ViewData.Model, ViewData); %>
+</asp:Content>
+<#+
+	}
+}
+#>

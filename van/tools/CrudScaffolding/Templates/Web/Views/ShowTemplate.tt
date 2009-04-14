@@ -1,0 +1,34 @@
+﻿<#@ import namespace="System.Collections" #>
+
+<#+
+public class ShowTemplate : BaseTemplate
+{
+	public ShowTemplate(string solutionName, EntityScaffoldingDetails entityScaffoldingDetails) 
+		: base(solutionName, entityScaffoldingDetails) { } 
+
+	protected override void RenderCore()
+	{
+#>
+<%@ Page Title="<#= EntityScaffoldingDetails.EntityName #> Details" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
+	Inherits="System.Web.Mvc.ViewPage<<#= AppendNamespaceHierarchyTo(SolutionName + ".Core") #>.<#= EntityScaffoldingDetails.EntityName #>>" %>
+
+<asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    <h2><#= EntityScaffoldingDetails.EntityName #> Details</h2>
+
+    <ul>
+	<#+
+	foreach (EntityProperty property in EntityScaffoldingDetails.EntityProperties) {
+	#>
+	<li>
+			<label for="<#= EntityScaffoldingDetails.EntityName #>.<#= property.PropertyName #>"><#= property.PropertyName #>:</label>
+            <span id="<#= EntityScaffoldingDetails.EntityName #>.<#= property.PropertyName #>"><%= ViewData.Model.<#= property.PropertyName #> %></span>
+		</li>
+	<#+
+	}
+	#>
+</ul>
+</asp:Content>
+<#+
+	}
+}
+#>
