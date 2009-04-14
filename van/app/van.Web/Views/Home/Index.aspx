@@ -3,9 +3,8 @@
 <%@ Import Namespace="van.Web.Controllers" %>
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <h2>VirtualAltNet</h2>
-    <h3>
-        Intro</h3><p><b></b></p>
+    <h1 class="first">Virtual Alt.Net</h1>
+    <h2>The Beginnings</h2>
 <p>What is Virtual ALT.NET (VAN)?&nbsp; In this blog I’m going to explain the purpose
 of VAN.&nbsp; The history of VAN is very short.&nbsp; Another alt.netter <a href="http://www.lostechies.com/blogs/chad_myers">Chad Myers</a> and<a href="http://www.zachariahyoung.com"> I </a>started
 meeting once a week to do some pair programming.&nbsp; I had met Chad at the <a href="http://www.austincodecamp.com/">Austin Code Camp 2008</a> conference and
@@ -21,7 +20,7 @@ the world attending our VAN meetings.&nbsp; We typically meet once a week and
 announce the meeting via twitter or by a blog post by Chad or myself.&nbsp; We have
 had various influential alt.netters speak to at our meetings.&nbsp; For example,
 Jeremy D Miller and Scott Bellware have both spoken.&nbsp;&nbsp; </p>
-<p><b>Purpose</b></p>
+<p><h2>Purpose</h2></p>
 <p>Since&nbsp;technology has improved so much, it is really easy to hold virtual
 meetings.&nbsp; With this ease, meetings can bring together all kinds of people from
 all over the world.&nbsp; These people can include influencers, learners and
@@ -40,7 +39,7 @@ other countries trying to learn about alt.net, who may never have the chance to
 ask the difficult questions, can.&nbsp; Really the purpose of these VAN meetings is
 to provide anyone in the world the opportunity to learn more about alt.net
 virtually.</p>
-<p><b>The VAN meeting</b></p>
+<p><h2>The VAN meeting</h2></p>
 <p>The requirements for hosting a virtual alt.net meeting are really simple.&nbsp; It
 just requires two people talking about alt.net virtually.&nbsp; It could be just
 a&nbsp;basic Skype call.&nbsp; We have used Skype and Shareview before.&nbsp; The second piece
@@ -57,6 +56,4 @@ items you want to talk about.&nbsp; Also, it is a good idea to appoint a
 facilitator. <br>
 </p>
 <p>&nbsp;</p>
-<wbr>
-
 </asp:Content>

@@ -1,56 +1,189 @@
+<%@ Import Namespace="van.Web.Helpers"%>
 <%@ Master Language="C#" AutoEventWireup="true" 
     Inherits="System.Web.Mvc.ViewMasterPage" %>
 <%@ Import Namespace="van.Web.Controllers" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
     <link href="<%= ResolveUrl("~") %>Content/Site.css" rel="stylesheet" type="text/css" />
 
     <% // At bottom to facilitate other JS files to be loaded before page-by-page JS is loaded %>
+<meta name="description" content="Description of your web page goes here." />
+<meta name="keywords" content="Keywords for you web page go here. Each keyword or group of keyword phrases are separated by a comma. Keep this  list short and relevant to the content and title of this specific page." />
     <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
-        <title>van</title>
+        <title>Virtual Alt.Net</title>
     </asp:ContentPlaceHolder>
+<link rel="shortcut icon" href="../../Content/images/favicon.ico" />
+<link href="../../Content/Site.css" rel="stylesheet" type="text/css" media="interactive, braille, emboss, handheld, projection, screen, tty, tv" />
+<link href="../../Content/print-styles.css" rel="stylesheet" type="text/css" media="print" />
 </head>
-
 <body>
-    <div class="page">
+<div class="none"><a href="#maincontent">skip to the main content area of this page</a></div>
+<div class="header-container">
+    <div class="nav-login">
+        <ul>
+            <li class="first"><%= Html.ActionLink("Register", "Register", "Account") %></li>
+        </ul>
+    </div>
+    <div class="logo"><a href="<%= Url.Action("Index", "Home") %>">VIRTUAL ALT.NET</a></div>
+    <div class="clear"></div>
+</div>
+<div class="poster-container-no-image">
+    <div class="poster-inner"> </div>
+</div>
+<div class="nav-main">
+    <ul>
+    
+                
+          <% if (Html.IsCurrentAction("Index", "Home")) { %>
+            <li class="first active"><span class="active"></span><%= Html.ActionLink("Home", "Index", "Home") %></li>
+          <% } else { %>
+            <li class="first"><%= Html.ActionLink("Home", "Index", "Home") %></li>
+          <% }%>
 
-        <div id="mainContent">
+          <% if (Html.IsCurrentAction("About", "Home")) { %>
+            <li class="active"><span class="active"></span><%= Html.ActionLink("About", "About", "Home") %></li>
+          <% } else { %>
+            <li><%= Html.ActionLink("About", "About", "Home") %></li>
+          <% }%>
 
-            <div class="columnsContainer">
+    </ul>
+</div>
+<div class="content-container">
+    <div class="content-container-inner">
 
-                <div class="leftColumn">
-                    <!-- 
-                    <p>
-                        <%= Html.Image("~/Content/Images/sharp_arch.jpg") %>
-                    </p>
-                    -->
-                    
-                    <h2>van Pages</h2>
-                    <ul>
-                        <!-- We cannot use Html.ActionLink within a master page to link to a controller while using areas -->
-                        <li><asp:HyperLink runat="server" NavigateUrl="~/Home" Text="Home" /></li>
-                    </ul>
+        <div class="content-main"><a name="maincontent" id="maincontent"></a>
+        
+            <div class="breadcrumb"> <a href="home.html">Home</a> &raquo; Mission Statement</div>
+        
+       <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
+        
+        
+            <!--<h1 class="first">&lt;H1&gt; Header</h1>-->
+            <!--<div class="photo-container align-left" style="width:202px;">
+                <div class="photo-content"> <img src="../../Content/images/photo-small-01.jpg" alt="Photo Small 1" /> </div>
+                <div class="photo-caption">Photo caption goes here</div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ulliam corper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem veleum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel willum lunombro dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te <a href="#">link nulla facilisi</a>. </p>
+            <h2>&lt;H2&gt; Header</h2>
+            <p> Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc., li tot Europa usa li sam vocabularium. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilit de un nov lingua franca: on refusa continuar payar custosi traductores. It solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. </p>
+            <ul>
+                <li>Quisque tristique augue ac pede.</li>
+                <li> Praesent arcu ante, tincidunt a, ullamcorper at, vehicula vel, risus.</li>
+                <li> Vivamus consequat tortor in neque. </li>
+                <li>Morbi sit amet arcu. Nam nonummy dui eu arcu. </li>
+            </ul>
+            <div class="photo-container align-right" style="width:202px;">
+                <div class="photo-content"> <img src="../../Content/images/photo-small-02.jpg" alt="Photo Small 2" /> </div>
+                <div class="photo-caption">Photo caption goes here</div>
+            </div>-->
+           <!-- <p> Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental: in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es. </p>
+            <p>Maecenas scelerisque, orci vel lobortis pharetra, mauris tortor tempor ligula, a fringilla lectus elit at arcu. Morbi vel felis. Pellentesque mattis ipsum ut risus. Cras fringilla laoreet diam. Cras eu enim et risus porttitor tristique. Vestibulum ac lacus in erat laoreet rutrum. Sed mi arcu, auctor ut, mattis vel, molestie at, tortor. Donec faucibus, erat id ullamcorper iaculis, lorem magna lacinia dolor, vel feugiat arcu lectus ut justo. Duis felis dui, varius id, consequat ac, tincidunt eu, ligula. Integer eu mi. Aenean laoreet, nisi eu varius hendrerit, libero magna tempor nulla, quis hendrerit est turpis non nunc. Morbi luctus mi et lorem. Aenean interdum, elit eget dignissim sodales, diam mi imperdiet risus, id porta sapien elit nec arcu. In neque arcu, aliquam at, tempor ut, scelerisque eu, sem. Aliquam vel metus. Cras augue. Donec leo orci, bibendum in, posuere at, dapibus eget, diam. Pellentesque quis odio at felis ullamcorper dignissim. Nam nunc. Cras hendrerit scelerisque diam.</p>-->
+            <!--<table width="100%" border="0" cellpadding="0" cellspacing="0" class="data-table">
+                <caption>
+                &lt;caption&gt; Table Caption
+                </caption>
+                <tr>
+                    <th scope="col">&lt;th&gt; Heading </th>
+                    <th scope="col">&lt;th&gt; Heading</th>
+                    <th scope="col">&lt;th&gt; Heading</th>
+                    <th scope="col">&lt;th&gt; Heading</th>
+                </tr>
+                <tr>
+                    <th scope="row">&lt;th&gt; Heading</th>
+                    <td>content</td>
+                    <td>content</td>
+                    <td>content</td>
+                </tr>
+                <tr class="row-alternating">
+                    <th scope="row">&lt;th&gt; Heading</th>
+                    <td>content</td>
+                    <td>content</td>
+                    <td>content</td>
+                </tr>
+                <tr>
+                    <th scope="row">&lt;th&gt; Heading</th>
+                    <td>content</td>
+                    <td>content</td>
+                    <td>content</td>
+                </tr>
+                <tr class="row-alternating">
+                    <th scope="row">&lt;th&gt; Heading</th>
+                    <td>content</td>
+                    <td>content</td>
+                    <td>content</td>
+                </tr>
+            </table>-->
+            <div class="three-column-container">
+                <div class="three-column-left">
+                    <!--<h3>&lt;h3&gt; Header</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>-->
                 </div>
-                <!--/leftColumn-->
-
-                <div class="rightColumn">
-                    <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
-                </div><!--/rightColumn-->
-
-                <div class="clear">
+                <div class="three-column-middle">
+                    <!--<h3>&lt;h3&gt; Header</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>-->
                 </div>
-
-            </div><!--/columnsContainer-->
-<!-- 
-            <div id="sharpArchLogo"><%= Html.Image("~/Content/Images/sharp_arch_small.gif")%></div>
--->
-        </div><!--/mainContent-->
-
-    </div><!--/page-->
+                <div class="three-column-right">
+                    <!--<h3>&lt;h3&gt; Header</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>-->
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="three-column-container">
+                <div class="three-column-left">
+                    <!--<h3>&lt;h3&gt; Header</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>-->
+                </div>
+                <div class="three-column-middle">
+                    <!--<h3>&lt;h3&gt; Header</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>-->
+                </div>
+                <div class="three-column-right">
+                    <!--<h3>&lt;h3&gt; Header</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>-->
+                </div>
+                <div class="clear"></div>
+            </div>
+            
+        </div>
+		        <div class="content-left">
+            <div class="side-bucket">
+                <ul>
+                    <li class="first"><a href="#">Side nav</a></li>
+                    <li> <a href="#">Praesent arcu ante</a></li>
+                    <li> <a href="#">Vivamus consequat tortor</a></li>
+                    <li><a href="#">Morbi sit amet</a></li>
+                    <li><a href="#">Suspendisse vulputate</a></li>
+                    <li><a href="#">Bibendum nulla</a></li>
+                    <li><a href="#">Maecenas scelerisque</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-right">
+            <h2 class="first">User Login</h2>
+            <label for="username">Username</label>
+            <input class="input-box" id="username" type="text" />
+            <label for="password">Password</label>
+            <input class="input-box" id="password" type="password" />
+            <input class="button" name="Login" type="button" value="Login" />
+            <p class="forgot-password"><a href="#">Forgot your password?</a></p>
+            <div class="ads"> <a href="#"><img src="../../Content/images/ad.gif" alt="ad" /></a> </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="nav-footer">
+        <ul>
+            <li class="first"><%= Html.ActionLink("Home", "Index", "Home") %></li>
+            <li><%= Html.ActionLink("About", "About", "Home") %></li>
+        </ul>
+        <p class="copyright">&copy; 2007 Site Name</p>
+    </div>
+</div>
 </body>
 </html>

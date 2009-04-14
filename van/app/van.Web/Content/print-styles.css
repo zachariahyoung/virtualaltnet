@@ -1,6 +1,5 @@
 
-/*  9 of 12 Microsoft Internet Explorer Design Templates 
-
+/*  Print Styles - 9 of 12 Microsoft Internet Explorer Design Templates 
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	 
@@ -112,8 +111,6 @@ fieldset fieldset legend {
 	padding:2px;
 	color:#666666;
 	font-size:.8em;
-	border:1px solid #82b26e;
-	background:url(images/bg-input.png) no-repeat;
 	}
 
 label {
@@ -143,12 +140,9 @@ label {
 	
 input.button {
 	color:#FFF;
-	background:#317f0c url(images/bg-button.png) repeat-x;
-	border:2px groove #FFF;
 	font-size:.7em;
 	font-weight:bold;
 	padding:0 5px 2px 5px;
-	cursor:pointer;
 	}
 	
 input.button-big {
@@ -189,30 +183,23 @@ a:active {
 .header-container {
 	position:relative;
 	padding:6px 0 0 0;
-	background:#373737;
 	color:#FFF;
-	border-bottom:1px dotted #585858;
-	min-height:1px;
-	_height:1px;
 	}
 
 /* LOGO */
 
 .logo {
 	font-size:1.5em;
-	width:60%;
-	float:left;
 	font-family:"trebuchet MS", verdana, sans-serif;
-	padding:5px 0 10px 15px;
+	padding:0;
 	letter-spacing:.2em;
+	color:#373737;
 	}
 
-/* LOGO LINK */
-
-.logo a:link,
+.logo a:link, 
 .logo a:visited {
+	color:#373737;
 	text-decoration:none;
-	color:#FFF;
 	}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -222,39 +209,7 @@ a:active {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 .nav-login  {
-	font-size:.9em;
-	text-align:right;
-	margin:10px 15px 3px 0;
-	float:right;
-	width:20%;
-	}
-
-/* LOGIN LISTS */
-
-.nav-login ul {
-	margin:0;
-	padding:0;
-	}
-
-.nav-login li {
-	list-style:none;
-	padding:3px 0 3px 17px;
-	display:inline;
-	margin-left:15px;
-	background:url(images/bullet.png) no-repeat 0 4px;
-	}
-
-.nav-login li.first {
-	list-style:none;
-	margin-left:0;
-	}
-	
-/* LOGIN LINKS */
-
-.nav-login a:link,
-.nav-login a:visited{
-	color:#FFF;
-	text-decoration:none;
+	display:none;
 	}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -264,55 +219,7 @@ a:active {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 .nav-main {
-	margin:-41px 0 0 199px;
-	padding:12px 15px 0 15px;
-	background:#f6f6f6;
-	min-height:28px;
-	_height:28px;
-	border-top:1px dotted #7a7a7a;
-	border-bottom:1px dotted #7a7a7a;
-	border-left:1px dotted #7a7a7a;
-	}
-
-/* MAIN NAV LISTS */
-
-.nav-main ul {
-	margin:0;
-	padding:0;
-	}
-
-.nav-main li {
-	list-style:none;
-	float:left;
-	background:none;
-	padding:0;
-	}
-
-.nav-main li a {
-	display:block;
-	padding:0 10px;
-	border-right:1px dotted #d2d2d2;
-	}
-
-.nav-main li.first a {
-	padding-left:0;
-	}
-	
-/* NAV MAIN LINKS */
-
-.nav-main a:link,
-.nav-main a:visited {
-	color:#33840c;
-	text-decoration:none;
-	}
-
-.nav-main .active a:link,
-.nav-main .active a:visited {
-	color:#000;
-	}
-
-.nav-main a:hover {
-	text-decoration:underline;
+	display:none;
 	}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -323,46 +230,23 @@ a:active {
 
 .footer {
 	padding:10px 0;
-	_height:1px;
-	background:#373737;
+	border-top:1px dotted #373737;
 	clear:both;
 	}
 
 .nav-footer {
-	position:relative;
-	_height:1px;
-	margin:0 200px;
-	text-align:center;
-	clear:both;
+	
 	}
 
 .nav-footer ul{
-	padding:0;
-	margin:0;
-	text-align:center;
+	display:none;
 	}
 
-.nav-footer li{
-	background:none;
-	display:inline;
-	border-right:1px dotted #686868;
-	padding:0 10px;
-	}
-
-.nav-footer li.first {
-	border-left:1px dotted #686868;
-	}
-	
 .copyright {
-	color:#999;
+	color:#373737;
 	font-size:.7em;
 	clear:both;
 	margin:5px 0 0 0;
-	}
-
-.nav-footer a:link,
-.nav-footer a:visited {
-	color:#CCC;
 	}
 	
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -372,32 +256,23 @@ a:active {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 .poster-container {
-	background:url(images/bg-poster-tile.jpg) repeat-x;
-	min-height:200px;
-	_height:200px;
-	margin-top:-1px;
+	margin:15px 0 15px 0;
+	border:1px solid #F6B525;
+	padding:15px;
 	}
 
 .poster-container-no-image {
-	background:url(images/bg-poster-tile.jpg) repeat-x;
-	min-height:70px;
-	_height:70px;
-	margin-top:-1px;
+	border-top:30px solid #F6B525;
+	height:1px;
+	margin:15px 0;
 	}
 	
 .poster-inner {
-	background:url(images/bg-poster.jpg) no-repeat left top;
 	font-family:"trebuchet MS", verdana, sans-serif;
-	min-height:70px;
-	_height:70px;
 	}
 
 .poster-photo {
-	background:url(images/bg-poster-photo.jpg) no-repeat left;
-	min-height:170px;
-	_height:170px;
-	padding:30px 30% 0 200px;
-	font-style:italic;
+	
 	}
 
 .poster-container h1 {
@@ -444,61 +319,6 @@ a:active {
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	 
-	 PRIMARY LAYOUT STYLES 
-	 	 	 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-  
-.content-container {
-	position:relative;
-	_height:1px;
-	min-height:1px;
-	background:url(images/bg-column-left.png) repeat-y;
-	}
-
-.content-container-inner {
-	background:url(images/bg-column-right.png) repeat-y right;
-	_height:1px;
-	min-height:1px;
-	padding:0 200px;
-	position:relative;
-	}
-	
-.content-main {
-	padding:15px 2% 20px 2%;
-	position:relative;
-	min-height:1px;
-	_height:1px;
-	float:left;
-	width:96%;
-	}
-
-.content-left {
-	padding:20px 10px;
-	float:left;
-	width:180px;
-	margin-top:-1px;
-	position:relative;
-	margin-left:-100%;
-	right:200px;
-	_left:200px;
-	border-top:1px dotted #797979;
-	}
-
-.content-right {
-	padding:15px 10px 20px 10px;
-	float:left;
-	width:180px;
-	position:relative;
-	margin-right:-200px;
-	}
-
-.ads {
-	text-align:center;
-	margin:20px 0;
-	}
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	 
 	 SIDE BUCKET
 	 	 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -506,6 +326,7 @@ a:active {
 .side-bucket {
 	margin-bottom:20px;
 	line-height:normal;
+	width:400px;
 	}
 
 /* SIDE BUCKET LISTS */
@@ -513,13 +334,11 @@ a:active {
 .side-bucket ul {
 	margin:0;
 	padding:0;
-	_height:1px;
 	}
 
 .side-bucket li {
 	list-style:none;
 	border-bottom:1px dotted #7a7a7a;
-	background-position:0 4px;
 	}
 
 .side-bucket li.first {
@@ -592,14 +411,12 @@ a:active {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 table.data-table {
-	background:#f6f6f6;
 	font-size:.7em;
 	border-top:1px dotted #7a7a7a;
 	border-left:1px dotted #7a7a7a;
 	}
 
 table.data-table caption{
-	background:#b6b6b6;
 	padding:10px;
 	text-align:center;
 	font-weight:bold;
@@ -618,14 +435,12 @@ table.data-table th{
 table.data-table th{
 	text-align:left;
 	font-family:Arial, Helvetica, sans-serif;
-	background:#ececec;
 	}
 	
 table.data-table td{
 	}
 
 table.data-table tr.row-alternating td{
-	background:#e0e0e0;
 	}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -635,9 +450,7 @@ table.data-table tr.row-alternating td{
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 li {
-	list-style:none;
-	background:url(images/bullet.png) no-repeat 0 5px;
-	padding:3px 0 3px 17px;
+	padding:3px 0 3px 0;
 	}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -3,7 +3,7 @@ using van.Web.Controllers;
 using MvcContrib.TestHelper;
 using System.Web.Routing;
 
-namespace Tests.van.Controllers
+namespace Tests.van.Web.Controllers
 {
     [TestFixture]
     public class RouteRegistrarTests
