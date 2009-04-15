@@ -28,6 +28,10 @@ namespace van.Web.Controllers
             routes.CreateArea("Root", "van.Web.Controllers",
                 routes.MapRoute(null, "{controller}/{action}", new { controller = "Home", action = "Index" })
             );
+
+            routes.CreateArea("Calendar", "van.Web.Controllers",
+                routes.MapRoute(null, "{controller}/{action}", new { controller = "Calendar", action = "Index" })
+                );
         }
     }
 }

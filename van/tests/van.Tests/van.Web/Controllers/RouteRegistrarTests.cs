@@ -20,5 +20,6 @@ namespace Tests.van.Web.Controllers
         {
             "~/".Route().ShouldMapTo<HomeController>(x => x.Index());
         }
+
     }
 }
