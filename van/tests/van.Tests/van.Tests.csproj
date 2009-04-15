@@ -129,6 +129,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="van.Web\Controllers\CalendarControllerRouteRegistrarTests.cs" />
     <Compile Include="van.Web\Controllers\RouteRegistrarTests.cs" />
     <Compile Include="van.Data\NHibernateMaps\MappingIntegrationTests.cs" />
     <Compile Include="..\..\CommonAssemblyInfo.cs">
