@@ -29,7 +29,8 @@
             <li class="first"><%= Html.ActionLink("Register", "Register", "Account") %></li>
         </ul>
     </div>
-    <div class="logo"><a href="<%= Url.Action("Index", "Home") %>">VIRTUAL ALT.NET</a></div>
+    <div class="logo"><a href="<%= Url.Action("Index", "Home") %>">
+        <img src="../../Content/Images/VAN-1.png" height="100" width="660" alt="Virtual Alt.Net"/></a></div>
     <div class="clear"></div>
 </div>
 <div class="poster-container-no-image">

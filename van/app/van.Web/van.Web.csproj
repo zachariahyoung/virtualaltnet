@@ -202,6 +202,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\VAN-1.png" />
     <Content Include="Views\Calendar\Index.aspx" />
     <Content Include="Views\Shared\Site.Master" />
   </ItemGroup>
