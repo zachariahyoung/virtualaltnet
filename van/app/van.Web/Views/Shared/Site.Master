@@ -59,7 +59,7 @@
 
         <div class="content-main"><a name="maincontent" id="maincontent"></a>
         
-            <div class="breadcrumb"> <a href="home.html">Home</a> &raquo; Mission Statement</div>
+            <!--<div class="breadcrumb"> <a href="home.html">Home</a> &raquo; Mission Statement</div>-->
         
        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
         
@@ -87,7 +87,7 @@
         </div>
 		        <div class="content-left">
             <div class="side-bucket">
-                <ul>
+<%--                <ul>
                     <li class="first"><a href="#">Side nav</a></li>
                     <li> <a href="#">Praesent arcu ante</a></li>
                     <li> <a href="#">Vivamus consequat tortor</a></li>
@@ -95,17 +95,17 @@
                     <li><a href="#">Suspendisse vulputate</a></li>
                     <li><a href="#">Bibendum nulla</a></li>
                     <li><a href="#">Maecenas scelerisque</a></li>
-                </ul>
+                </ul>--%>
             </div>
         </div>
         <div class="content-right">
-            <h2 class="first">User Login</h2>
+           <!-- <h2 class="first">User Login</h2>
             <label for="username">Username</label>
             <input class="input-box" id="username" type="text" />
             <label for="password">Password</label>
             <input class="input-box" id="password" type="password" />
             <input class="button" name="Login" type="button" value="Login" />
-            <p class="forgot-password"><a href="#">Forgot your password?</a></p>
+            <p class="forgot-password"><a href="#">Forgot your password?</a></p>-->
             <div class="ads"> <a href="#"><img src="../../Content/images/ad.gif" alt="ad" /></a> </div>
         </div>
         <div class="clear"></div>

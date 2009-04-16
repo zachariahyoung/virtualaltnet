@@ -14,4 +14,5 @@ namespace van.Web.Helpers
             return currentControllerName.Equals(controllerName, StringComparison.CurrentCultureIgnoreCase) && currentActionName.Equals(actionName, StringComparison.CurrentCultureIgnoreCase);
         }
     }
+        
 }

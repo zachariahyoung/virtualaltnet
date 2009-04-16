@@ -26,19 +26,18 @@ namespace van.Web.Controllers
 
             //Route config for the Calendar area
             routes.CreateArea("Calendar", "van.Web.Controllers",
-                            routes.MapRoute(null, "{controller}/{action}", new { controller = "Calendar", action = "Index" })
+                            routes.MapRoute(null, "Calendar/{action}", new { controller = "Calendar", action = "Index" })
+            );
+
+            //// Routing config for the Home area
+            routes.CreateArea("Home", "van.Web.Controllers",
+                routes.MapRoute(null, "Home/{action}", new { controller = "Home", action = "Index" })
             );
 
             // Routing config for the root area
             routes.CreateArea("Root", "van.Web.Controllers",
                 routes.MapRoute(null, "{controller}/{action}", new { controller = "Home", action = "Index" })
             );
-
-            //// Routing config for the Home area
-            //routes.CreateArea("Home", "van.Web.Controllers",
-            //    routes.MapRoute(null, "{controller}/{action}", new { controller = "Home", action = "Index" })
-            //);
-
             
         }
     }
