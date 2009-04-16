@@ -8,8 +8,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-
-    <link href="<%= ResolveUrl("~") %>Content/Site.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="<%= ResolveUrl("~") %>Content/images/favicon.ico" />
+<link href="<%= ResolveUrl("~") %>Content/Site.css" rel="stylesheet" type="text/css" media="interactive, braille, emboss, handheld, projection, screen, tty, tv" />
+<link href="<%= ResolveUrl("~") %>Content/print-styles.css" rel="stylesheet" type="text/css" media="print" />
 
     <% // At bottom to facilitate other JS files to be loaded before page-by-page JS is loaded %>
 <meta name="description" content="Description of your web page goes here." />
@@ -17,9 +18,7 @@
     <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
         <title>Virtual Alt.Net</title>
     </asp:ContentPlaceHolder>
-<link rel="shortcut icon" href="../../Content/images/favicon.ico" />
-<link href="../../Content/Site.css" rel="stylesheet" type="text/css" media="interactive, braille, emboss, handheld, projection, screen, tty, tv" />
-<link href="../../Content/print-styles.css" rel="stylesheet" type="text/css" media="print" />
+
 </head>
 <body>
 <div class="none"><a href="#maincontent">skip to the main content area of this page</a></div>
@@ -30,7 +29,7 @@
         </ul>
     </div>
     <div class="logo"><a href="<%= Url.Action("Index", "Home") %>">
-        <img src="../../Content/Images/VAN-1.png" height="100" width="660" alt="Virtual Alt.Net"/></a></div>
+        <img src="<%= ResolveUrl("~") %>Content/Images/VAN-1.png" height="100" width="660" alt="Virtual Alt.Net"/></a></div>
     <div class="clear"></div>
 </div>
 <div class="poster-container-no-image">
@@ -87,7 +86,7 @@
         </div>
 		        <div class="content-left">
             <div class="side-bucket">
-<%--                <ul>
+<!--                <ul>
                     <li class="first"><a href="#">Side nav</a></li>
                     <li> <a href="#">Praesent arcu ante</a></li>
                     <li> <a href="#">Vivamus consequat tortor</a></li>
@@ -95,7 +94,7 @@
                     <li><a href="#">Suspendisse vulputate</a></li>
                     <li><a href="#">Bibendum nulla</a></li>
                     <li><a href="#">Maecenas scelerisque</a></li>
-                </ul>--%>
+                </ul>-->
             </div>
         </div>
         <div class="content-right">
@@ -106,7 +105,7 @@
             <input class="input-box" id="password" type="password" />
             <input class="button" name="Login" type="button" value="Login" />
             <p class="forgot-password"><a href="#">Forgot your password?</a></p>-->
-            <div class="ads"> <a href="#"><img src="../../Content/images/ad.gif" alt="ad" /></a> </div>
+            <div class="ads"> <a href="#"><img src="<%= ResolveUrl("~") %>Content/images/ad.gif" alt="ad" /></a> </div>
         </div>
         <div class="clear"></div>
     </div>
