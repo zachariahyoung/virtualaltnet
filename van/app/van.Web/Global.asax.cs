@@ -70,6 +70,16 @@ namespace van.Web
         public override void Init()
         {
             base.Init();
+            
+            // this hack is used to allow the application run in Integrated pipeline mode.
+            // Issue reference 75 
+            // See http://code.google.com/p/sharp-architecture/issues/detail?id=75
+
+            if (!hasInitBeenCalledOnce)
+            {
+                hasInitBeenCalledOnce = true;
+                return;
+            }
 
             // Only allow the NHibernate session to be initialized once
             if (!wasNHibernateInitialized)
@@ -88,6 +98,8 @@ namespace van.Web
                 }
             }
         }
+
+        private static bool hasInitBeenCalledOnce = false;
 
         private static bool wasNHibernateInitialized = false;
 
