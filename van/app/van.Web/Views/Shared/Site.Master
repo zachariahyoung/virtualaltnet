@@ -29,29 +29,15 @@
         </ul>
     </div>
     <div class="logo"><a href="<%= Url.Action("Index", "Home") %>">
-        <img src="<%= ResolveUrl("~") %>Content/Images/VAN-1.png" height="100" width="660" alt="Virtual Alt.Net"/></a></div>
+        <img src="<%= ResolveUrl("~") %>Content/Images/VAN-4.png" height="100" width="665" alt="Virtual Alt.Net"/></a></div>
     <div class="clear"></div>
 </div>
 <div class="poster-container-no-image">
     <div class="poster-inner"> </div>
 </div>
 <div class="nav-main">
-    <ul>
-    
-                
-          <% if (Html.IsCurrentAction("Index", "Home")) { %>
-            <li class="first active"><span class="active"></span><%= Html.ActionLink("Home", "Index", "Home") %></li>
-          <% } else { %>
-            <li class="first"><%= Html.ActionLink("Home", "Index", "Home") %></li>
-          <% }%>
+   			<% Html.RenderPartial("Menu"); %>
 
-          <% if (Html.IsCurrentAction("Calendar", "Index")) { %>
-            <li class="active"><span class="active"></span><%= Html.ActionLink("Calendar", "Index",  "Calendar") %></li>
-          <% } else { %>
-            <li><%= Html.ActionLink("Calendar", "Index", "Calendar") %></li>
-          <% }%>
-
-    </ul>
 </div>
 <div class="content-container">
     <div class="content-container-inner">
@@ -112,10 +98,7 @@
 </div>
 <div class="footer">
     <div class="nav-footer">
-        <ul>
-            <li class="first"><%= Html.ActionLink("Home", "Index", "Home") %></li>
-            <li><%= Html.ActionLink("Calendar", "Index", "Calendar") %></li>
-        </ul>
+        <% Html.RenderPartial("Menu"); %>
         <p class="copyright">&copy; 2009 Virtual Alt.Net</p>
     </div>
 </div>

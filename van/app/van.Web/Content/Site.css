@@ -244,11 +244,25 @@ a:active {
 	background:url(images/bullet.png) no-repeat 0 4px;
 	}
 
-.nav-login li.first {
-	list-style:none;
-	margin-left:0;
+.nav-main li.first {
+	padding-left:0;
 	}
 	
+.nav-main li.second {
+	padding-left:2;
+	}
+.nav-main li.third {
+	padding-left:2;
+	}
+.nav-main li.fourth {
+	padding-left:2;
+	}	
+.nav-main li.fifth {
+	padding-left:2;
+	}	
+.nav-main li.sixth {
+	padding-left:2;
+	}		
 /* LOGIN LINKS */
 
 .nav-login a:link,

@@ -155,6 +155,10 @@
     </Compile>
     <Compile Include="Helpers\IsCurrentActionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Shared\Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\ad.gif" />
@@ -206,7 +210,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\VAN-1.png" />
+    <Content Include="Content\Images\VAN-3.jpg" />
+    <Content Include="Content\Images\VAN-4.png" />
     <Content Include="Views\Calendar\Index.aspx" />
+    <Content Include="Views\Shared\Menu.ascx" />
     <Content Include="Views\Shared\Site.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

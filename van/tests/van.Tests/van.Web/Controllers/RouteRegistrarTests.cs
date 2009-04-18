@@ -16,7 +16,7 @@ namespace Tests.van.Web.Controllers
         }
 
         [Test]
-        public void CanVerifyRouteMaps()
+        public void CanVerifyHomeRouteMaps()
         {
             "~/".Route().ShouldMapTo<HomeController>(x => x.Index());
         }
