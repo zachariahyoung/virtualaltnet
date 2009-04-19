@@ -7,8 +7,8 @@ namespace van.Core
         public Recording(){}
 
         [DomainSignature]
-        public string RecordingTitle { get; set; }
+        public virtual string RecordingTitle { get; set; }
         [DomainSignature]
-        public string RecordingUrl { get; set; }
+        public virtual string RecordingUrl { get; set; }
     }
 }
