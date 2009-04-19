@@ -20,7 +20,7 @@ namespace Tests.van.Core
 
         }
 
-        [Ignore]
+     
         [Test]
         public void CanCompareRecording()
         {
