@@ -1,4 +1,4 @@
-<%@ Import Namespace="van.Web.Helpers"%>
+<%@ Import Namespace="van.Web.Extensions"%>
 <%@ Master Language="C#" AutoEventWireup="true" 
     Inherits="System.Web.Mvc.ViewMasterPage" %>
 <%@ Import Namespace="van.Web.Controllers" %>
@@ -11,10 +11,11 @@
 <link rel="shortcut icon" href="<%= ResolveUrl("~") %>Content/images/favicon.ico" />
 <link href="<%= ResolveUrl("~") %>Content/Site.css" rel="stylesheet" type="text/css" media="interactive, braille, emboss, handheld, projection, screen, tty, tv" />
 <link href="<%= ResolveUrl("~") %>Content/print-styles.css" rel="stylesheet" type="text/css" media="print" />
+<%= Html.IncludeJs("jquery-1.3.2", "MicrosoftAjax", "MicrosoftMvcAjax")%>
 
     <% // At bottom to facilitate other JS files to be loaded before page-by-page JS is loaded %>
 <meta name="description" content="Description of your web page goes here." />
-<meta name="keywords" content="Keywords for you web page go here. Each keyword or group of keyword phrases are separated by a comma. Keep this  list short and relevant to the content and title of this specific page." />
+<meta name="keywords" content="Alt.Net, Google groups, Programming" />
     <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
         <title>Virtual Alt.Net</title>
     </asp:ContentPlaceHolder>
@@ -84,13 +85,7 @@
             </div>
         </div>
         <div class="content-right">
-           <!-- <h2 class="first">User Login</h2>
-            <label for="username">Username</label>
-            <input class="input-box" id="username" type="text" />
-            <label for="password">Password</label>
-            <input class="input-box" id="password" type="password" />
-            <input class="button" name="Login" type="button" value="Login" />
-            <p class="forgot-password"><a href="#">Forgot your password?</a></p>-->
+           
             <div class="ads"> <a href="#"><img src="<%= ResolveUrl("~") %>Content/images/ad.gif" alt="ad" /></a> </div>
         </div>
         <div class="clear"></div>
@@ -102,5 +97,15 @@
         <p class="copyright">&copy; 2009 Virtual Alt.Net</p>
     </div>
 </div>
+<!-- Once we have analytics hooked up reset uncomment the scripts below and fill in the correct tracker code for our site.-->
+<!--<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-OURTRACKERNUMBER");
+pageTracker._trackPageview();
+} catch(err) {}</script>-->
 </body>
 </html>
