@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="van.Core\RecordingTests.cs" />
+    <Compile Include="van.Data\RecordingRepositoryTests.cs" />
     <Compile Include="van.Web\Controllers\CalendarControllerRouteRegistrarTests.cs" />
     <Compile Include="van.Web\Controllers\RecordingsControllerTests.cs" />
     <Compile Include="van.Web\Controllers\RouteRegistrarTests.cs" />
