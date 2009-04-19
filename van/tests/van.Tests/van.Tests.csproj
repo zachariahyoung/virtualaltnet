@@ -129,7 +129,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="van.Core\RecordingTests.cs" />
     <Compile Include="van.Web\Controllers\CalendarControllerRouteRegistrarTests.cs" />
+    <Compile Include="van.Web\Controllers\RecordingsControllerTests.cs" />
     <Compile Include="van.Web\Controllers\RouteRegistrarTests.cs" />
     <Compile Include="van.Data\NHibernateMaps\MappingIntegrationTests.cs" />
     <Compile Include="..\..\CommonAssemblyInfo.cs">
@@ -159,9 +161,6 @@
     <Content Include="Hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="van.Core\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
