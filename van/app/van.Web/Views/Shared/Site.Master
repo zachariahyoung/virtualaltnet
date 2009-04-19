@@ -97,15 +97,15 @@
         <p class="copyright">&copy; 2009 Virtual Alt.Net</p>
     </div>
 </div>
-<!-- Once we have analytics hooked up reset uncomment the scripts below and fill in the correct tracker code for our site.-->
-<!--<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-OURTRACKERNUMBER");
-pageTracker._trackPageview();
-} catch(err) {}</script>-->
+    try {
+        var pageTracker = _gat._getTracker("UA-3010739-6");
+        pageTracker._trackPageview();
+    } catch (err) { }</script>
+
 </body>
 </html>
