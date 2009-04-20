@@ -26,7 +26,7 @@
 <div class="header-container">
     <div class="nav-login">
         <ul>
-            <li class="first"><%= Html.ActionLink("Register", "Register", "Account") %></li>
+            <%--<li class="first"><%= Html.ActionLink("Register", "Register", "Account") %></li>--%>
         </ul>
     </div>
     <div class="logo"><a href="<%= Url.Action("Index", "Home") %>">
