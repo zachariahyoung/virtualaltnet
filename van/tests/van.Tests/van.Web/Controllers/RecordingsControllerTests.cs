@@ -13,16 +13,32 @@ namespace Tests.van.Web.Controllers
     [TestFixture]
     public class RecordingsControllerTests
     {
+        private RecordingsController controller;
+
+        [SetUp]
+        public void SetUp()
+        {
+            controller = new RecordingsController(CreateMockRecordingRepository());
+        }
+
+        [Test]
+        public void CanListRecordings()
+        {
+            ViewResult result = controller.Index().AssertViewRendered();
+
+            Assert.That(result.ViewData.Model as List<Recording>, Is.Not.Null);
+            Assert.That((result.ViewData.Model as List<Recording>).Count, Is.EqualTo(4));
+
+        }
         [Test]
         public void CanListFilteredRecordings()
         {
-            RecordingsController controller = 
-                new RecordingsController(CreateMockRecordingRepository());
+            
 
             ViewResult result =
-                controller.ListRecordingsMatching("test")
+                controller.ListRecordingsMatching("Joe")
                     .AssertViewRendered()
-                    .ForView("ListRecoringsMatchingFilter");
+                    .ForView("ListRecordingMatchingFilter");
 
             Assert.That(result.ViewData, Is.Not.Null);
             Assert.That(result.ViewData.Model as List<Recording>,  Is.Not.Null);
@@ -35,7 +51,8 @@ namespace Tests.van.Web.Controllers
 
             IRecordingRepository mockedRepository =
                 mocks.StrictMock<IRecordingRepository>();
-            Expect.Call(mockedRepository.FindAllMatching(null)).IgnoreArguments().Return(CreateRecordings());
+            Expect.Call(mockedRepository.GetAll()).Return(CreateRecordings());
+            Expect.Call(mockedRepository.FindAllMatching("Joe")).IgnoreArguments().Return(CreateRecordings());
             mocks.Replay(mockedRepository);
 
             return mockedRepository;

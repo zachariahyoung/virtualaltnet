@@ -214,6 +214,8 @@
     <Content Include="Content\Images\VAN-3.jpg" />
     <Content Include="Content\Images\VAN-4.png" />
     <Content Include="Views\Calendar\Index.aspx" />
+    <Content Include="Views\Recordings\Index.aspx" />
+    <Content Include="Views\Recordings\ListRecordingMatchingFilter.aspx" />
     <Content Include="Views\Shared\Menu.ascx" />
     <Content Include="Views\Shared\Site.Master" />
   </ItemGroup>
