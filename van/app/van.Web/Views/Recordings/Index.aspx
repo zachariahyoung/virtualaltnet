@@ -25,9 +25,8 @@ Inherits="ViewPage<IEnumerable<Recording>>" %>
 		<%
 		foreach (Recording recordings in ViewData.Model) { %>
 			<tr>
-				<td> <a href="<%= recordings.RecordingUrl %>"><%= recordings.RecordingUrl %></a>
-				</td>
-				<td><%= recordings.RecordingDate.ToString("dd, MM", CultureInfo.InvariantCulture)%></td>
+				<td> <a href="<%= recordings.RecordingUrl %>"><%= recordings.RecordingTitle %></a></td>
+				<td><%= recordings.RecordingDate %></td>
 				<td><%= recordings.RecordingDuration %></td>
 			</tr>
 		<%} %>
