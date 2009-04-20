@@ -1,0 +1,60 @@
+USE [zac0910306395493]
+GO
+
+/****** Object:  Table [dbo].[Recordings]    Script Date: 04/19/2009 15:10:34 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Recordings](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[RecordingTitle] [varchar](50) NOT NULL,
+	[RecordingUrl] [varchar](200) NOT NULL,
+	[RecordingDate] [datetime] NOT NULL,
+	[RecordingDuration] [varchar](50) NOT NULL,
+ CONSTRAINT [Recording_PrimaryKey] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+USE [zac0910306395493]
+GO
+
+SET IDENTITY_INSERT [zac0910306395493].[dbo].[Recordings] ON
+GO
+
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(2,N'Fluent NHibernate',N'http://www.zachariahyoung.com/zy/post/2008/08/Screencast-on-Fluent-NHibernate-with-Chad-Myers.aspx',CAST(0x00009AFE00C5C100 AS DateTime),N'1:27')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(3,N'ALT.NET conference',N'http://www.zachariahyoung.com/zy/post/2009/01/ALTNET-conference---111208.aspx',CAST(0x00009B5200000000 AS DateTime),N'2:14')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(4,N'ALT.NET Virtual Conference',N'http://www.zachariahyoung.com/zy/post/2009/01/ALTNET-Virtual-Conference---111908.aspx',CAST(0x00009B5900000000 AS DateTime),N'2:33')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(5,N'ALT.NET Virtual Conference on Lean',N'http://www.zachariahyoung.com/zy/post/2009/01/ALTNET-Virtual-Conference-on-Lean---12308.aspx',CAST(0x00009CEF00000000 AS DateTime),N'1:18')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(6,N'VAN Meeting for 12-10-08',N'http://www.zachariahyoung.com/zy/post/2009/01/VAN-Meeting---12-10-08.aspx',CAST(0x00009B6E00000000 AS DateTime),N'1:02')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(7,N'VAN Meeting for 1-07-09',N'http://www.zachariahyoung.com/zy/post/2009/01/VAN-Meeting---1-07-09.aspx',CAST(0x00009B8A00000000 AS DateTime),N'2:32')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(8,N'VAN Meeting for 1-14-09',N'http://www.zachariahyoung.com/zy/post/2009/01/VAN-Meeting---1-14-08.aspx',CAST(0x00009B9100000000 AS DateTime),N'2:00')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(9,N'VAN Meeting for 1-21-09',N'http://www.zachariahyoung.com/zy/post/2009/01/VAN-Meeting-for-1-21-2008-on-GIT.aspx',CAST(0x00009B9800000000 AS DateTime),N'2:06')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(10,N'VAN Meeting for 1-28-09',N'http://www.zachariahyoung.com/zy/post/2009/02/VAN-Meeting-for-1-28-2008.aspx',CAST(0x00009B9F00000000 AS DateTime),N'1:37')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(11,N'Oz VAN Meeting for 2-3-09',N'http://www.viddler.com/explore/rbanks/videos/1/',CAST(0x00009BA500000000 AS DateTime),N'1:46')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(12,N'VAN Meeting for 2-4-09',N'http://www.zachariahyoung.com/zy/post/2009/02/VAN-Meeting-for-2-4-2008-on-MEF.aspx',CAST(0x00009BA600000000 AS DateTime),N'1:04')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(13,N'E-VAN Meeting for 2-9-09 with Greg Young',N'http://www.zachariahyoung.com/zy/post/2009/02/VAN-Meeting-for-2-9-09-with-Greg-Young.aspx',CAST(0x00009BAB00000000 AS DateTime),N'1:29')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(14,N'VAN Meeting for 2-11-09 with Jimmy Bogard',N'http://www.zachariahyoung.com/zy/post/2009/02/VAN-Meeting-for-2-11-09-with-Jimmy-Bogard.aspx',CAST(0x00009BAD00000000 AS DateTime),N'1:55')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(15,N'VAN Meeting for 2-18-09 with Oren Eini',N'http://zachariahyoung.com/zy/post/2009/02/VAN-Meeting-NHibernate-Profiler-with-Oren-Eini-on-21809.aspx',CAST(0x00009BB400000000 AS DateTime),N'2:01')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(16,N'E-VAN Meeting for 2-25-09 with Sebastien Lambla',N'http://www.zachariahyoung.com/zy/post/2009/03/VAN-Meeting-for-2-25-09-with-Sebastien-Lambla.aspx',CAST(0x00009BBB00000000 AS DateTime),N'1:32')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(17,N'VAN Meeting for 2-25-09',N'http://www.viddler.com/explore/virtualaltnet/videos/17/',CAST(0x00009BBB00000000 AS DateTime),N'1:34')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(18,N'VAN Meeting for 3-04-09 with Stephen A. Bohlen',N'http://www.viddler.com/explore/virtualaltnet/videos/18/',CAST(0x00009BC200000000 AS DateTime),N'1:48')
+INSERT INTO [zac0910306395493].[dbo].[Recordings]([Id],[RecordingTitle],[RecordingUrl],[RecordingDate],[RecordingDuration]) VALUES(19,N'VAN Meeting for 3-11-09 with Eric Hester',N'http://www.viddler.com/explore/virtualaltnet/videos/20/',CAST(0x00009BC900000000 AS DateTime),N'0:44')
+GO
+
+SET IDENTITY_INSERT [zac0910306395493].[dbo].[Recordings] OFF
+GO
+
+
