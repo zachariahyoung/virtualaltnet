@@ -86,7 +86,9 @@
         </div>
         <div class="content-right">
            
-            <div class="ads"> <a href="#"><img src="<%= ResolveUrl("~") %>Content/images/ad.gif" alt="ad" /></a> </div>
+            <div class="ads"> 
+                <%--<a href="#"><img src="<%= ResolveUrl("~") %>Content/images/ad.gif" alt="ad" /></a> --%>
+            </div>
         </div>
         <div class="clear"></div>
     </div>
