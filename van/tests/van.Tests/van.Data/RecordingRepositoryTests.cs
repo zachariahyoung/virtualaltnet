@@ -13,7 +13,7 @@ namespace Tests.van.Data
     [Category("DB Tests")]
     public class RecordingRepositoryTests : RepositoryTestsBase
     {
-        private IRecordingRepository recordingRepository = new RecordingRepository();
+        private readonly IRecordingRepository recordingRepository = new RecordingRepository();
 
         protected override void LoadTestData()
         {
@@ -23,9 +23,10 @@ namespace Tests.van.Data
             AddRecording("Jay", "http://www.zachariahyoung.com/", new DateTime(2008, 3, 20), "1:30");
         }
 
+     
         private void AddRecording(string name, string url, DateTime date, string duration)
         {
-            var recording = new Recording()
+            var recording = new Recording
                                 {
                                     RecordingTitle = name, 
                                     RecordingUrl = url,

@@ -10,7 +10,7 @@ Inherits="ViewPage<IEnumerable<Recording>>" %>
 
     <ul>
         <%
-        foreach (Recording recording in ViewData.Model) { %>
+        foreach (var recording in ViewData.Model) { %>
     	    <li><%= recording.RecordingTitle %></li><%
         }
         %>

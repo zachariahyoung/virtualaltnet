@@ -23,7 +23,6 @@ namespace van.Web.Controllers
             //    routes.MapRoute(null, "Organization/{controller}/{action}", new { action = "Index" }),
             //    routes.MapRoute(null, "Organization/{controller}/{action}/{id}")
             //);
-
             
             //Route config for the Home area
             routes.CreateArea("Home", "van.Web.Controllers",routes.MapRoute(null, "{controller}/{action}", new { controller = "Home", action = "Index" }));

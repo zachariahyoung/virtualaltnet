@@ -10,20 +10,19 @@ namespace van.Web.Controllers
 {
     public class RecordingsController : Controller
     {
-        private readonly IRecordingRepository _recordingRepository;
+        private readonly IRecordingRepository recordingRepository;
 
-        public RecordingsController(
-            IRecordingRepository recordingRepository)
+        public RecordingsController(IRecordingRepository recordingRepository)
         {
-            Check.Require(recordingRepository != null, "_recordingRepository may not be null");
+            Check.Require(recordingRepository != null, "recordingRepository may not be null");
 
-            this._recordingRepository = recordingRepository;
+            this.recordingRepository = recordingRepository;
         }
 
         [Transaction]
         public ActionResult ListRecordingsMatching(string filter)
         {
-            List<Recording> matchingRecording = _recordingRepository.FindAllMatching(filter);
+            List<Recording> matchingRecording = recordingRepository.FindAllMatching(filter);
 
             return View("ListRecordingMatchingFilter", matchingRecording);
 
@@ -32,7 +31,7 @@ namespace van.Web.Controllers
         [Transaction]
         public ActionResult Index()
         {
-            IList<Recording> recordings = _recordingRepository.GetAll();
+            IList<Recording> recordings = recordingRepository.GetAll();
             return View(recordings);
 
         }
