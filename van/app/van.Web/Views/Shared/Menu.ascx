@@ -9,5 +9,7 @@
 		<%= Html.ActionLink<HomeController>(x=>x.Index(), "Home") %></li>
 	<li class="second <%=Html.CurrentAction("Index", "Calendar") %>">
 		<%= Html.ActionLink<CalendarController>(x=>x.Index(), "Calendar") %></li>
+	<li class="third <%=Html.CurrentAction("Index", "Recording") %>">
+		<%= Html.ActionLink<RecordingsController>(x=>x.Index(), "Recordings") %></li>
 
 </ul>

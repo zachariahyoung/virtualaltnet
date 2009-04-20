@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" 
+<%@ Page Title="Recordings" Language="C#" 
 MasterPageFile="~/Views/Shared/Site.Master" 
 AutoEventWireup="true" 
 Inherits="ViewPage<IEnumerable<Recording>>" %>
@@ -15,16 +15,19 @@ Inherits="ViewPage<IEnumerable<Recording>>" %>
     <table>
         <thead>
             <tr>
-			    <th>RecordingTitle</th>
-			    <th>RecordingURL</th>
+			    <th>Subject</th>
+			    <th>Date</th>
+			    <th>Duration</th>
             </tr>
         </thead>
 
 		<%
 		foreach (Recording recordings in ViewData.Model) { %>
 			<tr>
-				<td><%= recordings.RecordingTitle %></td>
-				<td><%= recordings.RecordingUrl %></td>
+				<td> <a href="<%= recordings.RecordingUrl %>"><%= recordings.RecordingUrl %></a>
+				</td>
+				<td><%= recordings.RecordingDate %></td>
+				<td><%= recordings.RecordingDuration %></td>
 			</tr>
 		<%} %>
     </table>

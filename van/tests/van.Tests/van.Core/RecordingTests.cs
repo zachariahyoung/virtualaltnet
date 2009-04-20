@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using NUnit.Framework.SyntaxHelpers;
 using van.Core;
 namespace Tests.van.Core
@@ -9,14 +10,21 @@ namespace Tests.van.Core
         [Test]
         public void CanCreateRecording()
         {
-            string title = "Unit Testing";
-            string url = "http://www.zachariahyoung.com";
-
-            Recording recording = new Recording();
+            var title = "Unit Testing";
+            var url = "http://www.zachariahyoung.com";
+            var date = new DateTime(2008, 3, 20);
+            var duration = "1:30";
+            
+            var recording = new Recording();
             recording.RecordingTitle = title;
             recording.RecordingUrl = url;
+            recording.RecordingDate = date;
+            recording.RecordingDuration = duration;
 
             Assert.That(recording.RecordingTitle, Is.EqualTo(title));
+            Assert.That(recording.RecordingUrl, Is.EqualTo(url));
+            Assert.That(recording.RecordingDate, Is.EqualTo(date));
+            Assert.That(recording.RecordingDuration, Is.EqualTo(duration));
 
         }
 
@@ -24,13 +32,21 @@ namespace Tests.van.Core
         [Test]
         public void CanCompareRecording()
         {
-            Recording instance = new Recording();
-            instance.RecordingTitle = "Joe";
-            instance.RecordingUrl = "http://www.cnn.com";
+            var instance = new Recording
+                               {
+                                   RecordingTitle = "Joe", 
+                                   RecordingUrl = "http://www.cnn.com", 
+                                   RecordingDate = new DateTime(2008, 3, 20), 
+                                   RecordingDuration = "1:30"
+                               };
 
-            Recording instanceToCompareTo = new Recording();
-            instanceToCompareTo.RecordingTitle = "Joe";
-            instanceToCompareTo.RecordingUrl = "http://www.cnn.com";
+            var instanceToCompareTo = new Recording
+                                          {
+                                              RecordingTitle = "Joe", 
+                                              RecordingUrl = "http://www.cnn.com", 
+                                              RecordingDate = new DateTime(2008, 3, 20), 
+                                              RecordingDuration = "1:30"
+                                          };
 
             Assert.That(instance.Equals(instanceToCompareTo));
         }

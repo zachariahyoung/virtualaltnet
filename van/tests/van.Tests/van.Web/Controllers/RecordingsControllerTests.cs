@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 using MvcContrib.TestHelper;
@@ -59,16 +60,41 @@ namespace Tests.van.Web.Controllers
 
         }
 
-        private List<Recording> CreateRecordings()
+        private static List<Recording> CreateRecordings()
         {
-            List<Recording> recordings =
-                new List<Recording>();
+            var recordings =
+                new List<Recording>
+                    {
+                        new Recording
+                            {
+                                RecordingTitle = "Joe",
+                                RecordingUrl = "http://www.zachariahyoung.com/",
+                                RecordingDate = new DateTime(2008, 3, 20),
+                                RecordingDuration = "1:30"
+                            },
+                        new Recording
+                            {
+                                RecordingTitle = "Joe",
+                                RecordingUrl = "http://www.zachariahyoung.com/",
+                                RecordingDate = new DateTime(2008, 3, 20),
+                                RecordingDuration = "1:30"
+                            },
+                        new Recording
+                            {
+                                RecordingTitle = "Joe",
+                                RecordingUrl = "http://www.zachariahyoung.com/",
+                                RecordingDate = new DateTime(2008, 3, 20),
+                                RecordingDuration = "1:30"
+                            },
+                        new Recording
+                            {
+                                RecordingTitle = "Joe",
+                                RecordingUrl = "http://www.zachariahyoung.com/",
+                                RecordingDate = new DateTime(2008, 3, 20),
+                                RecordingDuration = "1:30"
+                            }
+                    };
 
-            
-            recordings.Add(new Recording { RecordingTitle = "Joe", RecordingUrl = "http://www.cnn.com"});
-            recordings.Add(new Recording { RecordingTitle = "Joe", RecordingUrl = "http://www.cnn.com" });
-            recordings.Add(new Recording { RecordingTitle = "Joe", RecordingUrl = "http://www.cnn.com" });
-            recordings.Add(new Recording { RecordingTitle = "Joe", RecordingUrl = "http://www.cnn.com" });
 
             return recordings;
         }
