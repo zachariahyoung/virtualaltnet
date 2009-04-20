@@ -2,6 +2,7 @@
 MasterPageFile="~/Views/Shared/Site.Master" 
 AutoEventWireup="true" 
 Inherits="ViewPage<IEnumerable<Recording>>" %>
+<%@ Import Namespace="System.Globalization"%>
 <%@ Import Namespace="van.Core"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
@@ -26,7 +27,7 @@ Inherits="ViewPage<IEnumerable<Recording>>" %>
 			<tr>
 				<td> <a href="<%= recordings.RecordingUrl %>"><%= recordings.RecordingUrl %></a>
 				</td>
-				<td><%= recordings.RecordingDate %></td>
+				<td><%= recordings.RecordingDate.ToString("dd, MM", CultureInfo.InvariantCulture)%></td>
 				<td><%= recordings.RecordingDuration %></td>
 			</tr>
 		<%} %>
