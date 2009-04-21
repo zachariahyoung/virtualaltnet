@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="van" default="build" xmlns="http://nant.sf.net/schemas/nant.xsd">
+
+  <property name="file.solution" value="van.sln"/>
+  <property name="project.config" value="debug"/>
+  
+  <target name="build" depends="compile"/>
+  
+  <target name="compile" >    
+    <exec program="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe"
+          commandline="${file.solution} /t:Clean /p:Configuration=${project.config} /v:q" workingdir="." />
+    <echo message="Clean Finished"/>
+    <exec program="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe"
+				  commandline="${file.solution} /t:Rebuild /p:Configuration=${project.config} /v:q" workingdir="." />
+    <echo message="Rebuild Finished"/>
+  </target>
+
+
+</project>
