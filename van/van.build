@@ -5,12 +5,14 @@
   <property name="file.solution" value="van.sln"/>
   <property name="project.config" value="debug"/>
   
-  <target name="build" depends="compile"/>
+  <target name="build" depends="compile.source"/>
   
-  <target name="compile" >    
+  <target name="clean.source" >    
     <exec program="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe"
           commandline="${file.solution} /t:Clean /p:Configuration=${project.config} /v:q" workingdir="." />
     <echo message="Clean Finished"/>
+  </target>
+  <target name="compile.source" depends="clean.source" >
     <exec program="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe"
 				  commandline="${file.solution} /t:Rebuild /p:Configuration=${project.config} /v:q" workingdir="." />
     <echo message="Rebuild Finished"/>
