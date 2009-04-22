@@ -39,7 +39,7 @@
   
   <target name="compile.source" description="Compiles using the Debug Configuration">
     <mkdir dir="${build.dir}\Help"/>
-    <msbuild project="van\van.sln">
+    <msbuild project="${project::get-base-directory()}\van.sln">
       <property name="Configuration" value="${project.config}" />
     </msbuild>
   </target>
