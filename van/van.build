@@ -7,37 +7,53 @@
   <property name="nant.settings.currentframework" value="net-3.5" />
   <!--<property name="partCoverReportPath" value="C:\BuildReports\PartCover\${projectName}\" />-->
   <property name="partCoverReportPath" value="${build.dir}\test-reports\PartCover\" />
-  <property name="nunitExePath" value="C:\Program Files\NUnit 2.4.7\bin\nunit-console.exe" />
+  <property name="nunitExePath" value="tools/NUnit/nunit-console.exe" />
   
   <property name="file.solution" value="van.sln"/>
   <property name="project.config" value="debug"/>
   
-  <target name="build" depends="init,clean.source, compile.source"/>
+  <target name="build" depends="init,clean.source, compile.source, dist"/>
 
   <!-- Init targets -->
 
   <target name="init" description="Initializes build properties">
     <delete dir="${build.dir}" failonerror="false" includeemptydirs="true" />
     <mkdir dir="${build.dir}" />
+    <mkdir dir="${build.dir}/test-reports"/>
     <echo message="Current Directory: ${project::get-base-directory()}"/>
   </target>
-  
+  <!-- Cleans Solution Source files-->
   <target name="clean.source" >    
     <exec program="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe"
           commandline="${file.solution} /t:Clean /p:Configuration=${project.config} /v:q" workingdir="." />
     <echo message="Clean Finished"/>
   </target>
+  <!-- Compiles entire Solution files-->
   <target name="compile.source" depends="clean.source" >
     <exec program="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe"
 				  commandline="${file.solution} /t:Rebuild /p:Configuration=${project.config} /v:q" workingdir="." />
     <echo message="Rebuild Finished"/>
   </target>
+
+  <target name="dist">
+    <mkdir dir="${build.dir}\dist"/>
+    <copy todir="${build.dir}\dist">
+      <fileset basedir="${build.dir}\${project.config}">
+        <include name="**\*"/>
+        <exclude name="**\*.pdb" />
+      </fileset>
+    </copy>
+    <zip zipfile="${build.dir}\${projectName}.zip">
+      <fileset basedir="${build.dir}\dist">
+        <include name="**\*" />
+      </fileset>
+    </zip>
+  </target>
   
-  
-  <target name="test" depends="compile, run-unit-tests"
+  <target name="test" depends="build, run-unit-tests"
 		description="Compile and Run Tests" />
 
-  <target name="full" depends="clean, test, dist"	description="Compiles, tests, and produces distributions" />
+ 
 
   <!-- Internal targets -->
   <target name="run-unit-tests" description="Measures how much code have been covered by the test">
@@ -46,9 +62,9 @@
       <arg value="--target=${nunitExePath}" />
       <arg value="--target-work-dir=${build.dir}\test-reports" />
       <arg value="--target-args=${projectTests}.dll" />
-      <arg value="--include=[MovieLibrary.UnitTests]*" />
+      <arg value="--include=[van.Tests]*" />
       <arg value="--output=${partCoverReportPath}\${projectTests}-Results.xml" />
     </exec>
   </target>
-
+ 
 </project>
