@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project name="van" default="build" xmlns="http://nant.sourceforge.net/release/0.85/nant.xsd">
+<project name="van" default="test" xmlns="http://nant.sourceforge.net/release/0.85/nant.xsd">
 
   <property name="build.dir" value="build" />
   <property name="projectName" value="van"/>
@@ -7,7 +7,7 @@
   <property name="nant.settings.currentframework" value="net-3.5" />
   <!--<property name="partCoverReportPath" value="C:\BuildReports\PartCover\${projectName}\" />-->
   <property name="partCoverReportPath" value="${build.dir}\test-reports\PartCover\" />
-  <property name="nunitExePath" value="tools/NUnit/nunit-console.exe" />
+  <property name="nunitExePath" value="C:\Program Files\NUnit 2.4.7\bin\nunit-console.exe" />
   
   <property name="file.solution" value="van.sln"/>
   <property name="project.config" value="debug"/>
@@ -29,20 +29,20 @@
     <echo message="Clean Finished"/>
   </target>
   <!-- Compiles entire Solution files-->
-  <target name="compile.source" depends="clean.source" >
+  <!--<target name="compile.source" depends="clean.source" >
     <exec program="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe"
 				  commandline="${file.solution} /t:Rebuild /p:Configuration=${project.config} /v:q" workingdir="." />
     <echo message="Rebuild Finished"/>
-  </target>
+  </target>-->
 
   <target name="full" depends="clean.source, test, dist"	description="Compiles, tests, and produces distributions" />
   
-  <!--<target name="compile.source" description="Compiles using the Debug Configuration">
+  <target name="compile.source" description="Compiles using the Debug Configuration">
     <mkdir dir="${build.dir}\Help"/>
     <msbuild project="van\van.sln">
       <property name="Configuration" value="${project.config}" />
     </msbuild>
-  </target>-->
+  </target>
   
   <target name="dist">
     <mkdir dir="${build.dir}\dist"/>
