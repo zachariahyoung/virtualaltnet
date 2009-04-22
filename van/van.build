@@ -29,18 +29,20 @@
     <echo message="Clean Finished"/>
   </target>
   <!-- Compiles entire Solution files-->
-  <!--<target name="compile.source" depends="clean.source" >
+  <target name="compile.source" depends="clean.source" >
     <exec program="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe"
 				  commandline="${file.solution} /t:Rebuild /p:Configuration=${project.config} /v:q" workingdir="." />
     <echo message="Rebuild Finished"/>
-  </target>-->
+  </target>
 
-  <target name="compile.source" description="Compiles using the Debug Configuration">
+  <target name="full" depends="clean.source, test, dist"	description="Compiles, tests, and produces distributions" />
+  
+  <!--<target name="compile.source" description="Compiles using the Debug Configuration">
     <mkdir dir="${build.dir}\Help"/>
-    <msbuild project="van.sln">
+    <msbuild project="van\van.sln">
       <property name="Configuration" value="${project.config}" />
     </msbuild>
-  </target>
+  </target>-->
   
   <target name="dist">
     <mkdir dir="${build.dir}\dist"/>
