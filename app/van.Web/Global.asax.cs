@@ -3,17 +3,13 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Reflection;
-using NHibernate.Cfg;
 using Castle.Windsor;
 using MvcContrib.Castle;
-using Castle.MicroKernel.Registration;
 using SharpArch.Data.NHibernate;
 using SharpArch.Web.NHibernate;
-using SharpArch.Web.Castle;
 using Microsoft.Practices.ServiceLocation;
 using CommonServiceLocator.WindsorAdapter;
 using SharpArch.Web.Areas;
-using SharpArch.Web.CommonValidator;
 using van.Web.Controllers;
 using van.Data.NHibernateMaps;
 using van.Web.CastleWindsor;
@@ -48,8 +44,8 @@ namespace van.Web
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container));
 
             container.RegisterControllers(typeof(HomeController).Assembly);
-            container.RegisterControllers(typeof (CalendarController ).Assembly);
-            container.RegisterControllers(typeof(RecordingsController).Assembly);
+            //container.RegisterControllers(typeof (CalendarController).Assembly);
+            //container.RegisterControllers(typeof(RecordingsController).Assembly);
             ComponentRegistrar.AddComponentsTo(container);
 
             ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(container));

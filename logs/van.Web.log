@@ -1,0 +1,131 @@
+2009-04-23 15:24:06,102 [8] NHibernate.Cfg.Environment..cctor(:0) - NHibernate 2.0.1.4000 (2.0.1.4000)
+
+2009-04-23 15:24:06,860 [8] NHibernate.Cfg.Environment.LoadGlobalPropertiesFromAppConfig(:0) - hibernate-configuration section not found in application configuration file
+
+2009-04-23 15:24:06,865 [8] NHibernate.Cfg.Environment.BuildBytecodeProvider(:0) - Bytecode provider name : lcg
+
+2009-04-23 15:24:06,869 [8] NHibernate.Cfg.Environment..cctor(:0) - Using reflection optimizer
+
+2009-04-23 15:24:06,957 [8] NHibernate.Cfg.Configuration.AddProperties(:0) - connection.connection_string=Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=van;Integrated Security=True;
+
+2009-04-23 15:24:06,958 [8] NHibernate.Cfg.Configuration.AddProperties(:0) - dialect=NHibernate.Dialect.MsSql2005Dialect
+
+2009-04-23 15:24:06,959 [8] NHibernate.Cfg.Configuration.AddProperties(:0) - connection.provider=NHibernate.Connection.DriverConnectionProvider
+
+2009-04-23 15:24:06,959 [8] NHibernate.Cfg.Configuration.AddProperties(:0) - connection.driver_class=NHibernate.Driver.SqlClientDriver
+
+2009-04-23 15:24:06,959 [8] NHibernate.Cfg.Configuration.AddProperties(:0) - show_sql=true
+
+2009-04-23 15:24:06,960 [8] NHibernate.Cfg.Configuration.AddProperties(:0) - connection.release_mode=auto
+
+2009-04-23 15:24:06,960 [8] NHibernate.Cfg.Configuration.AddProperties(:0) - adonet.batch_size=500
+
+2009-04-23 15:24:06,961 [8] NHibernate.Cfg.Configuration.DoConfigure(:0) - properties: System.Collections.Generic.Dictionary`2[System.String,System.String]
+
+2009-04-23 15:24:07,080 [8] NHibernate.Cfg.Configuration.AddAssembly(:0) - No mapped documents found in assembly: van.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+
+2009-04-23 15:24:07,589 [8] NHibernate.Cfg.Configuration.AddDocument(:0) - Mapping XML:
+<?xml version="1.0" encoding="utf-8"?><hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" default-lazy="true" assembly="van.Core" namespace="van.Core"><class name="Recording" table="Recordings" xmlns="urn:nhibernate-mapping-2.2"><id name="Id" column="Id" type="Int32"><generator class="identity" /></id><property name="RecordingDuration" length="100" type="String"><column name="RecordingDuration" /></property><property name="RecordingTitle" length="100" type="String"><column name="RecordingTitle" /></property><property name="RecordingUrl" length="100" type="String"><column name="RecordingUrl" /></property><property name="RecordingDate"><column name="RecordingDate" /></property></class></hibernate-mapping>
+
+2009-04-23 15:24:07,852 [8] NHibernate.Dialect.Dialect..ctor(:0) - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+
+2009-04-23 15:24:13,424 [8] NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(:0) - Mapping class: van.Core.Recording -> Recordings
+
+2009-04-23 15:24:13,531 [8] NHibernate.Cfg.XmlHbmBinding.ClassBinder.LogMappedProperty(:0) - Mapped property: Id -> Id, type: Int32
+
+2009-04-23 15:24:13,599 [8] NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindProperty(:0) - Mapped property: RecordingDuration -> RecordingDuration, type: String
+
+2009-04-23 15:24:13,601 [8] NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindProperty(:0) - Mapped property: RecordingTitle -> RecordingTitle, type: String
+
+2009-04-23 15:24:13,602 [8] NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindProperty(:0) - Mapped property: RecordingUrl -> RecordingUrl, type: String
+
+2009-04-23 15:24:13,619 [8] NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindProperty(:0) - Mapped property: RecordingDate -> RecordingDate, type: DateTime
+
+2009-04-23 15:24:13,654 [8] NHibernate.Cfg.Configuration.SecondPassCompile(:0) - checking mappings queue
+
+2009-04-23 15:24:13,655 [8] NHibernate.Cfg.Configuration.SecondPassCompile(:0) - processing one-to-many association mappings
+
+2009-04-23 15:24:13,656 [8] NHibernate.Cfg.Configuration.SecondPassCompile(:0) - processing one-to-one association property references
+
+2009-04-23 15:24:13,656 [8] NHibernate.Cfg.Configuration.SecondPassCompile(:0) - processing foreign key constraints
+
+2009-04-23 15:24:13,846 [8] NHibernate.Dialect.Dialect..ctor(:0) - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+
+2009-04-23 15:24:13,851 [8] NHibernate.Exceptions.SQLExceptionConverterFactory.BuildSQLExceptionConverter(:0) - Using dialect defined converter
+
+2009-04-23 15:24:13,862 [8] NHibernate.Connection.ConnectionProviderFactory.NewConnectionProvider(:0) - Initializing connection provider: NHibernate.Connection.DriverConnectionProvider
+
+2009-04-23 15:24:13,863 [8] NHibernate.Connection.ConnectionProvider.Configure(:0) - Configuring ConnectionProvider
+
+2009-04-23 15:24:13,867 [8] NHibernate.Cfg.SettingsFactory.CreateTransactionFactory(:0) - Transaction factory: NHibernate.Transaction.AdoNetTransactionFactory
+
+2009-04-23 15:24:13,869 [8] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Optimize cache for minimal puts: False
+
+2009-04-23 15:24:13,870 [8] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Connection release mode: auto
+
+2009-04-23 15:24:13,876 [8] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Default batch fetch size: 1
+
+2009-04-23 15:24:13,878 [8] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - echoing all SQL to stdout
+
+2009-04-23 15:24:13,879 [8] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Statistics: disabled
+
+2009-04-23 15:24:13,881 [8] NHibernate.Cfg.SettingsFactory.CreateQueryTranslatorFactory(:0) - Query translator: NHibernate.Hql.Classic.ClassicQueryTranslatorFactory
+
+2009-04-23 15:24:13,886 [8] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Query language substitutions: {}
+
+2009-04-23 15:24:13,888 [8] NHibernate.Cfg.SettingsFactory.CreateCacheProvider(:0) - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=2.0.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+
+2009-04-23 15:24:13,895 [8] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Wrap result sets: disabled
+
+2009-04-23 15:24:13,898 [8] NHibernate.Cfg.SettingsFactory.CreateBatcherFactory(:0) - Batcher factory: NHibernate.AdoNet.SqlClientBatchingBatcherFactory, NHibernate, Version=2.0.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+
+2009-04-23 15:24:13,899 [8] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Named query checking : enabled
+
+2009-04-23 15:24:13,947 [8] NHibernate.Impl.SessionFactoryImpl..ctor(:0) - building session factory
+
+2009-04-23 15:24:13,952 [8] NHibernate.Impl.SessionFactoryImpl..ctor(:0) - instantiating session factory with properties: {use_reflection_optimizer=True, connection.connection_string=Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=van;Integrated Security=True;, dialect=NHibernate.Dialect.MsSql2005Dialect, connection.provider=NHibernate.Connection.DriverConnectionProvider, connection.driver_class=NHibernate.Driver.SqlClientDriver, show_sql=true, connection.release_mode=auto, adonet.batch_size=500}
+
+2009-04-23 15:24:14,302 [8] NHibernate.Tuple.Entity.AbstractEntityTuplizer..ctor(:0) - No custom accessors found for entity: van.Core.Recording
+
+2009-04-23 15:24:14,329 [8] NHibernate.Tuple.Entity.AbstractEntityTuplizer..ctor(:0) - No custom accessors found for entity: van.Core.Recording
+
+2009-04-23 15:24:14,773 [8] NHibernate.Impl.SessionFactoryObjectFactory..cctor(:0) - initializing class SessionFactoryObjectFactory
+
+2009-04-23 15:24:14,779 [8] NHibernate.Impl.SessionFactoryObjectFactory.AddInstance(:0) - registered: 288812ea94b94206a3f8893bbf502534(unnamed)
+
+2009-04-23 15:24:14,780 [8] NHibernate.Impl.SessionFactoryObjectFactory.AddInstance(:0) - no name configured
+
+2009-04-23 15:24:15,053 [8] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) - Static SQL for entity: van.Core.Recording
+
+2009-04-23 15:24:15,058 [8] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Version select: SELECT Id FROM Recordings WHERE Id = ?
+
+2009-04-23 15:24:15,058 [8] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Snapshot select: SELECT recording_.Id, recording_.RecordingDuration as Recordin2_0_, recording_.RecordingTitle as Recordin3_0_, recording_.RecordingUrl as Recordin4_0_, recording_.RecordingDate as Recordin5_0_ FROM Recordings recording_ WHERE recording_.Id=?
+
+2009-04-23 15:24:15,059 [8] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Insert 0: NHibernate.SqlCommand.SqlCommandInfo
+
+2009-04-23 15:24:15,059 [8] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Update 0: NHibernate.SqlCommand.SqlCommandInfo
+
+2009-04-23 15:24:15,060 [8] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Delete 0: NHibernate.SqlCommand.SqlCommandInfo
+
+2009-04-23 15:24:15,060 [8] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Identity insert: NHibernate.SqlCommand.SqlCommandInfo
+
+2009-04-23 15:24:15,170 [8] NHibernate.Loader.Entity.EntityLoader..ctor(:0) - Static select for entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=?
+
+2009-04-23 15:24:15,173 [8] NHibernate.Loader.Entity.EntityLoader..ctor(:0) - Static select for entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=?
+
+2009-04-23 15:24:15,175 [8] NHibernate.Loader.Entity.EntityLoader..ctor(:0) - Static select for entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ with (updlock, rowlock) WHERE recording0_.Id=?
+
+2009-04-23 15:24:15,176 [8] NHibernate.Loader.Entity.EntityLoader..ctor(:0) - Static select for entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ with (updlock, rowlock) WHERE recording0_.Id=?
+
+2009-04-23 15:24:15,177 [8] NHibernate.Loader.Entity.EntityLoader..ctor(:0) - Static select for entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ with (updlock, rowlock) WHERE recording0_.Id=?
+
+2009-04-23 15:24:15,181 [8] NHibernate.Loader.Entity.CascadeEntityLoader..ctor(:0) - Static select for action NHibernate.Engine.CascadingAction+MergeCascadingAction on entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=?
+
+2009-04-23 15:24:15,182 [8] NHibernate.Loader.Entity.CascadeEntityLoader..ctor(:0) - Static select for action NHibernate.Engine.CascadingAction+RefreshCascadingAction on entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=?
+
+2009-04-23 15:24:15,185 [8] NHibernate.Impl.SessionFactoryImpl..ctor(:0) - Instantiated session factory
+
+2009-04-23 15:24:15,197 [8] NHibernate.Impl.SessionFactoryImpl.CheckNamedQueries(:0) - Checking 0 named HQL queries
+
+2009-04-23 15:24:15,198 [8] NHibernate.Impl.SessionFactoryImpl.CheckNamedQueries(:0) - Checking 0 named SQL queries
+

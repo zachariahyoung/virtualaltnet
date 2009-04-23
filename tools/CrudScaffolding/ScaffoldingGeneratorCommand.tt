@@ -16,30 +16,30 @@
  * Examples:  Product, Organization.Employee, Financial.Costs.LedgerEntry
  */
 EntityScaffoldingDetails entityScaffoldingDetails =
-	new EntityScaffoldingDetails("Organization.Worker");
+	new EntityScaffoldingDetails("Recording");
  
 /*
  * Property names should be PascalCase.
  * Do not include a property for Id as it will be included automatically.
  */
 entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("FirstName", "string", "Joe", "[NotNull, NotEmpty]", true) 
+	new EntityProperty("RecordingTitle", "string", "Joe", "[NotNull, NotEmpty]", true) 
 );
 entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("LastName", "string", "Smith", "[NotNull, NotEmpty]", true)
+	new EntityProperty("RecordingUrl", "string", "Smith", "[NotNull, NotEmpty]", true)
 );
 entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("BirthDate", "DateTime", DateTime.Parse("1/1/1975"))
+	new EntityProperty("RecordingDate", "DateTime", DateTime.Parse("1/1/1975"))
 );
 entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("Manager", "Employee", null, "[NotNull]")
+	new EntityProperty("RecordingDuration", "string", null, "[NotNull]")
 );
 
 ///////////////////////////////////////////////////
 
 // The first parameter should reflect the root directory of your solution
 ScaffoldingGenerator generator = new ScaffoldingGenerator(
-	@"C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\", "van", entityScaffoldingDetails); 
+	@"C:\Data\OSS\virtualaltnet\", "van", entityScaffoldingDetails); 
 
 // Uncomment this line when you're ready for the scaffolding generator to fire...be sure to recomment after it completes to avoid accidental generating!
 //generator.Run();

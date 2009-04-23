@@ -8,6 +8,7 @@ using System.Collections.Generic;
 
 namespace van.Web.Controllers
 {
+    [HandleError]
     public class RecordingsController : Controller
     {
         private readonly IRecordingRepository recordingRepository;

@@ -2,7 +2,7 @@
 
 namespace van.Web.Views.Shared
 {
-    public class Menu : ViewUserControl
+    public partial class Menu : ViewUserControl
     {
     }
 }

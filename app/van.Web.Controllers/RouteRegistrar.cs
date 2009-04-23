@@ -19,16 +19,16 @@ namespace van.Web.Controllers
             //    routes.MapRoute(null, "Organization/Department/{controller}/{action}", new { action = "Index" }),
             //    routes.MapRoute(null, "Organization/Department/{controller}/{action}/{id}")
             //);
-            //routes.CreateArea("Organization", "van.Web.Controllers.Organization",
-            //    routes.MapRoute(null, "Organization/{controller}/{action}", new { action = "Index" }),
-            //    routes.MapRoute(null, "Organization/{controller}/{action}/{id}")
+            //routes.CreateArea("Recordings", "van.Web.Controllers",
+            //    routes.MapRoute(null, "Recordings/{controller}/{action}", new { action = "Index" }),
+            //    routes.MapRoute(null, "Recordings/{controller}/{action}/{id}")
             //);
             
-            //Route config for the Home area
-            routes.CreateArea("Home", "van.Web.Controllers",routes.MapRoute(null, "{controller}/{action}", new { controller = "Home", action = "Index" }));
             
            // Routing config for the root area
-            routes.CreateArea("Root", "van.Web.Controllers", routes.MapRoute(null, "{controller}/{action}", new { controller = "Home", action = "Index" }));
+            routes.CreateArea("Root", "van.Web.Controllers", 
+                routes.MapRoute(null, "{controller}/{action}", 
+                new { controller = "Home", action = "Index" }));
             
         }
     }
