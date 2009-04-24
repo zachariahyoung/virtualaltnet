@@ -23,10 +23,10 @@ EntityScaffoldingDetails entityScaffoldingDetails =
  * Do not include a property for Id as it will be included automatically.
  */
 entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("RecordingTitle", "string", "Joe", "[NotNull, NotEmpty]", true) 
+	new EntityProperty("RecordingTitle", "string", "Van Recording", "[NotNull, NotEmpty]", true) 
 );
 entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("RecordingUrl", "string", "Smith", "[NotNull, NotEmpty]", true)
+	new EntityProperty("RecordingUrl", "string", "Location of Recording", "[NotNull, NotEmpty]", true)
 );
 entityScaffoldingDetails.EntityProperties.Add(
 	new EntityProperty("RecordingDate", "DateTime", DateTime.Parse("1/1/1975"))

@@ -19,7 +19,7 @@ public class ScaffoldingGenerator : Generator
 
 	public ScaffoldingGenerator(string solutionRootPath, string solutionName, EntityScaffoldingDetails entityScaffoldingDetails, ArtifactToGenerate[] artifactsToGenerate) {
 		this.solutionRootPath = solutionRootPath;
-		this.applicationRootPath = solutionRootPath + "\\app";
+		this.applicationRootPath = solutionRootPath + "app\\";
 		this.scaffoldingOutputFolder = solutionRootPath + "tools\\CrudScaffolding\\";
 		this.testsRootFolder = solutionRootPath + "tests\\";
 		this.logsPath = solutionRootPath + "logs\\";
