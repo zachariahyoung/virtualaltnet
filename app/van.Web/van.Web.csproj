@@ -227,8 +227,11 @@
     <Content Include="Content\Images\VAN-4.png" />
     <Content Include="van.Web.Publish.xml" />
     <Content Include="Views\Calendar\Index.aspx" />
+    <Content Include="Views\Recordings\Create.aspx" />
+    <Content Include="Views\Recordings\Edit.aspx" />
     <Content Include="Views\Recordings\Index.aspx" />
-    <Content Include="Views\Recordings\ListRecordingMatchingFilter.aspx" />
+    <Content Include="Views\Recordings\RecordingForm.ascx" />
+    <Content Include="Views\Recordings\Show.aspx" />
     <Content Include="Views\Shared\Menu.ascx" />
     <Content Include="Views\Shared\Site.Master" />
   </ItemGroup>

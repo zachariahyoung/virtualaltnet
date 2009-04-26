@@ -44,8 +44,6 @@ namespace van.Web
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container));
 
             container.RegisterControllers(typeof(HomeController).Assembly);
-            //container.RegisterControllers(typeof (CalendarController).Assembly);
-            //container.RegisterControllers(typeof(RecordingsController).Assembly);
             ComponentRegistrar.AddComponentsTo(container);
 
             ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(container));
@@ -82,7 +80,7 @@ namespace van.Web
             // Only allow the NHibernate session to be initialized once
             if (!wasNHibernateInitialized)
             {
-                lock (lockObject)
+                lock (LockObject)
                 {
                     if (!wasNHibernateInitialized)
                     {
@@ -104,6 +102,6 @@ namespace van.Web
         /// <summary>
         /// Private, static object used only for synchronization
         /// </summary>
-        private static object lockObject = new object();
+        private static readonly object LockObject = new object();
     }
 }

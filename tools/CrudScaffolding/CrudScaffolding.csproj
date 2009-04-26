@@ -61,18 +61,6 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Recording.cs">
-      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RecordingsController.cs">
-      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RecordingsControllerTests.cs">
-      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RecordingTests.cs">
-      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="EntityScaffoldingDetails.tt">
@@ -108,9 +96,6 @@
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RecordingForm.ascx">
-      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
-    </Content>
     <Content Include="ScaffoldingGeneratorCommand.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

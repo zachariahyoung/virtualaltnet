@@ -19,11 +19,6 @@ namespace van.Web.Controllers
             //    routes.MapRoute(null, "Organization/Department/{controller}/{action}", new { action = "Index" }),
             //    routes.MapRoute(null, "Organization/Department/{controller}/{action}/{id}")
             //);
-            //routes.CreateArea("Recordings", "van.Web.Controllers",
-            //    routes.MapRoute(null, "Recordings/{controller}/{action}", new { action = "Index" }),
-            //    routes.MapRoute(null, "Recordings/{controller}/{action}/{id}")
-            //);
-            
             
            // Routing config for the root area
             routes.CreateArea("Root", "van.Web.Controllers", 

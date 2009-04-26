@@ -13,7 +13,7 @@
     <property name="RecordingUrl" length="100" type="String">
       <column name="RecordingUrl" />
     </property>
-    <property name="RecordingDate">
+    <property name="RecordingDate" type="DateTime">
       <column name="RecordingDate" />
     </property>
   </class>

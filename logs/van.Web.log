@@ -1,131 +1,752 @@
-2009-04-23 15:24:06,102 [8] NHibernate.Cfg.Environment..cctor(:0) - NHibernate 2.0.1.4000 (2.0.1.4000)
+2009-04-26 12:22:15,912 [4] NHibernate.Cfg.Environment..cctor(:0) - NHibernate 2.0.1.4000 (2.0.1.4000)
 
-2009-04-23 15:24:06,860 [8] NHibernate.Cfg.Environment.LoadGlobalPropertiesFromAppConfig(:0) - hibernate-configuration section not found in application configuration file
+2009-04-26 12:22:16,000 [4] NHibernate.Cfg.Environment.LoadGlobalPropertiesFromAppConfig(:0) - hibernate-configuration section not found in application configuration file
 
-2009-04-23 15:24:06,865 [8] NHibernate.Cfg.Environment.BuildBytecodeProvider(:0) - Bytecode provider name : lcg
+2009-04-26 12:22:16,003 [4] NHibernate.Cfg.Environment.BuildBytecodeProvider(:0) - Bytecode provider name : lcg
 
-2009-04-23 15:24:06,869 [8] NHibernate.Cfg.Environment..cctor(:0) - Using reflection optimizer
+2009-04-26 12:22:16,005 [4] NHibernate.Cfg.Environment..cctor(:0) - Using reflection optimizer
 
-2009-04-23 15:24:06,957 [8] NHibernate.Cfg.Configuration.AddProperties(:0) - connection.connection_string=Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=van;Integrated Security=True;
+2009-04-26 12:22:16,100 [4] NHibernate.Cfg.Configuration.AddProperties(:0) - connection.connection_string=Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=van;Integrated Security=True;
 
-2009-04-23 15:24:06,958 [8] NHibernate.Cfg.Configuration.AddProperties(:0) - dialect=NHibernate.Dialect.MsSql2005Dialect
+2009-04-26 12:22:16,101 [4] NHibernate.Cfg.Configuration.AddProperties(:0) - dialect=NHibernate.Dialect.MsSql2005Dialect
 
-2009-04-23 15:24:06,959 [8] NHibernate.Cfg.Configuration.AddProperties(:0) - connection.provider=NHibernate.Connection.DriverConnectionProvider
+2009-04-26 12:22:16,102 [4] NHibernate.Cfg.Configuration.AddProperties(:0) - connection.provider=NHibernate.Connection.DriverConnectionProvider
 
-2009-04-23 15:24:06,959 [8] NHibernate.Cfg.Configuration.AddProperties(:0) - connection.driver_class=NHibernate.Driver.SqlClientDriver
+2009-04-26 12:22:16,103 [4] NHibernate.Cfg.Configuration.AddProperties(:0) - connection.driver_class=NHibernate.Driver.SqlClientDriver
 
-2009-04-23 15:24:06,959 [8] NHibernate.Cfg.Configuration.AddProperties(:0) - show_sql=true
+2009-04-26 12:22:16,103 [4] NHibernate.Cfg.Configuration.AddProperties(:0) - show_sql=true
 
-2009-04-23 15:24:06,960 [8] NHibernate.Cfg.Configuration.AddProperties(:0) - connection.release_mode=auto
+2009-04-26 12:22:16,104 [4] NHibernate.Cfg.Configuration.AddProperties(:0) - connection.release_mode=auto
 
-2009-04-23 15:24:06,960 [8] NHibernate.Cfg.Configuration.AddProperties(:0) - adonet.batch_size=500
+2009-04-26 12:22:16,104 [4] NHibernate.Cfg.Configuration.AddProperties(:0) - adonet.batch_size=500
 
-2009-04-23 15:24:06,961 [8] NHibernate.Cfg.Configuration.DoConfigure(:0) - properties: System.Collections.Generic.Dictionary`2[System.String,System.String]
+2009-04-26 12:22:16,106 [4] NHibernate.Cfg.Configuration.DoConfigure(:0) - properties: System.Collections.Generic.Dictionary`2[System.String,System.String]
 
-2009-04-23 15:24:07,080 [8] NHibernate.Cfg.Configuration.AddAssembly(:0) - No mapped documents found in assembly: van.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2009-04-26 12:22:16,148 [4] NHibernate.Cfg.Configuration.AddAssembly(:0) - No mapped documents found in assembly: van.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
-2009-04-23 15:24:07,589 [8] NHibernate.Cfg.Configuration.AddDocument(:0) - Mapping XML:
-<?xml version="1.0" encoding="utf-8"?><hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" default-lazy="true" assembly="van.Core" namespace="van.Core"><class name="Recording" table="Recordings" xmlns="urn:nhibernate-mapping-2.2"><id name="Id" column="Id" type="Int32"><generator class="identity" /></id><property name="RecordingDuration" length="100" type="String"><column name="RecordingDuration" /></property><property name="RecordingTitle" length="100" type="String"><column name="RecordingTitle" /></property><property name="RecordingUrl" length="100" type="String"><column name="RecordingUrl" /></property><property name="RecordingDate"><column name="RecordingDate" /></property></class></hibernate-mapping>
+2009-04-26 12:22:16,333 [4] NHibernate.Cfg.Configuration.AddDocument(:0) - Mapping XML:
+<?xml version="1.0" encoding="utf-8"?><hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" default-lazy="true" assembly="van.Core" namespace="van.Core"><class name="Recording" table="Recordings" xmlns="urn:nhibernate-mapping-2.2"><id name="Id" column="Id" type="Int32"><generator class="identity" /></id><property name="RecordingDuration" length="100" type="String"><column name="RecordingDuration" /></property><property name="RecordingTitle" length="100" type="String"><column name="RecordingTitle" /></property><property name="RecordingUrl" length="100" type="String"><column name="RecordingUrl" /></property><property name="RecordingDate" type="DateTime"><column name="RecordingDate" /></property></class></hibernate-mapping>
 
-2009-04-23 15:24:07,852 [8] NHibernate.Dialect.Dialect..ctor(:0) - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2009-04-26 12:22:16,554 [4] NHibernate.Dialect.Dialect..ctor(:0) - Using dialect: NHibernate.Dialect.MsSql2005Dialect
 
-2009-04-23 15:24:13,424 [8] NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(:0) - Mapping class: van.Core.Recording -> Recordings
+2009-04-26 12:22:18,775 [4] NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(:0) - Mapping class: van.Core.Recording -> Recordings
 
-2009-04-23 15:24:13,531 [8] NHibernate.Cfg.XmlHbmBinding.ClassBinder.LogMappedProperty(:0) - Mapped property: Id -> Id, type: Int32
+2009-04-26 12:22:18,815 [4] NHibernate.Cfg.XmlHbmBinding.ClassBinder.LogMappedProperty(:0) - Mapped property: Id -> Id, type: Int32
 
-2009-04-23 15:24:13,599 [8] NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindProperty(:0) - Mapped property: RecordingDuration -> RecordingDuration, type: String
+2009-04-26 12:22:18,854 [4] NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindProperty(:0) - Mapped property: RecordingDuration -> RecordingDuration, type: String
 
-2009-04-23 15:24:13,601 [8] NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindProperty(:0) - Mapped property: RecordingTitle -> RecordingTitle, type: String
+2009-04-26 12:22:18,856 [4] NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindProperty(:0) - Mapped property: RecordingTitle -> RecordingTitle, type: String
 
-2009-04-23 15:24:13,602 [8] NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindProperty(:0) - Mapped property: RecordingUrl -> RecordingUrl, type: String
+2009-04-26 12:22:18,856 [4] NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindProperty(:0) - Mapped property: RecordingUrl -> RecordingUrl, type: String
 
-2009-04-23 15:24:13,619 [8] NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindProperty(:0) - Mapped property: RecordingDate -> RecordingDate, type: DateTime
+2009-04-26 12:22:18,857 [4] NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindProperty(:0) - Mapped property: RecordingDate -> RecordingDate, type: DateTime
 
-2009-04-23 15:24:13,654 [8] NHibernate.Cfg.Configuration.SecondPassCompile(:0) - checking mappings queue
+2009-04-26 12:22:18,868 [4] NHibernate.Cfg.Configuration.SecondPassCompile(:0) - checking mappings queue
 
-2009-04-23 15:24:13,655 [8] NHibernate.Cfg.Configuration.SecondPassCompile(:0) - processing one-to-many association mappings
+2009-04-26 12:22:18,869 [4] NHibernate.Cfg.Configuration.SecondPassCompile(:0) - processing one-to-many association mappings
 
-2009-04-23 15:24:13,656 [8] NHibernate.Cfg.Configuration.SecondPassCompile(:0) - processing one-to-one association property references
+2009-04-26 12:22:18,870 [4] NHibernate.Cfg.Configuration.SecondPassCompile(:0) - processing one-to-one association property references
 
-2009-04-23 15:24:13,656 [8] NHibernate.Cfg.Configuration.SecondPassCompile(:0) - processing foreign key constraints
+2009-04-26 12:22:18,870 [4] NHibernate.Cfg.Configuration.SecondPassCompile(:0) - processing foreign key constraints
 
-2009-04-23 15:24:13,846 [8] NHibernate.Dialect.Dialect..ctor(:0) - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2009-04-26 12:22:18,916 [4] NHibernate.Dialect.Dialect..ctor(:0) - Using dialect: NHibernate.Dialect.MsSql2005Dialect
 
-2009-04-23 15:24:13,851 [8] NHibernate.Exceptions.SQLExceptionConverterFactory.BuildSQLExceptionConverter(:0) - Using dialect defined converter
+2009-04-26 12:22:18,919 [4] NHibernate.Exceptions.SQLExceptionConverterFactory.BuildSQLExceptionConverter(:0) - Using dialect defined converter
 
-2009-04-23 15:24:13,862 [8] NHibernate.Connection.ConnectionProviderFactory.NewConnectionProvider(:0) - Initializing connection provider: NHibernate.Connection.DriverConnectionProvider
+2009-04-26 12:22:18,922 [4] NHibernate.Connection.ConnectionProviderFactory.NewConnectionProvider(:0) - Initializing connection provider: NHibernate.Connection.DriverConnectionProvider
 
-2009-04-23 15:24:13,863 [8] NHibernate.Connection.ConnectionProvider.Configure(:0) - Configuring ConnectionProvider
+2009-04-26 12:22:18,925 [4] NHibernate.Connection.ConnectionProvider.Configure(:0) - Configuring ConnectionProvider
 
-2009-04-23 15:24:13,867 [8] NHibernate.Cfg.SettingsFactory.CreateTransactionFactory(:0) - Transaction factory: NHibernate.Transaction.AdoNetTransactionFactory
+2009-04-26 12:22:18,929 [4] NHibernate.Cfg.SettingsFactory.CreateTransactionFactory(:0) - Transaction factory: NHibernate.Transaction.AdoNetTransactionFactory
 
-2009-04-23 15:24:13,869 [8] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Optimize cache for minimal puts: False
+2009-04-26 12:22:18,930 [4] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Optimize cache for minimal puts: False
 
-2009-04-23 15:24:13,870 [8] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Connection release mode: auto
+2009-04-26 12:22:18,930 [4] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Connection release mode: auto
 
-2009-04-23 15:24:13,876 [8] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Default batch fetch size: 1
+2009-04-26 12:22:18,931 [4] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Default batch fetch size: 1
 
-2009-04-23 15:24:13,878 [8] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - echoing all SQL to stdout
+2009-04-26 12:22:18,932 [4] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - echoing all SQL to stdout
 
-2009-04-23 15:24:13,879 [8] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Statistics: disabled
+2009-04-26 12:22:18,933 [4] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Statistics: disabled
 
-2009-04-23 15:24:13,881 [8] NHibernate.Cfg.SettingsFactory.CreateQueryTranslatorFactory(:0) - Query translator: NHibernate.Hql.Classic.ClassicQueryTranslatorFactory
+2009-04-26 12:22:18,935 [4] NHibernate.Cfg.SettingsFactory.CreateQueryTranslatorFactory(:0) - Query translator: NHibernate.Hql.Classic.ClassicQueryTranslatorFactory
 
-2009-04-23 15:24:13,886 [8] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Query language substitutions: {}
+2009-04-26 12:22:18,940 [4] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Query language substitutions: {}
 
-2009-04-23 15:24:13,888 [8] NHibernate.Cfg.SettingsFactory.CreateCacheProvider(:0) - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=2.0.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2009-04-26 12:22:18,941 [4] NHibernate.Cfg.SettingsFactory.CreateCacheProvider(:0) - cache provider: NHibernate.Cache.NoCacheProvider, NHibernate, Version=2.0.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
 
-2009-04-23 15:24:13,895 [8] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Wrap result sets: disabled
+2009-04-26 12:22:18,943 [4] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Wrap result sets: disabled
 
-2009-04-23 15:24:13,898 [8] NHibernate.Cfg.SettingsFactory.CreateBatcherFactory(:0) - Batcher factory: NHibernate.AdoNet.SqlClientBatchingBatcherFactory, NHibernate, Version=2.0.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
+2009-04-26 12:22:18,944 [4] NHibernate.Cfg.SettingsFactory.CreateBatcherFactory(:0) - Batcher factory: NHibernate.AdoNet.SqlClientBatchingBatcherFactory, NHibernate, Version=2.0.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4
 
-2009-04-23 15:24:13,899 [8] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Named query checking : enabled
+2009-04-26 12:22:18,945 [4] NHibernate.Cfg.SettingsFactory.BuildSettings(:0) - Named query checking : enabled
 
-2009-04-23 15:24:13,947 [8] NHibernate.Impl.SessionFactoryImpl..ctor(:0) - building session factory
+2009-04-26 12:22:18,967 [4] NHibernate.Impl.SessionFactoryImpl..ctor(:0) - building session factory
 
-2009-04-23 15:24:13,952 [8] NHibernate.Impl.SessionFactoryImpl..ctor(:0) - instantiating session factory with properties: {use_reflection_optimizer=True, connection.connection_string=Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=van;Integrated Security=True;, dialect=NHibernate.Dialect.MsSql2005Dialect, connection.provider=NHibernate.Connection.DriverConnectionProvider, connection.driver_class=NHibernate.Driver.SqlClientDriver, show_sql=true, connection.release_mode=auto, adonet.batch_size=500}
+2009-04-26 12:22:18,972 [4] NHibernate.Impl.SessionFactoryImpl..ctor(:0) - instantiating session factory with properties: {use_reflection_optimizer=True, connection.connection_string=Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=van;Integrated Security=True;, dialect=NHibernate.Dialect.MsSql2005Dialect, connection.provider=NHibernate.Connection.DriverConnectionProvider, connection.driver_class=NHibernate.Driver.SqlClientDriver, show_sql=true, connection.release_mode=auto, adonet.batch_size=500}
 
-2009-04-23 15:24:14,302 [8] NHibernate.Tuple.Entity.AbstractEntityTuplizer..ctor(:0) - No custom accessors found for entity: van.Core.Recording
+2009-04-26 12:22:19,130 [4] NHibernate.Tuple.Entity.AbstractEntityTuplizer..ctor(:0) - No custom accessors found for entity: van.Core.Recording
 
-2009-04-23 15:24:14,329 [8] NHibernate.Tuple.Entity.AbstractEntityTuplizer..ctor(:0) - No custom accessors found for entity: van.Core.Recording
+2009-04-26 12:22:19,141 [4] NHibernate.Tuple.Entity.AbstractEntityTuplizer..ctor(:0) - No custom accessors found for entity: van.Core.Recording
 
-2009-04-23 15:24:14,773 [8] NHibernate.Impl.SessionFactoryObjectFactory..cctor(:0) - initializing class SessionFactoryObjectFactory
+2009-04-26 12:22:19,235 [4] NHibernate.Impl.SessionFactoryObjectFactory..cctor(:0) - initializing class SessionFactoryObjectFactory
 
-2009-04-23 15:24:14,779 [8] NHibernate.Impl.SessionFactoryObjectFactory.AddInstance(:0) - registered: 288812ea94b94206a3f8893bbf502534(unnamed)
+2009-04-26 12:22:19,235 [4] NHibernate.Impl.SessionFactoryObjectFactory.AddInstance(:0) - registered: a7953b09d98542fb8007f2e906539c47(unnamed)
 
-2009-04-23 15:24:14,780 [8] NHibernate.Impl.SessionFactoryObjectFactory.AddInstance(:0) - no name configured
+2009-04-26 12:22:19,236 [4] NHibernate.Impl.SessionFactoryObjectFactory.AddInstance(:0) - no name configured
 
-2009-04-23 15:24:15,053 [8] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) - Static SQL for entity: van.Core.Recording
+2009-04-26 12:22:19,350 [4] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) - Static SQL for entity: van.Core.Recording
 
-2009-04-23 15:24:15,058 [8] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Version select: SELECT Id FROM Recordings WHERE Id = ?
+2009-04-26 12:22:19,351 [4] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Version select: SELECT Id FROM Recordings WHERE Id = ?
 
-2009-04-23 15:24:15,058 [8] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Snapshot select: SELECT recording_.Id, recording_.RecordingDuration as Recordin2_0_, recording_.RecordingTitle as Recordin3_0_, recording_.RecordingUrl as Recordin4_0_, recording_.RecordingDate as Recordin5_0_ FROM Recordings recording_ WHERE recording_.Id=?
+2009-04-26 12:22:19,352 [4] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Snapshot select: SELECT recording_.Id, recording_.RecordingDuration as Recordin2_0_, recording_.RecordingTitle as Recordin3_0_, recording_.RecordingUrl as Recordin4_0_, recording_.RecordingDate as Recordin5_0_ FROM Recordings recording_ WHERE recording_.Id=?
 
-2009-04-23 15:24:15,059 [8] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Insert 0: NHibernate.SqlCommand.SqlCommandInfo
+2009-04-26 12:22:19,353 [4] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Insert 0: NHibernate.SqlCommand.SqlCommandInfo
 
-2009-04-23 15:24:15,059 [8] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Update 0: NHibernate.SqlCommand.SqlCommandInfo
+2009-04-26 12:22:19,354 [4] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Update 0: NHibernate.SqlCommand.SqlCommandInfo
 
-2009-04-23 15:24:15,060 [8] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Delete 0: NHibernate.SqlCommand.SqlCommandInfo
+2009-04-26 12:22:19,355 [4] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Delete 0: NHibernate.SqlCommand.SqlCommandInfo
 
-2009-04-23 15:24:15,060 [8] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Identity insert: NHibernate.SqlCommand.SqlCommandInfo
+2009-04-26 12:22:19,356 [4] NHibernate.Persister.Entity.AbstractEntityPersister.LogStaticSQL(:0) -  Identity insert: NHibernate.SqlCommand.SqlCommandInfo
 
-2009-04-23 15:24:15,170 [8] NHibernate.Loader.Entity.EntityLoader..ctor(:0) - Static select for entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=?
+2009-04-26 12:22:19,415 [4] NHibernate.Loader.Entity.EntityLoader..ctor(:0) - Static select for entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=?
 
-2009-04-23 15:24:15,173 [8] NHibernate.Loader.Entity.EntityLoader..ctor(:0) - Static select for entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=?
+2009-04-26 12:22:19,417 [4] NHibernate.Loader.Entity.EntityLoader..ctor(:0) - Static select for entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=?
 
-2009-04-23 15:24:15,175 [8] NHibernate.Loader.Entity.EntityLoader..ctor(:0) - Static select for entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ with (updlock, rowlock) WHERE recording0_.Id=?
+2009-04-26 12:22:19,418 [4] NHibernate.Loader.Entity.EntityLoader..ctor(:0) - Static select for entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ with (updlock, rowlock) WHERE recording0_.Id=?
 
-2009-04-23 15:24:15,176 [8] NHibernate.Loader.Entity.EntityLoader..ctor(:0) - Static select for entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ with (updlock, rowlock) WHERE recording0_.Id=?
+2009-04-26 12:22:19,418 [4] NHibernate.Loader.Entity.EntityLoader..ctor(:0) - Static select for entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ with (updlock, rowlock) WHERE recording0_.Id=?
 
-2009-04-23 15:24:15,177 [8] NHibernate.Loader.Entity.EntityLoader..ctor(:0) - Static select for entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ with (updlock, rowlock) WHERE recording0_.Id=?
+2009-04-26 12:22:19,419 [4] NHibernate.Loader.Entity.EntityLoader..ctor(:0) - Static select for entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ with (updlock, rowlock) WHERE recording0_.Id=?
 
-2009-04-23 15:24:15,181 [8] NHibernate.Loader.Entity.CascadeEntityLoader..ctor(:0) - Static select for action NHibernate.Engine.CascadingAction+MergeCascadingAction on entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=?
+2009-04-26 12:22:19,422 [4] NHibernate.Loader.Entity.CascadeEntityLoader..ctor(:0) - Static select for action NHibernate.Engine.CascadingAction+MergeCascadingAction on entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=?
 
-2009-04-23 15:24:15,182 [8] NHibernate.Loader.Entity.CascadeEntityLoader..ctor(:0) - Static select for action NHibernate.Engine.CascadingAction+RefreshCascadingAction on entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=?
+2009-04-26 12:22:19,422 [4] NHibernate.Loader.Entity.CascadeEntityLoader..ctor(:0) - Static select for action NHibernate.Engine.CascadingAction+RefreshCascadingAction on entity van.Core.Recording: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=?
 
-2009-04-23 15:24:15,185 [8] NHibernate.Impl.SessionFactoryImpl..ctor(:0) - Instantiated session factory
+2009-04-26 12:22:19,424 [4] NHibernate.Impl.SessionFactoryImpl..ctor(:0) - Instantiated session factory
 
-2009-04-23 15:24:15,197 [8] NHibernate.Impl.SessionFactoryImpl.CheckNamedQueries(:0) - Checking 0 named HQL queries
+2009-04-26 12:22:19,431 [4] NHibernate.Impl.SessionFactoryImpl.CheckNamedQueries(:0) - Checking 0 named HQL queries
 
-2009-04-23 15:24:15,198 [8] NHibernate.Impl.SessionFactoryImpl.CheckNamedQueries(:0) - Checking 0 named SQL queries
+2009-04-26 12:22:19,432 [4] NHibernate.Impl.SessionFactoryImpl.CheckNamedQueries(:0) - Checking 0 named SQL queries
+
+2009-04-26 12:22:21,977 [4] NHibernate.Impl.SessionImpl..ctor(:0) - opened session
+
+2009-04-26 12:22:21,996 [4] NHibernate.Transaction.AdoTransaction.Begin(:0) - Begin (Unspecified)
+
+2009-04-26 12:22:22,000 [4] NHibernate.Connection.DriverConnectionProvider.GetConnection(:0) - Obtaining IDbConnection from Driver
+
+2009-04-26 12:22:22,327 [4] NHibernate.AdoNet.AbstractBatcher.LogOpenPreparedCommand(:0) - Opened new IDbCommand, open IDbCommands: 1
+
+2009-04-26 12:22:22,346 [4] NHibernate.AdoNet.AbstractBatcher.Generate(:0) - Building an IDbCommand object for the SqlString: SELECT this_.Id as Id0_0_, this_.RecordingDuration as Recordin2_0_0_, this_.RecordingTitle as Recordin3_0_0_, this_.RecordingUrl as Recordin4_0_0_, this_.RecordingDate as Recordin5_0_0_ FROM Recordings this_
+
+2009-04-26 12:22:22,351 [4] NHibernate.Loader.Loader.GetResultSet(:0) - SELECT this_.Id as Id0_0_, this_.RecordingDuration as Recordin2_0_0_, this_.RecordingTitle as Recordin3_0_0_, this_.RecordingUrl as Recordin4_0_0_, this_.RecordingDate as Recordin5_0_0_ FROM Recordings this_
+
+2009-04-26 12:22:22,356 [4] NHibernate.AdoNet.AbstractBatcher.LogCommand(:0) - SELECT this_.Id as Id0_0_, this_.RecordingDuration as Recordin2_0_0_, this_.RecordingTitle as Recordin3_0_0_, this_.RecordingUrl as Recordin4_0_0_, this_.RecordingDate as Recordin5_0_0_ FROM Recordings this_
+
+2009-04-26 12:22:22,359 [4] NHibernate.Transaction.AdoTransaction.Enlist(:0) - Enlist Command
+
+2009-04-26 12:22:22,425 [4] NHibernate.AdoNet.AbstractBatcher.LogOpenReader(:0) - Opened IDataReader, open IDataReaders: 1
+
+2009-04-26 12:22:22,431 [4] NHibernate.Loader.Loader.DoQuery(:0) - processing result set
+
+2009-04-26 12:22:22,432 [4] NHibernate.Loader.Loader.DoQuery(:0) - result set row: 0
+
+2009-04-26 12:22:22,438 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning '1' as column: Id0_0_
+
+2009-04-26 12:22:22,446 [4] NHibernate.Loader.Loader.GetRow(:0) - result row: EntityKey[van.Core.Recording#1]
+
+2009-04-26 12:22:22,456 [4] NHibernate.Loader.Loader.LoadFromResultSet(:0) - Initializing object from DataReader: [van.Core.Recording#1]
+
+2009-04-26 12:22:22,468 [4] NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(:0) - Hydrating entity: [van.Core.Recording#1]
+
+2009-04-26 12:22:22,471 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning '1.35' as column: Recordin2_0_0_
+
+2009-04-26 12:22:22,472 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning 'Test title' as column: Recordin3_0_0_
+
+2009-04-26 12:22:22,473 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning 'http://legeronline.blogspot.com' as column: Recordin4_0_0_
+
+2009-04-26 12:22:22,476 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning '3/8/2009' as column: Recordin5_0_0_
+
+2009-04-26 12:22:22,481 [4] NHibernate.Loader.Loader.DoQuery(:0) - done processing result set (1 rows)
+
+2009-04-26 12:22:22,485 [4] NHibernate.Driver.NHybridDataReader.Dispose(:0) - running NHybridDataReader.Dispose()
+
+2009-04-26 12:22:22,487 [4] NHibernate.AdoNet.AbstractBatcher.LogCloseReader(:0) - Closed IDataReader, open IDataReaders :0
+
+2009-04-26 12:22:22,489 [4] NHibernate.AdoNet.AbstractBatcher.LogClosePreparedCommand(:0) - Closed IDbCommand, open IDbCommands: 0
+
+2009-04-26 12:22:22,493 [4] NHibernate.Loader.Loader.InitializeEntitiesAndCollections(:0) - total objects hydrated: 1
+
+2009-04-26 12:22:22,499 [4] NHibernate.Engine.TwoPhaseLoad.InitializeEntity(:0) - resolving associations for [van.Core.Recording#1]
+
+2009-04-26 12:22:22,512 [4] NHibernate.Engine.TwoPhaseLoad.InitializeEntity(:0) - done materializing entity [van.Core.Recording#1]
+
+2009-04-26 12:22:22,515 [4] NHibernate.Engine.StatefulPersistenceContext.InitializeNonLazyCollections(:0) - initializing non-lazy collections
+
+2009-04-26 12:22:22,521 [4] NHibernate.Transaction.AdoTransaction.Commit(:0) - Start Commit
+
+2009-04-26 12:22:22,526 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(:0) - flushing session
+
+2009-04-26 12:22:22,528 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PrepareEntityFlushes(:0) - processing flush-time cascades
+
+2009-04-26 12:22:22,538 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PrepareCollectionFlushes(:0) - dirty checking collections
+
+2009-04-26 12:22:22,541 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(:0) - Flushing entities and processing referenced collections
+
+2009-04-26 12:22:22,565 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushCollections(:0) - Processing unreferenced collections
+
+2009-04-26 12:22:22,567 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushCollections(:0) - Scheduling collection removes/(re)creates/updates
+
+2009-04-26 12:22:22,570 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(:0) - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+
+2009-04-26 12:22:22,571 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(:0) - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+
+2009-04-26 12:22:22,574 [4] NHibernate.Impl.Printer.ToString(:0) - listing entities:
+
+2009-04-26 12:22:22,577 [4] NHibernate.Impl.Printer.ToString(:0) - van.Core.Recording{RecordingTitle=Test title, RecordingDate=3/8/2009, RecordingDuration=1.35, Id=1, RecordingUrl=http://legeronline.blogspot.com}
+
+2009-04-26 12:22:22,579 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(:0) - executing flush
+
+2009-04-26 12:22:22,580 [4] NHibernate.AdoNet.ConnectionManager.FlushBeginning(:0) - registering flush begin
+
+2009-04-26 12:22:22,587 [4] NHibernate.AdoNet.ConnectionManager.FlushEnding(:0) - registering flush end
+
+2009-04-26 12:22:22,589 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PostFlush(:0) - post flush
+
+2009-04-26 12:22:22,593 [4] NHibernate.Impl.SessionImpl.BeforeTransactionCompletion(:0) - before transaction completion
+
+2009-04-26 12:22:22,595 [4] NHibernate.Transaction.AdoTransaction.Commit(:0) - IDbTransaction Committed
+
+2009-04-26 12:22:22,597 [4] NHibernate.Impl.SessionImpl.AfterTransactionCompletion(:0) - transaction completion
+
+2009-04-26 12:22:22,598 [4] NHibernate.AdoNet.ConnectionManager.AggressiveRelease(:0) - aggressively releasing database connection
+
+2009-04-26 12:22:22,601 [4] NHibernate.Connection.ConnectionProvider.CloseConnection(:0) - Closing connection
+
+2009-04-26 12:22:22,605 [4] NHibernate.Transaction.AdoTransaction.Dispose(:0) - IDbTransaction disposed.
+
+2009-04-26 12:22:25,672 [4] NHibernate.Impl.SessionImpl.Close(:0) - closing session
+
+2009-04-26 12:22:25,674 [4] NHibernate.AdoNet.AbstractBatcher.Dispose(:0) - running BatcherImpl.Dispose(true)
+
+2009-04-26 12:23:02,289 [4] NHibernate.Impl.SessionImpl..ctor(:0) - opened session
+
+2009-04-26 12:23:02,290 [4] NHibernate.Transaction.AdoTransaction.Begin(:0) - Begin (Unspecified)
+
+2009-04-26 12:23:02,290 [4] NHibernate.Connection.DriverConnectionProvider.GetConnection(:0) - Obtaining IDbConnection from Driver
+
+2009-04-26 12:23:02,300 [4] NHibernate.AdoNet.AbstractBatcher.LogOpenPreparedCommand(:0) - Opened new IDbCommand, open IDbCommands: 1
+
+2009-04-26 12:23:02,301 [4] NHibernate.AdoNet.AbstractBatcher.Generate(:0) - Building an IDbCommand object for the SqlString: SELECT this_.Id as Id0_0_, this_.RecordingDuration as Recordin2_0_0_, this_.RecordingTitle as Recordin3_0_0_, this_.RecordingUrl as Recordin4_0_0_, this_.RecordingDate as Recordin5_0_0_ FROM Recordings this_
+
+2009-04-26 12:23:02,305 [4] NHibernate.Loader.Loader.GetResultSet(:0) - SELECT this_.Id as Id0_0_, this_.RecordingDuration as Recordin2_0_0_, this_.RecordingTitle as Recordin3_0_0_, this_.RecordingUrl as Recordin4_0_0_, this_.RecordingDate as Recordin5_0_0_ FROM Recordings this_
+
+2009-04-26 12:23:02,306 [4] NHibernate.AdoNet.AbstractBatcher.LogCommand(:0) - SELECT this_.Id as Id0_0_, this_.RecordingDuration as Recordin2_0_0_, this_.RecordingTitle as Recordin3_0_0_, this_.RecordingUrl as Recordin4_0_0_, this_.RecordingDate as Recordin5_0_0_ FROM Recordings this_
+
+2009-04-26 12:23:02,307 [4] NHibernate.Transaction.AdoTransaction.Enlist(:0) - Enlist Command
+
+2009-04-26 12:23:02,309 [4] NHibernate.AdoNet.AbstractBatcher.LogOpenReader(:0) - Opened IDataReader, open IDataReaders: 1
+
+2009-04-26 12:23:02,310 [4] NHibernate.Loader.Loader.DoQuery(:0) - processing result set
+
+2009-04-26 12:23:02,311 [4] NHibernate.Loader.Loader.DoQuery(:0) - result set row: 0
+
+2009-04-26 12:23:02,312 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning '1' as column: Id0_0_
+
+2009-04-26 12:23:02,313 [4] NHibernate.Loader.Loader.GetRow(:0) - result row: EntityKey[van.Core.Recording#1]
+
+2009-04-26 12:23:02,314 [4] NHibernate.Loader.Loader.LoadFromResultSet(:0) - Initializing object from DataReader: [van.Core.Recording#1]
+
+2009-04-26 12:23:02,315 [4] NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(:0) - Hydrating entity: [van.Core.Recording#1]
+
+2009-04-26 12:23:02,316 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning '1.35' as column: Recordin2_0_0_
+
+2009-04-26 12:23:02,317 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning 'Test title' as column: Recordin3_0_0_
+
+2009-04-26 12:23:02,318 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning 'http://legeronline.blogspot.com' as column: Recordin4_0_0_
+
+2009-04-26 12:23:02,319 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning '3/8/2009' as column: Recordin5_0_0_
+
+2009-04-26 12:23:02,320 [4] NHibernate.Loader.Loader.DoQuery(:0) - done processing result set (1 rows)
+
+2009-04-26 12:23:02,321 [4] NHibernate.Driver.NHybridDataReader.Dispose(:0) - running NHybridDataReader.Dispose()
+
+2009-04-26 12:23:02,322 [4] NHibernate.AdoNet.AbstractBatcher.LogCloseReader(:0) - Closed IDataReader, open IDataReaders :0
+
+2009-04-26 12:23:02,322 [4] NHibernate.AdoNet.AbstractBatcher.LogClosePreparedCommand(:0) - Closed IDbCommand, open IDbCommands: 0
+
+2009-04-26 12:23:02,323 [4] NHibernate.Loader.Loader.InitializeEntitiesAndCollections(:0) - total objects hydrated: 1
+
+2009-04-26 12:23:02,324 [4] NHibernate.Engine.TwoPhaseLoad.InitializeEntity(:0) - resolving associations for [van.Core.Recording#1]
+
+2009-04-26 12:23:02,325 [4] NHibernate.Engine.TwoPhaseLoad.InitializeEntity(:0) - done materializing entity [van.Core.Recording#1]
+
+2009-04-26 12:23:02,326 [4] NHibernate.Engine.StatefulPersistenceContext.InitializeNonLazyCollections(:0) - initializing non-lazy collections
+
+2009-04-26 12:23:02,327 [4] NHibernate.Transaction.AdoTransaction.Commit(:0) - Start Commit
+
+2009-04-26 12:23:02,328 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(:0) - flushing session
+
+2009-04-26 12:23:02,329 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PrepareEntityFlushes(:0) - processing flush-time cascades
+
+2009-04-26 12:23:02,330 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PrepareCollectionFlushes(:0) - dirty checking collections
+
+2009-04-26 12:23:02,331 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(:0) - Flushing entities and processing referenced collections
+
+2009-04-26 12:23:02,332 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushCollections(:0) - Processing unreferenced collections
+
+2009-04-26 12:23:02,333 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushCollections(:0) - Scheduling collection removes/(re)creates/updates
+
+2009-04-26 12:23:02,333 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(:0) - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+
+2009-04-26 12:23:02,334 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(:0) - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+
+2009-04-26 12:23:02,336 [4] NHibernate.Impl.Printer.ToString(:0) - listing entities:
+
+2009-04-26 12:23:02,336 [4] NHibernate.Impl.Printer.ToString(:0) - van.Core.Recording{RecordingTitle=Test title, RecordingDate=3/8/2009, RecordingDuration=1.35, Id=1, RecordingUrl=http://legeronline.blogspot.com}
+
+2009-04-26 12:23:02,337 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(:0) - executing flush
+
+2009-04-26 12:23:02,338 [4] NHibernate.AdoNet.ConnectionManager.FlushBeginning(:0) - registering flush begin
+
+2009-04-26 12:23:02,338 [4] NHibernate.AdoNet.ConnectionManager.FlushEnding(:0) - registering flush end
+
+2009-04-26 12:23:02,339 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PostFlush(:0) - post flush
+
+2009-04-26 12:23:02,339 [4] NHibernate.Impl.SessionImpl.BeforeTransactionCompletion(:0) - before transaction completion
+
+2009-04-26 12:23:02,340 [4] NHibernate.Transaction.AdoTransaction.Commit(:0) - IDbTransaction Committed
+
+2009-04-26 12:23:02,341 [4] NHibernate.Impl.SessionImpl.AfterTransactionCompletion(:0) - transaction completion
+
+2009-04-26 12:23:02,342 [4] NHibernate.AdoNet.ConnectionManager.AggressiveRelease(:0) - aggressively releasing database connection
+
+2009-04-26 12:23:02,342 [4] NHibernate.Connection.ConnectionProvider.CloseConnection(:0) - Closing connection
+
+2009-04-26 12:23:02,343 [4] NHibernate.Transaction.AdoTransaction.Dispose(:0) - IDbTransaction disposed.
+
+2009-04-26 12:23:15,017 [4] NHibernate.Impl.SessionImpl..ctor(:0) - opened session
+
+2009-04-26 12:23:15,018 [4] NHibernate.Transaction.AdoTransaction.Begin(:0) - Begin (Unspecified)
+
+2009-04-26 12:23:15,019 [4] NHibernate.Connection.DriverConnectionProvider.GetConnection(:0) - Obtaining IDbConnection from Driver
+
+2009-04-26 12:23:15,032 [4] NHibernate.Event.Default.DefaultLoadEventListener.ProxyOrLoad(:0) - loading entity: [van.Core.Recording#1]
+
+2009-04-26 12:23:15,036 [4] NHibernate.Event.Default.DefaultLoadEventListener.DoLoad(:0) - attempting to resolve: [van.Core.Recording#1]
+
+2009-04-26 12:23:15,040 [4] NHibernate.Event.Default.DefaultLoadEventListener.DoLoad(:0) - object not resolved in any cache: [van.Core.Recording#1]
+
+2009-04-26 12:23:15,041 [4] NHibernate.Persister.Entity.AbstractEntityPersister.Load(:0) - Fetching entity: [van.Core.Recording#1]
+
+2009-04-26 12:23:15,049 [4] NHibernate.Loader.Loader.LoadEntity(:0) - loading entity: [van.Core.Recording#1]
+
+2009-04-26 12:23:15,054 [4] NHibernate.AdoNet.AbstractBatcher.LogOpenPreparedCommand(:0) - Opened new IDbCommand, open IDbCommands: 1
+
+2009-04-26 12:23:15,058 [4] NHibernate.AdoNet.AbstractBatcher.Generate(:0) - Building an IDbCommand object for the SqlString: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=?
+
+2009-04-26 12:23:15,060 [4] NHibernate.Type.NullableType.NullSafeSet(:0) - binding '1' to parameter: 0
+
+2009-04-26 12:23:15,062 [4] NHibernate.Loader.Loader.GetResultSet(:0) - SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=@p0
+
+2009-04-26 12:23:15,063 [4] NHibernate.AdoNet.AbstractBatcher.LogCommand(:0) - SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=@p0; @p0 = '1'
+
+2009-04-26 12:23:15,064 [4] NHibernate.Transaction.AdoTransaction.Enlist(:0) - Enlist Command
+
+2009-04-26 12:23:15,068 [4] NHibernate.AdoNet.AbstractBatcher.LogOpenReader(:0) - Opened IDataReader, open IDataReaders: 1
+
+2009-04-26 12:23:15,069 [4] NHibernate.Loader.Loader.DoQuery(:0) - processing result set
+
+2009-04-26 12:23:15,070 [4] NHibernate.Loader.Loader.DoQuery(:0) - result set row: 0
+
+2009-04-26 12:23:15,071 [4] NHibernate.Loader.Loader.GetRow(:0) - result row: EntityKey[van.Core.Recording#1]
+
+2009-04-26 12:23:15,072 [4] NHibernate.Loader.Loader.LoadFromResultSet(:0) - Initializing object from DataReader: [van.Core.Recording#1]
+
+2009-04-26 12:23:15,072 [4] NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(:0) - Hydrating entity: [van.Core.Recording#1]
+
+2009-04-26 12:23:15,073 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning '1.35' as column: Recordin2_0_0_
+
+2009-04-26 12:23:15,074 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning 'Test title' as column: Recordin3_0_0_
+
+2009-04-26 12:23:15,075 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning 'http://legeronline.blogspot.com' as column: Recordin4_0_0_
+
+2009-04-26 12:23:15,076 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning '3/8/2009' as column: Recordin5_0_0_
+
+2009-04-26 12:23:15,077 [4] NHibernate.Loader.Loader.DoQuery(:0) - done processing result set (1 rows)
+
+2009-04-26 12:23:15,078 [4] NHibernate.Driver.NHybridDataReader.Dispose(:0) - running NHybridDataReader.Dispose()
+
+2009-04-26 12:23:15,079 [4] NHibernate.AdoNet.AbstractBatcher.LogCloseReader(:0) - Closed IDataReader, open IDataReaders :0
+
+2009-04-26 12:23:15,080 [4] NHibernate.AdoNet.AbstractBatcher.LogClosePreparedCommand(:0) - Closed IDbCommand, open IDbCommands: 0
+
+2009-04-26 12:23:15,083 [4] NHibernate.Loader.Loader.InitializeEntitiesAndCollections(:0) - total objects hydrated: 1
+
+2009-04-26 12:23:15,084 [4] NHibernate.Engine.TwoPhaseLoad.InitializeEntity(:0) - resolving associations for [van.Core.Recording#1]
+
+2009-04-26 12:23:15,085 [4] NHibernate.Engine.TwoPhaseLoad.InitializeEntity(:0) - done materializing entity [van.Core.Recording#1]
+
+2009-04-26 12:23:15,086 [4] NHibernate.Engine.StatefulPersistenceContext.InitializeNonLazyCollections(:0) - initializing non-lazy collections
+
+2009-04-26 12:23:15,087 [4] NHibernate.Loader.Loader.LoadEntity(:0) - done entity load
+
+2009-04-26 12:23:15,088 [4] NHibernate.Transaction.AdoTransaction.Commit(:0) - Start Commit
+
+2009-04-26 12:23:15,089 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(:0) - flushing session
+
+2009-04-26 12:23:15,090 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PrepareEntityFlushes(:0) - processing flush-time cascades
+
+2009-04-26 12:23:15,091 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PrepareCollectionFlushes(:0) - dirty checking collections
+
+2009-04-26 12:23:15,091 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(:0) - Flushing entities and processing referenced collections
+
+2009-04-26 12:23:15,092 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushCollections(:0) - Processing unreferenced collections
+
+2009-04-26 12:23:15,093 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushCollections(:0) - Scheduling collection removes/(re)creates/updates
+
+2009-04-26 12:23:15,094 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(:0) - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+
+2009-04-26 12:23:15,094 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(:0) - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+
+2009-04-26 12:23:15,099 [4] NHibernate.Impl.Printer.ToString(:0) - listing entities:
+
+2009-04-26 12:23:15,099 [4] NHibernate.Impl.Printer.ToString(:0) - van.Core.Recording{RecordingTitle=Test title, RecordingDate=3/8/2009, RecordingDuration=1.35, Id=1, RecordingUrl=http://legeronline.blogspot.com}
+
+2009-04-26 12:23:15,100 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(:0) - executing flush
+
+2009-04-26 12:23:15,101 [4] NHibernate.AdoNet.ConnectionManager.FlushBeginning(:0) - registering flush begin
+
+2009-04-26 12:23:15,101 [4] NHibernate.AdoNet.ConnectionManager.FlushEnding(:0) - registering flush end
+
+2009-04-26 12:23:15,102 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PostFlush(:0) - post flush
+
+2009-04-26 12:23:15,102 [4] NHibernate.Impl.SessionImpl.BeforeTransactionCompletion(:0) - before transaction completion
+
+2009-04-26 12:23:15,103 [4] NHibernate.Transaction.AdoTransaction.Commit(:0) - IDbTransaction Committed
+
+2009-04-26 12:23:15,104 [4] NHibernate.Impl.SessionImpl.AfterTransactionCompletion(:0) - transaction completion
+
+2009-04-26 12:23:15,104 [4] NHibernate.AdoNet.ConnectionManager.AggressiveRelease(:0) - aggressively releasing database connection
+
+2009-04-26 12:23:15,105 [4] NHibernate.Connection.ConnectionProvider.CloseConnection(:0) - Closing connection
+
+2009-04-26 12:23:15,106 [4] NHibernate.Transaction.AdoTransaction.Dispose(:0) - IDbTransaction disposed.
+
+2009-04-26 12:23:23,535 [4] NHibernate.Impl.SessionImpl..ctor(:0) - opened session
+
+2009-04-26 12:23:23,536 [4] NHibernate.Transaction.AdoTransaction.Begin(:0) - Begin (Unspecified)
+
+2009-04-26 12:23:23,539 [4] NHibernate.Connection.DriverConnectionProvider.GetConnection(:0) - Obtaining IDbConnection from Driver
+
+2009-04-26 12:23:23,544 [4] NHibernate.Event.Default.DefaultLoadEventListener.ProxyOrLoad(:0) - loading entity: [van.Core.Recording#1]
+
+2009-04-26 12:23:23,545 [4] NHibernate.Event.Default.DefaultLoadEventListener.DoLoad(:0) - attempting to resolve: [van.Core.Recording#1]
+
+2009-04-26 12:23:23,546 [4] NHibernate.Event.Default.DefaultLoadEventListener.DoLoad(:0) - object not resolved in any cache: [van.Core.Recording#1]
+
+2009-04-26 12:23:23,548 [4] NHibernate.Persister.Entity.AbstractEntityPersister.Load(:0) - Fetching entity: [van.Core.Recording#1]
+
+2009-04-26 12:23:23,549 [4] NHibernate.Loader.Loader.LoadEntity(:0) - loading entity: [van.Core.Recording#1]
+
+2009-04-26 12:23:23,549 [4] NHibernate.AdoNet.AbstractBatcher.LogOpenPreparedCommand(:0) - Opened new IDbCommand, open IDbCommands: 1
+
+2009-04-26 12:23:23,550 [4] NHibernate.AdoNet.AbstractBatcher.Generate(:0) - Building an IDbCommand object for the SqlString: SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=?
+
+2009-04-26 12:23:23,552 [4] NHibernate.Type.NullableType.NullSafeSet(:0) - binding '1' to parameter: 0
+
+2009-04-26 12:23:23,552 [4] NHibernate.Loader.Loader.GetResultSet(:0) - SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=@p0
+
+2009-04-26 12:23:23,553 [4] NHibernate.AdoNet.AbstractBatcher.LogCommand(:0) - SELECT recording0_.Id as Id0_0_, recording0_.RecordingDuration as Recordin2_0_0_, recording0_.RecordingTitle as Recordin3_0_0_, recording0_.RecordingUrl as Recordin4_0_0_, recording0_.RecordingDate as Recordin5_0_0_ FROM Recordings recording0_ WHERE recording0_.Id=@p0; @p0 = '1'
+
+2009-04-26 12:23:23,554 [4] NHibernate.Transaction.AdoTransaction.Enlist(:0) - Enlist Command
+
+2009-04-26 12:23:23,646 [4] NHibernate.AdoNet.AbstractBatcher.LogOpenReader(:0) - Opened IDataReader, open IDataReaders: 1
+
+2009-04-26 12:23:23,647 [4] NHibernate.Loader.Loader.DoQuery(:0) - processing result set
+
+2009-04-26 12:23:23,648 [4] NHibernate.Loader.Loader.DoQuery(:0) - result set row: 0
+
+2009-04-26 12:23:23,648 [4] NHibernate.Loader.Loader.GetRow(:0) - result row: EntityKey[van.Core.Recording#1]
+
+2009-04-26 12:23:23,649 [4] NHibernate.Loader.Loader.LoadFromResultSet(:0) - Initializing object from DataReader: [van.Core.Recording#1]
+
+2009-04-26 12:23:23,650 [4] NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(:0) - Hydrating entity: [van.Core.Recording#1]
+
+2009-04-26 12:23:23,651 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning '1.35' as column: Recordin2_0_0_
+
+2009-04-26 12:23:23,652 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning 'Test title' as column: Recordin3_0_0_
+
+2009-04-26 12:23:23,653 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning 'http://legeronline.blogspot.com' as column: Recordin4_0_0_
+
+2009-04-26 12:23:23,654 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning '3/8/2009' as column: Recordin5_0_0_
+
+2009-04-26 12:23:23,654 [4] NHibernate.Loader.Loader.DoQuery(:0) - done processing result set (1 rows)
+
+2009-04-26 12:23:23,655 [4] NHibernate.Driver.NHybridDataReader.Dispose(:0) - running NHybridDataReader.Dispose()
+
+2009-04-26 12:23:23,656 [4] NHibernate.AdoNet.AbstractBatcher.LogCloseReader(:0) - Closed IDataReader, open IDataReaders :0
+
+2009-04-26 12:23:23,657 [4] NHibernate.AdoNet.AbstractBatcher.LogClosePreparedCommand(:0) - Closed IDbCommand, open IDbCommands: 0
+
+2009-04-26 12:23:23,657 [4] NHibernate.Loader.Loader.InitializeEntitiesAndCollections(:0) - total objects hydrated: 1
+
+2009-04-26 12:23:23,658 [4] NHibernate.Engine.TwoPhaseLoad.InitializeEntity(:0) - resolving associations for [van.Core.Recording#1]
+
+2009-04-26 12:23:23,659 [4] NHibernate.Engine.TwoPhaseLoad.InitializeEntity(:0) - done materializing entity [van.Core.Recording#1]
+
+2009-04-26 12:23:23,660 [4] NHibernate.Engine.StatefulPersistenceContext.InitializeNonLazyCollections(:0) - initializing non-lazy collections
+
+2009-04-26 12:23:23,661 [4] NHibernate.Loader.Loader.LoadEntity(:0) - done entity load
+
+2009-04-26 12:23:23,754 [4] NHibernate.Validator.Engine.JITClassMappingFactory.GetClassMapping(:0) - Reflection applied for van.Core.Recording
+
+2009-04-26 12:23:23,760 [4] NHibernate.Validator.Engine.JITClassMappingFactory.GetClassMapping(:0) - Reflection applied for SharpArch.Core.CommonValidator.IValidatable
+
+2009-04-26 12:23:23,761 [4] NHibernate.Validator.Engine.JITClassMappingFactory.GetClassMapping(:0) - Reflection applied for SharpArch.Core.DomainModel.IEntityWithTypedId`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+2009-04-26 12:23:23,762 [4] NHibernate.Validator.Engine.JITClassMappingFactory.GetClassMapping(:0) - Reflection applied for SharpArch.Core.DomainModel.Entity
+
+2009-04-26 12:23:23,763 [4] NHibernate.Validator.Engine.JITClassMappingFactory.GetClassMapping(:0) - Reflection applied for SharpArch.Core.DomainModel.EntityWithTypedId`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+2009-04-26 12:23:23,764 [4] NHibernate.Validator.Engine.JITClassMappingFactory.GetClassMapping(:0) - Reflection applied for SharpArch.Core.DomainModel.ValidatableObject
+
+2009-04-26 12:23:23,765 [4] NHibernate.Validator.Engine.JITClassMappingFactory.GetClassMapping(:0) - Reflection applied for SharpArch.Core.DomainModel.BaseObject
+
+2009-04-26 12:23:23,770 [4] NHibernate.Validator.Mappings.ReflectionClassMapping.CreateMemberAttributes(:0) - For class van.Core.Recording Adding member <RecordingTitle>k__BackingField to dictionary with attribute System.Runtime.CompilerServices.CompilerGeneratedAttribute
+
+2009-04-26 12:23:23,771 [4] NHibernate.Validator.Mappings.ReflectionClassMapping.CreateMemberAttributes(:0) - For class van.Core.Recording Adding member <RecordingUrl>k__BackingField to dictionary with attribute System.Runtime.CompilerServices.CompilerGeneratedAttribute
+
+2009-04-26 12:23:23,772 [4] NHibernate.Validator.Mappings.ReflectionClassMapping.CreateMemberAttributes(:0) - For class van.Core.Recording Adding member <RecordingDate>k__BackingField to dictionary with attribute System.Runtime.CompilerServices.CompilerGeneratedAttribute
+
+2009-04-26 12:23:23,773 [4] NHibernate.Validator.Mappings.ReflectionClassMapping.CreateMemberAttributes(:0) - For class van.Core.Recording Adding member <RecordingDuration>k__BackingField to dictionary with attribute System.Runtime.CompilerServices.CompilerGeneratedAttribute
+
+2009-04-26 12:23:23,773 [4] NHibernate.Validator.Mappings.ReflectionClassMapping.CreateMemberAttributes(:0) - For class van.Core.Recording Adding member RecordingTitle to dictionary with attribute NHibernate.Validator.Constraints.NotEmptyAttribute
+
+2009-04-26 12:23:23,774 [4] NHibernate.Validator.Mappings.ReflectionClassMapping.CreateMemberAttributes(:0) - For class van.Core.Recording Adding member RecordingTitle to dictionary with attribute SharpArch.Core.DomainModel.DomainSignatureAttribute
+
+2009-04-26 12:23:23,776 [4] NHibernate.Validator.Mappings.ReflectionClassMapping.CreateMemberAttributes(:0) - For class van.Core.Recording Adding member RecordingTitle to dictionary with attribute NHibernate.Validator.Constraints.NotNullAttribute
+
+2009-04-26 12:23:23,777 [4] NHibernate.Validator.Mappings.ReflectionClassMapping.CreateMemberAttributes(:0) - For class van.Core.Recording Adding member RecordingUrl to dictionary with attribute NHibernate.Validator.Constraints.NotNullAttribute
+
+2009-04-26 12:23:23,778 [4] NHibernate.Validator.Mappings.ReflectionClassMapping.CreateMemberAttributes(:0) - For class van.Core.Recording Adding member RecordingUrl to dictionary with attribute SharpArch.Core.DomainModel.DomainSignatureAttribute
+
+2009-04-26 12:23:23,779 [4] NHibernate.Validator.Mappings.ReflectionClassMapping.CreateMemberAttributes(:0) - For class van.Core.Recording Adding member RecordingUrl to dictionary with attribute NHibernate.Validator.Constraints.NotEmptyAttribute
+
+2009-04-26 12:23:23,780 [4] NHibernate.Validator.Mappings.ReflectionClassMapping.CreateMemberAttributes(:0) - For class van.Core.Recording Adding member RecordingDate to dictionary with attribute NHibernate.Validator.Constraints.PastAttribute
+
+2009-04-26 12:23:23,786 [4] NHibernate.Validator.Engine.ClassValidator.AddAttributeToMember(:0) - Adding member <RecordingTitle>k__BackingField to dictionary with attribute System.Runtime.CompilerServices.CompilerGeneratedAttribute
+
+2009-04-26 12:23:23,791 [4] NHibernate.Validator.Engine.ClassValidator.AddAttributeToMember(:0) - Adding member <RecordingUrl>k__BackingField to dictionary with attribute System.Runtime.CompilerServices.CompilerGeneratedAttribute
+
+2009-04-26 12:23:23,792 [4] NHibernate.Validator.Engine.ClassValidator.AddAttributeToMember(:0) - Adding member <RecordingDate>k__BackingField to dictionary with attribute System.Runtime.CompilerServices.CompilerGeneratedAttribute
+
+2009-04-26 12:23:23,794 [4] NHibernate.Validator.Engine.ClassValidator.AddAttributeToMember(:0) - Adding member <RecordingDuration>k__BackingField to dictionary with attribute System.Runtime.CompilerServices.CompilerGeneratedAttribute
+
+2009-04-26 12:23:23,796 [4] NHibernate.Validator.Engine.ClassValidator.AddAttributeToMember(:0) - Adding member RecordingTitle to dictionary with attribute NHibernate.Validator.Constraints.NotEmptyAttribute
+
+2009-04-26 12:23:23,797 [4] NHibernate.Validator.Engine.ClassValidator.AddAttributeToMember(:0) - Adding member RecordingTitle to dictionary with attribute SharpArch.Core.DomainModel.DomainSignatureAttribute
+
+2009-04-26 12:23:23,798 [4] NHibernate.Validator.Engine.ClassValidator.AddAttributeToMember(:0) - Adding member RecordingTitle to dictionary with attribute NHibernate.Validator.Constraints.NotNullAttribute
+
+2009-04-26 12:23:23,804 [4] NHibernate.Validator.Engine.ClassValidator.AddAttributeToMember(:0) - Adding member RecordingUrl to dictionary with attribute NHibernate.Validator.Constraints.NotNullAttribute
+
+2009-04-26 12:23:23,805 [4] NHibernate.Validator.Engine.ClassValidator.AddAttributeToMember(:0) - Adding member RecordingUrl to dictionary with attribute SharpArch.Core.DomainModel.DomainSignatureAttribute
+
+2009-04-26 12:23:23,806 [4] NHibernate.Validator.Engine.ClassValidator.AddAttributeToMember(:0) - Adding member RecordingUrl to dictionary with attribute NHibernate.Validator.Constraints.NotEmptyAttribute
+
+2009-04-26 12:23:23,807 [4] NHibernate.Validator.Engine.ClassValidator.AddAttributeToMember(:0) - Adding member RecordingDate to dictionary with attribute NHibernate.Validator.Constraints.PastAttribute
+
+2009-04-26 12:23:23,809 [4] NHibernate.Validator.Mappings.ReflectionClassMapping.CreateMemberAttributes(:0) - For class SharpArch.Core.DomainModel.EntityWithTypedId`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] Adding member <Id>k__BackingField to dictionary with attribute System.Runtime.CompilerServices.CompilerGeneratedAttribute
+
+2009-04-26 12:23:23,810 [4] NHibernate.Validator.Mappings.ReflectionClassMapping.CreateMemberAttributes(:0) - For class SharpArch.Core.DomainModel.EntityWithTypedId`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] Adding member CS$<>9__CachedAnonymousMethodDelegate1 to dictionary with attribute System.Runtime.CompilerServices.CompilerGeneratedAttribute
+
+2009-04-26 12:23:23,812 [4] NHibernate.Validator.Mappings.ReflectionClassMapping.CreateMemberAttributes(:0) - For class SharpArch.Core.DomainModel.EntityWithTypedId`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] Adding member Id to dictionary with attribute Newtonsoft.Json.JsonPropertyAttribute
+
+2009-04-26 12:23:23,814 [4] NHibernate.Validator.Mappings.ReflectionClassMapping.CreateMemberAttributes(:0) - For class SharpArch.Core.DomainModel.EntityWithTypedId`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] Adding member Id to dictionary with attribute System.Xml.Serialization.XmlIgnoreAttribute
+
+2009-04-26 12:23:23,815 [4] NHibernate.Validator.Engine.ClassValidator.AddAttributeToMember(:0) - Adding member <Id>k__BackingField to dictionary with attribute System.Runtime.CompilerServices.CompilerGeneratedAttribute
+
+2009-04-26 12:23:23,815 [4] NHibernate.Validator.Engine.ClassValidator.AddAttributeToMember(:0) - Adding member CS$<>9__CachedAnonymousMethodDelegate1 to dictionary with attribute System.Runtime.CompilerServices.CompilerGeneratedAttribute
+
+2009-04-26 12:23:23,816 [4] NHibernate.Validator.Engine.ClassValidator.AddAttributeToMember(:0) - Adding member Id to dictionary with attribute Newtonsoft.Json.JsonPropertyAttribute
+
+2009-04-26 12:23:23,817 [4] NHibernate.Validator.Engine.ClassValidator.AddAttributeToMember(:0) - Adding member Id to dictionary with attribute System.Xml.Serialization.XmlIgnoreAttribute
+
+2009-04-26 12:23:23,818 [4] NHibernate.Validator.Mappings.ReflectionClassMapping.CreateMemberAttributes(:0) - For class SharpArch.Core.DomainModel.BaseObject Adding member signaturePropertiesDictionary to dictionary with attribute System.ThreadStaticAttribute
+
+2009-04-26 12:23:23,819 [4] NHibernate.Validator.Engine.ClassValidator.AddAttributeToMember(:0) - Adding member signaturePropertiesDictionary to dictionary with attribute System.ThreadStaticAttribute
+
+2009-04-26 12:23:23,834 [4] NHibernate.Transaction.AdoTransaction.Commit(:0) - Start Commit
+
+2009-04-26 12:23:23,835 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(:0) - flushing session
+
+2009-04-26 12:23:23,836 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PrepareEntityFlushes(:0) - processing flush-time cascades
+
+2009-04-26 12:23:23,836 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PrepareCollectionFlushes(:0) - dirty checking collections
+
+2009-04-26 12:23:23,837 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(:0) - Flushing entities and processing referenced collections
+
+2009-04-26 12:23:23,839 [4] NHibernate.Persister.Entity.AbstractEntityPersister.LogDirtyProperties(:0) - van.Core.Recording.RecordingDuration is dirty
+
+2009-04-26 12:23:23,842 [4] NHibernate.Event.Default.DefaultFlushEntityEventListener.ScheduleUpdate(:0) - Updating entity: [van.Core.Recording#1]
+
+2009-04-26 12:23:23,850 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushCollections(:0) - Processing unreferenced collections
+
+2009-04-26 12:23:23,851 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushCollections(:0) - Scheduling collection removes/(re)creates/updates
+
+2009-04-26 12:23:23,851 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(:0) - Flushed: 0 insertions, 1 updates, 0 deletions to 1 objects
+
+2009-04-26 12:23:23,852 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(:0) - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+
+2009-04-26 12:23:23,853 [4] NHibernate.Impl.Printer.ToString(:0) - listing entities:
+
+2009-04-26 12:23:23,853 [4] NHibernate.Impl.Printer.ToString(:0) - van.Core.Recording{RecordingTitle=Test title, RecordingDate=3/8/2009, RecordingDuration=, Id=1, RecordingUrl=http://legeronline.blogspot.com}
+
+2009-04-26 12:23:23,854 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(:0) - executing flush
+
+2009-04-26 12:23:23,854 [4] NHibernate.AdoNet.ConnectionManager.FlushBeginning(:0) - registering flush begin
+
+2009-04-26 12:23:23,873 [4] NHibernate.Persister.Entity.AbstractEntityPersister.Update(:0) - Updating entity: [van.Core.Recording#1]
+
+2009-04-26 12:23:23,877 [4] NHibernate.AdoNet.AbstractBatcher.LogOpenPreparedCommand(:0) - Opened new IDbCommand, open IDbCommands: 1
+
+2009-04-26 12:23:23,878 [4] NHibernate.AdoNet.AbstractBatcher.Generate(:0) - Building an IDbCommand object for the SqlString: UPDATE Recordings SET RecordingDuration = ?, RecordingTitle = ?, RecordingUrl = ?, RecordingDate = ? WHERE Id = ?
+
+2009-04-26 12:23:23,880 [4] NHibernate.Persister.Entity.AbstractEntityPersister.Dehydrate(:0) - Dehydrating entity: [van.Core.Recording#1]
+
+2009-04-26 12:23:23,881 [4] NHibernate.Type.NullableType.NullSafeSet(:0) - binding '' to parameter: 0
+
+2009-04-26 12:23:23,883 [4] NHibernate.Type.NullableType.NullSafeSet(:0) - binding 'Test title' to parameter: 1
+
+2009-04-26 12:23:23,884 [4] NHibernate.Type.NullableType.NullSafeSet(:0) - binding 'http://legeronline.blogspot.com' to parameter: 2
+
+2009-04-26 12:23:23,884 [4] NHibernate.Type.NullableType.NullSafeSet(:0) - binding '3/8/2009' to parameter: 3
+
+2009-04-26 12:23:23,886 [4] NHibernate.Type.NullableType.NullSafeSet(:0) - binding '1' to parameter: 4
+
+2009-04-26 12:23:23,888 [4] NHibernate.AdoNet.SqlClientBatchingBatcher.AddToBatch(:0) - Adding to batch:
+
+2009-04-26 12:23:23,895 [4] NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(:0) - Executing batch
+
+2009-04-26 12:23:23,896 [4] NHibernate.AdoNet.AbstractBatcher.LogCommand(:0) - 
+
+2009-04-26 12:23:23,897 [4] NHibernate.Transaction.AdoTransaction.Enlist(:0) - Enlist Command
+
+2009-04-26 12:23:23,898 [4] NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(:0) - Batch command: UPDATE Recordings SET RecordingDuration = @p0, RecordingTitle = @p1, RecordingUrl = @p2, RecordingDate = @p3 WHERE Id = @p4; @p0 = '', @p1 = 'Test title', @p2 = 'http://legeronline.blogspot.com', @p3 = '3/8/2009 12:00:00 AM', @p4 = '1'
+
+
+2009-04-26 12:23:24,402 [4] NHibernate.AdoNet.AbstractBatcher.LogClosePreparedCommand(:0) - Closed IDbCommand, open IDbCommands: 0
+
+2009-04-26 12:23:24,403 [4] NHibernate.AdoNet.ConnectionManager.FlushEnding(:0) - registering flush end
+
+2009-04-26 12:23:24,403 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PostFlush(:0) - post flush
+
+2009-04-26 12:23:24,404 [4] NHibernate.Impl.SessionImpl.BeforeTransactionCompletion(:0) - before transaction completion
+
+2009-04-26 12:23:24,532 [4] NHibernate.Transaction.AdoTransaction.Commit(:0) - IDbTransaction Committed
+
+2009-04-26 12:23:24,533 [4] NHibernate.Impl.SessionImpl.AfterTransactionCompletion(:0) - transaction completion
+
+2009-04-26 12:23:24,533 [4] NHibernate.AdoNet.ConnectionManager.AggressiveRelease(:0) - aggressively releasing database connection
+
+2009-04-26 12:23:24,534 [4] NHibernate.Connection.ConnectionProvider.CloseConnection(:0) - Closing connection
+
+2009-04-26 12:23:24,534 [4] NHibernate.Transaction.AdoTransaction.Dispose(:0) - IDbTransaction disposed.
+
+2009-04-26 12:23:24,662 [4] NHibernate.Impl.SessionImpl..ctor(:0) - opened session
+
+2009-04-26 12:23:24,663 [4] NHibernate.Transaction.AdoTransaction.Begin(:0) - Begin (Unspecified)
+
+2009-04-26 12:23:24,664 [4] NHibernate.Connection.DriverConnectionProvider.GetConnection(:0) - Obtaining IDbConnection from Driver
+
+2009-04-26 12:23:24,666 [4] NHibernate.AdoNet.AbstractBatcher.LogOpenPreparedCommand(:0) - Opened new IDbCommand, open IDbCommands: 1
+
+2009-04-26 12:23:24,666 [4] NHibernate.AdoNet.AbstractBatcher.Generate(:0) - Building an IDbCommand object for the SqlString: SELECT this_.Id as Id0_0_, this_.RecordingDuration as Recordin2_0_0_, this_.RecordingTitle as Recordin3_0_0_, this_.RecordingUrl as Recordin4_0_0_, this_.RecordingDate as Recordin5_0_0_ FROM Recordings this_
+
+2009-04-26 12:23:24,667 [4] NHibernate.Loader.Loader.GetResultSet(:0) - SELECT this_.Id as Id0_0_, this_.RecordingDuration as Recordin2_0_0_, this_.RecordingTitle as Recordin3_0_0_, this_.RecordingUrl as Recordin4_0_0_, this_.RecordingDate as Recordin5_0_0_ FROM Recordings this_
+
+2009-04-26 12:23:24,668 [4] NHibernate.AdoNet.AbstractBatcher.LogCommand(:0) - SELECT this_.Id as Id0_0_, this_.RecordingDuration as Recordin2_0_0_, this_.RecordingTitle as Recordin3_0_0_, this_.RecordingUrl as Recordin4_0_0_, this_.RecordingDate as Recordin5_0_0_ FROM Recordings this_
+
+2009-04-26 12:23:24,669 [4] NHibernate.Transaction.AdoTransaction.Enlist(:0) - Enlist Command
+
+2009-04-26 12:23:24,671 [4] NHibernate.AdoNet.AbstractBatcher.LogOpenReader(:0) - Opened IDataReader, open IDataReaders: 1
+
+2009-04-26 12:23:24,672 [4] NHibernate.Loader.Loader.DoQuery(:0) - processing result set
+
+2009-04-26 12:23:24,672 [4] NHibernate.Loader.Loader.DoQuery(:0) - result set row: 0
+
+2009-04-26 12:23:24,673 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning '1' as column: Id0_0_
+
+2009-04-26 12:23:24,674 [4] NHibernate.Loader.Loader.GetRow(:0) - result row: EntityKey[van.Core.Recording#1]
+
+2009-04-26 12:23:24,675 [4] NHibernate.Loader.Loader.LoadFromResultSet(:0) - Initializing object from DataReader: [van.Core.Recording#1]
+
+2009-04-26 12:23:24,676 [4] NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(:0) - Hydrating entity: [van.Core.Recording#1]
+
+2009-04-26 12:23:24,677 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning '' as column: Recordin2_0_0_
+
+2009-04-26 12:23:24,680 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning 'Test title' as column: Recordin3_0_0_
+
+2009-04-26 12:23:24,681 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning 'http://legeronline.blogspot.com' as column: Recordin4_0_0_
+
+2009-04-26 12:23:24,681 [4] NHibernate.Type.NullableType.NullSafeGet(:0) - returning '3/8/2009' as column: Recordin5_0_0_
+
+2009-04-26 12:23:24,681 [4] NHibernate.Loader.Loader.DoQuery(:0) - done processing result set (1 rows)
+
+2009-04-26 12:23:24,682 [4] NHibernate.Driver.NHybridDataReader.Dispose(:0) - running NHybridDataReader.Dispose()
+
+2009-04-26 12:23:24,683 [4] NHibernate.AdoNet.AbstractBatcher.LogCloseReader(:0) - Closed IDataReader, open IDataReaders :0
+
+2009-04-26 12:23:24,684 [4] NHibernate.AdoNet.AbstractBatcher.LogClosePreparedCommand(:0) - Closed IDbCommand, open IDbCommands: 0
+
+2009-04-26 12:23:24,684 [4] NHibernate.Loader.Loader.InitializeEntitiesAndCollections(:0) - total objects hydrated: 1
+
+2009-04-26 12:23:24,685 [4] NHibernate.Engine.TwoPhaseLoad.InitializeEntity(:0) - resolving associations for [van.Core.Recording#1]
+
+2009-04-26 12:23:24,686 [4] NHibernate.Engine.TwoPhaseLoad.InitializeEntity(:0) - done materializing entity [van.Core.Recording#1]
+
+2009-04-26 12:23:24,688 [4] NHibernate.Engine.StatefulPersistenceContext.InitializeNonLazyCollections(:0) - initializing non-lazy collections
+
+2009-04-26 12:23:24,688 [4] NHibernate.Transaction.AdoTransaction.Commit(:0) - Start Commit
+
+2009-04-26 12:23:24,689 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(:0) - flushing session
+
+2009-04-26 12:23:24,689 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PrepareEntityFlushes(:0) - processing flush-time cascades
+
+2009-04-26 12:23:24,690 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PrepareCollectionFlushes(:0) - dirty checking collections
+
+2009-04-26 12:23:24,690 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(:0) - Flushing entities and processing referenced collections
+
+2009-04-26 12:23:24,691 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushCollections(:0) - Processing unreferenced collections
+
+2009-04-26 12:23:24,692 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushCollections(:0) - Scheduling collection removes/(re)creates/updates
+
+2009-04-26 12:23:24,692 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(:0) - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+
+2009-04-26 12:23:24,693 [4] NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(:0) - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+
+2009-04-26 12:23:24,694 [4] NHibernate.Impl.Printer.ToString(:0) - listing entities:
+
+2009-04-26 12:23:24,695 [4] NHibernate.Impl.Printer.ToString(:0) - van.Core.Recording{RecordingTitle=Test title, RecordingDate=3/8/2009, RecordingDuration=, Id=1, RecordingUrl=http://legeronline.blogspot.com}
+
+2009-04-26 12:23:24,695 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(:0) - executing flush
+
+2009-04-26 12:23:24,696 [4] NHibernate.AdoNet.ConnectionManager.FlushBeginning(:0) - registering flush begin
+
+2009-04-26 12:23:24,697 [4] NHibernate.AdoNet.ConnectionManager.FlushEnding(:0) - registering flush end
+
+2009-04-26 12:23:24,697 [4] NHibernate.Event.Default.AbstractFlushingEventListener.PostFlush(:0) - post flush
+
+2009-04-26 12:23:24,698 [4] NHibernate.Impl.SessionImpl.BeforeTransactionCompletion(:0) - before transaction completion
+
+2009-04-26 12:23:24,699 [4] NHibernate.Transaction.AdoTransaction.Commit(:0) - IDbTransaction Committed
+
+2009-04-26 12:23:24,699 [4] NHibernate.Impl.SessionImpl.AfterTransactionCompletion(:0) - transaction completion
+
+2009-04-26 12:23:24,700 [4] NHibernate.AdoNet.ConnectionManager.AggressiveRelease(:0) - aggressively releasing database connection
+
+2009-04-26 12:23:24,700 [4] NHibernate.Connection.ConnectionProvider.CloseConnection(:0) - Closing connection
+
+2009-04-26 12:23:24,701 [4] NHibernate.Transaction.AdoTransaction.Dispose(:0) - IDbTransaction disposed.
 
