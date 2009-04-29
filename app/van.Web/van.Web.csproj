@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\van.Web.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -225,7 +226,6 @@
     <Content Include="Content\Images\VAN-1.png" />
     <Content Include="Content\Images\VAN-3.jpg" />
     <Content Include="Content\Images\VAN-4.png" />
-    <Content Include="van.Web.Publish.xml" />
     <Content Include="Views\Calendar\Index.aspx" />
     <Content Include="Views\Recordings\Create.aspx" />
     <Content Include="Views\Recordings\Edit.aspx" />

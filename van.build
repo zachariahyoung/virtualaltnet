@@ -1,79 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project name="van" default="test" xmlns="http://nant.sourceforge.net/release/0.85/nant.xsd">
+<project name="van" default="hello" xmlns="http://nant.sourceforge.net/release/0.85/nant.xsd">
 
-  <property name="build.dir" value="build" />
-  <property name="projectName" value="van"/>
-  <property name="projectTests" value="van.Tests"/>
-  <property name="nant.settings.currentframework" value="net-3.5" />
-  <!--<property name="partCoverReportPath" value="C:\BuildReports\PartCover\${projectName}\" />-->
-  <property name="partCoverReportPath" value="${build.dir}\test-reports\PartCover\" />
-  <property name="nunitExePath" value="C:\Program Files\NUnit 2.4.7\bin\nunit-console.exe" />
+    <property name="version" value="0.0.*" />
+
+    <!--Main paths-->
+    <property name="root-dir" value="${path::get-full-path('..\virtualaltnet')}" />
+    <property name="app-dir" value="${root-dir}\app" />
+    <property name="lib-dir" value="${root-dir}\lib" />
+    <property name="tools-dir" value="${root-dir}\tools" />
+    <property name="test-dir" value="${root-dir}\tests\van.Tests\" />
+    <property name="build-dir" value="${root-dir}\build" />
+    <property name="build-debug-dir" value="${root-dir}\build\Debug" />
+    <property name="build-release-dir" value="${root-dir}\build\Release"/>
+    <property name="build-tests-dir" value="${root-dir}\build\Tests"/>
+    <property name="build-web-dir" value="${build-dir}\build\deploymentdir\bin" />
+    <property name="doc-dir" value="${root-dir}\doc" />
+  <!--<property name="version-file" value="${app-dir}\SpecUnit.Version.xml"/>-->
+
+    <!--Tools paths-->
+    <property name="msbuild" value="C:\WINDOWS\Microsoft.NET\Framework\v3.5\MSBuild.exe" />
+    <property name="nunitconsole" value="${tools-dir}\nunit\nunit-console.exe" />
+    <!--<property name="spec-report" value="${build-dir}\SpecUnit.Report.exe" />-->
+    <echo message="msbuild tool path => ${msbuild} "/>
+    <echo message="Project root path => ${root-dir} "/>  
+  <!--External targets-->
+  <target name="build-debug" depends="_clean-build-dir, _make-build-dir, _compile-debug, _copy-debug-artifacts-to-build-debug-dir" />
+  <target name="compile-web" depends="build-debug, _compile-web" />
+  <target name="build-release" depends="_clean-build-dir, _make-build-dir, _compile-release, _copy-release-artifacts-to-build-dir" />
+  <target name="test" depends="build-debug, _test" description="Compile and run tests" />
+  <!--<target name="generate-spec-report" depends="test, _generate-spec-report" description="Generate the specification report" />
+  <target name="update-version" depends="_get-current-version, _generate-assembly-info" description="Get current version and assign it to assembly metadata" />
+  <target name="package" depends="update-version, build-release, _generate-spec-report, _package-build" description="Build and package a release" />
+  <target name="tc-build" depends="update-version, build-debug, _test, _tc-test, _generate-spec-report, _package-build" description="Compile and run tests" />-->
   
-  <property name="file.solution" value="van.sln"/>
-  <property name="project.config" value="debug"/>
   
-  <target name="build" depends="init,clean.source, compile.source, dist"/>
-
-  <!-- Init targets -->
-
-  <target name="init" description="Initializes build properties">
-    <delete dir="${build.dir}" failonerror="false" includeemptydirs="true" />
-    <mkdir dir="${build.dir}" />
-    <mkdir dir="${build.dir}/test-reports"/>
-    <echo message="Current Directory: ${project::get-base-directory()}"/>
+    <target name="hello">
+      <echo message="Hi, how are you?" />
+      <echo message="You need to tell the build system which target to run" />
+      <echo message="" />
+      <echo message="To get started, try: nant test" />
+      <echo message="" />
+      <echo message="Here are a few more helpful targets found in ${path::get-full-path(path::get-file-name(project::get-buildfile-uri()))}" />
+      <echo message="=> test" />
+      <echo message="=> build-web" />
+      <echo message="=> build-debug" />
+      <echo message="=> build-release" />
+      <echo message="=> package" />
   </target>
-  <!-- Cleans Solution Source files-->
-  <target name="clean.source" >    
-    <exec program="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe"
-          commandline="${file.solution} /t:Clean /p:Configuration=${project.config} /v:q" workingdir="." />
-    <echo message="Clean Finished"/>
-  </target>
-  <!-- Compiles entire Solution files-->
-  <!--<target name="compile.source" depends="clean.source" >
-    <exec program="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe"
-				  commandline="${file.solution} /t:Rebuild /p:Configuration=${project.config} /v:q" workingdir="." />
-    <echo message="Rebuild Finished"/>
-  </target>-->
 
-  <target name="full" depends="clean.source, test, dist"	description="Compiles, tests, and produces distributions" />
-  
-  <target name="compile.source" description="Compiles using the Debug Configuration">
-    <mkdir dir="${build.dir}\Help"/>
-    <msbuild project="${project::get-base-directory()}\van.sln">
-      <property name="Configuration" value="${project.config}" />
-    </msbuild>
+  <!--Clean build dir-->
+  <target name="_clean-build-dir" description="Delete automated build artifacts">
+    <delete dir="${build-dir}" if="${directory::exists(build-dir)}" failonerror="false"/>
   </target>
-  
-  <target name="dist">
-    <mkdir dir="${build.dir}\dist"/>
-    <copy todir="${build.dir}\dist">
-      <fileset basedir="${build.dir}\${project.config}">
-        <include name="**\*"/>
-        <exclude name="**\*.pdb" />
-      </fileset>
-    </copy>
-    <zip zipfile="${build.dir}\${projectName}.zip">
-      <fileset basedir="${build.dir}\dist">
-        <include name="**\*" />
-      </fileset>
-    </zip>
+
+  <!--Make build dir-->
+  <target name="_make-build-dir" description="Create build dir and build report dir">
+    <mkdir dir="${build-dir}" unless="${directory::exists(build-dir)}" />
   </target>
+
+  <!--Make build debug dir-->
+  <target name="_make-build-debug-dir" description="Create build dir and build report dir">
+    <mkdir dir="${build-debug-dir}" unless="${directory::exists(build-debug-dir)}" />
+  </target>
+
   
-  <target name="test" depends="build, run-unit-tests"
-		description="Compile and Run Tests" />
-
- 
-
-  <!-- Internal targets -->
-  <target name="run-unit-tests" description="Measures how much code have been covered by the test">
-    <mkdir dir="${partCoverReportPath}" unless="${directory::exists(partCoverReportPath)}"/>
-    <exec program="tools/PartCover/PartCover.exe" failonerror="false">
-      <arg value="--target=${nunitExePath}" />
-      <arg value="--target-work-dir=${build.dir}\test-reports" />
-      <arg value="--target-args=${projectTests}.dll" />
-      <arg value="--include=[van.Tests]*" />
-      <arg value="--output=${partCoverReportPath}\${projectTests}-Results.xml" />
+  <!-- Compile using the Debug Configuration -->
+  <target name="_compile-debug" description="Compile using the Debug Configuration">
+    <exec program="${msbuild}">
+      <arg value="${root-dir}\van.sln" />
+      <arg value="/v:n" />
+      <arg value="/p:Configuration=Debug" />
+      <arg value="/p:WarningLevel=0" />
+      <arg value="/p:SolutionDir=${app-dir}" />
     </exec>
   </target>
- 
-</project>
+
+  <!--After compile copy artifacts to build debug dir-->
+  <target name="_copy-debug-artifacts-to-build-debug-dir">
+    <copy todir="${build-debug-dir}" overwrite="true">
+      <fileset basedir="${app-dir}\van.Core\bin\Debug\">
+        <include name="*.*" />
+      </fileset>
+    </copy>
+    <copy todir="${build-debug-dir}" overwrite="true">
+      <fileset basedir="${app-dir}\van.Data\bin\Debug\">
+        <include name="*.*" />
+      </fileset>
+    </copy>
+    <copy todir="${build-debug-dir}" overwrite="true">
+      <fileset basedir="${app-dir}\van.Web.Controllers\bin\Debug\">
+        <include name="*.*" />
+      </fileset>
+    </copy>
+    <copy todir="${build-tests-dir}" overwrite="true">
+      <fileset basedir="${test-dir}\bin\Debug\">
+        <include name="*.*" />
+      </fileset>
+    </copy>
+  </target>
+  <!-- Compile using the Release Configuration -->
+  <target name="_compile-release" description="Compile using the Release Configuration">
+    <exec program="${msbuild}">
+      <arg value="${root-dir}\van.sln" />
+      <arg value="/v:n" />
+      <arg value="/p:Configuration=Release" />
+      <arg value="/p:WarningLevel=0" />
+      <arg value="/p:SolutionDir=${app-dir}" />
+    </exec>
+  </target>
+
+  <target name="_copy-release-artifacts-to-build-dir">
+    <copy todir="${build-release-dir}" overwrite="true">
+      <fileset basedir="${app-dir}\Van.Core\bin\Release\">
+        <include name="*.*" />
+      </fileset>
+    </copy>
+    <copy todir="${build-release-dir}" overwrite="true">
+      <fileset basedir="${app-dir}\Van.Data\bin\Release\">
+        <include name="*.*" />
+      </fileset>
+    </copy>
+    <copy todir="${build-release-dir}" overwrite="true">
+      <fileset basedir="${app-dir}\Van.WebControllers\bin\Release\">
+        <include name="*.*" />
+      </fileset>
+    </copy>
+    <copy todir="${build-tests-dir}" overwrite="true">
+      <fileset basedir="${test-dir}\bin\Release\">
+        <include name="*.*" />
+      </fileset>
+    </copy>
+  </target>
+  <!--Test-->
+  <target name="_test">
+    <exec program="${nunitconsole}" verbose="true" failonerror="false">
+      <arg value="${build-tests-dir}/van.Tests.dll" />
+      <arg value="/nologo" />
+    </exec>
+  </target>
+
+
+  <!--TeamCity test launcher-->
+  <target name="_tc-test">
+    <exec program="${teamcity.dotnet.nunitlauncher2.0}" failonerror="false">
+      <arg file="..\build\Tests\van.Tests.dll"/>
+    </exec>
+  </target>
+  
+  <!-- Compile the web site -->
+  <target name="_compile-web" description="Compile Web Site.">
+    <exec program="${msbuild}"
+    commandline="${app-dir}\van.web\van.web.csproj /nologo 
+  /t:Rebuild
+  /t:ResolveReferences;_CopyWebApplication
+  /p:OutDir=${build-dir}\deploymentdir\bin\
+  /p:WebProjectOutputDir=${build-dir}\deploymentdir\"
+    workingdir="."
+    failonerror="true" />
+    <delete>
+      <fileset>
+        <include dir="${build-dir}\deploymentdir\" name="Web.config"/>
+        <include dir="${build-dir}\deploymentdir\" name="NHibernate.config"/>
+      </fileset>
+    </delete>
+  </target>
+
+
+  <target name="print-system-time">
+    <echo message="Current time: ${datetime::now()}" />
+  </target>
+  </project>
