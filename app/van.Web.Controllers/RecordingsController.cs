@@ -23,7 +23,7 @@ namespace van.Web.Controllers
 
         [Transaction]
         public ActionResult Index() {
-            IList<Recording> recordings = recordingRepository.GetAll();
+            var recordings = (List<Recording>) recordingRepository.GetAll();
             return View(recordings);
         }
 
