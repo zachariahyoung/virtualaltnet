@@ -22,6 +22,7 @@ namespace Tests.van.Data.NHibernateMaps
     /// </summary>
     [TestFixture]
     [Category("DB Tests")]
+    [Ignore]
     public class MappingIntegrationExportSchemaTests {
         #region Setup/Teardown
 
