@@ -22,7 +22,7 @@
 
     <!--Tools paths-->
     <property name="msbuild" value="C:\WINDOWS\Microsoft.NET\Framework\v3.5\MSBuild.exe" />
-    <property name="nunitconsole" value="${tools-dir}\NUnit\" />
+    <property name="nunitconsole" value="${tools-dir}\NUnit\nunit-console.exe" />
     <!--<property name="spec-report" value="${build-dir}\SpecUnit.Report.exe" />-->
     <echo message="msbuild tool path => ${msbuild} "/>
     <echo message="Project root path => ${root-dir} "/>  
