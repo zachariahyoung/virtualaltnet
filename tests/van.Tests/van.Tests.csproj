@@ -141,7 +141,9 @@
     <Compile Include="ServiceLocatorInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\app\van.Web.Controllers\van.Web.Controllers.csproj">

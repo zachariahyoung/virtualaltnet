@@ -6,7 +6,8 @@
     <!--Main paths-->
   
     <!--<property name="root-dir" value="${path::get-full-path('..\virtualaltnet')}" />-->
-    <property name="root-dir" value="${teamcity.build.workingDir}" />
+    <!--<property name="root-dir" value="${teamcity.build.workingDir}" />-->
+    <property name="root-dir" value="." />
     <property name="app-dir" value="${root-dir}\app" />
     <property name="lib-dir" value="${root-dir}\lib" />
     <property name="tools-dir" value="${root-dir}\tools" />
