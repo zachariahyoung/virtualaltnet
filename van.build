@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="van" default="hello" xmlns="http://nant.sourceforge.net/release/0.85/nant.xsd">
 
-    <property name="version" value="0.0.*" />
+    <property name="version" value="1.0.0.*" />
 
     <!--Main paths-->
   
-    <!--<property name="root-dir" value="${path::get-full-path('..\virtualaltnet')}" />-->
-    <!--<property name="root-dir" value="${teamcity.build.workingDir}" />-->
     <property name="root-dir" value="."/>
     <property name="app-dir" value="${root-dir}\app" />
     <property name="lib-dir" value="${root-dir}\lib" />
@@ -18,7 +16,8 @@
     <property name="build-tests-dir" value="${root-dir}\build\Tests"/>
     <property name="build-web-dir" value="${build-dir}\build\deploymentdir\bin" />
     <property name="doc-dir" value="${root-dir}\doc" />
-  <!--<property name="version-file" value="${app-dir}\SpecUnit.Version.xml"/>-->
+    <property name="test-report" value="${build-dir}" />
+    <property name="version-file" value="${app-dir}\van.Version.xml"/>
 
     <!--Tools paths-->
     <property name="msbuild" value="C:\WINDOWS\Microsoft.NET\Framework\v3.5\MSBuild.exe" />
@@ -31,11 +30,10 @@
   <target name="compile-web" depends="build-debug, _compile-web" />
   <target name="build-release" depends="_clean-build-dir, _make-build-dir, _compile-release, _copy-release-artifacts-to-build-dir" />
   <target name="test" depends="build-debug, _test" description="Compile and run tests" />
-  <!--<target name="generate-spec-report" depends="test, _generate-spec-report" description="Generate the specification report" />
+  <!--<target name="generate-spec-report" depends="test, _generate-spec-report" description="Generate the specification report" />-->
   <target name="update-version" depends="_get-current-version, _generate-assembly-info" description="Get current version and assign it to assembly metadata" />
-  <target name="package" depends="update-version, build-release, _generate-spec-report, _package-build" description="Build and package a release" />
-  <target name="tc-build" depends="update-version, build-debug, _test, _tc-test, _generate-spec-report, _package-build" description="Compile and run tests" />-->
-  
+  <!--<target name="package" depends="update-version, build-release, _generate-spec-report, _package-build" description="Build and package a release" />
+  <target name="tc-build" depends="update-version, build-debug, _test, _tc-test, _generate-spec-report, _package-build" description="Compile and run tests" />-->  
   
     <target name="hello">
       <echo message="Hi, how are you?" />
@@ -141,7 +139,18 @@
       <arg value="/nologo" />
     </exec>
   </target>
-
+  
+  <!--Generate test report-->
+  <target name = "_generate-testresult-report">
+    <exec program="${test-report}" verbose="true">
+      <arg value="${build-dir}\TeSpecUnit.Specs.dll" />
+    </exec>
+    <move todir="${build-dir}" overwrite="true">
+      <fileset>
+        <include name="SpecUnit.Specs.html" />
+      </fileset>
+    </move>
+  </target>
 
   <!--TeamCity test launcher-->
   <target name="_tc-test">
@@ -169,6 +178,36 @@
   </target>
 
 
+  <!--Version-->
+  <target name="_get-current-version">
+    <if test="${environment::variable-exists('BUILD_NUMBER')}">
+      <property name="version" value="${environment::get-variable('BUILD_NUMBER')}" />
+    </if>
+
+    <echo message="Got version number: ${version}"/>
+  </target>
+
+  <target name="_generate-assembly-info">
+    <asminfo output="${root-dir}\CommonAssemblyInfo.cs" language="CSharp" verbose="true">
+      <imports>
+        <import namespace="System.Reflection" />
+        <import namespace="System.Runtime.CompilerServices" />
+        <import namespace="System.Runtime.InteropServices" />
+      </imports>
+      <attributes>
+        <attribute type="AssemblyCompanyAttribute" value="Virtual Alt Net" />
+        <attribute type="AssemblyCopyrightAttribute" value="Copyright © Virtual Alt Net 2009" />
+        <attribute type="AssemblyVersionAttribute" value="${version}" />
+        <attribute type="AssemblyFileVersionAttribute" value="${version}" />
+      </attributes>
+      <references>
+        <include name="System.Reflection.dll" />
+      </references>
+    </asminfo>
+
+    <echo message="Assigned version number: ${version}"/>
+  </target>
+  
   <target name="print-system-time">
     <echo message="Current time: ${datetime::now()}" />
   </target>
