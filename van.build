@@ -158,7 +158,32 @@
       <arg file="..\build\Tests\van.Tests.dll"/>
     </exec>
   </target>
-  
+
+  <echo message="&lt;configuration&gt;
+     &lt;runtime&gt;
+   &lt;assemblyBinding
+xmlns=&quot;urn:schemas-microsoft-com:asm.v1&quot;&gt;
+   &lt;dependentAssembly&gt;
+   &lt;assemblyIdentity name=&quot;nunit.framework&quot;
+   publicKeyToken=&quot;96d09a1eb7f44a77&quot;
+   culture=&quot;Neutral&quot; /&gt;
+   &lt;bindingRedirect oldVersion=&quot;0.0.0.0-2.4.7.0&quot;
+newVersion=&quot;2.4.8.0&quot; /&gt;
+   &lt;/dependentAssembly&gt;
+   &lt;/assemblyBinding&gt;
+   &lt;/runtime&gt;
+  &lt;/configuration&gt;
+  " file="..\build\test.config" append="false" />
+
+  <nunit2 failonerror="true">
+    <formatter type="Xml" usefile="true" extension=".xml" outputdir="build"/>
+    <test  appconfig="..\build\test.config">
+      <assemblies>
+        <include name="..\build\Tests\van.Tests.dll" />
+      </assemblies>
+    </test>
+  </nunit2>
+
   <!-- Compile the web site -->
   <target name="_compile-web" description="Compile Web Site.">
     <exec program="${msbuild}"
