@@ -165,7 +165,7 @@
   <property name="workingDirectory" value="..\tools\NUnit" />
   
   <target name="_coverage" description="Generate code coverage using NCover">
-    <exec command="&quot;${Program}&quot; &quot;${nunitconsole}&quot; ${testRunnerArgs} //h &quot;${htmlReportDir}&quot; //at &quot;${appendTrendTo}&quot; //x &quot;${coverageFile}&quot; //ll &quot;${logLevel}&quot; //p &quot;${projectName}&quot; //reg //ssp &quot;${symbolSearchLocations}&quot; //w &quot;${workingDirectory}&quot;" />
+    <exec program="&quot;${Program}&quot; &quot;${nunitconsole}&quot; ${testRunnerArgs} //h &quot;${htmlReportDir}&quot; //at &quot;${appendTrendTo}&quot; //x &quot;${coverageFile}&quot; //ll &quot;${logLevel}&quot; //p &quot;${projectName}&quot; //reg //ssp &quot;${symbolSearchLocations}&quot; //w &quot;${workingDirectory}&quot;" />
   </target>
   
   <!-- Compile the web site -->
