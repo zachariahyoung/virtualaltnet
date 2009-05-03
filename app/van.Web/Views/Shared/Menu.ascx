@@ -11,4 +11,6 @@
 		<%= Html.ActionLink<CalendarController>(x=>x.Index(), "Calendar") %></li>
     <li class="third <%=Html.CurrentAction("Index", "Recording") %>">
         <%= Html.ActionLink<RecordingsController>(x=>x.Index(), "Recording") %></li>
+    <li class="third <%=Html.CurrentAction("Index", "About") %>">
+        <%= Html.ActionLink<AboutController>(x=>x.Index(), "About") %></li>
 </ul>
