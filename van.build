@@ -138,6 +138,7 @@
   <target name="_test">
     <mkdir dir="C:\Program Files\NUnit 2.4.8\bin\addins"/>
     <copy file="${teamcity.dotnet.nunitaddin}-2.4.8.dll" todir="C:\Program Files\NUnit 2.4.8\bin\addins"/>
+    <copy file="${teamcity.dotnet.nunitaddin}-2.4.8.pdb" todir="C:\Program Files\NUnit 2.4.8\bin\addins"/>
     <exec program="${nunitconsole}" verbose="true" failonerror="false">
       <arg value="${build-tests-dir}/van.Tests.dll" />
       <arg value="/nologo" />
