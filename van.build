@@ -23,14 +23,13 @@
       <!--Tools paths-->
     <property name="msbuild" value="C:\WINDOWS\Microsoft.NET\Framework\v3.5\MSBuild.exe" />
     <property name="nunitconsole" value="C:\Program Files\NUnit 2.4.8\bin\nunit-console.exe" />
-    <!--<property name="spec-report" value="${build-dir}\SpecUnit.Report.exe" />-->
     <echo message="msbuild tool path => ${msbuild} "/>
     <echo message="Project root path => ${root-dir} "/>  
     <!--External targets-->
     <target name="build-debug" depends="_clean-build-dir, _make-build-dir, _compile-debug, _copy-debug-artifacts-to-build-debug-dir" />
     <target name="compile-web" depends="build-debug, _compile-web" />
     <target name="build-release" depends="_clean-build-dir, _make-build-dir, _compile-release, _copy-release-artifacts-to-build-dir" />
-    <target name="test" depends="build-debug, _test, _coverage" description="Compile and run tests" />
+    <target name="test" depends="build-debug, _test, coverage" description="Compile and run tests" />
     <!--<target name="generate-spec-report" depends="test, _generate-spec-report" description="Generate the specification report" />-->
     <target name="update-version" depends="_get-current-version, _generate-assembly-info" description="Get current version and assign it to assembly metadata" />
     <!--<target name="package" depends="update-version, build-release, _generate-spec-report, _package-build" description="Build and package a release" />
@@ -151,23 +150,11 @@
       <arg file="..\build\Tests\van.Tests.dll"/>
     </exec>
   </target>
-
-  <!-- NCover Properties-->
-  <property name="Program" value="C:\Program Files\NCover\ncover.console.exe" />
-  <property name="testRunnerArgs" value="${build-tests-dir}\van.Tests.dll" />
-  <property name="htmlReportDir" value="${coverage}" />
-  <property name="appendTrendTo" value="${test-report}\TestCoverageTrends.trend" />
-  <property name="coverageFile" value="${test-report}\Coverage.xml" />
-  <property name="logLevel" value="Normal" />
-  <property name="projectName" value="van" />
-  <property name="registerProfiler" value="True" />
-  <property name="symbolSearchLocations" value="Registry, SymbolServer, BuildPath, ExecutingDir" />
-  <property name="workingDirectory" value="..\tools\NUnit" />
-  
-  <target name="_coverage" description="Generate code coverage using NCover">
-    <exec program="&quot;${Program}&quot; &quot;${nunitconsole}&quot; ${testRunnerArgs} //h &quot;${htmlReportDir}&quot; //at &quot;${appendTrendTo}&quot; //x &quot;${coverageFile}&quot; //ll &quot;${logLevel}&quot; //p &quot;${projectName}&quot; //reg //ssp &quot;${symbolSearchLocations}&quot; //w &quot;${workingDirectory}&quot;" />
-  </target>
-  
+  <target name="coverage" description="Generate code coverage using NCover">
+      <ncover program="C:\Program Files\NCover\ncover.console.exe"
+              projectName="van"
+              symbolSearchLocations="Registry, SymbolServer, BuildPath, ExecutingDir"    />
+    </target>
   <!-- Compile the web site -->
   <target name="_compile-web" description="Compile Web Site.">
     <exec program="${msbuild}"
