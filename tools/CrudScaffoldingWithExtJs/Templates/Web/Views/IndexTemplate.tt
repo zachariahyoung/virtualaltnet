@@ -1,0 +1,43 @@
+﻿<#@ import namespace="System.Collections" #>
+
+<#+
+public class IndexTemplate : BaseTemplate
+{
+	public IndexTemplate(string solutionName, EntityScaffoldingDetails entityScaffoldingDetails) 
+		: base(solutionName, entityScaffoldingDetails) { }
+
+	protected override void RenderCore()
+	{
+#>
+<%@ Page Title="<#= EntityScaffoldingDetails.EntityNamePlural #>" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
+	Inherits="System.Web.Mvc.ViewPage<IEnumerable<<#= AppendNamespaceHierarchyTo(SolutionName + ".Core") #>.<#= EntityScaffoldingDetails.EntityName #>>>" %>
+<%@ Import Namespace="<#= AppendNamespaceHierarchyTo(SolutionName + ".Core") #>" %>
+<%@ Import Namespace="<#= SolutionName #>.Web.Controllers" %>
+<#+ if (EntityScaffoldingDetails.NamespaceHierarchy != null) { 
+#><%@ Import Namespace="<#= AppendNamespaceHierarchyTo(SolutionName + ".Web.Controllers") #>" %><#+ 
+	} #> 
+
+<asp:Content ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+    <script language="javascript" type="text/javascript">
+        SharpJs.<#= EntityScaffoldingDetails.EntityNamePlural #>Data = <%= Newtonsoft.Json.JsonConvert.SerializeObject(ViewData.Model) %>;
+    </script>
+
+    <script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/ViewScripts/<#= EntityBaseUrl #>List<#= EntityScaffoldingDetails.EntityNamePlural #>.js"></script>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    <h1><#= EntityScaffoldingDetails.EntityNamePlural #></h1>
+
+    <% if (ViewContext.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()] != null) { %>
+        <p id="pageMessage" class="fade page-message"><%= ViewContext.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()]%></p>
+    <% } %>
+
+    <p id="dynamicMessage" class="page-message" style="display:none"></p>
+
+    <div id="div<#= EntityScaffoldingDetails.EntityNamePlural #>Grid"></div>
+    <%= Html.AntiForgeryToken() %>
+</asp:Content>
+<#+
+	}
+}
+#>

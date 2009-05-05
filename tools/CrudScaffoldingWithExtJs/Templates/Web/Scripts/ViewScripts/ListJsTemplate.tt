@@ -1,0 +1,149 @@
+﻿<#@ import namespace="System.Collections" #>
+
+<#+
+public class ListJsTemplate : BaseTemplate
+{
+	public ListJsTemplate(string solutionName, EntityScaffoldingDetails entityScaffoldingDetails) 
+		: base(solutionName, entityScaffoldingDetails) { }
+
+	protected override void RenderCore()
+	{
+#>
+Ext.onReady(function() {
+    Ext.state.Manager.setProvider(new Ext.state.CookieProvider());
+    Ext.QuickTips.init();
+
+    SharpJs.<#= EntityScaffoldingDetails.EntityNamePlural #>Store = new Ext.data.JsonStore({
+        data: SharpJs.<#= EntityScaffoldingDetails.EntityNamePlural #>Data,
+        fields: [
+            'Id'
+			<#+
+			PushIndent("\t\t\t");
+
+			foreach (EntityProperty property in EntityScaffoldingDetails.EntityProperties) {
+				WriteLine(",'" + property.PropertyName + "'");
+			}
+
+			PopIndent();
+			#>
+		],
+        sortInfo: { field: 'Id', direction: 'ASC' }
+    });
+
+    SharpJs.<#= EntityScaffoldingDetails.EntityNamePlural #>ColumnModel = new Ext.grid.ColumnModel([
+			<#+
+			PushIndent("\t\t\t");
+
+			for (int i=0; i < EntityScaffoldingDetails.EntityProperties.Count; i++) {
+			    if (i > 0) {
+			        Write(",");
+			    }
+			    
+				WriteLine("{ header: '" + EntityScaffoldingDetails.EntityProperties[i].PropertyName + 
+					"', dataIndex: '" + EntityScaffoldingDetails.EntityProperties[i].PropertyName + "' }");
+			}
+
+			PopIndent();
+			#>
+        ]);
+
+    SharpJs.<#= EntityScaffoldingDetails.EntityNamePlural #>ColumnModel.defaultSortable = true;
+
+    // create the grid
+    SharpJs.<#= EntityScaffoldingDetails.EntityNamePlural #>Grid = new Ext.grid.GridPanel({
+        ds: SharpJs.<#= EntityScaffoldingDetails.EntityNamePlural #>Store,
+        cm: SharpJs.<#= EntityScaffoldingDetails.EntityNamePlural #>ColumnModel,
+        sm: new Ext.grid.RowSelectionModel({ singleSelect: true }),
+        renderTo: 'div<#= EntityScaffoldingDetails.EntityNamePlural #>Grid',
+        width: Ext.GRID_WIDTH,
+        height: 418,
+        stripeRows: true,
+        viewConfig: {
+            forceFit: true,
+            emptyText: 'No <#= EntityScaffoldingDetails.EntityNamePluralCamelCase #> were found.'
+        },
+        // inline toolbars
+        tbar: [{
+            text: 'New...',
+            tooltip: 'Create new <#= EntityScaffoldingDetails.EntityName #>',
+            handler: function() {
+                SharpJs.<#= EntityScaffoldingDetails.EntityNamePlural #>Grid.suspendEvents();
+                window.location.href = SharpJs.RootUrl + '<#= EntityBaseUrl #>Create';
+            },
+            iconCls: 'add'
+        }, '-', {
+            text: 'Edit...',
+            tooltip: 'Edit selected <#= EntityScaffoldingDetails.EntityName #>',
+            handler: function() {
+                var selected = SharpJs.<#= EntityScaffoldingDetails.EntityNamePlural #>Grid.getSelectionModel().getSelected();
+
+                if (selected) {
+                    SharpJs.<#= EntityScaffoldingDetails.EntityNamePlural #>Grid.suspendEvents();
+                    window.location.href = SharpJs.RootUrl + '<#= EntityBaseUrl #>Edit/' + selected.data.Id;
+                } else {
+                    Ext.Msg.alert('Edit <#= EntityScaffoldingDetails.EntityName #>', 'Please select a <#= EntityScaffoldingDetails.EntityNameCamelCase #> to edit.');
+                }
+            },
+            iconCls: 'edit'
+        }, '-', {
+            text: 'Delete...',
+            tooltip: 'Delete selected InspectionItem',
+            handler: function() {
+                var selectedRow = SharpJs.<#= EntityScaffoldingDetails.EntityNamePlural #>Grid.getSelectionModel().getSelected();
+
+                if (selectedRow) {
+                    Ext.Msg.confirm('Confirm', 'Really delete?', function(confirmation) {
+                        if (confirmation == 'yes') {
+                            SharpJs.<#= EntityScaffoldingDetails.EntityNamePlural #>Grid.delete<#= EntityScaffoldingDetails.EntityName #>(selectedRow);
+                        }
+                    });
+                } else {
+                    Ext.Msg.alert('Delete Use', 'Please select a <#= EntityScaffoldingDetails.EntityNameCamelCase #> to delete.');
+                }
+            },
+            iconCls: 'remove'
+        }, '->'],
+        delete<#= EntityScaffoldingDetails.EntityName #>: function(selectedRow) {
+            var conn = new Ext.data.Connection();
+
+            conn.request({
+                url: SharpJs.RootUrl + '<#= EntityBaseUrl #>Delete/',
+                method: 'POST',
+                params: {
+                    'id': selectedRow.data.Id,
+                    '__RequestVerificationToken': $("input[name='__RequestVerificationToken']").val()
+                },
+                success: function(response) {
+                    SharpJs.<#= EntityScaffoldingDetails.EntityNamePlural #>Store.remove(selectedRow);
+                    SharpJs.ShowDynamicMessage('The <#= EntityScaffoldingDetails.EntityNameCamelCase #> was successfully deleted.');
+                },
+                failure: function() {
+                    Ext.Msg.alert('Error', 'Sorry, something went wrong. Please try again.');
+                }
+            });
+        },
+        /* Commented until needed - you'll need to change the store to be asynch as well
+        bbar: new Ext.PagingToolbar({
+        pageSize: 15,
+        store: SharpJs.<#= EntityScaffoldingDetails.EntityNamePlural #>Store,
+        displayInfo: true,
+        displayMsg: 'Record {0} - {1} of {2}',
+        emptyMsg: "No records found"
+        }),
+        */
+        plugins: [new Ext.ux.grid.Search({
+            position: 'top',
+            mode: 'local'
+        })]
+    });
+
+    // show record on double-click
+    SharpJs.<#= EntityScaffoldingDetails.EntityNamePlural #>Grid.on("rowdblclick", function(grid, row, e) {
+        grid.suspendEvents();
+        window.location.href = SharpJs.RootUrl + '<#= EntityBaseUrl #>Show/' + grid.getStore().getAt(row).data.Id;
+    });
+});
+<#+
+	}
+}
+#>
