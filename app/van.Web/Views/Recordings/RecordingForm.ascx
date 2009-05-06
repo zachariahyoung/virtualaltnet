@@ -1,50 +1,65 @@
 <%@ Control Language="C#" AutoEventWireup="true"
-	Inherits="System.Web.Mvc.ViewUserControl<van.Core.Recording>" %>
+	Inherits="System.Web.Mvc.ViewUserControl<van.Web.Controllers.RecordingsController.RecordingFormViewModel>" %>
 <%@ Import Namespace="van.Core" %>
+<%@ Import Namespace="van.Web.Controllers" %>
+ 
+
+<% if (ViewContext.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] != null) { %>
+    <p id="pageMessage" class="fade page-message"><%= ViewContext.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()]%></p>
+<% } %>
 
 <%= Html.ValidationSummary() %>
 
+<span class="wufoo">
 <% using (Html.BeginForm()) { %>
     <%= Html.AntiForgeryToken() %>
-    <%= Html.Hidden("id", (ViewData.Model != null) ? ViewData.Model.Id : 0) %>
+    <%= Html.Hidden("Recording.Id", (ViewData.Model.Recording != null) ? ViewData.Model.Recording.Id : 0)%>
 
     <ul>
 		<li>
-			<label for="Recording_RecordingTitle">RecordingTitle:</label>
-			<div>
+			<label class="desc">RecordingTitle</label>
+			<span>
 				<%= Html.TextBox("Recording.RecordingTitle", 
-					(ViewData.Model != null) ? ViewData.Model.RecordingTitle.ToString() : "")%>
-			</div>
-			<%= Html.ValidationMessage("Recording.RecordingTitle")%>
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.RecordingTitle.ToString() : "")%>
+			    <label>
+			        <%= Html.ValidationMessage("Recording.RecordingTitle")%>
+			    </label>
+			</span>
 		</li>
 		<li>
-			<label for="Recording_RecordingUrl">RecordingUrl:</label>
-			<div>
+			<label class="desc">RecordingUrl</label>
+			<span>
 				<%= Html.TextBox("Recording.RecordingUrl", 
-					(ViewData.Model != null) ? ViewData.Model.RecordingUrl.ToString() : "")%>
-			</div>
-			<%= Html.ValidationMessage("Recording.RecordingUrl")%>
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.RecordingUrl.ToString() : "")%>
+			    <label>
+			        <%= Html.ValidationMessage("Recording.RecordingUrl")%>
+			    </label>
+			</span>
 		</li>
 		<li>
-			<label for="Recording_RecordingDate">RecordingDate:</label>
-			<div>
+			<label class="desc">RecordingDate</label>
+			<span>
 				<%= Html.TextBox("Recording.RecordingDate", 
-					(ViewData.Model != null) ? ViewData.Model.RecordingDate.ToString() : "")%>
-			</div>
-			<%= Html.ValidationMessage("Recording.RecordingDate")%>
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.RecordingDate.ToString() : "")%>
+			    <label>
+			        <%= Html.ValidationMessage("Recording.RecordingDate")%>
+			    </label>
+			</span>
 		</li>
 		<li>
-			<label for="Recording_RecordingDuration">RecordingDuration:</label>
-			<div>
+			<label class="desc">RecordingDuration</label>
+			<span>
 				<%= Html.TextBox("Recording.RecordingDuration", 
-					(ViewData.Model != null) ? ViewData.Model.RecordingDuration.ToString() : "")%>
-			</div>
-			<%= Html.ValidationMessage("Recording.RecordingDuration")%>
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.RecordingDuration.ToString() : "")%>
+			    <label>
+			        <%= Html.ValidationMessage("Recording.RecordingDuration")%>
+			    </label>
+			</span>
 		</li>
-	    <li>
+	    <li class="buttons">
             <%= Html.SubmitButton("btnSave", "Save Recording") %>
 	        <%= Html.Button("btnCancel", "Cancel", HtmlButtonType.Button, 
-	                        "window.location.href = '" + ResolveUrl("~") + "Recordings';") %>
+					"window.location.href = '" + Html.BuildUrlFromExpression<RecordingsController>(c => c.Index()) + "';") %>
         </li>
     </ul>
 <% } %>

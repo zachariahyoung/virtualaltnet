@@ -1,25 +1,40 @@
 <%@ Page Title="Recording Details" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
 	Inherits="System.Web.Mvc.ViewPage<van.Core.Recording>" %>
+<%@ Import Namespace="van.Web.Controllers" %>
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <h2>Recording Details</h2>
+    <h1>Recording Details</h1>
 
-    <ul>
-		<li>
-			<label for="Recording.RecordingTitle">Title:</label>
-            <span id="Recording.RecordingTitle"><%= ViewData.Model.RecordingTitle %></span>
-		</li>
-		<li>
-			<label for="Recording.RecordingUrl">Url:</label>
-            <span id="Recording.RecordingUrl"><%= ViewData.Model.RecordingUrl %></span>
-		</li>
-		<li>
-			<label for="Recording.RecordingDate"Date:</label>
-            <span id="Recording.RecordingDate"><%= ViewData.Model.RecordingDate %></span>
-		</li>
-		<li>
-			<label for="Recording.RecordingDuration">Duration:</label>
-            <span id="Recording.RecordingDuration"><%= ViewData.Model.RecordingDuration %></span>
-		</li>
-	</ul>
+    <form class="wufoo">
+		<ul>
+				<li>
+				<label class="desc">RecordingTitle:</label>
+				<span>
+					<%= Server.HtmlEncode(ViewData.Model.RecordingTitle) %>
+				</span>
+			</li>
+				<li>
+				<label class="desc">RecordingUrl:</label>
+				<span>
+					<%= Server.HtmlEncode(ViewData.Model.RecordingUrl) %>
+				</span>
+			</li>
+				<li>
+				<label class="desc">RecordingDate:</label>
+				<span>
+					<%= Server.HtmlEncode(ViewData.Model.RecordingDate) %>
+				</span>
+			</li>
+				<li>
+				<label class="desc">RecordingDuration:</label>
+				<span>
+					<%= Server.HtmlEncode(ViewData.Model.RecordingDuration) %>
+				</span>
+			</li>
+		        <li class="buttons">
+	            <%= Html.Button("btnBack", "Back", HtmlButtonType.Button, 
+                    "window.location.href = '" + Html.BuildUrlFromExpression<RecordingsController>(c => c.Index()) + "';") %>
+            </li>
+		</ul>
+	</form>
 </asp:Content>
