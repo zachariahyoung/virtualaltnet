@@ -23,7 +23,7 @@ namespace van.Web.Controllers
 
         [Transaction]
         public ActionResult Index() {
-            var recordings = (List<Recording>) recordingRepository.GetAll();
+            IList<Recording> recordings = recordingRepository.GetAll();
             return View(recordings);
         }
 
@@ -34,47 +34,52 @@ namespace van.Web.Controllers
         }
 
         public ActionResult Create() {
-            return View();
+            RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
+            return View(viewModel);
         }
 
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Create(Recording recording) {
-            if (recording.IsValid()) {
+            if (ViewData.ModelState.IsValid && recording.IsValid()) {
                 recordingRepository.SaveOrUpdate(recording);
 
-                TempData["message"] = "The recording was successfully created.";
+                TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
+					"The recording was successfully created.";
                 return RedirectToAction("Index");
             }
 
-            MvcValidationAdapter.TransferValidationMessagesTo(ViewData.ModelState,
-                recording.ValidationResults());
-            return View();
+            RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
+            viewModel.Recording = recording;
+            return View(viewModel);
         }
 
         [Transaction]
         public ActionResult Edit(int id) {
-            Recording recording = recordingRepository.Get(id);
-            return View(recording);
+            RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
+            viewModel.Recording = recordingRepository.Get(id);
+            return View(viewModel);
         }
 
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Edit(int id, [ModelBinder(typeof(DefaultModelBinder))] Recording recording) {
-            Recording recordingToUpdate = recordingRepository.Get(id);
+        public ActionResult Edit(Recording recording) {
+            Recording recordingToUpdate = recordingRepository.Get(recording.Id);
             TransferFormValuesTo(recordingToUpdate, recording);
 
-            if (recordingToUpdate.IsValid()) {
-                TempData["message"] = "The recording was successfully updated.";
+            if (ViewData.ModelState.IsValid && recording.IsValid()) {
+                TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
+					"The recording was successfully updated.";
                 return RedirectToAction("Index");
             }
             else {
                 recordingRepository.DbContext.RollbackTransaction();
-                MvcValidationAdapter.TransferValidationMessagesTo(ViewData.ModelState, 
-                    recordingToUpdate.ValidationResults());
-                return View(recordingToUpdate);
+
+				RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
+				viewModel.Recording = recording;
+				return View(viewModel);
             }
         }
 
@@ -108,8 +113,28 @@ namespace van.Web.Controllers
                 resultMessage = "The recording could not be found for deletion. It may already have been deleted.";
             }
 
-            TempData["Message"] = resultMessage;
+            TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = resultMessage;
             return RedirectToAction("Index");
+        }
+
+		/// <summary>
+		/// Holds data to be passed to the Recording form for creates and edits
+		/// </summary>
+        public class RecordingFormViewModel
+        {
+            private RecordingFormViewModel() { }
+
+			/// <summary>
+			/// Creation method for creating the view model. Services may be passed to the creation 
+			/// method to instantiate items such as lists for drop down boxes.
+			/// </summary>
+            public static RecordingFormViewModel CreateRecordingFormViewModel() {
+                RecordingFormViewModel viewModel = new RecordingFormViewModel();
+                
+                return viewModel;
+            }
+
+            public Recording Recording { get; internal set; }
         }
 
         private readonly IRepository<Recording> recordingRepository;
