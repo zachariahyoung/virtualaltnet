@@ -6,32 +6,33 @@
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head id="Head1" runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link rel="shortcut icon" href="<%= ResolveUrl("~") %>Content/images/favicon.ico" />
 <link href="<%= ResolveUrl("~") %>Content/Site.css" rel="stylesheet" type="text/css" media="interactive, braille, emboss, handheld, projection, screen, tty, tv" />
 <link href="<%= ResolveUrl("~") %>Content/print-styles.css" rel="stylesheet" type="text/css" media="print" />
 <link type="text/css" href="<%= ResolveUrl("~") %>Scripts/ext-2.2.1/resources/css/ext-all.css" rel="stylesheet" />
 <!-- Optional styling -->
+
 <link type="text/css" href="<%= ResolveUrl("~") %>Scripts/ext-2.2.1/resources/css/xtheme-gray.css" rel="stylesheet" />
-<% string rootPath = ResolveUrl("~"); %>
+
+<%= Html.IncludeJs("jquery-1.3.2", "MicrosoftAjax", "MicrosoftMvcAjax")%>
 <!-- ExtJS related JavaScript -->
-<script type="text/javascript" src="<%= rootPath %>Scripts/ext-2.2.1/adapter/jquery/ext-jquery-adapter.js"></script>
-<script type="text/javascript" src="<%= rootPath %>Scripts/ext-2.2.1/adapter/ext-base.js"></script>
-<script type="text/javascript" src="<%= rootPath %>Scripts/ext-2.2.1/ext-all-debug.js"></script>
-<!-- Custom ExtJS JavaScript 
-<script type="text/javascript" src="<%= rootPath %>Scripts/Model/Ext.ux/Ext.ux.grid.Search.js"></script>
-<script type="text/javascript" src="<%= rootPath %>Scripts/Model/Ext.ux/Ext.ux.grid.GroupingSummary.js"></script>
--->
+<script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/ext-2.2.1/adapter/jquery/ext-jquery-adapter.js"></script>
+<script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/ext-2.2.1/ext-all-debug.js"></script>
+<!-- Custom ExtJS JavaScript -->
+<script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/Model/Ext.ux/Ext.ux.grid.Search.js"></script>
+<script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/Model/Ext.ux/Ext.ux.grid.GroupingSummary.js"></script>
+
 <script language="javascript" type="text/javascript">
-    <!-- Create a generic namespace to be used by custom JavaScript objects and variables -->
+    <!-- Create a generic ns to be used by custom JavaScript objects and variables -->
     Ext.namespace('SharpJs');
-    SharpJs.RootUrl = '<%= rootPath %>';
+    SharpJs.RootUrl = '<%= ResolveUrl("~") %>';
     Ext.BLANK_IMAGE_URL = SharpJs.RootUrl + 'Scripts/ext-2.2.1/resources/images/default/s.gif';
     <!-- Used by generated index pages - makes it easy to modify grid width globally -->
     Ext.GRID_WIDTH = 1186;
 </script>
 
-<%= Html.IncludeJs("jquery-1.3.2", "MicrosoftAjax", "MicrosoftMvcAjax")%>
+
 
     <% // At bottom to facilitate other JS files to be loaded before page-by-page JS is loaded %>
 <meta name="description" content="Description of your web page goes here." />
@@ -39,7 +40,7 @@
     <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
         <title>Virtual Alt.Net</title>
     </asp:ContentPlaceHolder>
-
+    
 </head>
 <body>
 <div class="none"><a href="#maincontent">skip to the main content area of this page</a></div>

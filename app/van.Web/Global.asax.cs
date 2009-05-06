@@ -85,9 +85,10 @@ namespace van.Web
                     if (!wasNHibernateInitialized)
                     {
                         NHibernateSession.Init(new WebSessionStorage(this),
-                            new[] { Server.MapPath("~/bin/van.Data.dll") },
+                            new string[] { Server.MapPath("~/bin/van.Data.dll") },
                             new AutoPersistenceModelGenerator().Generate(),
                             Server.MapPath("~/NHibernate.config"));
+
 
                         wasNHibernateInitialized = true;
                     }

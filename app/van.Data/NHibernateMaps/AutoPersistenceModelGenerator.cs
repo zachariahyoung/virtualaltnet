@@ -2,9 +2,11 @@ using System;
 using System.Linq;
 using FluentNHibernate;
 using FluentNHibernate.AutoMap;
+using FluentNHibernate.Conventions;
 using SharpArch.Core.DomainModel;
 using SharpArch.Data.NHibernate.FluentNHibernate;
 using van.Core;
+using van.Data.NHibernateMaps.Conventions;
 
 namespace van.Data.NHibernateMaps
 {
@@ -16,10 +18,31 @@ namespace van.Data.NHibernateMaps
                 // If you delete the default class, simply point the following line to an entity within the .Core layer
                 .MapEntitiesFromAssemblyOf<Recording>()
                 .Where(GetAutoMappingFilter)
-                .WithConvention(GetConventions)
+                .ConventionDiscovery.Setup(GetConventions())
+                .WithSetup(GetSetup())
                 .UseOverridesFromAssemblyOf<AutoPersistenceModelGenerator>();
 
             return mappings;
+        }
+
+        private Action<AutoMappingExpressions> GetSetup()
+        {
+            return c =>
+            {
+                c.FindIdentity = type => type.Name == "Id";
+                c.IsBaseType = IsBaseTypeConvention;
+            };
+        }
+
+        private Action<IConventionFinder> GetConventions()
+        {
+            return c =>
+            {
+                c.Add<PrimaryKeyConvention>();
+                c.Add<ReferenceConvention>();
+                c.Add<HasManyConvention>();
+                c.Add<TableNameConvention>();
+            };
         }
 
         /// <summary>
@@ -29,25 +52,6 @@ namespace van.Data.NHibernateMaps
         {
             return t.GetInterfaces().Any(x =>
                  x.IsGenericType && x.GetGenericTypeDefinition() == typeof(IEntityWithTypedId<>));
-        }
-
-        /// <summary>
-        /// This project's conventions (which may be changed) are as follows:
-        /// * Table names are plural
-        /// * The Id of an object is "Id"
-        /// * Foreign keys are "ObjectNameFk"
-        /// * One-to-Many relationships cascade "All"
-        /// 
-        /// Feel free to change this to your project's needs!
-        /// </summary>
-        private void GetConventions(Conventions c)
-        {
-            c.GetTableName = type => Inflector.Net.Inflector.Pluralize(type.Name);
-            c.IsBaseType = IsBaseTypeConvention;
-            c.FindIdentity = type => type.Name == "Id";
-            c.GetForeignKeyName = type => type.Name + "Fk";
-            c.GetForeignKeyNameOfParent = type => type.Name + "Fk";
-            c.OneToManyConvention = o => o.Cascade.All();
         }
 
         private bool IsBaseTypeConvention(Type arg)
