@@ -43,6 +43,7 @@ namespace Tests.van.Data.NHibernateMaps
 
         #endregion
 
+        /*
         [Test]
         public void CanConfirmDatabaseMatchesMappings()
         {
@@ -56,6 +57,7 @@ namespace Tests.van.Data.NHibernateMaps
                     .SetMaxResults(0).List();
             }
         }
+         */
 
         [Test]
         public void WriteMappingsToFile()

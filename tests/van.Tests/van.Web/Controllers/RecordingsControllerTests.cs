@@ -2,13 +2,14 @@ using System;
 using MvcContrib.TestHelper;
 using NUnit.Framework;
 using Rhino.Mocks;
-using NUnit.Framework.SyntaxHelpers;
 using SharpArch.Core.PersistenceSupport;
 using SharpArch.Testing;
+using SharpArch.Testing.NUnit;
 using System.Collections.Generic;
 using System.Web.Mvc;
 using van.Core;
 using van.Web.Controllers;
+ 
 
 namespace Tests.van.Web.Controllers
 {
@@ -29,88 +30,88 @@ namespace Tests.van.Web.Controllers
         public void CanListRecordings() {
             ViewResult result = controller.Index().AssertViewRendered();
 
-            Assert.That(result.ViewData.Model as IList<Recording>, Is.Not.Null);
-            Assert.That((result.ViewData.Model as IList<Recording>).Count, Is.EqualTo(0));
+            result.ViewData.Model.ShouldNotBeNull();
+            (result.ViewData.Model as List<Recording>).Count.ShouldEqual(0);
         }
 
         [Test]
         public void CanShowRecording() {
             ViewResult result = controller.Show(1).AssertViewRendered();
 
-            Assert.That(result.ViewData.Model as Recording, Is.Not.Null);
-            Assert.That((result.ViewData.Model as Recording).Id, Is.EqualTo(1));
+			result.ViewData.ShouldNotBeNull();
+			
+            (result.ViewData.Model as Recording).Id.ShouldEqual(1);
         }
 
         [Test]
         public void CanInitRecordingCreation() {
             ViewResult result = controller.Create().AssertViewRendered();
-
-            Assert.That(result.ViewData.Model as Recording, Is.Null);
+            
+            result.ViewData.Model.ShouldNotBeNull();
+            result.ViewData.Model.ShouldBeOfType(typeof(RecordingsController.RecordingFormViewModel));
+            (result.ViewData.Model as RecordingsController.RecordingFormViewModel).Recording.ShouldBeNull();
         }
 
         [Test]
         public void CanEnsureRecordingCreationIsValid() {
-           Recording recordingFromForm = new Recording();
+            Recording recordingFromForm = new Recording();
             ViewResult result = controller.Create(recordingFromForm).AssertViewRendered();
 
-            Assert.That(result.ViewData.Model as Recording, Is.Null);
-            Assert.That(result.ViewData.ModelState.Count, Is.GreaterThan(0));
-
-            // Example validation message test for lower level testing
-            // Assert.That(result.ViewData.ModelState["Recording.Name"].Errors[0].ErrorMessage, Is.Not.Empty);
+            result.ViewData.Model.ShouldNotBeNull();
+            result.ViewData.Model.ShouldBeOfType(typeof(RecordingsController.RecordingFormViewModel));
         }
 
         [Test]
         public void CanCreateRecording() {
-            var recordingFromForm = CreateTransientRecording();
-            var redirectResult = controller.Create(recordingFromForm)
+            Recording recordingFromForm = CreateTransientRecording();
+            RedirectToRouteResult redirectResult = controller.Create(recordingFromForm)
                 .AssertActionRedirect().ToAction("Index");
-            Assert.That(controller.TempData["message"].ToString().Contains("was successfully created"));
+            controller.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
+				.ShouldContain("was successfully created");
         }
 
         [Test]
         public void CanUpdateRecording() {
             Recording recordingFromForm = CreateTransientRecording();
-            RedirectToRouteResult redirectResult = controller.Edit(1, recordingFromForm)
+            EntityIdSetter.SetIdOf<int>(recordingFromForm, 1);
+            RedirectToRouteResult redirectResult = controller.Edit(recordingFromForm)
                 .AssertActionRedirect().ToAction("Index");
-            Assert.That(controller.TempData["message"].ToString().Contains("was successfully updated"));
+            controller.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
+				.ShouldContain("was successfully updated");
         }
 
         [Test]
         public void CanInitRecordingEdit() {
             ViewResult result = controller.Edit(1).AssertViewRendered();
 
-            Assert.That(result.ViewData.Model as Recording, Is.Not.Null);
-            Assert.That((result.ViewData.Model as Recording).Id, Is.EqualTo(1));
+			result.ViewData.Model.ShouldNotBeNull();
+            result.ViewData.Model.ShouldBeOfType(typeof(RecordingsController.RecordingFormViewModel));
+            (result.ViewData.Model as RecordingsController.RecordingFormViewModel).Recording.Id.ShouldEqual(1);
         }
 
         [Test]
         public void CanDeleteRecording() {
             RedirectToRouteResult redirectResult = controller.Delete(1)
                 .AssertActionRedirect().ToAction("Index");
-            Assert.That(controller.TempData["message"].ToString().Contains("was successfully deleted"));
+            
+            controller.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
+				.ShouldContain("was successfully deleted");
         }
 
 		#region Create Mock Recording Repository
 
         private IRepository<Recording> CreateMockRecordingRepository() {
-            MockRepository mocks = new MockRepository();
 
-            IRepository<Recording> mockedRepository = mocks.StrictMock<IRepository<Recording>>();
-            Expect.Call(mockedRepository.GetAll())
-                .Return(CreateRecordings());
-            Expect.Call(mockedRepository.Get(1)).IgnoreArguments()
-                .Return(CreateRecording());
-            Expect.Call(mockedRepository.SaveOrUpdate(null)).IgnoreArguments()
-                .Return(CreateRecording());
-            Expect.Call(delegate { mockedRepository.Delete(null); }).IgnoreArguments();
+            IRepository<Recording> mockedRepository = MockRepository.GenerateMock<IRepository<Recording>>();
+            mockedRepository.Expect(mr => mr.GetAll()).Return(CreateRecordings());
+            mockedRepository.Expect(mr => mr.Get(1)).IgnoreArguments().Return(CreateRecording());
+            mockedRepository.Expect(mr => mr.SaveOrUpdate(null)).IgnoreArguments().Return(CreateRecording());
+            mockedRepository.Expect(mr => mr.Delete(null)).IgnoreArguments();
 
-            IDbContext mockedDbContext = mocks.StrictMock<IDbContext>();
-            Expect.Call(delegate { mockedDbContext.CommitChanges(); });
-            SetupResult.For(mockedRepository.DbContext).Return(mockedDbContext);
+			IDbContext mockedDbContext = MockRepository.GenerateStub<IDbContext>();
+			mockedDbContext.Stub(c => c.CommitChanges());
+			mockedRepository.Stub(mr => mr.DbContext).Return(mockedDbContext);
             
-            mocks.Replay(mockedRepository);
-
             return mockedRepository;
         }
 
@@ -133,13 +134,12 @@ namespace Tests.van.Web.Controllers
         /// <summary>
         /// Creates a valid, transient Recording; typical of something retrieved back from a form submission
         /// </summary>
-        private static Recording CreateTransientRecording() {
-            var recording = new Recording
-                                {
+        private Recording CreateTransientRecording() {
+            Recording recording = new Recording() {
 				RecordingTitle = "Van Recording",
 				RecordingUrl = "Location of Recording",
 				RecordingDate = DateTime.Parse("1/1/1975 12:00:00 AM"),
-				RecordingDuration = "1.09"
+				RecordingDuration = null
             };
             
             return recording;
