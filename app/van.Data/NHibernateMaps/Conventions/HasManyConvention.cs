@@ -5,15 +5,13 @@ namespace van.Data.NHibernateMaps.Conventions
 {
     public class HasManyConvention : IHasManyConvention
     {
-        public bool Accept(IOneToManyPart oneToManyPart)
-        {
+        public bool Accept(IOneToManyPart oneToManyPart) {
             return true;
         }
 
-        public void Apply(IOneToManyPart oneToManyPart)
-        {
+        public void Apply(IOneToManyPart oneToManyPart) {
             oneToManyPart.KeyColumnNames.Clear();
-            oneToManyPart.KeyColumnNames.Add(oneToManyPart.EntityType.Name + "Fk");
+            oneToManyPart.KeyColumnNames.Add(oneToManyPart.EntityType.Name + "ID");
         }
     }
 }

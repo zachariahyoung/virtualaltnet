@@ -2,20 +2,19 @@ using System;
 using System.Linq;
 using FluentNHibernate;
 using FluentNHibernate.AutoMap;
-using FluentNHibernate.Conventions;
-using SharpArch.Core.DomainModel;
-using SharpArch.Data.NHibernate.FluentNHibernate;
 using van.Core;
+using SharpArch.Core.DomainModel;
 using van.Data.NHibernateMaps.Conventions;
+using FluentNHibernate.Conventions;
+using SharpArch.Data.NHibernate.FluentNHibernate;
+
 
 namespace van.Data.NHibernateMaps
 {
-    public class AutoPersistenceModelGenerator : IAutoPersistenceModelGenerator
-    {
+    public class AutoPersistenceModelGenerator : IAutoPersistenceModelGenerator {
         public AutoPersistenceModel Generate()
         {
             AutoPersistenceModel mappings = AutoPersistenceModel
-                // If you delete the default class, simply point the following line to an entity within the .Core layer
                 .MapEntitiesFromAssemblyOf<Recording>()
                 .Where(GetAutoMappingFilter)
                 .ConventionDiscovery.Setup(GetConventions())
@@ -25,7 +24,7 @@ namespace van.Data.NHibernateMaps
             return mappings;
         }
 
-        private Action<AutoMappingExpressions> GetSetup()
+        private static Action<AutoMappingExpressions> GetSetup()
         {
             return c =>
             {
@@ -34,12 +33,11 @@ namespace van.Data.NHibernateMaps
             };
         }
 
-        private Action<IConventionFinder> GetConventions()
+        private static Action<IConventionFinder> GetConventions()
         {
             return c =>
             {
                 c.Add<PrimaryKeyConvention>();
-                c.Add<ReferenceConvention>();
                 c.Add<HasManyConvention>();
                 c.Add<TableNameConvention>();
             };
@@ -48,13 +46,13 @@ namespace van.Data.NHibernateMaps
         /// <summary>
         /// Provides a filter for only including types which inherit from the IEntityWithTypedId interface.
         /// </summary>
-        private bool GetAutoMappingFilter(Type t)
+        private static bool GetAutoMappingFilter(Type t)
         {
             return t.GetInterfaces().Any(x =>
                  x.IsGenericType && x.GetGenericTypeDefinition() == typeof(IEntityWithTypedId<>));
         }
 
-        private bool IsBaseTypeConvention(Type arg)
+        private static bool IsBaseTypeConvention(Type arg)
         {
             bool derivesFromEntity = arg == typeof(Entity);
             bool derivesFromEntityWithTypedId = arg.IsGenericType &&

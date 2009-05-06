@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.IO;
-using van.Data.NHibernateMaps;
+﻿using System.IO;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
+using van.Data.NHibernateMaps;
 using NUnit.Framework;
-using SharpArch.Data.NHibernate;
 using SharpArch.Testing.NUnit.NHibernate;
+using SharpArch.Data.NHibernate;
+using NHibernate;
+using System.Collections.Generic;
+using NHibernate.Metadata;
 
 namespace Tests.van.Data.NHibernateMaps
 {
@@ -22,39 +23,40 @@ namespace Tests.van.Data.NHibernateMaps
     /// </summary>
     [TestFixture]
     [Category("DB Tests")]
-    [Ignore]
-    public class MappingIntegrationExportSchemaTests {
+    public class MappingIntegrationTests {
         #region Setup/Teardown
 
         [SetUp]
         public virtual void SetUp()
         {
-            GetDatabaseCfg(true);
+            GetDatabaseCfg(false);
+
         }
 
         [TearDown]
         public virtual void TearDown()
-        {
-            if (NHibernateSession.Storage.Session != null)
-            {
-                NHibernateSession.Storage.Session.Dispose();
+        {  
+            if (NHibernateSession.Storages[FACTORY_KEY].Session != null) {
+                NHibernateSession.Storages[FACTORY_KEY].Session.Dispose();
             }
-        }
 
+            NHibernateSession.SessionFactory = null;
+            NHibernateSession.Storage = null;
+        }
+         
         #endregion
 
         /*
         [Test]
         public void CanConfirmDatabaseMatchesMappings()
         {
-            var allClassMetadata = NHibernateSession.SessionFactory.GetAllClassMetadata();
-            Console.WriteLine("The number of Classes =" + allClassMetadata.Count);
+            IDictionary<string, IClassMetadata> allClassMetadata =
+                NHibernateSession.SessionFactories[FACTORY_KEY].GetAllClassMetadata();
 
-            foreach (DictionaryEntry entry in allClassMetadata)
+            foreach (KeyValuePair<string, IClassMetadata> entry in allClassMetadata)
             {
-              
-                NHibernateSession.Current.CreateCriteria((Type)entry.Key)
-                    .SetMaxResults(0).List();
+                NHibernateSession.CurrentFor(FACTORY_KEY).CreateCriteria(entry.Value.GetMappedClass(EntityMode.Poco))
+                     .SetMaxResults(0).List();
             }
         }
          */
@@ -71,7 +73,7 @@ namespace Tests.van.Data.NHibernateMaps
         public void ExportSchemaToFile()
         {
             PrepareSchemaExport(true).Execute(true, false, false, true, null,
-                                              new StreamWriter(DB_FOLDER_PATH + "DbSchema.sql"));
+                new StreamWriter(DB_FOLDER_PATH + "DbSchema.sql"));
         }
 
         [Test]
@@ -82,16 +84,16 @@ namespace Tests.van.Data.NHibernateMaps
 
         private static Configuration GetDatabaseCfg(bool useLiveDb)
         {
+            NHibernateSession.SessionFactory = null;
+            NHibernateSession.Storage = null;
+
             var mappingAssemblies = RepositoryTestsHelper.GetMappingAssemblies();
-            Console.WriteLine("The entity map type is =" + mappingAssemblies.GetType());
             return useLiveDb
-                       ? NHibernateSession.Init(new SimpleSessionStorage(), mappingAssemblies,
-                                                new AutoPersistenceModelGenerator().Generate(),
-                                                LIVE_DB_CONFIG_PATH)
+                       ? NHibernateSession.Init(new SimpleSessionStorage(FACTORY_KEY), mappingAssemblies,
+                new AutoPersistenceModelGenerator().Generate(), LIVE_DB_CONFIG_PATH)
                        :
                            NHibernateSession.Init(new SimpleSessionStorage(), mappingAssemblies,
                                                   new AutoPersistenceModelGenerator().Generate());
-            
         }
 
         private static SchemaExport PrepareSchemaExport(bool useLiveDb)
@@ -106,5 +108,6 @@ namespace Tests.van.Data.NHibernateMaps
 
         private const string LIVE_DB_CONFIG_PATH = "../../../../app/van.Web/NHibernate.config";
         private const string DB_FOLDER_PATH = "../../../../db/";
+        private const string FACTORY_KEY = "nhibernate.tests_using_live_database";
     }
 }
