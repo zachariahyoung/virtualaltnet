@@ -1,0 +1,45 @@
+5:38:54 PM	MoveCommonAssemblyInfoToRoot: Moving CommonAssemblyInfo.cs from C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\SolutionItemsContainer\CommonAssemblyInfo.cs to root at C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\CommonAssemblyInfo.cs
+5:38:54 PM	MoveSolutionItemsToLib: Moving solution items from C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\SolutionItemsContainer\Solution Items to lib at C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\lib
+5:38:56 PM	MoveSolutionItemsToToolsLib: Moving tools solution items from C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\ToolsSolutionItemsContainer\Solution Items to tools lib at C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\tools\lib
+5:38:58 PM	MoveProjectTo: Removing zach.Core from solution
+5:39:00 PM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\zach.Core\zach.Core.csproj
+5:39:00 PM	MoveProjectTo: Moving zach.Core from C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\zach.Core to target location at C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Core
+5:39:00 PM	MoveProjectTo: Adding zach.Core to solution
+5:39:02 PM	CaptureProjectGuidOf: Does C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Core\zach.Core.csproj exist? True
+5:39:02 PM	CaptureProjectGuidOf: About to open C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Core\zach.Core.csproj
+5:39:02 PM	CaptureProjectGuidOf: Captured the GUID {3EEF5F72-BE1B-4FD7-A024-D61A97A0E3D1} for zach.Core
+5:39:02 PM	MoveProjectTo: Removing zach.ApplicationServices from solution
+5:39:04 PM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\zach.ApplicationServices\zach.ApplicationServices.csproj
+5:39:04 PM	MoveProjectTo: Moving zach.ApplicationServices from C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\zach.ApplicationServices to target location at C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.ApplicationServices
+5:39:04 PM	MoveProjectTo: Adding zach.ApplicationServices to solution
+5:39:05 PM	CaptureProjectGuidOf: Does C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.ApplicationServices\zach.ApplicationServices.csproj exist? True
+5:39:05 PM	CaptureProjectGuidOf: About to open C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.ApplicationServices\zach.ApplicationServices.csproj
+5:39:05 PM	CaptureProjectGuidOf: Captured the GUID {BF98ED86-B0EE-44C3-9AEC-9E55F168BB78} for zach.ApplicationServices
+5:39:07 PM	MoveProjectTo: Removing zach.Data from solution
+5:39:09 PM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\zach.Data\zach.Data.csproj
+5:39:09 PM	MoveProjectTo: Moving zach.Data from C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\zach.Data to target location at C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Data
+5:39:09 PM	MoveProjectTo: Adding zach.Data to solution
+5:39:10 PM	CaptureProjectGuidOf: Does C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Data\zach.Data.csproj exist? True
+5:39:10 PM	CaptureProjectGuidOf: About to open C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Data\zach.Data.csproj
+5:39:10 PM	CaptureProjectGuidOf: Captured the GUID {CC348B44-CCD2-447E-BF8F-F372EA1D1662} for zach.Data
+5:39:12 PM	MoveProjectTo: Removing zach.Web.Controllers from solution
+5:39:14 PM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\zach.Web.Controllers\zach.Web.Controllers.csproj
+5:39:14 PM	MoveProjectTo: Moving zach.Web.Controllers from C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\zach.Web.Controllers to target location at C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web.Controllers
+5:39:14 PM	MoveProjectTo: Adding zach.Web.Controllers to solution
+5:39:15 PM	CaptureProjectGuidOf: Does C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web.Controllers\zach.Web.Controllers.csproj exist? True
+5:39:15 PM	CaptureProjectGuidOf: About to open C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web.Controllers\zach.Web.Controllers.csproj
+5:39:15 PM	CaptureProjectGuidOf: Captured the GUID {D054E01B-34E7-4297-BB4B-E42815376265} for zach.Web.Controllers
+5:39:23 PM	MoveProjectTo: Removing zach.Tests from solution
+5:39:24 PM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\zach.Tests\zach.Tests.csproj
+5:39:24 PM	MoveProjectTo: Moving zach.Tests from C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\zach.Tests to target location at C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\tests\zach.Tests
+5:39:24 PM	MoveProjectTo: Adding zach.Tests to solution
+5:39:33 PM	MoveProjectTo: Removing zach.Web from solution
+5:39:35 PM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\zach.Web\zach.Web.csproj
+5:39:35 PM	MoveProjectTo: Moving zach.Web from C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\zach.Web to target location at C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web
+5:39:35 PM	MoveProjectTo: Adding zach.Web to solution
+5:39:38 PM	MoveProjectTo: Removing CrudScaffolding from solution
+5:39:40 PM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\CrudScaffolding\CrudScaffolding.csproj
+5:39:40 PM	MoveProjectTo: Moving CrudScaffolding from C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\CrudScaffolding to target location at C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\tools\CrudScaffolding
+5:39:40 PM	MoveProjectTo: Adding CrudScaffolding to solution folder C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\tools\CrudScaffolding
+5:39:40 PM	ExcludeProjectFromBuildProcess: Setting build to false for project zach\tools\CrudScaffolding\CrudScaffolding.csproj within the Debug configuration
+5:39:40 PM	ExcludeProjectFromBuildProcess: Setting build to false for project zach\tools\CrudScaffolding\CrudScaffolding.csproj within the Release configuration

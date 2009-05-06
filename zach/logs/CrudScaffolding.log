@@ -1,0 +1,24 @@
+5:58:28 PM	Opened solution for addition of generated files
+5:58:31 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\tests\zach.Tests\zach.Core\RecordingTests.cs to project named zach.Tests with AddFromFile
+5:58:31 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\tests\zach.Tests\zach.Core\RecordingTests.cs
+5:58:32 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Core\Recording.cs to project named zach.Core with AddFromFile
+5:58:33 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Core\Recording.cs
+5:58:33 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\tests\zach.Tests\zach.Web\Controllers\RecordingsControllerTests.cs to project named zach.Tests with AddFromFile
+5:58:34 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\tests\zach.Tests\zach.Web\Controllers\RecordingsControllerTests.cs
+5:58:34 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web.Controllers\RecordingsController.cs to project named zach.Web.Controllers with AddFromFile
+5:58:35 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web.Controllers\RecordingsController.cs
+5:58:35 PM	Added directory C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web\Scripts\ViewScripts\Recordings\
+5:58:36 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web\Scripts\ViewScripts\Recordings\ListRecordings.js to project named zach.Web with AddFromFile
+5:58:37 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web\Scripts\ViewScripts\Recordings\ListRecordings.js
+5:58:37 PM	Added directory C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web\Views\Recordings\
+5:58:38 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web\Views\Recordings\RecordingForm.ascx to project named zach.Web with AddFromFile
+5:58:38 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web\Views\Recordings\RecordingForm.ascx
+5:58:39 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web\Views\Recordings\Create.aspx to project named zach.Web with AddFromFile
+5:58:39 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web\Views\Recordings\Create.aspx
+5:58:40 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web\Views\Recordings\Edit.aspx to project named zach.Web with AddFromFile
+5:58:41 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web\Views\Recordings\Edit.aspx
+5:58:42 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web\Views\Recordings\Index.aspx to project named zach.Web with AddFromFile
+5:58:42 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web\Views\Recordings\Index.aspx
+5:58:43 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web\Views\Recordings\Show.aspx to project named zach.Web with AddFromFile
+5:58:43 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\zach\zach\app\zach.Web\Views\Recordings\Show.aspx
+5:58:50 PM	Closed solution after addition of generated files
