@@ -6,7 +6,6 @@ using SharpArch.Web.Castle;
 using Castle.MicroKernel.Registration;
 using SharpArch.Core.CommonValidator;
 using SharpArch.Core.NHibernateValidator.CommonValidatorAdapter;
-using Rhino.Commons;
 
 
 namespace van.Web.CastleWindsor {
@@ -22,7 +21,6 @@ namespace van.Web.CastleWindsor {
         {
             AddGenericRepositoriesTo(container);
             AddCustomRepositoriesTo(container);
-            AddRhinoSecurityComponentsTo(container);
             container.AddComponent("validator",
                 typeof(IValidator), typeof(Validator));
         }
@@ -39,20 +37,12 @@ namespace van.Web.CastleWindsor {
         {
             container.AddComponent("entityDuplicateChecker",
                 typeof(IEntityDuplicateChecker), typeof(EntityDuplicateChecker));
-            container.AddComponent("repositoryType", typeof(SharpArch.Core.PersistenceSupport.IRepository<>),
-            typeof(SharpArch.Data.NHibernate.Repository<>));
             container.AddComponent("nhibernateRepositoryType",
                 typeof(INHibernateRepository<>), typeof(NHibernateRepository<>));
             container.AddComponent("repositoryWithTypedId",
                 typeof(IRepositoryWithTypedId<,>), typeof(RepositoryWithTypedId<,>));
             container.AddComponent("nhibernateRepositoryWithTypedId",
                 typeof(INHibernateRepositoryWithTypedId<,>), typeof(NHibernateRepositoryWithTypedId<,>));
-        }
-
-        private static void AddRhinoSecurityComponentsTo(IWindsorContainer container)
-        {
-            container.AddComponent("rhinoRepositoryType", typeof(Rhino.Commons.IRepository<>), typeof(NHRepository<>));
-            container.AddComponent("unitOfWorkFactoryType", typeof(IUnitOfWorkFactory), typeof(NHibernateUnitOfWorkFactory));
         }
     }
 }

@@ -15,6 +15,9 @@ namespace van.Web.Controllers
     [HandleError]
     public class RecordingsController : Controller
     {
+
+        private readonly IRepository<Recording> recordingRepository;
+
         public RecordingsController(IRepository<Recording> recordingRepository) {
             Check.Require(recordingRepository != null, "recordingRepository may not be null");
 
@@ -83,7 +86,7 @@ namespace van.Web.Controllers
             }
         }
 
-        private void TransferFormValuesTo(Recording recordingToUpdate, Recording recordingFromForm) {
+        private static void TransferFormValuesTo(Recording recordingToUpdate, Recording recordingFromForm) {
 			recordingToUpdate.RecordingTitle = recordingFromForm.RecordingTitle;
 			recordingToUpdate.RecordingUrl = recordingFromForm.RecordingUrl;
 			recordingToUpdate.RecordingDate = recordingFromForm.RecordingDate;
@@ -129,7 +132,7 @@ namespace van.Web.Controllers
 			/// method to instantiate items such as lists for drop down boxes.
 			/// </summary>
             public static RecordingFormViewModel CreateRecordingFormViewModel() {
-                RecordingFormViewModel viewModel = new RecordingFormViewModel();
+                var viewModel = new RecordingFormViewModel();
                 
                 return viewModel;
             }
@@ -137,6 +140,6 @@ namespace van.Web.Controllers
             public Recording Recording { get; internal set; }
         }
 
-        private readonly IRepository<Recording> recordingRepository;
+       
     }
 }

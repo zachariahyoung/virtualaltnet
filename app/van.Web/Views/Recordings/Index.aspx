@@ -1,5 +1,5 @@
 <%@ Page Title="Recordings" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
-	Inherits="System.Web.Mvc.ViewPage<IEnumerable<van.Core.Recording>>" %>
+	Inherits="System.Web.Mvc.ViewPage<IEnumerable<Recording>>" %>
 <%@ Import Namespace="van.Core" %>
 <%@ Import Namespace="van.Web.Controllers" %>
  

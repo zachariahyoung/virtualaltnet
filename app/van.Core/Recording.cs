@@ -1,5 +1,4 @@
 using NHibernate.Validator.Constraints;
-using SharpArch.Core.PersistenceSupport;
 using SharpArch.Core.DomainModel;
 using System;
 using Newtonsoft.Json;
@@ -12,7 +11,6 @@ namespace van.Core
     /// </summary>
     public class Recording : Entity
     {
-        Guid securityKey = Guid.NewGuid();
         /// <summary>
         /// Gets or sets the recording title.
         /// </summary>
@@ -38,24 +36,14 @@ namespace van.Core
         [Past]
         [JsonProperty]
 		public virtual DateTime RecordingDate { get; set; }
-        
-        [NotNull]
-        [JsonProperty]
+
         /// <summary>
         /// Gets or sets the duration of the recording.
         /// </summary>
         /// <value>The duration of the recording.</value>
-		public virtual string RecordingDuration { get; set; }
-
-
-        /// <summary>
-        /// Gets or sets the security key.
-        /// </summary>
-        /// <value>The security key.</value>
-        public virtual Guid SecurityKey
-        {
-            get { return securityKey; }
-            set { securityKey = value;}
-        }
-    }
+        [NotNull]
+        [JsonProperty]
+        public virtual string RecordingDuration { get; set; }
+        
+   }
 }

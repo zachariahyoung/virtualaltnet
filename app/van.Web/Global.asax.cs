@@ -47,7 +47,6 @@ namespace van.Web
 
             container.RegisterControllers(typeof(HomeController).Assembly);
             ComponentRegistrar.AddComponentsTo(container);
-            FacilitiesRegistrar.AddFacilitiesTo(container);
             ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(container));
 
             return container;
@@ -92,7 +91,7 @@ namespace van.Web
         {
             NHibernateSession.Init(
                 webSessionStorage,
-                new string[] { Server.MapPath("~/bin/van.Data.dll") },
+                new[] { Server.MapPath("~/bin/van.Data.dll") },
                 new AutoPersistenceModelGenerator().Generate(),
                 Server.MapPath("~/NHibernate.config"));
         }
