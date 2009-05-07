@@ -84,8 +84,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\MvcContrib.FluentHtml.dll</HintPath>
     </Reference>
-      <HintPath>..\..\lib\NHibernate.dll</HintPath>
+    <Reference Include="NHibernate, Version=2.1.0.1001, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.1001, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -231,6 +232,10 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\van.Data\van.Data.csproj">
+      <Project>{2809B046-D341-4CFE-B385-F9A3631CC2AE}</Project>
+      <Name>van.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\van.Web.Controllers\van.Web.Controllers.csproj">
       <Project>{A6AAC06B-9E6E-4130-AE65-0CB6A692B64C}</Project>
       <Name>van.Web.Controllers</Name>

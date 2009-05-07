@@ -57,7 +57,7 @@ namespace van.Web
         {
             // Useful for debugging
             Exception ex = Server.GetLastError();
-            ReflectionTypeLoadException reflectionTypeLoadException = ex as ReflectionTypeLoadException;
+            var reflectionTypeLoadException = ex as ReflectionTypeLoadException;
         }
         /// <summary>
         /// Due to issues on IIS7, the NHibernate initialization must occur in Init().
