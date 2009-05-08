@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{A6AAC06B-9E6E-4130-AE65-0CB6A692B64C}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -43,11 +43,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\NHibernate.Validator.dll</HintPath>
     </Reference>
-    <Reference Include="SharpArch.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="SharpArch.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b5f559ae0ac4e006, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\SharpArch.Core.dll</HintPath>
     </Reference>
-    <Reference Include="SharpArch.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="SharpArch.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b5f559ae0ac4e006, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\SharpArch.Web.dll</HintPath>
     </Reference>
@@ -88,13 +88,13 @@
     <Compile Include="RouteRegistrar.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\van.Core\van.Core.csproj">
-      <Project>{1AADF674-DD89-4434-9C21-40DA2270F0D0}</Project>
-      <Name>van.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\van.ApplicationServices\van.ApplicationServices.csproj">
       <Project>{EDA02190-7EB8-41FC-B488-38207A7E658A}</Project>
       <Name>van.ApplicationServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\van.Core\van.Core.csproj">
+      <Project>{1AADF674-DD89-4434-9C21-40DA2270F0D0}</Project>
+      <Name>van.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
