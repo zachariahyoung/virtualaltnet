@@ -28,12 +28,14 @@ namespace van.Web
 
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new AreaViewEngine());
+
             ModelBinders.Binders.DefaultBinder = new SharpModelBinder();
 
             IWindsorContainer container = InitializeServiceLocator();
-           
+
             RouteRegistrar.RegisterRoutesTo(RouteTable.Routes);
         }
+
 
         /// <summary>
         /// Instantiate the container and add all Controllers that derive from 
@@ -47,6 +49,7 @@ namespace van.Web
 
             container.RegisterControllers(typeof(HomeController).Assembly);
             ComponentRegistrar.AddComponentsTo(container);
+
             ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(container));
 
             return container;
@@ -80,7 +83,8 @@ namespace van.Web
         /// </summary>
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-            NHibernateInitializer.Instance().InitializeNHibernateOnce(InitializeNHibernateSession);
+            NHibernateInitializer.Instance().InitializeNHibernateOnce(
+                () => InitializeNHibernateSession());
         }
 
         /// <summary>
@@ -91,7 +95,7 @@ namespace van.Web
         {
             NHibernateSession.Init(
                 webSessionStorage,
-                new[] { Server.MapPath("~/bin/van.Data.dll") },
+                new string[] { Server.MapPath("~/bin/van.Data.dll") },
                 new AutoPersistenceModelGenerator().Generate(),
                 Server.MapPath("~/NHibernate.config"));
         }

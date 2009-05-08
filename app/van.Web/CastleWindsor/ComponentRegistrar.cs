@@ -37,6 +37,8 @@ namespace van.Web.CastleWindsor {
         {
             container.AddComponent("entityDuplicateChecker",
                 typeof(IEntityDuplicateChecker), typeof(EntityDuplicateChecker));
+            container.AddComponent("repositoryType",
+                typeof(IRepository<>), typeof(Repository<>));
             container.AddComponent("nhibernateRepositoryType",
                 typeof(INHibernateRepository<>), typeof(NHibernateRepository<>));
             container.AddComponent("repositoryWithTypedId",

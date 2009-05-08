@@ -1,13 +1,8 @@
 using System.Web.Mvc;
-using van.Core;
 using SharpArch.Core.PersistenceSupport;
-using SharpArch.Core.DomainModel;
+using van.Core;
 using System.Collections.Generic;
-using System;
 using SharpArch.Web.NHibernate;
-using NHibernate.Validator.Engine;
-using System.Text;
-using SharpArch.Web.CommonValidator;
 using SharpArch.Core;
 
 namespace van.Web.Controllers
@@ -26,7 +21,7 @@ namespace van.Web.Controllers
 
         [Transaction]
         public ActionResult Index() {
-            IList<Recording> recordings = recordingRepository.GetAll();
+            var recordings = recordingRepository.GetAll();
             return View(recordings);
         }
 
