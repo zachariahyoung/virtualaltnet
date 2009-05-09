@@ -15,10 +15,10 @@ namespace van.Web.Controllers
             // i.e., the root area should be the last area registered
 
             // Example illustrative routes with a nested area - note that the order of registration is important
-            //routes.CreateArea("Organization/Department", "van.Web.Controllers.Organization.Department",
-            //    routes.MapRoute(null, "Organization/Department/{controller}/{action}", new { action = "Index" }),
-            //    routes.MapRoute(null, "Organization/Department/{controller}/{action}/{id}")
-            //);
+            routes.CreateArea("Recordings", "van.Web.Controllers",
+                routes.MapRoute(null, "Recordings/{controller}/{action}", new { action = "Index" }),
+                routes.MapRoute(null, "Recordings/{controller}/{action}/{id}")
+            );
             
            // Routing config for the root area
             routes.CreateArea("Root", "van.Web.Controllers", 

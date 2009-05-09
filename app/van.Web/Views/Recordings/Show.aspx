@@ -22,7 +22,7 @@
 				<li>
 				<label class="desc">RecordingDate:</label>
 				<span>
-					<%= Server.HtmlEncode(ViewData.Model.RecordingDate.ToString()) %>
+					<%= Server.HtmlEncode(ViewData.Model.RecordingDate.Date.ToShortDateString()) %>
 				</span>
 			</li>
 				<li>

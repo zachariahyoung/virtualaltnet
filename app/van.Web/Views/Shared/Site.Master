@@ -29,7 +29,7 @@
     SharpJs.RootUrl = '<%= ResolveUrl("~") %>';
     Ext.BLANK_IMAGE_URL = SharpJs.RootUrl + 'Scripts/ext-2.2.1/resources/images/default/s.gif';
     <!-- Used by generated index pages - makes it easy to modify grid width globally -->
-    Ext.GRID_WIDTH = 1186;
+    Ext.GRID_WIDTH = 750;
 </script>
 
 

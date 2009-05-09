@@ -15,10 +15,10 @@ Ext.onReady(function() {
     });
 
     SharpJs.RecordingsColumnModel = new Ext.grid.ColumnModel([
-			{ header: 'RecordingTitle', dataIndex: 'RecordingTitle' }
-			,{ header: 'RecordingUrl', dataIndex: 'RecordingUrl' }
-			,{ header: 'RecordingDate', dataIndex: 'RecordingDate' }
-			,{ header: 'RecordingDuration', dataIndex: 'RecordingDuration' }
+			{ header: 'Title', dataIndex: 'RecordingTitle' }
+			,{ header: 'Url', dataIndex: 'RecordingUrl' }
+			,{ header: 'Date', dataIndex: 'RecordingDate' }
+			,{ header: 'Duration', dataIndex: 'RecordingDuration' }
         ]);
 
     SharpJs.RecordingsColumnModel.defaultSortable = true;

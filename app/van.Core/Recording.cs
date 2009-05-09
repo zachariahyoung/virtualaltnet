@@ -2,7 +2,6 @@ using NHibernate.Validator.Constraints;
 using SharpArch.Core.DomainModel;
 using System;
 using Newtonsoft.Json;
-using SharpArch.Core.PersistenceSupport;
 
 namespace van.Core
 {
@@ -12,12 +11,6 @@ namespace van.Core
     public class Recording : Entity
     {
 
-        /// <summary>
-        /// Gets or sets the id.
-        /// </summary>
-        /// <value>The id.</value>
-        [JsonProperty]
-        public virtual int Id { get; set; }
         /// <summary>
         /// Gets or sets the recording title.
         /// </summary>

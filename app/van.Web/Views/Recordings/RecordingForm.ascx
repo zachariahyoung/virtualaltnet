@@ -17,7 +17,7 @@
 
     <ul>
 		<li>
-			<label class="desc">RecordingTitle</label>
+			<label class="desc">Title</label>
 			<span>
 				<%= Html.TextBox("Recording.RecordingTitle", 
 					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.RecordingTitle : "")%>
@@ -27,7 +27,7 @@
 			</span>
 		</li>
 		<li>
-			<label class="desc">RecordingUrl</label>
+			<label class="desc">Url</label>
 			<span>
 				<%= Html.TextBox("Recording.RecordingUrl", 
 					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.RecordingUrl.ToString() : "")%>
@@ -37,10 +37,10 @@
 			</span>
 		</li>
 		<li>
-			<label class="desc">RecordingDate</label>
+			<label class="desc">Date</label>
 			<span>
 				<%= Html.TextBox("Recording.RecordingDate", 
-					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.RecordingDate.ToString() : "")%>
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.RecordingDate.Date.ToShortDateString() : "")%>
 			    <label>
 			        <%= Html.ValidationMessage("Recording.RecordingDate")%>
 			    </label>

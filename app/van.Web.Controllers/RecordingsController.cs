@@ -1,7 +1,6 @@
 using System.Web.Mvc;
 using SharpArch.Core.PersistenceSupport;
 using van.Core;
-using System.Collections.Generic;
 using SharpArch.Web.NHibernate;
 using SharpArch.Core;
 
@@ -50,7 +49,7 @@ namespace van.Web.Controllers
 
             RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
             viewModel.Recording = recording;
-            return View(viewModel);
+            return RedirectToAction("Index");
         }
 
         [Transaction]
