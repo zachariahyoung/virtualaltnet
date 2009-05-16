@@ -1,0 +1,56 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Scripts/d:ViewScripts/d:Recordings/f:ListRecordings.js" caret="592" fromTop="5" />
+      <File id="AF8B1560-C67D-4525-B2AB-D3DEBB21BD6C/f:Recording.cs" caret="603" fromTop="25" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Home/f:Index.aspx" caret="1423" fromTop="34" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Shared/f:Site.Master" caret="1447" fromTop="11" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Scripts/d:ViewScripts/d:Recordings/f:ListRecordings.js" caret="606" fromTop="15" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Scripts/d:ViewScripts/d:Recordings/f:ListRecordings.js" caret="109" fromTop="1" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Scripts/d:ViewScripts/d:Recordings/f:ListRecordings.js" caret="124" fromTop="2" />
+      <File id="AF8B1560-C67D-4525-B2AB-D3DEBB21BD6C/f:Recording.cs" caret="291" fromTop="11" />
+      <File id="AF8B1560-C67D-4525-B2AB-D3DEBB21BD6C/f:Recording.cs" caret="404" fromTop="17" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Scripts/d:ViewScripts/d:Recordings/f:ListRecordings.js" caret="918" fromTop="14" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Scripts/d:ViewScripts/d:Recordings/f:ListRecordings.js" caret="592" fromTop="5" />
+      <File id="AF8B1560-C67D-4525-B2AB-D3DEBB21BD6C/f:Recording.cs" caret="603" fromTop="25" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Home/f:Index.aspx" caret="282" fromTop="24" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Home/f:Index.aspx" caret="282" fromTop="23" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Home/f:Index.aspx" caret="282" fromTop="3" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Home/f:Index.aspx" caret="282" fromTop="10" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Home/f:Index.aspx" caret="282" fromTop="32" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Home/f:Index.aspx" caret="282" fromTop="33" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Home/f:Index.aspx" caret="282" fromTop="28" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Home/f:Index.aspx" caret="282" fromTop="15" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Home/f:Index.aspx" caret="282" fromTop="29" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Home/f:Index.aspx" caret="282" fromTop="2" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Home/f:Index.aspx" caret="282" fromTop="2" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Home/f:Index.aspx" caret="1423" fromTop="34" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Shared/f:Site.Master" caret="1066" fromTop="15" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Shared/f:Site.Master" caret="2023" fromTop="20" />
+      <File id="411D0A76-EC70-4A1D-B838-8EDE9E783B1E/d:Views/d:Shared/f:Site.Master" caret="1447" fromTop="11" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerMSTest>
+    <UseTestRunConfigFromMetadataFile>False</UseTestRunConfigFromMetadataFile>
+  </UnitTestRunnerMSTest>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="JsonSerializer" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
