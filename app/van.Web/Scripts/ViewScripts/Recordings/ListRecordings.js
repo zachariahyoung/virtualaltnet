@@ -19,10 +19,10 @@ Ext.onReady(function() {
     });
 
     SharpJs.RecordingsColumnModel = new Ext.grid.ColumnModel([
-			{ header: 'Title', dataIndex: 'Title' }
-			,{ header: 'Url', dataIndex: 'Url' }
-			,{ header: 'Date', dataIndex: 'Date', renderer:Ext.util.Format.dateRenderer('m-d-Y')   }
-			,{ header: 'Duration', dataIndex: 'Duration' }
+			{ header: 'Title', dataIndex: 'Title', sortable: true }
+			,{ header: 'Url', dataIndex: 'Url', sortable: true }
+			,{ header: 'Date', dataIndex: 'Date', sortable: true, renderer:Ext.util.Format.dateRenderer('m-d-Y'),    }
+			,{ header: 'Duration', dataIndex: 'Duration', sortable: true }
         ]);
 
     SharpJs.RecordingsColumnModel.defaultSortable = true;
@@ -41,7 +41,7 @@ Ext.onReady(function() {
             emptyText: 'No recordings were found.'
         },
         // inline toolbars
-        tbar: [{
+        tbar: ['->'], /*{
             text: 'New...',
             tooltip: 'Create new Recording',
             handler: function() {
@@ -100,6 +100,7 @@ Ext.onReady(function() {
                 }
             });
         },
+        */
         /* Commented until needed - you'll need to change the store to be asynch as well
         bbar: new Ext.PagingToolbar({
         pageSize: 15,
