@@ -32,7 +32,7 @@ namespace van.Web.Controllers
             Recording recording = recordingRepository.Get(id);
             return View(recording);
         }
-
+        /*
         public ActionResult Create() {
             RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
             return View(viewModel);
@@ -116,6 +116,7 @@ namespace van.Web.Controllers
             TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = resultMessage;
             return RedirectToAction("Index");
         }
+        */
 
 		/// <summary>
 		/// Holds data to be passed to the Recording form for creates and edits
