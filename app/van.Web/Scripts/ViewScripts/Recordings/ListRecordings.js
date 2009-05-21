@@ -21,7 +21,7 @@ Ext.onReady(function() {
     SharpJs.RecordingsColumnModel = new Ext.grid.ColumnModel([
 			{ header: 'Title', dataIndex: 'Title', sortable: true }
 			,{ header: 'Url', dataIndex: 'Url', sortable: true }
-			,{ header: 'Date', dataIndex: 'Date', sortable: true, renderer:Ext.util.Format.dateRenderer('m-d-Y'),    }
+			,{ header: 'Date', dataIndex: 'Date', sortable: true, renderer:Ext.util.Format.dateRenderer('m-d-Y')    }
 			,{ header: 'Duration', dataIndex: 'Duration', sortable: true }
         ]);
 
