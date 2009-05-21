@@ -22,5 +22,5 @@
     <p id="dynamicMessage" class="page-message" style="display:none"></p>
 
     <div id="divRecordingsGrid"></div>
-    <%= Html.AntiForgeryToken() %>
+    
 </asp:Content>
