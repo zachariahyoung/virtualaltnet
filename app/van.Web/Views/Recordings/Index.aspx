@@ -1,14 +1,15 @@
 <%@ Page Title="Recordings" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
-	Inherits="System.Web.Mvc.ViewPage<IEnumerable<van.Core.Recording>>" %>
+	Inherits="System.Web.Mvc.ViewPage<IEnumerable<Recording>>" %>
 <%@ Import Namespace="van.Core" %>
 <%@ Import Namespace="van.Web.Controllers" %>
+<%@ Import Namespace="van.Web.Extensions"%>
  
 
 <asp:Content ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
     <script language="javascript" type="text/javascript">
         SharpJs.RecordingsData = <%= Newtonsoft.Json.JsonConvert.SerializeObject(ViewData.Model) %>;
     </script>
-
+<%= Html.IncludeExtViewListingJs("ListRecordings") %>
     <script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/ViewScripts/Recordings/ListRecordings.js"></script>
 </asp:Content>
 
@@ -22,5 +23,5 @@
     <p id="dynamicMessage" class="page-message" style="display:none"></p>
 
     <div id="divRecordingsGrid"></div>
-    
+   
 </asp:Content>
