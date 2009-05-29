@@ -10,7 +10,7 @@
 				<li>
 				<label class="desc">Title:</label>
 				<span>
-					<%= Server.HtmlEncode(ViewData.Model.Title) %>
+					<a href="<%= Server.HtmlEncode(ViewData.Model.Url) %>" target="_blank"><%= Server.HtmlEncode(ViewData.Model.Title) %></a>
 				</span>
 			</li>
 				<li>
@@ -22,7 +22,7 @@
 				<li>
 				<label class="desc">Date:</label>
 				<span>
-					<%= Server.HtmlEncode(ViewData.Model.Date.ToString()) %>
+					<%= Server.HtmlEncode(ViewData.Model.Date.ToShortDateString()) %>
 				</span>
 			</li>
 				<li>
