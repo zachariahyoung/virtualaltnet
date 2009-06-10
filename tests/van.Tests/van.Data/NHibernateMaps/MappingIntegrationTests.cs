@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using NHibernate.Cfg;
+using NHibernate.Tool.hbm2ddl;
+using NUnit.Framework;
 using SharpArch.Testing.NUnit.NHibernate;
 using SharpArch.Data.NHibernate;
 using System.Collections;
@@ -21,13 +23,22 @@ namespace Tests.van.Data.NHibernateMaps
     [Category("DB Tests")]
     public class MappingIntegrationTests
     {
+        private Configuration cfg;
+
         [SetUp]
         public virtual void SetUp()
         {
-            string[] mappingAssemblies = RepositoryTestsHelper.GetMappingAssemblies();
-            NHibernateSession.Init(new SimpleSessionStorage(), mappingAssemblies,
+            var mappingAssemblies = RepositoryTestsHelper.GetMappingAssemblies();
+            cfg = NHibernateSession.Init(new SimpleSessionStorage(), mappingAssemblies,
                 new AutoPersistenceModelGenerator().Generate(),
                 "../../../../app/van.Web/NHibernate.config");
+        }
+        [Test]
+        public virtual void CanGenerateSchema()
+        {
+            var session = NHibernateSession.SessionFactory.OpenSession();
+            new SchemaExport(cfg).Execute(true, false, false, false, session.Connection, null);
+            Assert.IsTrue(true);
         }
 
         [Test]

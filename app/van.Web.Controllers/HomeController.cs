@@ -2,7 +2,7 @@
 
 namespace van.Web.Controllers
 {
-    [HandleError]
+    [HandleErrorAttribute]
     public class HomeController : Controller
     {
         public ActionResult Index()

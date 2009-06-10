@@ -10,7 +10,6 @@
         SharpJs.RecordingsData = <%= Newtonsoft.Json.JsonConvert.SerializeObject(ViewData.Model) %>;
     </script>
 <%= Html.IncludeExtViewListingJs("ListRecordings") %>
-    <script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/ViewScripts/Recordings/ListRecordings.js"></script>
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">

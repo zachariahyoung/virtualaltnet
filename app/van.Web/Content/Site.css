@@ -187,14 +187,15 @@ a:active {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 .header-container {
-	position:relative;
-	padding:6px 0 0 0;
-	background:#373737;
-	color:#FFF;
-	border-bottom:1px dotted #585858;
-	min-height:1px;
-	_height:1px;
-	}
+    background-position: #373737;
+    position: relative;
+    padding: 6px 0 6 0;
+    background: #373737;
+    color: #FFF;
+    border-bottom: 1px dotted #585858;
+    min-height: 1px;
+    _height: 1px;
+}
 
 /* LOGO */
 

@@ -47,6 +47,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\CommonServiceLocator.WindsorAdapter.dll</HintPath>
     </Reference>
+    <Reference Include="Elmah, Version=1.1.11228.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Elmah.dll</HintPath>
+    </Reference>
     <Reference Include="FluentNHibernate, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\FluentNHibernate.dll</HintPath>
@@ -148,6 +152,10 @@
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\HandleErrorAttribute.cs" />
     <Compile Include="Extensions\HtmlExtensions.cs" />
     <Compile Include="Extensions\IsCurrentActionHelper.cs" />
     <Compile Include="Global.asax.cs">
@@ -161,6 +169,9 @@
       <DependentUpon>Menu.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Views\Shared\Menu.ascx.designer.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\ad.gif" />
@@ -173,6 +184,8 @@
     <Content Include="Content\Images\bg-poster-tile.jpg" />
     <Content Include="Content\Images\bg-poster.jpg" />
     <Content Include="Content\Images\bullet.png" />
+    <Content Include="Content\Images\dasp.gif" />
+    <Content Include="Content\Images\dasp_logo4.jpg" />
     <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Images\photo-small-01.jpg" />
     <Content Include="Content\Images\photo-small-02.jpg" />
