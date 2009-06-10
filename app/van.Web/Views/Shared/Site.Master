@@ -117,6 +117,9 @@
                     <img src="<%= ResolveUrl("~") %>Content/images/dasp_logo4.jpg" alt="DiscountASP.NET" />
                 </a>
               </span>
+              <span id="ineta">
+              <img src="http://www.ineta.org/OfficialLogo.ashx?ugid=1" alt="Official INETA Logo" width="114px" height="70px" />
+              </span>
             </div>
         </div>
         <div class="clear"></div>
