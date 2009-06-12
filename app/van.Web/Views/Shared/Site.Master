@@ -97,21 +97,13 @@
         </div>
 		        <div class="content-left">
             <div class="side-bucket">
-<!--                <ul>
-                    <li class="first"><a href="#">Side nav</a></li>
-                    <li> <a href="#">Praesent arcu ante</a></li>
-                    <li> <a href="#">Vivamus consequat tortor</a></li>
-                    <li><a href="#">Morbi sit amet</a></li>
-                    <li><a href="#">Suspendisse vulputate</a></li>
-                    <li><a href="#">Bibendum nulla</a></li>
-                    <li><a href="#">Maecenas scelerisque</a></li>
-                </ul>-->
+
             </div>
         </div>
         <div class="content-right">
            
             <div class="ads"> 
-            <div class="header-container"><span>PARTNERING WITH</span></div>
+                       <div class="header-container"><span>PARTNERING WITH</span></div>
               <span>
                 <a href="http://www.DiscountASP.net" target="_blank">
                     <img src="<%= ResolveUrl("~") %>Content/images/dasp_logo4.jpg" alt="DiscountASP.NET" />

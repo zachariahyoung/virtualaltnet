@@ -482,6 +482,7 @@ a:active {
 	padding:15px 2% 20px 2%;
 	position:relative;
 	min-height:1px;
+	min-width:800px;
 	_height:1px;
 	float:left;
 	width:96%;
@@ -510,8 +511,8 @@ a:active {
 .ads {
 	text-align:center;
 	margin:20px 0;
-	position:absolute;
 	width:180px;
+	position:absolute;
 	}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
