@@ -510,6 +510,8 @@ a:active {
 .ads {
 	text-align:center;
 	margin:20px 0;
+	position:absolute;
+	width:180px;
 	}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
