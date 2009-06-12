@@ -1,7 +1,7 @@
 <%@ Page Title="Recording Details" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
 	Inherits="System.Web.Mvc.ViewPage<van.Core.Recording>" %>
 <%@ Import Namespace="van.Web.Controllers" %>
-
+<asp:Content ID="Content1" ContentPlaceHolderID="_headContentPlaceHolder" runat="server"/>
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <h1>Recording Details</h1>
 

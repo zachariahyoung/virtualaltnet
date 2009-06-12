@@ -5,7 +5,7 @@
 <%@ Import Namespace="van.Web.Extensions"%>
  
 
-<asp:Content ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+<asp:Content ContentPlaceHolderID="_headContentPlaceHolder" runat="server">
     <script language="javascript" type="text/javascript">
         SharpJs.RecordingsData = <%= Newtonsoft.Json.JsonConvert.SerializeObject(ViewData.Model) %>;
     </script>
