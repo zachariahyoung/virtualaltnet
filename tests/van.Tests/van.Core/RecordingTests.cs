@@ -10,13 +10,28 @@ namespace Tests.van.Core
     {
         [Test]
         public void CanCompareRecordings() {
-            Recording instance = new Recording();
-			instance.Title = "Van Recording";
-			instance.Url = "Location of Recording";
+        
+            var instance = new Recording
+            {
+                Title = "Van Recording",
+                Url = "www.virtualalt.con",
+                Speaker = "Zach Young",
+                UserGroup = "VAN",
+                LiveMeetingUrl = "www.snipr.com/virtualaltnet.com",
+                Description = "Zach talked on DDD"
+            };
 
-            Recording instanceToCompareTo = new Recording();
-			instanceToCompareTo.Title = "Van Recording";
-			instanceToCompareTo.Url = "Location of Recording";
+            var instanceToCompareTo = new Recording
+            {
+                Title = "Van Recording",
+                Url = "www.virtualalt.con",
+                Speaker = "Zach Young",
+                UserGroup = "VAN",
+                LiveMeetingUrl = "www.snipr.com/virtualaltnet.com",
+                Description = "Zach talked on DDD"
+            };
+
+            
 
 			instance.ShouldEqual(instanceToCompareTo);
         }
