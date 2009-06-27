@@ -10,17 +10,19 @@ Ext.onReady(function() {
         data: SharpJs.RecordingsData,
         fields: [
             {name:'Id'}
-			,{name:'Title'}
-			,{name:'Url'}
+			, { name: 'Title' }
+			, { name: 'Speaker' }
+			,{name:'UserGroup'}
 			,{name: 'Date', type: 'date'},
 			,{name:'Duration'}
 		],
-        sortInfo: { field: 'Id', direction: 'ASC' }
+        sortInfo: { field: 'Date', direction: 'ASC' }
     });
 
     SharpJs.RecordingsColumnModel = new Ext.grid.ColumnModel([
 			{ header: 'Title', dataIndex: 'Title', sortable: true }
-			,{ header: 'Url', dataIndex: 'Url', sortable: true }
+			, { header: 'Speaker', dataIndex: 'Speaker', sortable: true }
+			, { header: 'User Group', dataIndex: 'UserGroup', sortable: true }
 			,{ header: 'Date', dataIndex: 'Date', sortable: true, renderer:Ext.util.Format.dateRenderer('m-d-Y')    }
 			,{ header: 'Duration', dataIndex: 'Duration', sortable: true }
         ]);
@@ -34,7 +36,7 @@ Ext.onReady(function() {
         sm: new Ext.grid.RowSelectionModel({ singleSelect: true }),
         renderTo: 'divRecordingsGrid',
         width: Ext.GRID_WIDTH,
-        height: 418,
+        height: 1000,
         stripeRows: true,
         viewConfig: {
             forceFit: true,
