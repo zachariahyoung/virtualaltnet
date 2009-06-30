@@ -1,6 +1,5 @@
 using NUnit.Framework;
 using van.Core;
-using SharpArch.Testing;
 using SharpArch.Testing.NUnit;
 
 namespace Tests.van.Core

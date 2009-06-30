@@ -125,7 +125,7 @@ namespace van.Web.Controllers
 			/// method to instantiate items such as lists for drop down boxes.
 			/// </summary>
             public static RecordingFormViewModel CreateRecordingFormViewModel() {
-                RecordingFormViewModel viewModel = new RecordingFormViewModel();
+                var viewModel = new RecordingFormViewModel();
                 
                 return viewModel;
             }

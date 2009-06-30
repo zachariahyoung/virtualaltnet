@@ -3,6 +3,7 @@
 <%@ Import Namespace="van.Web.Controllers" %>
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+<a href="http://snipr.com/virtualaltnet">Attend a meeting</a>
     <!-- start feedwind code -->
 <script type="text/javascript">
 <!--
