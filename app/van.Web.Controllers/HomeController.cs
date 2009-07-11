@@ -19,5 +19,22 @@ namespace van.Web.Controllers
         {
             return View();
         }
+
+        public RedirectResult Blog()
+        {
+            return Redirect("http://feeds2.feedburner.com/VirtualAltnet");
+        }
+
+        public RedirectResult GoogleGroup()
+        {
+            return Redirect("http://groups.google.com/group/virtualaltnet");
+        }
+
+        public RedirectResult Twitter()
+        {
+            return Redirect("http://twitter.com/virtualaltnet");
+        }
+
+
     }
 }
