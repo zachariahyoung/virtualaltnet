@@ -14,10 +14,11 @@ body {
 	padding:0;
 	}
 
-p, li {
-	font-size:.75em;
-	line-height:160%;
-	}
+p, li
+{
+	font-size: large;
+	line-height: 160%;
+}
 	
 a img {
 	border:none;
@@ -187,10 +188,10 @@ a:active {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 .header-container {
-    background-position: #373737;
+    background-position: #000000;
     position: relative;
     padding: 6px 0 6 0;
-    background: #373737;
+    background: #000000;
     color: #FFF;
     border-bottom: 1px dotted #585858;
     min-height: 1px;
@@ -339,7 +340,7 @@ a:active {
 .footer {
 	padding:10px 0;
 	_height:1px;
-	background:#373737;
+	background:#000000;
 	clear:both;
 	}
 
