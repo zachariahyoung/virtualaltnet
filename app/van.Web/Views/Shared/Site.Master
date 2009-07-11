@@ -38,10 +38,8 @@
 
 
     <% // At bottom to facilitate other JS files to be loaded before page-by-page JS is loaded %>
-<meta name="description" content="Description of your web page goes here." />
-<meta name="keywords" content="Alt.Net, Google groups, Programming" />
     <asp:ContentPlaceHolder ID="_headContentPlaceHolder" runat="server">
-        <title>Virtual Alt.Net</title>
+        
     </asp:ContentPlaceHolder>
     
 </head>
@@ -54,7 +52,7 @@
         </ul>
     </div>
     <div class="logo"><a href="<%= Url.Action("Index", "Home") %>">
-        <img src="<%= ResolveUrl("~") %>Content/Images/VAN-4.png" height="100" width="665" alt="Virtual Alt.Net"/></a></div>
+        <img src="<%= ResolveUrl("~") %>Content/Images/VAN_LOGO.png"  alt="Virtual Alt.Net"/></a></div>
     <div class="clear"></div>
 </div>
 <div class="poster-container-no-image">
@@ -97,6 +95,13 @@
         </div>
 		        <div class="content-left">
             <div class="side-bucket">
+                <ul>
+                    <li class="first"><a href="<%= Url.Action("Index","Van")%>">Attend a meeting</a></li>
+                    <li> <a href="<%= Url.Action("Blog","Home")%>">Blog</a></li>
+                    <li> <a href="<%= Url.Action("GoogleGroup","Home")%>">Google Group</a></li>
+                    <li><a href="<%= Url.Action("Twitter","Home")%>">Twitter</a></li>                    
+                </ul>
+            
 
             </div>
         </div>

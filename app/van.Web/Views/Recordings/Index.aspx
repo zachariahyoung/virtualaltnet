@@ -1,9 +1,12 @@
-<%@ Page Title="Recordings" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
+<%@ Page Title="Recordings" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" Title="Virtual ALT.NET Recordings"
 	Inherits="System.Web.Mvc.ViewPage<IEnumerable<Recording>>" %>
 <%@ Import Namespace="van.Core" %>
 <%@ Import Namespace="van.Web.Controllers" %>
 <%@ Import Namespace="van.Web.Extensions"%>
- 
+  <asp:Content ID="Content1" ContentPlaceHolderID="_headContentPlaceHolder" runat="server">
+<meta name="description" content="Virtual ALT.NET (VAN) is the online gathering place of the ALT.NET community.  This page contains the recordings." />
+<meta name="keywords" content="Alt.Net, VAN, Virtual ALT.NET, Virtual ALT.NET Recordings" />
+</asp:Content>
 
 <asp:Content ContentPlaceHolderID="_headContentPlaceHolder" runat="server">
     <script language="javascript" type="text/javascript">

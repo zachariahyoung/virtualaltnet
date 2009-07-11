@@ -14,7 +14,7 @@
 			<li class="first <%=Html.CurrentAction("About", "About") %>">
 		<%= Html.ActionLink<HomeController>(x => x.About(), "About")%></li>
     <li class="third <%=Html.CurrentAction("Index", "Recording") %>">
-        <%= Html.ActionLink<RecordingsController>(x=>x.Index(), "Recording") %></li>
+        <%= Html.ActionLink<RecordingsController>(x=>x.Index(), "Recordings") %></li>
 
 
 

@@ -1,9 +1,13 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" Title="Virtual ALT.NET"
     Inherits="System.Web.Mvc.ViewPage" %>
 <%@ Import Namespace="van.Web.Controllers" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="_headContentPlaceHolder" runat="server">
+<meta name="description" content="Virtual ALT.NET (VAN) is the online gathering place of the ALT.NET community. " />
+<meta name="keywords" content="Alt.Net, VAN, Virtual ALT.NET, Virtual ALT.NET Home" />
+</asp:Content>
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-<a href="http://snipr.com/virtualaltnet">Attend a meeting</a>
+
     <!-- start feedwind code -->
 <script type="text/javascript">
 <!--
