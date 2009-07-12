@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{A65C1624-7AC2-4D1C-90C3-AE91779E16A1}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -119,6 +119,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\tools\lib\System.Data.SQLite.DLL</HintPath>
     </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\System.Web.Mvc.dll</HintPath>
@@ -138,6 +141,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="van.ApplicationServices\RssFeedReaderTest.cs" />
     <Compile Include="van.Core\RecordingTests.cs" />
     <Compile Include="van.Web\Controllers\RecordingsControllerTests.cs" />
     <Compile Include="van.Web\Controllers\RouteRegistrarTests.cs" />
@@ -153,6 +157,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\app\van.ApplicationServices\van.ApplicationServices.csproj">
+      <Project>{646B01CE-E1D8-4EB1-A900-C0943A596D51}</Project>
+      <Name>van.ApplicationServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\app\van.Web.Controllers\van.Web.Controllers.csproj">
       <Project>{A0EA8E2D-82A8-4E07-9679-574337DD8440}</Project>
       <Name>van.Web.Controllers</Name>
