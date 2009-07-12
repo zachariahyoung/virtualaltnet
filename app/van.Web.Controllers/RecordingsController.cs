@@ -4,11 +4,14 @@ using SharpArch.Core.PersistenceSupport;
 using System.Collections.Generic;
 using SharpArch.Web.NHibernate;
 using SharpArch.Core;
+using van.Web.Controllers.Infrastructure;
 
 namespace van.Web.Controllers
 {
     [HandleErrorAttribute]
+
     public class RecordingsController : Controller
+
     {
         public RecordingsController(IRepository<Recording> recordingRepository) {
             Check.Require(recordingRepository != null, "recordingRepository may not be null");
@@ -27,12 +30,15 @@ namespace van.Web.Controllers
             Recording recording = recordingRepository.Get(id);
             return View(recording);
         }
-        /*
+        
+        [RequiresAuthentication]
+        [RequiresAuthorization (RoleToCheckFor="Administrator")]
         public ActionResult Create() {
             RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
             return View(viewModel);
         }
-
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
@@ -49,14 +55,16 @@ namespace van.Web.Controllers
             viewModel.Recording = recording;
             return View(viewModel);
         }
-
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
         public ActionResult Edit(int id) {
             RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
             viewModel.Recording = recordingRepository.Get(id);
             return View(viewModel);
         }
-
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
@@ -78,13 +86,14 @@ namespace van.Web.Controllers
             }
         }
 
-        private void TransferFormValuesTo(Recording recordingToUpdate, Recording recordingFromForm) {
+        private static void TransferFormValuesTo(Recording recordingToUpdate, Recording recordingFromForm) {
 			recordingToUpdate.Title = recordingFromForm.Title;
 			recordingToUpdate.Url = recordingFromForm.Url;
 			recordingToUpdate.Date = recordingFromForm.Date;
 			recordingToUpdate.Duration = recordingFromForm.Duration;
         }
-
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
@@ -111,7 +120,7 @@ namespace van.Web.Controllers
             TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = resultMessage;
             return RedirectToAction("Index");
         }
-        */
+        
 
 		/// <summary>
 		/// Holds data to be passed to the Recording form for creates and edits

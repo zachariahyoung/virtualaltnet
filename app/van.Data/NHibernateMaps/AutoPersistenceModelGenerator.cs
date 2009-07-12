@@ -16,7 +16,7 @@ namespace van.Data.NHibernateMaps
         {
             AutoPersistenceModel mappings = AutoPersistenceModel
                 // If you delete the default class, simply point the following line to an entity within the .Core layer
-                .MapEntitiesFromAssemblyOf<Class1>()
+                .MapEntitiesFromAssemblyOf<User>()
                 .Where(GetAutoMappingFilter)
                 .ConventionDiscovery.Setup(GetConventions())
                 .WithSetup(GetSetup())

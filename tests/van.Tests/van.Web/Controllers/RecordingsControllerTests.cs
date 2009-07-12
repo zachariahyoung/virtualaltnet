@@ -42,7 +42,6 @@ namespace Tests.van.Web.Controllers
 			
             (result.ViewData.Model as Recording).Id.ShouldEqual(1);
         }
-        /*
         [Test]
         public void CanInitRecordingCreation() {
             ViewResult result = controller.Create().AssertViewRendered();
@@ -97,7 +96,7 @@ namespace Tests.van.Web.Controllers
             controller.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
 				.ShouldContain("was successfully deleted");
         }
-        */
+
 		#region Create Mock Recording Repository
 
         private IRepository<Recording> CreateMockRecordingRepository() {

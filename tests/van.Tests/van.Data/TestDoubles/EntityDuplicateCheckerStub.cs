@@ -11,7 +11,7 @@ namespace Tests.van.Data.TestDoubles
     /// </summary>
     public class EntityDuplicateCheckerStub : IEntityDuplicateChecker
     {
-        public bool DoesDuplicateExistWithTypedIdOf<IdT>(IEntityWithTypedId<IdT> entity)
+        public bool DoesDuplicateExistWithTypedIdOf<TIdT>(IEntityWithTypedId<TIdT> entity)
         {
             return false;
         }

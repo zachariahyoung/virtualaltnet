@@ -143,7 +143,11 @@
   <ItemGroup>
     <Compile Include="van.ApplicationServices\RssFeedReaderTest.cs" />
     <Compile Include="van.Core\RecordingTests.cs" />
+    <Compile Include="van.Core\UserTests.cs" />
+    <Compile Include="van.Web\Controllers\MembershipControllerTests.cs" />
     <Compile Include="van.Web\Controllers\RecordingsControllerTests.cs" />
+    <Compile Include="van.Web\Controllers\RequiresAuthenticationAttributeTests.cs" />
+    <Compile Include="van.Web\Controllers\RequiresAuthorizationAttributeTests.cs" />
     <Compile Include="van.Web\Controllers\RouteRegistrarTests.cs" />
     <Compile Include="van.Data\NHibernateMaps\MappingIntegrationTests.cs" />
     <Compile Include="van.Data\TestDoubles\EntityDuplicateCheckerStub.cs" />
@@ -152,6 +156,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceLocatorInitializer.cs" />
+    <Compile Include="van.Web\Controllers\UsersControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

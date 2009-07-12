@@ -1,5 +1,5 @@
 <%@ Control Language="C#" AutoEventWireup="true"
-	Inherits="System.Web.Mvc.ViewUserControl<van.Web.Controllers.RecordingsController.RecordingFormViewModel>" %>
+	Inherits="System.Web.Mvc.ViewUserControl<RecordingsController.RecordingFormViewModel>" %>
 <%@ Import Namespace="van.Core" %>
 <%@ Import Namespace="van.Web.Controllers" %>
  
@@ -20,7 +20,7 @@
 			<label class="desc">Title</label>
 			<span>
 				<%= Html.TextBox("Recording.Title", 
-					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.Title.ToString() : "")%>
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.Title : "")%>
 			    <label>
 			        <%= Html.ValidationMessage("Recording.Title")%>
 			    </label>
@@ -30,7 +30,7 @@
 			<label class="desc">Url</label>
 			<span>
 				<%= Html.TextBox("Recording.Url", 
-					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.Url.ToString() : "")%>
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.Url : "")%>
 			    <label>
 			        <%= Html.ValidationMessage("Recording.Url")%>
 			    </label>
@@ -50,7 +50,7 @@
 			<label class="desc">Duration</label>
 			<span>
 				<%= Html.TextBox("Recording.Duration", 
-					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.Duration.ToString() : "")%>
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.Duration : "")%>
 			    <label>
 			        <%= Html.ValidationMessage("Recording.Duration")%>
 			    </label>

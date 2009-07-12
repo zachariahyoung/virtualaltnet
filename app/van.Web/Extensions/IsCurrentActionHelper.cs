@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace van.Web.Helpers
+namespace van.Web.Extensions
 {
     public static class IsCurrentActionHelper
     {
@@ -15,5 +15,4 @@ namespace van.Web.Helpers
             return null;
         }
     }
-        
 }

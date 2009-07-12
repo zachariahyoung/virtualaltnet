@@ -6,6 +6,9 @@ using SharpArch.Web.Castle;
 using Castle.MicroKernel.Registration;
 using SharpArch.Core.CommonValidator;
 using SharpArch.Core.NHibernateValidator.CommonValidatorAdapter;
+using van.Core.DataInterfaces;
+using van.Data;
+using van.Web.Controllers.Infrastructure;
 
 namespace van.Web.CastleWindsor
 {
@@ -16,17 +19,18 @@ namespace van.Web.CastleWindsor
             AddGenericRepositoriesTo(container);
             AddCustomRepositoriesTo(container);
             AddApplicationServicesTo(container);
-
             container.AddComponent("validator",
                 typeof(IValidator), typeof(Validator));
-        }
-
-        private static void AddApplicationServicesTo(IWindsorContainer container)
-        {
-            container.Register(
-                AllTypes.Pick()
-                .FromAssemblyNamed("van.ApplicationServices")
-                .WithService.FirstInterface());
+            container.AddComponent("authenticationProvider",
+                                   typeof(IAuthenticationProvider), typeof(FormsAuthenticationProvider));
+            container.AddComponent("authorizationProvider",
+                                   typeof(IAuthorizationProvider), typeof(FormsAuthenticationProvider));
+            container.AddComponent("accountRepository",
+                       typeof(IAccountRepository), typeof(AccountRepository));
+            container.AddComponent("userRepository",
+                                   typeof(IUserRepository), typeof(UserRepository));
+            container.AddComponent("membershipProvider",
+                                   typeof(IMembershipProvider), typeof(MembershipProvider));
         }
 
         private static void AddCustomRepositoriesTo(IWindsorContainer container)
@@ -36,7 +40,13 @@ namespace van.Web.CastleWindsor
                 .FromAssemblyNamed("van.Data")
                 .WithService.FirstNonGenericCoreInterface("van.Core"));
         }
-
+        private static void AddApplicationServicesTo(IWindsorContainer container)
+        {
+            container.Register(
+                AllTypes.Pick()
+                .FromAssemblyNamed("van.ApplicationServices")
+                .WithService.FirstInterface());
+        }
         private static void AddGenericRepositoriesTo(IWindsorContainer container)
         {
             container.AddComponent("entityDuplicateChecker",
@@ -49,6 +59,7 @@ namespace van.Web.CastleWindsor
                 typeof(IRepositoryWithTypedId<,>), typeof(RepositoryWithTypedId<,>));
             container.AddComponent("nhibernateRepositoryWithTypedId",
                 typeof(INHibernateRepositoryWithTypedId<,>), typeof(NHibernateRepositoryWithTypedId<,>));
+           
         }
     }
 }

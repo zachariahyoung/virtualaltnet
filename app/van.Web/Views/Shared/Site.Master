@@ -26,7 +26,7 @@
 <%= Html.IncludeExtGridJs("Ext.ux.grid.Search", "Ext.ux.grid.GroupingSummary")%>
 
 
-<script language="javascript" type="text/javascript">
+<script type="text/javascript">
     <!-- Create a generic ns to be used by custom JavaScript objects and variables -->
     Ext.namespace('SharpJs');
     SharpJs.RootUrl = '<%= ResolveUrl("~") %>';
@@ -48,7 +48,7 @@
 <div class="header-container">
     <div class="nav-login">
         <ul>
-            <%--<li class="first"><%= Html.ActionLink("Register", "Register", "Account") %></li>--%>
+            <li class="first"><%= Html.ActionLink("Register", "Register", "Account") %></li>
         </ul>
     </div>
     <div class="logo"><a href="<%= Url.Action("Index", "Home") %>">

@@ -9,12 +9,12 @@ Ext.onReady(function() {
     SharpJs.RecordingsStore = new Ext.data.JsonStore({
         data: SharpJs.RecordingsData,
         fields: [
-            {name:'Id'}
-			, { name: 'Title' }
-			, { name: 'Speaker' }
-			,{name:'UserGroup'}
-			,{name: 'Date', type: 'date'},
-			,{name:'Duration'}
+                {name:'Id'}
+			,   {name: 'Title' }
+			,   {name: 'Speaker' }
+			,   {name:'UserGroup'}
+			,   {name: 'Date', type: 'date'},
+			,   {name:'Duration'}
 		],
         sortInfo: { field: 'Date', direction: 'ASC' }
     });
@@ -24,7 +24,7 @@ Ext.onReady(function() {
 			, { header: 'Speaker', dataIndex: 'Speaker', sortable: true }
 			, { header: 'User Group', dataIndex: 'UserGroup', sortable: true }
 			,{ header: 'Date', dataIndex: 'Date', sortable: true, renderer:Ext.util.Format.dateRenderer('m-d-Y')    }
-			,{ header: 'Duration', dataIndex: 'Duration', sortable: true }
+/*,{ header: 'Duration', dataIndex: 'Duration', sortable: true }*/
         ]);
 
     SharpJs.RecordingsColumnModel.defaultSortable = true;
@@ -43,7 +43,7 @@ Ext.onReady(function() {
             emptyText: 'No recordings were found.'
         },
         // inline toolbars
-        tbar: ['->'], /*{
+         tbar: [{
             text: 'New...',
             tooltip: 'Create new Recording',
             handler: function() {
@@ -102,8 +102,8 @@ Ext.onReady(function() {
                 }
             });
         },
-        */
-        /* Commented until needed - you'll need to change the store to be asynch as well
+        
+       /*
         bbar: new Ext.PagingToolbar({
         pageSize: 15,
         store: SharpJs.RecordingsStore,
@@ -111,7 +111,7 @@ Ext.onReady(function() {
         displayMsg: 'Record {0} - {1} of {2}',
         emptyMsg: "No records found"
         }),
-        */
+       */
         plugins: [new Ext.ux.grid.Search({
             position: 'top',
             mode: 'local'
