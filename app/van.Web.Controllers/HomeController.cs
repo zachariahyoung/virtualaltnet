@@ -22,10 +22,6 @@ namespace van.Web.Controllers
             return View(item);
         }
 
-        public ActionResult LogIn()
-        {
-            return View();
-        }
         public ActionResult Calendar()
         {
             return View();
