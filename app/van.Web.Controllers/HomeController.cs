@@ -15,8 +15,12 @@ namespace van.Web.Controllers
 
             this.rssFeedReader = rssFeedReader;
         }
+
+        
+       
         public ActionResult Index()
         {
+            //RssFeedReader rssFeedReader = new RssFeedReader();
             SyndicationFeed item = rssFeedReader.readFeed("http://feeds.feedburner.com/VirtualAltnet?format=xml");
 
             return View(item);
