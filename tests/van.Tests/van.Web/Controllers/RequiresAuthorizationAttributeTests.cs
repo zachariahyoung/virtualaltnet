@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using Rhino.Mocks;
-using van.Core;
 using van.Core.DataInterfaces;
 using van.Web.Controllers.Infrastructure;
 
