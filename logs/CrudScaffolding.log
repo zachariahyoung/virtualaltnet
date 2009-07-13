@@ -1,24 +1,20 @@
-9:51:36 PM	Opened solution for addition of generated files
-9:51:38 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\tests\van.Tests\van.Core\RecordingTests.cs to project named van.Tests with AddFromFile
-9:51:38 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\tests\van.Tests\van.Core\RecordingTests.cs
-9:51:39 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Core\Recording.cs to project named van.Core with AddFromFile
-9:51:39 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Core\Recording.cs
-9:51:39 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\tests\van.Tests\van.Web\Controllers\RecordingsControllerTests.cs to project named van.Tests with AddFromFile
-9:51:40 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\tests\van.Tests\van.Web\Controllers\RecordingsControllerTests.cs
-9:51:40 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web.Controllers\RecordingsController.cs to project named van.Web.Controllers with AddFromFile
-9:51:41 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web.Controllers\RecordingsController.cs
-9:51:41 PM	Added directory C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web\Scripts\ViewScripts\Recordings\
-9:51:44 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web\Scripts\ViewScripts\Recordings\ListRecordings.js to project named van.Web with AddFromFile
-9:51:45 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web\Scripts\ViewScripts\Recordings\ListRecordings.js
-9:51:45 PM	Added directory C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web\Views\Recordings\
-9:51:46 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web\Views\Recordings\RecordingForm.ascx to project named van.Web with AddFromFile
-9:51:46 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web\Views\Recordings\RecordingForm.ascx
-9:51:47 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web\Views\Recordings\Create.aspx to project named van.Web with AddFromFile
-9:51:48 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web\Views\Recordings\Create.aspx
-9:51:49 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web\Views\Recordings\Edit.aspx to project named van.Web with AddFromFile
-9:51:49 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web\Views\Recordings\Edit.aspx
-9:51:50 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web\Views\Recordings\Index.aspx to project named van.Web with AddFromFile
-9:51:50 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web\Views\Recordings\Index.aspx
-9:51:52 PM	Adding C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web\Views\Recordings\Show.aspx to project named van.Web with AddFromFile
-9:51:53 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\van\van\app\van.Web\Views\Recordings\Show.aspx
-9:52:01 PM	Closed solution after addition of generated files
+4:09:15 PM	Opened solution for addition of generated files
+4:09:17 PM	Adding C:\Dev\OSS\virtualaltnet\tests\van.Tests\van.Core\UserTests.cs to project named van.Tests with AddFromFile
+4:09:17 PM	Added file C:\Dev\OSS\virtualaltnet\tests\van.Tests\van.Core\UserTests.cs
+4:09:17 PM	File already exists C:\Dev\OSS\virtualaltnet\app\van.Core\User.cs
+4:09:19 PM	Adding C:\Dev\OSS\virtualaltnet\tests\van.Tests\van.Web\Controllers\UsersControllerTests.cs to project named van.Tests with AddFromFile
+4:09:19 PM	Added file C:\Dev\OSS\virtualaltnet\tests\van.Tests\van.Web\Controllers\UsersControllerTests.cs
+4:09:19 PM	Adding C:\Dev\OSS\virtualaltnet\app\van.Web.Controllers\UsersController.cs to project named van.Web.Controllers with AddFromFile
+4:09:20 PM	Added file C:\Dev\OSS\virtualaltnet\app\van.Web.Controllers\UsersController.cs
+4:09:20 PM	Added directory C:\Dev\OSS\virtualaltnet\app\van.Web\Views\Users\
+4:09:25 PM	Adding C:\Dev\OSS\virtualaltnet\app\van.Web\Views\Users\UserForm.ascx to project named van.Web with AddFromFile
+4:09:25 PM	Added file C:\Dev\OSS\virtualaltnet\app\van.Web\Views\Users\UserForm.ascx
+4:09:27 PM	Adding C:\Dev\OSS\virtualaltnet\app\van.Web\Views\Users\Create.aspx to project named van.Web with AddFromFile
+4:09:27 PM	Added file C:\Dev\OSS\virtualaltnet\app\van.Web\Views\Users\Create.aspx
+4:09:29 PM	Adding C:\Dev\OSS\virtualaltnet\app\van.Web\Views\Users\Edit.aspx to project named van.Web with AddFromFile
+4:09:29 PM	Added file C:\Dev\OSS\virtualaltnet\app\van.Web\Views\Users\Edit.aspx
+4:09:30 PM	Adding C:\Dev\OSS\virtualaltnet\app\van.Web\Views\Users\Index.aspx to project named van.Web with AddFromFile
+4:09:30 PM	Added file C:\Dev\OSS\virtualaltnet\app\van.Web\Views\Users\Index.aspx
+4:09:31 PM	Adding C:\Dev\OSS\virtualaltnet\app\van.Web\Views\Users\Show.aspx to project named van.Web with AddFromFile
+4:09:31 PM	Added file C:\Dev\OSS\virtualaltnet\app\van.Web\Views\Users\Show.aspx
+4:09:42 PM	Closed solution after addition of generated files

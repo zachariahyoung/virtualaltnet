@@ -1,8 +1,6 @@
 Ext.onReady(function() {
     function formatDate(value){ return value ? value.dateFormat('F d, Y') : '';  };
     function renderdate(value){ return value.dateFormat('M j, Y, g:i a');}
-    
-    //function formatDate(value) {  return new Date(value).format(Date.patterns.ShortDate); 
     Ext.state.Manager.setProvider(new Ext.state.CookieProvider());
     Ext.QuickTips.init();
 
@@ -16,15 +14,15 @@ Ext.onReady(function() {
 			,   {name: 'Date', type: 'date'},
 			,   {name:'Duration'}
 		],
-        sortInfo: { field: 'Date', direction: 'ASC' }
+        sortInfo: { field: 'Date', direction: 'DESC' }
     });
 
     SharpJs.RecordingsColumnModel = new Ext.grid.ColumnModel([
 			{ header: 'Title', dataIndex: 'Title', sortable: true }
 			, { header: 'Speaker', dataIndex: 'Speaker', sortable: true }
 			, { header: 'User Group', dataIndex: 'UserGroup', sortable: true }
-			,{ header: 'Date', dataIndex: 'Date', sortable: true, renderer:Ext.util.Format.dateRenderer('m-d-Y')    }
-/*,{ header: 'Duration', dataIndex: 'Duration', sortable: true }*/
+			,{ header: 'Date', dataIndex: 'Date', sortable: true, renderer:Ext.util.Format.dateRenderer('m-d-Y')}
+            ,{ header: 'Duration', dataIndex: 'Duration', sortable: true }
         ]);
 
     SharpJs.RecordingsColumnModel.defaultSortable = true;
@@ -82,7 +80,7 @@ Ext.onReady(function() {
                 }
             },
             iconCls: 'remove'
-        }, '->'],
+        },],
         deleteRecording: function(selectedRow) {
             var conn = new Ext.data.Connection();
 
@@ -102,8 +100,6 @@ Ext.onReady(function() {
                 }
             });
         },
-        
-       /*
         bbar: new Ext.PagingToolbar({
         pageSize: 15,
         store: SharpJs.RecordingsStore,
@@ -111,7 +107,7 @@ Ext.onReady(function() {
         displayMsg: 'Record {0} - {1} of {2}',
         emptyMsg: "No records found"
         }),
-       */
+       
         plugins: [new Ext.ux.grid.Search({
             position: 'top',
             mode: 'local'

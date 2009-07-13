@@ -38,7 +38,12 @@
 					<%= Server.HtmlEncode(ViewData.Model.UserGroup) %>
 				</span>
 			</li>
-
+            <li>
+                <label class="desc">
+                    Live Meeting Url:</label>
+                <span>
+                    <%= Server.HtmlEncode(ViewData.Model.LiveMeetingUrl) %>
+                </span></li>
 										<li>
 				<label class="desc">Description:</label>
 				<span>

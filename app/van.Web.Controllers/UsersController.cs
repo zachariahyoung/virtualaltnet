@@ -1,14 +1,10 @@
 using System.Web.Mvc;
 using van.Core;
 using SharpArch.Core.PersistenceSupport;
-using SharpArch.Core.DomainModel;
 using System.Collections.Generic;
-using System;
 using SharpArch.Web.NHibernate;
-using NHibernate.Validator.Engine;
-using System.Text;
-using SharpArch.Web.CommonValidator;
 using SharpArch.Core;
+using van.Web.Controllers.Infrastructure;
 
 namespace van.Web.Controllers
 {
@@ -20,24 +16,30 @@ namespace van.Web.Controllers
 
             this.userRepository = userRepository;
         }
-
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
         public ActionResult Index() {
             IList<User> users = userRepository.GetAll();
             return View(users);
         }
-
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
         public ActionResult Show(int id) {
             User user = userRepository.Get(id);
             return View(user);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         public ActionResult Create() {
             UserFormViewModel viewModel = UserFormViewModel.CreateUserFormViewModel();
             return View(viewModel);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
@@ -55,6 +57,8 @@ namespace van.Web.Controllers
             return View(viewModel);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
         public ActionResult Edit(int id) {
             UserFormViewModel viewModel = UserFormViewModel.CreateUserFormViewModel();
@@ -62,6 +66,8 @@ namespace van.Web.Controllers
             return View(viewModel);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
@@ -74,20 +80,20 @@ namespace van.Web.Controllers
 					"The user was successfully updated.";
                 return RedirectToAction("Index");
             }
-            else {
-                userRepository.DbContext.RollbackTransaction();
+            userRepository.DbContext.RollbackTransaction();
 
-				UserFormViewModel viewModel = UserFormViewModel.CreateUserFormViewModel();
-				viewModel.User = user;
-				return View(viewModel);
-            }
+            UserFormViewModel viewModel = UserFormViewModel.CreateUserFormViewModel();
+            viewModel.User = user;
+            return View(viewModel);
         }
 
-        private void TransferFormValuesTo(User userToUpdate, User userFromForm) {
+        private static void TransferFormValuesTo(User userToUpdate, User userFromForm) {
 			userToUpdate.UserName = userFromForm.UserName;
 			userToUpdate.Password = userFromForm.Password;
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
@@ -127,7 +133,7 @@ namespace van.Web.Controllers
 			/// method to instantiate items such as lists for drop down boxes.
 			/// </summary>
             public static UserFormViewModel CreateUserFormViewModel() {
-                UserFormViewModel viewModel = new UserFormViewModel();
+                var viewModel = new UserFormViewModel();
                 
                 return viewModel;
             }

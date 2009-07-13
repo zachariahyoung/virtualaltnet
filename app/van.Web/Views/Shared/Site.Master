@@ -46,11 +46,11 @@
 <body>
 <div class="none"><a href="#maincontent">skip to the main content area of this page</a></div>
 <div class="header-container">
-    <div class="nav-login">
+   <!-- <div class="nav-login">
         <ul>
-            <li class="first"><%= Html.ActionLink("Register", "Register", "Account") %></li>
+            <li class="first"><%= Html.ActionLink("Register", "Create", "Users") %></li>
         </ul>
-    </div>
+    </div>-->
     <div class="logo"><a href="<%= Url.Action("Index", "Home") %>">
         <img src="<%= ResolveUrl("~") %>Content/Images/VAN_LOGO.png"  alt="Virtual Alt.Net"/></a></div>
     <div class="clear"></div>

@@ -91,6 +91,10 @@ namespace van.Web.Controllers
 			recordingToUpdate.Url = recordingFromForm.Url;
 			recordingToUpdate.Date = recordingFromForm.Date;
 			recordingToUpdate.Duration = recordingFromForm.Duration;
+            recordingToUpdate.Speaker = recordingFromForm.Speaker;
+            recordingToUpdate.UserGroup = recordingFromForm.UserGroup;
+            recordingToUpdate.LiveMeetingUrl = recordingFromForm.LiveMeetingUrl;
+            recordingToUpdate.Description = recordingFromForm.Description;
         }
         [RequiresAuthentication]
         [RequiresAuthorization(RoleToCheckFor = "Administrator")]

@@ -56,6 +56,42 @@
 			    </label>
 			</span>
 		</li>
+        <li>
+            <label class="desc">Speaker</label>
+            <span>
+                <%= Html.TextBox("Recording.Speaker", 
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.Speaker : "")%>
+                <label>
+                    <%= Html.ValidationMessage("Recording.Speaker")%>
+                </label>
+            </span></li>
+        <li>
+            <label class="desc">User Group</label>
+            <span>
+                <%= Html.TextBox("Recording.UserGroup", 
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.UserGroup : "")%>
+                <label>
+                    <%= Html.ValidationMessage("Recording.UserGroup")%>
+                </label>
+            </span></li>
+        <li>
+            <label class="desc"> Live Meeting Url</label>
+            <span>
+                <%= Html.TextBox("Recording.LiveMeetingUrl",
+                                        (ViewData.Model.Recording != null) ? ViewData.Model.Recording.LiveMeetingUrl : "")%>
+                <label>
+                    <%= Html.ValidationMessage("Recording.LiveMeetingUrl")%>
+                </label>
+            </span></li>
+        <li>
+            <label class="desc">Description</label>
+            <span>
+                <%= Html.TextArea("Recording.Description",
+                                                            (ViewData.Model.Recording != null) ? ViewData.Model.Recording.Description : "")%>
+                <label>
+                    <%= Html.ValidationMessage("Recording.Description")%>
+                </label>
+            </span></li>
 	    <li class="buttons">
             <%= Html.SubmitButton("btnSave", "Save Recording") %>
 	        <%= Html.Button("btnCancel", "Cancel", HtmlButtonType.Button, 

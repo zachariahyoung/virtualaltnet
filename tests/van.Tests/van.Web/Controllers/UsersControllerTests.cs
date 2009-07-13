@@ -1,4 +1,3 @@
-using System;
 using MvcContrib.TestHelper;
 using NUnit.Framework;
 using Rhino.Mocks;

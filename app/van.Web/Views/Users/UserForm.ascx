@@ -1,5 +1,5 @@
 <%@ Control Language="C#" AutoEventWireup="true"
-	Inherits="System.Web.Mvc.ViewUserControl<van.Web.Controllers.UsersController.UserFormViewModel>" %>
+	Inherits="System.Web.Mvc.ViewUserControl<UsersController.UserFormViewModel>" %>
 <%@ Import Namespace="van.Core" %>
 <%@ Import Namespace="van.Web.Controllers" %>
  
