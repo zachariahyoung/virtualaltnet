@@ -100,13 +100,13 @@ Ext.onReady(function() {
                 }
             });
         },
-        bbar: new Ext.PagingToolbar({
-        pageSize: 15,
-        store: SharpJs.RecordingsStore,
-        displayInfo: true,
-        displayMsg: 'Record {0} - {1} of {2}',
-        emptyMsg: "No records found"
-        }),
+//        bbar: new Ext.PagingToolbar({
+//        pageSize: 15,
+//        store: SharpJs.RecordingsStore,
+//        displayInfo: true,
+//        displayMsg: 'Record {0} - {1} of {2}',
+//        emptyMsg: "No records found"
+//        }),
        
         plugins: [new Ext.ux.grid.Search({
             position: 'top',
