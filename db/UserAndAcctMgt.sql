@@ -8,5 +8,5 @@ alter table Users add constraint FK2C1C7FE52E76D3B foreign key (UserAccountFk) r
 Insert Into Accounts (Name) Values ('Administrator')
 
 /*Seed Users with User accounts that are Admins value of 1*/
-Insert Into Users (UserName,Password,UserAccountFk) Values ('JLeger','betts4463',1)
-Insert Into Users (UserName, Password, UserAccountFk) Values ('Zach', 'zachary',1)
+Insert Into Users (UserName,Password,UserAccountFk) Values ('JLeger','xxxxxx',1)
+Insert Into Users (UserName, Password, UserAccountFk) Values ('Zach', 'xxxxx',1)
