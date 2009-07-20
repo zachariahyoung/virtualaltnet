@@ -1,3 +1,4 @@
+using Iesi.Collections.Generic;
 using SharpArch.Core.DomainModel;
 
 namespace van.Core
@@ -8,7 +9,14 @@ namespace van.Core
         public virtual string UserName { get; set; }
         public virtual string Password { get; set; }
 
-        public virtual Account UserAccount { get; set; }
+        public virtual ISet<Role> Roles { get; set; }
+
+        public User ()
+        {
+            Roles = new HashedSet<Role>();
+        }
+
+
           
     }
 }

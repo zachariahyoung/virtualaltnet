@@ -86,7 +86,7 @@ namespace van.Web.Controllers
             }
         }
 
-        private static void TransferFormValuesTo(Recording recordingToUpdate, Recording recordingFromForm) {
+        private void TransferFormValuesTo(Recording recordingToUpdate, Recording recordingFromForm) {
 			recordingToUpdate.Title = recordingFromForm.Title;
 			recordingToUpdate.Url = recordingFromForm.Url;
 			recordingToUpdate.Date = recordingFromForm.Date;

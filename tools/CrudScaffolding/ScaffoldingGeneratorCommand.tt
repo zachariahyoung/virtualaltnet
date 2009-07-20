@@ -16,7 +16,7 @@
  * Examples:  Product, Organization.Employee, Financial.Costs.LedgerEntry
  */
 EntityScaffoldingDetails entityScaffoldingDetails =
-	new EntityScaffoldingDetails("User");
+	new EntityScaffoldingDetails("Role");
  
 /*
  * Property names should be PascalCase.

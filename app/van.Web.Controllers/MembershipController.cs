@@ -43,6 +43,7 @@ namespace van.Web.Controllers {
                 authenticationProvider.SetAuthCookie(userName, (rememberMe != null));
                 return new RedirectResult(returnUrl);
             }
+            validationMessage = "Please Login";
             ViewData["ErrorMessage"] = validationMessage;
             return View("Login");
         }

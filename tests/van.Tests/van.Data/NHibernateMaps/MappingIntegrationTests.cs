@@ -23,35 +23,29 @@ namespace Tests.van.Data.NHibernateMaps
     [Category("DB Tests")]
     public class MappingIntegrationTests
     {
-        private Configuration cfg;
+        private Configuration _cfg;
 
+     
         [SetUp]
         public virtual void SetUp()
         {
             var mappingAssemblies = RepositoryTestsHelper.GetMappingAssemblies();
-            cfg = NHibernateSession.Init(new SimpleSessionStorage(), mappingAssemblies,
+            _cfg = NHibernateSession.Init(new SimpleSessionStorage(), mappingAssemblies,
                 new AutoPersistenceModelGenerator().Generate(),
                 "../../../../app/van.Web/NHibernate.config");
+          
         }
-        [Test]
-        public virtual void CanGenerateSchema()
-        {
-            var session = NHibernateSession.SessionFactory.OpenSession();
-            new SchemaExport(cfg).Execute(true, false, false, false, session.Connection, null);
-            Assert.IsTrue(true);
-        }
-
         [Test]
         public void CanConfirmDatabaseMatchesMappings()
         {
-            IDictionary<string, IClassMetadata> allClassMetadata =
-                NHibernateSession.SessionFactory.GetAllClassMetadata();
-
-            foreach (KeyValuePair<string, IClassMetadata> entry in allClassMetadata)
+            IDictionary<string, IClassMetadata> _cfg = NHibernateSession.SessionFactory.GetAllClassMetadata();
+           foreach (KeyValuePair<string, IClassMetadata> entry in _cfg)
             {
                 NHibernateSession.Current.CreateCriteria(entry.Value.GetMappedClass(EntityMode.Poco))
                      .SetMaxResults(0).List();
             }
+            //var export = new SchemaExport(_cfg as Configuration);
+            //export.Execute(true, false, false, false, NHibernateSession.Current.Connection, null);
         }
 
         [TearDown]

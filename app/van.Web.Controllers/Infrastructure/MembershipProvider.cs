@@ -40,25 +40,18 @@ namespace van.Web.Controllers.Infrastructure
             catch (Exception ex) {
                 throw new Exception("Encountered an error while attempting to validate username and password", ex);
             }
-
         }
-
-
         public bool AuthorizeUser(string userName, out string authorizationMessage)
         {
             try
             {
-                User user = userRepository.GetByUserName(userName);
-                Account account = accountRepository.GetRoleForUser(user.Id);
-
-                if (account == null) {
+                var roleName = accountRepository.GetRoleForUser(userName);
+                if (roleName == null) {
                     authorizationMessage = "access is denied.";
                     return false;
                 }
-                if (account.Name == null ) authorizationMessage = "Access to this location is not allowed.";
                 authorizationMessage = "Access to this location is allowed.";
                 return true;
-                
             }
             catch (Exception ex)
             {

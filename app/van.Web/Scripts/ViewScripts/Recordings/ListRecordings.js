@@ -80,7 +80,7 @@ Ext.onReady(function() {
                 }
             },
             iconCls: 'remove'
-        },],
+        }, '->'],
         deleteRecording: function(selectedRow) {
             var conn = new Ext.data.Connection();
 

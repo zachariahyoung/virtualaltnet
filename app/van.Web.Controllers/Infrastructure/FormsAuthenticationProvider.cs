@@ -33,9 +33,10 @@ namespace van.Web.Controllers.Infrastructure {
         {
             if (IsAuthenticated(context))
             {
-                var user = userRepository.GetByUserName(context.HttpContext.User.Identity.Name);
-                Account account = accountRepository.GetRoleForUser(user.Id);
-                return account.Name.ToLower() == roleToCheck.ToLower();
+                //var user = userRepository.GetByUserName();
+
+                var roleName = accountRepository.GetRoleForUser(context.HttpContext.User.Identity.Name);
+                return roleName.ToLower() == roleToCheck.ToLower();
             }
             return false;
 

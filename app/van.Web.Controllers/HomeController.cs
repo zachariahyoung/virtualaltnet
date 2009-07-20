@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using System.ServiceModel.Syndication;
+﻿using System.ServiceModel.Syndication;
 using System.Web.Mvc;
+using MvcContrib.Filters;
 using SharpArch.Core;
 using van.ApplicationServices;
 
 namespace van.Web.Controllers
 {
-    [HandleErrorAttribute]
+    [Rescue("DefaultError")]
     public class HomeController : Controller
     {
         public HomeController(IRssFeedReader rssFeedReader)

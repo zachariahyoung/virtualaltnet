@@ -15,7 +15,7 @@ namespace Tests.van.Web.Controllers {
             var mockedUserRepository = MockRepository.GenerateMock<IUserRepository>();
 
             mockedUserRepository.Expect(x => x.GetByUserName("")).IgnoreArguments().Return(null);
-            mockedAccountRepository.Expect(x => x.GetRoleForUser(0)).IgnoreArguments().Return(null);
+            mockedAccountRepository.Expect(x => x.GetRoleForUser("")).IgnoreArguments().Return(null);
             mockedProvider.Expect(x => x.IsAuthorized(null, null, null,null)).IgnoreArguments().Return(false);
             mockedProvider.Expect(x => x.RedirectToDenied(null)).IgnoreArguments();
             //act 
@@ -34,7 +34,7 @@ namespace Tests.van.Web.Controllers {
             
 
             mockedUserRepository.Expect(x => x.GetByUserName("Digby")).IgnoreArguments().Return(null);
-            mockedAccountRepository.Expect(x => x.GetRoleForUser(1)).IgnoreArguments().Return(null);
+            mockedAccountRepository.Expect(x => x.GetRoleForUser("Digby")).IgnoreArguments().Return(null);
             mockedProvider.Expect(x => x.IsAuthorized(null, null, null, null)).IgnoreArguments().Return(true);
             
             

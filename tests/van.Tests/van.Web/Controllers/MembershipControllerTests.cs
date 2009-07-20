@@ -36,14 +36,14 @@ namespace Tests.van.Web.Controllers {
         {
             //arrange
             var membershipController = new MembershipController(mockedAuthenticationProvider, mockedAuthorizationProvider,mockedMembershipProvider);
-            string validationMessage = "";
+            string validationMessage = "User is authenticated";
 
-            mockedMembershipProvider.Expect(x => x.ValidateUser("", "", out validationMessage)).IgnoreArguments().Return(true);
-            mockedAuthenticationProvider.Expect(x => x.SetAuthCookie("", false)).IgnoreArguments();
-
-
+            mockedMembershipProvider.Expect(x => x.ValidateUser(null, null, out validationMessage)).IgnoreArguments().Return(true);
+            mockedMembershipProvider.Expect(x => x.AuthorizeUser(null, out validationMessage)).IgnoreArguments().Return(true);
+            mockedAuthenticationProvider.Expect(x => x.SetAuthCookie(null,true)).IgnoreArguments();
+            
             //act, assert
-            RedirectResult redirectResult = membershipController.Authenticate("username", "password", "rememberme", "/").AssertHttpRedirect();
+            RedirectResult  redirectResult = membershipController.Authenticate(null, null, "rememberme", "/").AssertHttpRedirect();
             mockedMembershipProvider.VerifyAllExpectations();
             mockedAuthenticationProvider.VerifyAllExpectations();
         }
@@ -53,7 +53,7 @@ namespace Tests.van.Web.Controllers {
         {
             //arrange
             var membershipController = new MembershipController(mockedAuthenticationProvider, mockedAuthorizationProvider,mockedMembershipProvider);
-            string validationMessage = "";
+            string validationMessage = "Not Authenticated";
 
             //when validate user returns false
             mockedMembershipProvider.Expect(x => x.ValidateUser("", "", out validationMessage)).IgnoreArguments().Return(false);
