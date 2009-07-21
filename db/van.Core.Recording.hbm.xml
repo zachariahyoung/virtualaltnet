@@ -1,0 +1,31 @@
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" default-access="">
+  <class name="van.Core.Recording, van.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="Recordings" xmlns="urn:nhibernate-mapping-2.2">
+    <id name="Id" type="Int32" unsaved-value="0" column="Id">
+      <generator class="identity" />
+    </id>
+    <property name="Title" type="String">
+      <column name="Title" />
+    </property>
+    <property name="Url" type="String">
+      <column name="Url" />
+    </property>
+    <property name="Date" type="DateTime">
+      <column name="Date" />
+    </property>
+    <property name="Duration" type="String">
+      <column name="Duration" />
+    </property>
+    <property name="Speaker" type="String">
+      <column name="Speaker" />
+    </property>
+    <property name="UserGroup" type="String">
+      <column name="UserGroup" />
+    </property>
+    <property name="LiveMeetingUrl" type="String">
+      <column name="LiveMeetingUrl" />
+    </property>
+    <property name="Description" type="String">
+      <column name="Description" />
+    </property>
+  </class>
+</hibernate-mapping>

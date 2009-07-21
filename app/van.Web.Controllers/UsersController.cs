@@ -8,7 +8,7 @@ using van.Web.Controllers.Infrastructure;
 
 namespace van.Web.Controllers
 {
-    [HandleError]
+    [HandleErrorAttribute]
     public class UsersController : Controller
     {
         public UsersController(IRepository<User> userRepository) {

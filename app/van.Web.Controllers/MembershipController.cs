@@ -1,8 +1,11 @@
 ﻿using System.Web.Mvc;
 using Microsoft.Practices.ServiceLocation;
+using SharpArch.Web.NHibernate;
 using van.Web.Controllers.Infrastructure;
 
 namespace van.Web.Controllers {
+    
+    [HandleErrorAttribute]
     public class MembershipController : Controller {
 
         private readonly IAuthenticationProvider authenticationProvider;
@@ -19,11 +22,8 @@ namespace van.Web.Controllers {
         public MembershipController()
             : this(ServiceLocator.Current.GetInstance<IAuthenticationProvider>(),ServiceLocator.Current.GetInstance<IAuthorizationProvider>(),
                    ServiceLocator.Current.GetInstance<IMembershipProvider>()) { }
- 
- 
 
-
-        
+        [Transaction]
         public ActionResult Login()
         {
             return View("Login");
@@ -33,7 +33,7 @@ namespace van.Web.Controllers {
         {
             return View("Denied");
         }
-
+        [Transaction]
         public ActionResult Authenticate(string userName, string password, string rememberMe, string returnUrl)
         {
 

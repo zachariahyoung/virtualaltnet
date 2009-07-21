@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Configuration;
+using System.IO;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Reflection;
 using Castle.Windsor;
+using HibernatingRhinos.NHibernate.Profiler.Appender;
 using MvcContrib.Castle;
 using SharpArch.Data.NHibernate;
 using SharpArch.Web.ModelBinder;
@@ -25,14 +28,18 @@ namespace van.Web
         protected void Application_Start()
         {
             log4net.Config.XmlConfigurator.Configure();
-
+           //const string pathToLog4NetConfig = @"C:\Dev\OSS\virtualaltnet\app\van.Web\log4net.config";
+            NHibernateProfiler.Initialize();
+            
+           // log4net.Config.XmlConfigurator.Configure(new FileInfo
+           //     (ConfigurationManager.AppSettings["log4net-config-file"])); 
+            
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new AreaViewEngine());
 
             ModelBinders.Binders.DefaultBinder = new SharpModelBinder();
 
             InitializeServiceLocator();
-
             RouteRegistrar.RegisterRoutesTo(RouteTable.Routes);
         }
 

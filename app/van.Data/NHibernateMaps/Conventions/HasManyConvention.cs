@@ -14,6 +14,9 @@ namespace van.Data.NHibernateMaps.Conventions
         {
             oneToManyPart.KeyColumnNames.Clear();
             oneToManyPart.KeyColumnNames.Add(oneToManyPart.EntityType.Name + "Fk");
+            oneToManyPart.LazyLoad();
+            oneToManyPart.Inverse();
+            //oneToManyPart.Cache.AsNonStrictReadWrite();
         }
     }
 }

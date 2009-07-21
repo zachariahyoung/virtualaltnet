@@ -11,7 +11,7 @@ namespace van.Core
 
         public virtual ISet<Role> Roles { get; set; }
 
-        public User ()
+        public User()
         {
             Roles = new HashedSet<Role>();
         }
