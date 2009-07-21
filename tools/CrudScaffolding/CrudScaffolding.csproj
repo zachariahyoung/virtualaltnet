@@ -66,15 +66,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
     </Compile>
-    <Compile Include="UsersController.cs">
-      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UsersControllerTests.cs">
-      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserTests.cs">
-      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="EntityScaffoldingDetails.tt">
@@ -108,23 +99,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Create.aspx">
-      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
-    </Content>
-    <Content Include="Edit.aspx">
-      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
-    </Content>
-    <Content Include="Index.aspx">
-      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
-    </Content>
-    <Content Include="Show.aspx">
-      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
-    </Content>
-    <Content Include="UserForm.ascx">
-      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

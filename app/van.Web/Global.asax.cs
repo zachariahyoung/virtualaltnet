@@ -31,7 +31,7 @@ namespace van.Web
 
             ModelBinders.Binders.DefaultBinder = new SharpModelBinder();
 
-            IWindsorContainer container = InitializeServiceLocator();
+            InitializeServiceLocator();
 
             RouteRegistrar.RegisterRoutesTo(RouteTable.Routes);
         }
@@ -42,7 +42,7 @@ namespace van.Web
         /// WindsorController to the container.  Also associate the Controller 
         /// with the WindsorContainer ControllerFactory.
         /// </summary>
-        protected virtual IWindsorContainer InitializeServiceLocator()
+        protected virtual void InitializeServiceLocator()
         {
             IWindsorContainer container = new WindsorContainer();
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container));
@@ -51,9 +51,8 @@ namespace van.Web
             ComponentRegistrar.AddComponentsTo(container);
 
             ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(container));
-
-            return container;
         }
+
 
         protected void Application_Error(object sender, EventArgs e)
         {
