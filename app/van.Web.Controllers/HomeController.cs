@@ -1,27 +1,33 @@
-﻿using System.ServiceModel.Syndication;
+﻿using System;
+using System.Collections.Generic;
+using System.ServiceModel.Syndication;
 using System.Web.Mvc;
 using MvcContrib.Filters;
 using SharpArch.Core;
 using van.ApplicationServices;
+using van.Core.Dto;
+using van.Core;
 
 namespace van.Web.Controllers
 {
     [Rescue("DefaultError")]
     public class HomeController : Controller
     {
-        public HomeController(IRssFeedReader rssFeedReader)
+        public HomeController(IPostProvider postProvider)
         {
-            Check.Require(rssFeedReader != null, "rssFeedReader may not be null");
+            Check.Require(postProvider != null, "postProvider may not be null");
 
-            this.rssFeedReader = rssFeedReader;
+            this.postProvider = postProvider;
         }
        
         public ActionResult Index()
         {
-            
-            SyndicationFeed item = rssFeedReader.readFeed("http://feeds.feedburner.com/VirtualAltnet?format=xml");
 
-            return View(item);
+            IEnumerable<SyndicationItem> items = postProvider.GetItems();
+
+            IEnumerable<PostDto> posts = items.FindItemsTop(15);
+
+            return View(posts);
         }
 
         public ActionResult Calendar()
@@ -49,6 +55,6 @@ namespace van.Web.Controllers
             return Redirect("http://twitter.com/virtualaltnet");
         }
 
-        private readonly IRssFeedReader rssFeedReader;
+        private readonly IPostProvider postProvider;
     }
 }
