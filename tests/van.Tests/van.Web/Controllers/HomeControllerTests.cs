@@ -15,9 +15,11 @@ namespace Tests.van.Web.Controllers
 
         }
 
+        /*
         private IPostProvider CreateMockPostProvider()
         {
             IPostProvider postProvider = MockRepository.GenerateMock<IRepository<Blog> blogRepository, ISyndicationFeedRepository syndicationFeedRepository>();
         }
+         */
     }
 }
