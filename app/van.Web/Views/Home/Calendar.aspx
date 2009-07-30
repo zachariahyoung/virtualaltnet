@@ -8,20 +8,24 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 <br />
-<table>
-<tr>
-<tb><a href="http://www.google.com/calendar/feeds/9fgo89ah4shtm6pk7k5307aerg@group.calendar.google.com/public/basic">
-        <img src="<%= ResolveUrl("~") %>Content/Images/xml.gif"  alt="Virtual Alt.Net Calendar XML"/></a></tb>
-<tb><a href="http://www.google.com/calendar/ical/9fgo89ah4shtm6pk7k5307aerg@group.calendar.google.com/public/basic.ics">
-        <img src="<%= ResolveUrl("~") %>Content/Images/ical.gif"  alt="Virtual Alt.Net Calendar XML"/></a></tb>
-<tb><a href="http://www.google.com/calendar/embed?src=9fgo89ah4shtm6pk7k5307aerg%40group.calendar.google.com&ctz=America/Chicago 
-">
-        <img src="<%= ResolveUrl("~") %>Content/Images/html.gif"  alt="Virtual Alt.Net Calendar XML"/></a></tb>
-        
-</tr>
-</table>
+    <table>
+        <tr>
+            <td>
+                <a href="http://www.google.com/calendar/feeds/9fgo89ah4shtm6pk7k5307aerg@group.calendar.google.com/public/basic">
+                    <img src="<%= ResolveUrl("~") %>Content/Images/xml.gif"  alt="Virtual Alt.Net Calendar XML"/></a>
+            </td>
+            <td>
+                <a href="http://www.google.com/calendar/ical/9fgo89ah4shtm6pk7k5307aerg@group.calendar.google.com/public/basic.ics">
+                    <img src="<%= ResolveUrl("~") %>Content/Images/ical.gif"  alt="Virtual Alt.Net Calendar XML"/></a>
+            </td>
+            <td>
+                <a href="http://www.google.com/calendar/embed?src=9fgo89ah4shtm6pk7k5307aerg%40group.calendar.google.com&ctz=America/Chicago">
+                    <img src="<%= ResolveUrl("~") %>Content/Images/html.gif"  alt="Virtual Alt.Net Calendar XML"/></a>
+            </td>
+        </tr>
+    </table>
 <br />
 <iframe src="http://www.google.com/calendar/embed?src=9fgo89ah4shtm6pk7k5307aerg%40group.calendar.google.com&ctz=America/Chicago" 
-style="border: 0" width="800" height="600" frameborder="0" scrolling="no" ></iframe>
+style="border: 0" width="600" height="600" frameborder="0" scrolling="no" ></iframe>
 
 </asp:Content>

@@ -34,7 +34,7 @@ Ext.onReady(function() {
         sm: new Ext.grid.RowSelectionModel({ singleSelect: true }),
         renderTo: 'divRecordingsGrid',
         width: Ext.GRID_WIDTH,
-        height: 1000,
+        height: Ext.GRID_HEIGHT,
         stripeRows: true,
         viewConfig: {
             forceFit: true,
