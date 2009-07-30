@@ -10,7 +10,7 @@ using van.Core;
 
 namespace van.Web.Controllers
 {
-    [Rescue("DefaultError")]
+    
     public class HomeController : Controller
     {
         public HomeController(IPostProvider postProvider)
@@ -20,6 +20,7 @@ namespace van.Web.Controllers
             this.postProvider = postProvider;
         }
        
+        [OutputCache(Duration=30, VaryByParam = "")]
         public ActionResult Index()
         {
 
