@@ -282,7 +282,8 @@ a:active {
 .nav-main {
 	margin:-41px 0 0 199px;
 	padding:12px 15px 0 15px;
-	background:#f6f6f6;
+	background:#000;
+	background-color:#000;
 	min-height:28px;
 	_height:28px;
 	border-top:1px dotted #7a7a7a;
@@ -294,41 +295,45 @@ a:active {
 
 .nav-main ul {
 	margin:0;
-	padding:0;
+	padding: 0px 2px -1px 2px;
 	}
 
 .nav-main li {
 	list-style:none;
 	float:left;
-	background:none;
-	padding:0;
+	font-size:1.25em;
+	background-color:#000;
+	padding: 0px 2px -1px 2px;
 	}
 
 .nav-main li a {
-	display:block;
+	display:inline-block;
 	padding:0 10px;
 	border-right:1px dotted #d2d2d2;
 	}
 
 .nav-main li.first a {
 	padding-left:0;
+	background:#000;
 	}
 	
 /* NAV MAIN LINKS */
 
 .nav-main a:link,
 .nav-main a:visited {
-	color:#33840c;
+	color:#57B6DD;
 	text-decoration:none;
 	}
 
 .nav-main .active a:link,
 .nav-main .active a:visited {
-	color:#000;
+	color:#57B6DD;
 	}
 
 .nav-main a:hover {
-	text-decoration:underline;
+	text-decoration:none;
+	background-color:#AA7B13;
+	color:#FFC526;
 	}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -338,10 +343,11 @@ a:active {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 .footer {
-	padding:10px 0;
+	padding:25px;
 	_height:1px;
 	background:#000000;
-	clear:both;
+	margin-top:20px;
+	
 	}
 
 .nav-footer {
@@ -349,7 +355,7 @@ a:active {
 	_height:1px;
 	margin:0 200px;
 	text-align:center;
-	clear:both;
+	
 	}
 
 .nav-footer ul{
@@ -366,6 +372,15 @@ a:active {
 	}
 
 .nav-footer li.first {
+	border-left:1px dotted #686868;
+	}
+	.nav-footer li.second {
+	border-left:1px dotted #686868;
+	}
+	.nav-footer li.third {
+	border-left:1px dotted #686868;
+	}
+	.nav-footer li.fourth {
 	border-left:1px dotted #686868;
 	}
 	
@@ -489,17 +504,16 @@ a:active {
 	width:96%;
 	}
 
-.content-left {
-	padding:20px 10px;
-	float:left;
-	width:180px;
-	margin-top:-1px;
-	position:relative;
-	margin-left:-100%;
-	right:200px;
-	_left:200px;
-	border-top:1px dotted #797979;
-	}
+/*.content-left {
+    padding: 20px 10px;
+    float: left;
+    width: 360px;
+    margin-top: -1px;
+    position: relative;
+    margin-left: -100%;
+    _left: 200px;
+    border-top: 1px dotted #797979;
+}
 
 .content-right {
 	padding:15px 10px 20px 10px;
@@ -508,12 +522,13 @@ a:active {
 	position:relative;
 	margin-right:-200px;
 	}
-
-.ads {
-	text-align:center;
-	margin:20px 0;
-	width:180px;
-	position:absolute;
+*/
+.ads 
+{
+    background:url(images/bg-column-left.png) repeat-y;
+	text-align:left;
+	width:200px;
+	height:auto;
 	}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -522,23 +537,30 @@ a:active {
 	 	 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-.side-bucket {
-	margin-bottom:20px;
-	line-height:normal;
+.side-bucket 
+{
+    background:url(images/bg-column-left.png) repeat-y;
+    text-align:left;
+    width:200px;
+	margin-bottom:10px;
 	}
 
 /* SIDE BUCKET LISTS */
 
+.side-bucket p
+{
+    font-size:1.5em;
+}
 .side-bucket ul {
 	margin:0;
-	padding:0;
-	_height:1px;
+	font-size:1.5em;
+	_height:5px;
 	}
 
 .side-bucket li {
 	list-style:none;
 	border-bottom:1px dotted #7a7a7a;
-	background-position:0 4px;
+	background-position:0 0px;
 	}
 
 .side-bucket li.first {
@@ -555,55 +577,8 @@ a:active {
 	}
 	
 .side-bucket a:hover {
-	text-decoration:underline;
+	text-decoration:none;
 	}
-	
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	 
-	 PHOTOS & CAPTIONS
-	 	 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-.photo-container {
-	padding:10px;
-	border:1px dotted #7a7a7a;
-	}
-
-.photo-container img {
-	display:block;
-	border:1px solid #666;
-	}
-	
-.photo-caption {
-	font-size:.7em;
-	padding:10px 10px 0 10px;
-	text-align:center;
-	color:#999;
-	font-style:italic
-	}
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	 
-	 THREE-COLUMN SECTION
-	 	 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-.three-column-container {
-	margin:10px 0px;
-	}
-
-.three-column-left,
-.three-column-right,
-.three-column-middle {
-	float:left;
-	width:30%;
-	margin-right:5%;
-	}
-
-.three-column-right {
-	margin-right:0;
-	}
-	
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	 
 	 DATA TABLES
@@ -697,3 +672,13 @@ li {
 .no-margin {
 	margin:0;
 	}
+	/**********************************************************
+        FEED STYLES
+
+    ***********************************************************/
+    .feed-content p
+    {
+        font-size:1em;
+        font-family:Verdana,Arial,Consolas;
+    }
+	

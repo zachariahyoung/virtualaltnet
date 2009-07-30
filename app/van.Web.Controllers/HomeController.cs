@@ -10,7 +10,7 @@ using van.Core;
 
 namespace van.Web.Controllers
 {
-    
+    [HandleError]
     public class HomeController : Controller
     {
         public HomeController(IPostProvider postProvider)

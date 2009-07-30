@@ -618,6 +618,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\960\CSS\960.css" />
+    <Content Include="Content\960\CSS\custom.css" />
+    <Content Include="Content\960\CSS\reset.css" />
+    <Content Include="Content\960\CSS\text.css" />
     <Content Include="log4net.config" />
     <None Include="Scripts\ext-3.0-rc1.1\resources\images\default\form\clear-trigger.psd" />
     <None Include="Scripts\ext-3.0-rc1.1\resources\images\default\form\date-trigger.psd" />

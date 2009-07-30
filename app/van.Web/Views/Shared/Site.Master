@@ -1,133 +1,116 @@
-<%@ Import Namespace="van.Web.Extensions"%>
-<%@ Master Language="C#" AutoEventWireup="true" 
-    Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="van.Web.Extensions" %>
+<%@ Master Language="C#" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewMasterPage" %>
 <%@ Import Namespace="van.Web.Controllers" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head id="Head1" runat="server">
- <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="shortcut icon" href="<%= ResolveUrl("~") %>Content/images/favicon.ico" />
-<link href="<%= ResolveUrl("~") %>Content/Site.css" rel="stylesheet" type="text/css" media="interactive, braille, emboss, handheld, projection, screen, tty, tv" />
-<link href="<%= ResolveUrl("~") %>Content/print-styles.css" rel="stylesheet" type="text/css" media="print" />
-<link type="text/css" href="<%= ResolveUrl("~") %>Scripts/ext-3.0-rc1.1/resources/css/ext-all.css" rel="stylesheet" />
-<!-- Optional styling -->
-
-<link type="text/css" href="<%= ResolveUrl("~") %>Scripts/ext-3.0-rc1.1/resources/css/xtheme-gray.css" rel="stylesheet" />
-
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="shortcut icon" href="<%= ResolveUrl("~") %>Content/images/favicon.ico" />
+    <link href="<%= ResolveUrl("~") %>Content/Site.css" rel="stylesheet" type="text/css"
+        media="interactive, braille, emboss, handheld, projection, screen, tty, tv" />
+    <link href="<%= ResolveUrl("~") %>Content/print-styles.css" rel="stylesheet" type="text/css"
+        media="print" />
+    <link type="text/css" href="<%= ResolveUrl("~") %>Scripts/ext-3.0-rc1.1/resources/css/ext-all.css"
+        rel="stylesheet" />
+    <!-- Optional styling -->
+    <link type="text/css" href="<%= ResolveUrl("~") %>Scripts/ext-3.0-rc1.1/resources/css/xtheme-gray.css"
+        rel="stylesheet" />
     <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <link rel="Stylesheet" type="text/css" href="<%= ResolveUrl("~") %>Content/960/CSS/960.css" />
+    <link rel="Stylesheet" type="text/css" href="<%= ResolveUrl("~") %>Content/960/CSS/reset.css" />
+    <link rel="Stylesheet" type="text/css" href="<%= ResolveUrl("~") %>Content/960/CSS/text.css" />
+    <link rel="Stylesheet" type="text/css" href="<%= ResolveUrl("~") %>Content/960/CSS/custom.css" />
+    <%= Html.IncludeMsJs("jquery-1.3.2", "MicrosoftAjax", "MicrosoftMvcAjax")%>
+    <!-- ExtJS related JavaScript -->
+    <%= Html.IncludeExtAdapterJs("ext-jquery-adapter")%>
+    <%= Html.IncludeExtAllJs("ext-all")%>
+    <!-- Custom ExtJS JavaScript -->
+    <%= Html.IncludeExtGridJs("Ext.ux.grid.Search", "Ext.ux.grid.GroupingSummary")%>
 
-<%= Html.IncludeMsJs("jquery-1.3.2", "MicrosoftAjax", "MicrosoftMvcAjax")%>
-
-<!-- ExtJS related JavaScript -->
-<%= Html.IncludeExtAdapterJs("ext-jquery-adapter")%>
-<%= Html.IncludeExtAllJs("ext-all")%>
-<!-- Custom ExtJS JavaScript -->
-<%= Html.IncludeExtGridJs("Ext.ux.grid.Search", "Ext.ux.grid.GroupingSummary")%>
-
-
-<script type="text/javascript">
+    <script type="text/javascript">
     <!-- Create a generic ns to be used by custom JavaScript objects and variables -->
     Ext.namespace('SharpJs');
     SharpJs.RootUrl = '<%= ResolveUrl("~") %>';
     Ext.BLANK_IMAGE_URL = SharpJs.RootUrl + 'Scripts/ext-3.0-rc1.1/resources/images/default/s.gif';
-    <!-- Used by generated index pages - makes it easy to modify grid width globally -->
-    Ext.GRID_WIDTH = 750;
-</script>
-
-
+    Ext.GRID_WIDTH = 720;
+    Ext.GRID_HEIGHT = 1000;
+    </script>
 
     <% // At bottom to facilitate other JS files to be loaded before page-by-page JS is loaded %>
     <asp:ContentPlaceHolder ID="_headContentPlaceHolder" runat="server">
-        
     </asp:ContentPlaceHolder>
     
 </head>
 <body>
-<div class="none"><a href="#maincontent">skip to the main content area of this page</a></div>
-<div class="header-container">
-   <!-- <div class="nav-login">
-        <ul>
-            <li class="first"><%= Html.ActionLink("Register", "Create", "Users") %></li>
-        </ul>
-    </div>-->
-    <div class="logo"><a href="<%= Url.Action("Index", "Home") %>">
-        <img src="<%= ResolveUrl("~") %>Content/Images/VAN_LOGO.png"  alt="Virtual Alt.Net"/></a></div>
-    <div class="clear"></div>
-</div>
-<div class="poster-container-no-image">
-    <div class="poster-inner"> </div>
-</div>
-<div class="nav-main">
-   			<% Html.RenderPartial("Menu"); %>
-
-</div>
-<div class="content-container">
-    <div class="content-container-inner">
-
-        <div class="content-main"><a name="maincontent" id="maincontent"></a>
-        
-            <!--<div class="breadcrumb"> <a href="home.html">Home</a> &raquo; Mission Statement</div>-->
-        
-       <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
-        
-        
-            <div class="three-column-container">
-                <div class="three-column-left">
-                   
-                </div>
-                <div class="three-column-middle">
-                </div>
-                <div class="three-column-right">
-                </div>
-                <div class="clear"></div>
+    <div class="container_12">
+        <div id="logo-container" class="grid_12">
+            <div class="nav-login">
+                <%Html.RenderPartial("LogOutUser"); %>
             </div>
-            <div class="three-column-container">
-                <div class="three-column-left">
-                </div>
-                <div class="three-column-middle">
-                </div>
-                <div class="three-column-right">
-                </div>
-                <div class="clear"></div>
+            <div class="logo">
+                <a href="<%= Url.Action("Index", "Home") %>">
+                    <img src="<%= ResolveUrl("~") %>Content/Images/VAN_LOGO.png" alt="Virtual Alt.Net" /></a>
             </div>
-            
         </div>
-		        <div class="content-left">
+        <!--Header container close-->
+        <div class="clear">
+        </div>
+        <!-- Nav Bar Region -->
+        <div id="space" class="grid_12">
+            <div class="poster-container-no-image">
+                <div class="poster-inner">
+                </div>
+            </div>
+        </div>
+        <div id="navbarContent" class="grid_12">
+            <div class="nav-main">
+                <% Html.RenderPartial("Menu"); %>
+            </div>
+        </div>
+        <!-- Content Regions -->
+        <div id="sidebar" class="grid_3">
             <div class="side-bucket">
                 <ul>
-                    <li class="first"><a href="<%= Url.Action("Index","Van")%>">Attend a meeting</a></li>
-                    <li> <a href="<%= Url.Action("Blog","Home")%>">Blog</a></li>
-                    <li> <a href="<%= Url.Action("GoogleGroup","Home")%>">Google Group</a></li>
-                    <li><a href="<%= Url.Action("Twitter","Home")%>">Twitter</a></li>                    
+                    <li class="first"><a href="<%= Url.Action("Index","Van")%>" target="_blank">Join a meeting</a></li>
+                    <li class="second"><a href="<%= Url.Action("Blog","Home")%>" target="_blank">Blog</a></li>
+                    <li class="third"><a href="<%= Url.Action("GoogleGroup","Home")%>" target="_blank">Google
+                        Group</a></li>
+                    <li class="fourth"><a href="<%= Url.Action("Twitter","Home")%>" target="_blank">Twitter</a></li>
                 </ul>
-            
-
             </div>
-        </div>
-        <div class="content-right">
-           
-            <div class="ads"> 
-                       <div class="header-container"><span>PARTNERING WITH</span></div>
-              <span>
-                <a href="http://www.DiscountASP.net" target="_blank">
-                    <img src="<%= ResolveUrl("~") %>Content/images/dasp_logo4.jpg" alt="DiscountASP.NET" />
-                </a>
-              </span>
-              <span id="ineta">
-              <img src="http://www.ineta.org/OfficialLogo.ashx?ugid=1" alt="Official INETA Logo" width="114px" height="70px" />
-              </span>
+            <div class="ads">
+                <div class="partner-container">
+                    <span>PARTNERING WITH</span>
+                </div>
+                <span id="DiscountASP"><a href="<%=Url.Action("DiscountAspNet","Home") %>" target="_blank">
+                    <img src="<%= ResolveUrl("~") %>Content/images/dasp_logo4.jpg" alt="DiscountAsp.Net" />
+                </a></span><span id="ineta"><a href="<%=Url.Action("Ineta","Home") %>" target="_blank">
+                    <img src="http://www.ineta.org/OfficialLogo.ashx?ugid=1" alt="Official INETA Logo"
+                        width="114px" height="70px" />
+                </a></span>
             </div>
+            <!--Close Ads Div-->
         </div>
+        <!--Close Sidebar-->
+        <!-- Start main page content-->
+        <div id="mainContent" class="grid_9">
+            <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
+        </div>
+        <!--Close main content-->
+        <!-- Start Footer content -->
         <div class="clear"></div>
+        <div class="grid_12">
+            <div class="footer">
+                <div class="nav-footer">
+                    <% Html.RenderPartial("Menu"); %>
+                    <p class="copyright">
+                        © 2009 Virtual Alt.Net</p>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<div class="footer">
-    <div class="nav-footer">
-        <% Html.RenderPartial("Menu"); %>
-        <p class="copyright">© 2009 Virtual Alt.Net</p>
-    </div>
-</div>
+    <!-- end .grid_12 -->
 
     <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -136,9 +119,8 @@
 
     <script type="text/javascript">
         try {
-            var pageTracker = _gat._getTracker("UA-3010739-6");
+            var pageTracker = _gat._getTracker("UA-4683950-2");
             pageTracker._trackPageview();
         } catch (err) { }</script>
-
 </body>
 </html>
