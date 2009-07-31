@@ -1,0 +1,493 @@
+
+/*  Print Styles - 9 of 12 Microsoft Internet Explorer Design Templates 
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 HTML TAGS
+	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+body {
+	font-family:Arial, Tahoma, Helvetica, sans-serif;
+	margin:0;
+	padding:0;
+	}
+
+p, li {
+	font-size:.75em;
+	line-height:160%;
+	}
+	
+a img {
+	border:none;
+	}
+
+/* HEADINGS */
+	
+h1,h2,h3,h4,h5,h6 {
+	margin:15px 0;
+	font-family:"trebuchet MS", verdana, sans-serif;
+	color:#e99400;
+	}
+
+.content-left h1, .content-right h1,
+.content-left h2, .content-right h2,
+.content-left h3, .content-right h3,
+.content-left h4, .content-right h4,
+.content-left h5, .content-right h5,
+.content-left h6, .content-right h6 {
+	color:#000;
+	margin:5px 0;
+	}
+	
+h1.first,
+h2.first,
+h3.first,
+h4.first,
+h5.first,
+h6.first {
+	margin-top:0;
+	}
+	
+h1 {
+	font-size:1.2em;
+	}
+	
+h2 {
+	font-size:1em;
+	}
+	
+h3 {
+	font-size:.9em;
+	background:url(images/bg-line.png) repeat-x bottom;
+	}
+	
+h4 {
+	font-size:.8em;
+	}
+	
+h5 {
+	font-size:.8em;
+	}
+	
+h6 {
+	font-size:.8em;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 FORMS
+	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+fieldset {
+	padding:10px 20px;
+	margin:15px 0;
+	position:relative;
+	}
+
+fieldset fieldset {
+	margin:10px 0;
+	width:90%;
+	}
+	
+legend {
+	font-weight:bold;
+	font-size:1em;
+	padding:10px;
+	color:#000;
+	margin:0 0 10px 30px;
+	font-family:"trebuchet MS", verdana, sans-serif;
+	}
+
+fieldset fieldset legend {
+	font-size:.8em;
+	}
+	
+.input-box {
+	display:block;
+	margin-bottom:5px;
+	vertical-align:top;
+	padding:2px;
+	color:#666666;
+	font-size:.8em;
+	}
+
+label {
+	font-weight:bold;
+	font-size:.7em;
+	font-weight:bold;
+	display:block;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+
+.checkbox {	
+	margin:12px 0;
+	padding:4px 0 2px 3px;
+	border:1px dotted #585858;
+	width:95%;
+	}
+	
+.checkbox input {	
+	margin-right:6px;
+	margin-bottom:2px;
+	}
+
+.forgot-password {
+	margin:2px 0;
+	font-size:.65em;
+	}
+	
+input.button {
+	color:#FFF;
+	font-size:.7em;
+	font-weight:bold;
+	padding:0 5px 2px 5px;
+	}
+	
+input.button-big {
+	padding:6px 20px;
+	}
+	
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 LINKS
+	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+a:link {
+	color:#33840c;
+	text-decoration:underline;
+	}
+
+a:visited {
+	color:#72840c;
+	text-decoration:underline;
+	}
+
+a:hover {
+	text-decoration:none;
+	}
+
+a:active {
+	text-decoration:underline;
+	color:#86c400;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 HEADER
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.header-container {
+	position:relative;
+	padding:6px 0 0 0;
+	color:#FFF;
+	}
+
+/* LOGO */
+
+.logo {
+	font-size:1.5em;
+	font-family:"trebuchet MS", verdana, sans-serif;
+	padding:0;
+	letter-spacing:.2em;
+	color:#373737;
+	}
+
+.logo a:link, 
+.logo a:visited {
+	color:#373737;
+	text-decoration:none;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 LOGIN
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.nav-login  {
+	display:none;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 MAIN NAV
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.nav-main {
+	display:none;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 FOOTER
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.footer {
+	padding:10px 0;
+	border-top:1px dotted #373737;
+	clear:both;
+	}
+
+.nav-footer {
+	
+	}
+
+.nav-footer ul{
+	display:none;
+	}
+
+.copyright {
+	color:#373737;
+	font-size:.7em;
+	clear:both;
+	margin:5px 0 0 0;
+	}
+	
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 POSTER
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.poster-container {
+	margin:15px 0 15px 0;
+	border:1px solid #F6B525;
+	padding:15px;
+	}
+
+.poster-container-no-image {
+	border-top:30px solid #F6B525;
+	height:1px;
+	margin:15px 0;
+	}
+	
+.poster-inner {
+	font-family:"trebuchet MS", verdana, sans-serif;
+	}
+
+.poster-photo {
+	
+	}
+
+.poster-container h1 {
+	margin:0;
+	font-size:1.2em;
+	color:#000;
+	}
+
+.poster-container p {
+	margin:10px 0 0 0;
+	line-height:normal;
+	font-size:1em;
+	}
+
+/* POSTER LINKS */
+
+.poster-links {
+	font-weight:bold;
+	}
+	
+.poster-container a:link,
+.poster-container a:visited {
+	color:#33840c;
+	}
+
+.poster-container a:hover {
+	text-decoration:none;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 BREADCRUMB
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.breadcrumb {
+	min-height:1px;
+	_height:1px;
+	padding:0 0 15px 0;
+	margin:0 0 15px 0;
+	font-size:.7em;
+	border-bottom:1px dotted #686868;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 SIDE BUCKET
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.side-bucket {
+	margin-bottom:20px;
+	line-height:normal;
+	width:400px;
+	}
+
+/* SIDE BUCKET LISTS */
+
+.side-bucket ul {
+	margin:0;
+	padding:0;
+	}
+
+.side-bucket li {
+	list-style:none;
+	border-bottom:1px dotted #7a7a7a;
+	}
+
+.side-bucket li.first {
+	border-top:1px dotted #7a7a7a;
+	}
+	
+/* SIDE BUCKET LINKS */
+
+.side-bucket a:link,
+.side-bucket a:visited {
+	text-decoration:none;
+	display:block;
+	_display:inline;
+	}
+	
+.side-bucket a:hover {
+	text-decoration:underline;
+	}
+	
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 PHOTOS & CAPTIONS
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.photo-container {
+	padding:10px;
+	border:1px dotted #7a7a7a;
+	}
+
+.photo-container img {
+	display:block;
+	border:1px solid #666;
+	}
+	
+.photo-caption {
+	font-size:.7em;
+	padding:10px 10px 0 10px;
+	text-align:center;
+	color:#999;
+	font-style:italic
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 THREE-COLUMN SECTION
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.three-column-container {
+	margin:10px 0px;
+	}
+
+.three-column-left,
+.three-column-right,
+.three-column-middle {
+	float:left;
+	width:30%;
+	margin-right:5%;
+	}
+
+.three-column-right {
+	margin-right:0;
+	}
+	
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 DATA TABLES
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+table.data-table {
+	font-size:.7em;
+	border-top:1px dotted #7a7a7a;
+	border-left:1px dotted #7a7a7a;
+	}
+
+table.data-table caption{
+	padding:10px;
+	text-align:center;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	border:1px dotted #7a7a7a;
+	border-bottom:none;
+	}
+
+table.data-table td,
+table.data-table th{
+	padding:8px;
+	border-right:1px dotted #7a7a7a;
+	border-bottom:1px dotted #7a7a7a;
+	}
+
+table.data-table th{
+	text-align:left;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+	
+table.data-table td{
+	}
+
+table.data-table tr.row-alternating td{
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 LISTS
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+li {
+	padding:3px 0 3px 0;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 MISC STYLES
+	 	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.none {
+	display:none;
+	}
+
+.clear {
+	clear:both;
+	font-size:1px;
+	margin:0;
+	padding:0;
+	}
+
+.align-left {
+	float:left;
+	margin:0 20px 15px 0;
+	}
+
+.align-right {
+	float:right;
+	margin:0 0 15px 20px;
+	}
+
+.align-middle {
+	vertical-align:middle;
+	}
+	
+.inline {
+	display:inline;
+	}
+
+.no-margin {
+	margin:0;
+	}
