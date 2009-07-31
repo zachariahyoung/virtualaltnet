@@ -8,11 +8,15 @@
 	 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-body {
-	font-family:Arial, Tahoma, Helvetica, sans-serif;
+body .container
+{
+    background-color: #000;
+	font-family:Verdana, Arial, Tahoma, Helvetica, sans-serif;
 	margin:0;
 	padding:0;
-	}
+	overflow:hidden;
+	
+}
 
 p, li
 {
@@ -192,7 +196,7 @@ a:active {
     position: relative;
     padding: 6px 0 6 0;
     background: #000000;
-    color: #FFF;
+    /*color: #FFF;*/
     border-bottom: 1px dotted #585858;
     min-height: 1px;
     _height: 1px;
@@ -495,7 +499,7 @@ a:active {
 	}
 	
 .content-main {
-	padding:15px 2% 20px 2%;
+	padding:15px 0px 20px 0px;
 	position:relative;
 	min-height:1px;
 	min-width:800px;
@@ -542,6 +546,7 @@ a:active {
     background:url(images/bg-column-left.png) repeat-y;
     text-align:left;
     width:200px;
+    height:auto;
 	margin-bottom:10px;
 	}
 
@@ -638,7 +643,6 @@ li {
 	 
 	 MISC STYLES
 	 	 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 .none {
 	display:none;
@@ -672,6 +676,7 @@ li {
 .no-margin {
 	margin:0;
 	}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 	/**********************************************************
         FEED STYLES
 

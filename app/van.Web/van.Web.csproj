@@ -178,7 +178,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\ad.gif" />
-    <Content Include="Content\Images\animated_favicon1.gif" />
     <Content Include="Content\Images\bg-button.png" />
     <Content Include="Content\Images\bg-column-left.png" />
     <Content Include="Content\Images\bg-column-right.png" />
@@ -190,8 +189,6 @@
     <Content Include="Content\Images\dasp.gif" />
     <Content Include="Content\Images\dasp_logo4.jpg" />
     <Content Include="Content\Images\favicon.ico" />
-    <Content Include="Content\Images\photo-small-01.jpg" />
-    <Content Include="Content\Images\photo-small-02.jpg" />
     <Content Include="Content\Images\ReadMe.txt" />
     <Content Include="Content\Images\sharp_arch.jpg" />
     <Content Include="Content\Images\sharp_arch_small.gif" />

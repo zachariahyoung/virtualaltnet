@@ -33,8 +33,8 @@
     Ext.namespace('SharpJs');
     SharpJs.RootUrl = '<%= ResolveUrl("~") %>';
     Ext.BLANK_IMAGE_URL = SharpJs.RootUrl + 'Scripts/ext-3.0-rc1.1/resources/images/default/s.gif';
-    Ext.GRID_WIDTH = 720;
-    Ext.GRID_HEIGHT = 1000;
+    Ext.GRID_WIDTH = 680;
+    Ext.GRID_HEIGHT = 600;
     </script>
 
     <% // At bottom to facilitate other JS files to be loaded before page-by-page JS is loaded %>
@@ -43,6 +43,7 @@
     
 </head>
 <body>
+<div class="container">
     <div class="container_12">
         <div id="logo-container" class="grid_12">
            <div class="logo">
@@ -76,9 +77,11 @@
                     <li class="fourth"><a href="<%= Url.Action("Twitter","Home")%>" target="_blank">Twitter</a></li>
                 </ul>
             </div>
+            <div class="clear">
+            </div>
             <div class="ads">
                 <div class="partner-container">
-                    <span>PARTNERING WITH</span>
+                    <h2>PARTNERS</h2>
                 </div>
                 <span id="DiscountASP"><a href="<%=Url.Action("DiscountAspNet","Home") %>" target="_blank">
                     <img src="<%= ResolveUrl("~") %>Content/images/dasp_logo4.jpg" alt="DiscountAsp.Net" />
@@ -95,8 +98,9 @@
             <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
         </div>
         <!--Close main content-->
+        <div class="clear">
+        </div>
         <!-- Start Footer content -->
-        <div class="clear"></div>
         <div class="grid_12">
             <div class="footer">
                 <div class="nav-footer">
@@ -106,8 +110,10 @@
                 </div>
             </div>
         </div>
+        
     </div>
     <!-- end .grid_12 -->
+    </div> <!-- End container-->
 
     <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
