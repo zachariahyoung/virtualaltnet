@@ -55,7 +55,14 @@ namespace van.Web.Controllers
         {
             return Redirect("http://twitter.com/virtualaltnet");
         }
-
+        public RedirectResult DiscountAspNet()
+        {
+            return Redirect("http://www.DiscountASP.net");
+        }
+        public RedirectResult Ineta()
+        {
+            return Redirect("http://www.ineta.org/");
+        }
         private readonly IPostProvider postProvider;
     }
 }

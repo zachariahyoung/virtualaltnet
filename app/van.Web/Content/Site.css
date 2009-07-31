@@ -411,10 +411,12 @@ a:active {
 	min-height:200px;
 	_height:200px;
 	margin-top:-1px;
+	background-color:#000;
 	}
 
 .poster-container-no-image {
 	background:url(images/bg-poster-tile.jpg) repeat-x;
+	background-color:#000;
 	min-height:70px;
 	_height:70px;
 	margin-top:-1px;

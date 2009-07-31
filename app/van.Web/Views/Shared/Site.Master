@@ -69,6 +69,9 @@
         <!-- Content Regions -->
         <div id="sidebar" class="grid_3">
             <div class="side-bucket">
+                <div class="partner-container">
+                    <h2>LINKS</h2>
+                </div>
                 <ul>
                     <li class="first"><a href="<%= Url.Action("Index","Van")%>" target="_blank">Join a meeting</a></li>
                     <li class="second"><a href="<%= Url.Action("Blog","Home")%>" target="_blank">Blog</a></li>
@@ -77,8 +80,7 @@
                     <li class="fourth"><a href="<%= Url.Action("Twitter","Home")%>" target="_blank">Twitter</a></li>
                 </ul>
             </div>
-            <div class="clear">
-            </div>
+            <div class="clear"></div>
             <div class="ads">
                 <div class="partner-container">
                     <h2>PARTNERS</h2>
