@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ServiceModel.Syndication;
 using System.Web.Mvc;
-using MvcContrib.Filters;
 using SharpArch.Core;
 using van.ApplicationServices;
 using van.Core.Dto;
