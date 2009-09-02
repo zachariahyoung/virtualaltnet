@@ -16,7 +16,13 @@ namespace van.ApplicationServices
 
         public IEnumerable<SyndicationItem> GetItems()
         {
+            var feeds = new List<SyndicationItem>();
+            Blog blog = new Blog();
+            blog.Rss = @"http://www.google.com/calendar/feeds/9fgo89ah4shtm6pk7k5307aerg@group.calendar.google.com/public/basic";
+
+            feeds.AddRange(syndicationFeedRepository.GetFeed(blog).Items);
             
+            return feeds;
         }
     }
-}
+} ;

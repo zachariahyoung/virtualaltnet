@@ -4,6 +4,7 @@ using System.ServiceModel.Syndication;
 using System.Web.Mvc;
 using MvcContrib.Filters;
 using SharpArch.Core;
+using SharpArch.Core.PersistenceSupport;
 using van.ApplicationServices;
 using van.Core.Dto;
 using van.Core;
@@ -13,22 +14,21 @@ namespace van.Web.Controllers
     [HandleError]
     public class HomeController : Controller
     {
-        public HomeController(IPostProvider postProvider)
+        public HomeController(IPostProvider postProvider, IEventProvider eventProvider, IRepository<Recording> recordingRepository)
         {
             Check.Require(postProvider != null, "postProvider may not be null");
 
             this.postProvider = postProvider;
+            this.eventProvider = eventProvider;
+            this.recordingRepository = recordingRepository;
         }
        
         [OutputCache(Duration=30, VaryByParam = "")]
         public ActionResult Index()
         {
-
-            IEnumerable<SyndicationItem> items = postProvider.GetItems();
-
-            IEnumerable<PostDto> posts = items.FindItemsTop(15);
-
-            return View(posts);
+            PostEventRecordViewModel viewModel = PostEventRecordViewModel.CreatePostEventRecordViewModel(postProvider, eventProvider, recordingRepository);
+            
+            return View(viewModel);
         }
 
         public ActionResult Calendar()
@@ -64,5 +64,7 @@ namespace van.Web.Controllers
             return Redirect("http://www.ineta.org/");
         }
         private readonly IPostProvider postProvider;
+        private readonly IEventProvider eventProvider;
+        private readonly IRepository<Recording> recordingRepository;
     }
 }

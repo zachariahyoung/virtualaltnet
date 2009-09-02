@@ -41,19 +41,6 @@ namespace van.ApplicationServices
 
         
 
-        private IEnumerable<PostDto> GetMashedItems(List<SyndicationFeed> feeds, int cnt)
-        {
-            return (from feed in feeds
-                   from item in feed.Items
-                   orderby item.PublishDate descending
-                   select new PostDto
-                              {
-                                  Url = item.Links[4].Uri.OriginalString,
-                                  Title = item.Title.Text,
-                                  Date = item.PublishDate.Date.ToShortDateString(),
-                                  Content = ((System.ServiceModel.Syndication.TextSyndicationContent) (item.Content)).Text
-                              }).Take(cnt);
-        }
 
         #endregion
     }
