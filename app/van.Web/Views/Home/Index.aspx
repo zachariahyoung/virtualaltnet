@@ -8,14 +8,19 @@
 </asp:Content>
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <h1>VAN Feeds</h1>
+    <h2>VAN Feeds</h2>
 <div class="feed-content">
+
+    <p>
+        This is a format title! ( <a href="About.aspx">link</a> )<br /> 
+        <strong>By:</strong> <a href="#asdfasdf">Jeremy Miller</a> - <strong>When:</strong> 1/2/2008
+    </p><br /><br />
 
    <% 
        foreach (var item in ViewData.Model.Posts) {
            string URL = item.Url;
            string Title = item.Title;
-           Response.Write(string.Format("<p><a href=\"{0}\"  class=\"title\">{1}</a><p>", URL, Title));
+           Response.Write(string.Format("<p style=\"margin-bottom: 9px;\"><a href=\"{0}\"  class=\"title\">{1}</a><p>", URL, Title));
        } %>
        <br />
           <% 
