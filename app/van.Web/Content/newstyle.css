@@ -1,0 +1,122 @@
+body {
+margin:0;
+padding:0;
+background-color:#ffffff;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:1em;
+background: #666 url(/Content/NewImages/bg.jpg) repeat top left; }
+
+a { color:#044497; text-decoration:none; }
+a:hover { text-decoration:none; color: #0B70F9; }
+
+strong { font-weight: bold; }
+
+div.box  
+{
+	background: #fff url(/Content/NewImages/box-bg.jpg) no-repeat bottom right; 
+	font-size:.9em; 
+	padding: 6px 6px 18px 6px; 
+	margin-bottom: 12px; }
+
+div.box ul { margin-top: 12px; }	
+
+div.box li  
+{
+	margin: 3px 0 0 6px; 
+	padding-left: 12px; 
+	background: transparent url('/Content/NewImages/tiny-world.gif') no-repeat top left; 
+	background-position: 0 5px;	}
+	
+div.box img { padding-left: 7px; }  
+	
+div#leftColumn h2, div#rightColumn h2  
+{
+	color: #CF9925; 
+	font-weight: bold; 
+	font-size: 1.1em;
+	margin-left: 6px;  }
+
+blockquote {
+	margin:1em;
+	padding:.5em;
+	font-size:.9em;
+	background-color:#cccccc;
+	border-top:1px solid #999999;
+	border-bottom:1px solid #999999; }
+
+blockquote p { margin:.2em; }
+
+#header { margin:2em 2em 0 2em;  border:1px solid #eeeeee; 
+          background: #fff url('/Content/NewImages/box-bg.jpg') no-repeat bottom right;        }
+
+div#header img { margin: 4px 4px; }
+
+div#header ul { border-top: 1px solid #ccc; height: 30px; margin: 0; }
+div#header ul li { float: left;  list-style: none; border-right: 1px solid #ccc; border-right: 1px solid #fff; }
+div#header ul li a { display: block; padding: 8px 8px; font-weight: bold;  } 
+div#header ul li a:hover { background-color: #fff; } 
+
+
+div#leftColumn {
+	position:absolute;
+	left:32px;
+	width:13.4em;
+	top:140px;
+	margin:0; }
+
+div#rightColumn {
+	position:absolute;
+	right:32px;
+	top:140px;
+	width:13.4em;
+	margin:0; }
+
+div#centerColumn {
+	margin-top: 8px ;
+	margin-left: 16em;
+	margin-right:16em;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	margin-left:17.50em;
+	margin-right:17.50em;
+	padding:1em .5em 2em .5em;
+	background: #fff url(/Content/NewImages/box-bg.jpg) no-repeat bottom right; 
+	font-size:.9em;
+}
+
+html>body #centerColumn {
+margin-left:17.50em;
+margin-right:17.50em;
+}
+
+div#centerColumn h2 { 
+	margin-bottom: 10px;
+	padding:0;
+	font-size:1.3em;
+	letter-spacing:.1em;
+}
+
+
+
+
+/* clearfix */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
