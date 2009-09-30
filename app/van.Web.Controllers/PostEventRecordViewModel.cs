@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ServiceModel.Syndication;
+using Google.GData.Client;
 using SharpArch.Core.PersistenceSupport;
 using van.ApplicationServices;
 using van.Core;
@@ -19,11 +20,11 @@ namespace van.Web.Controllers
 
             IEnumerable<SyndicationItem> posts = postProvider.GetItems();
 
-            viewModel.Posts = posts.FindItemsTop(15);
-            
-            IEnumerable<SyndicationItem> events = eventProvider.GetItems();
+            viewModel.Posts = posts.FindTopPost(15);
 
-            //viewModel.Events = events.FindItemsTop(15);
+            AtomEntryCollection events = eventProvider.GetItems();
+
+            viewModel.Events = events.FindTopEvent(15);
 
             return viewModel;
         }

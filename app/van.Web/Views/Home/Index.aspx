@@ -17,6 +17,15 @@
            string Title = item.Title;
            Response.Write(string.Format("<p><a href=\"{0}\"  class=\"title\">{1}</a><p>", URL, Title));
        } %>
+       <br />
+          <% 
+       foreach (var item in ViewData.Model.Events) {
+           string URL = item.Url;
+           string Title = item.Title;
+           string When = item.Date;
+           Response.Write(string.Format("<p><a href=\"{0}\"  class=\"title\">{1} {2}</a><p>", URL, Title, When));
+       } %>
+
 
 </div>
 

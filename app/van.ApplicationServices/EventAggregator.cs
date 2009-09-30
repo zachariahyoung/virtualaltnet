@@ -2,27 +2,30 @@ using System;
 using System.Collections.Generic;
 using System.ServiceModel.Syndication;
 using van.Core;
+//using Google.GData.Extensions;
+using Google.GData.Calendar;
+using Google.GData.Client;
+
 
 namespace van.ApplicationServices
 {
     public class EventAggregator : IEventProvider
     {
-        private readonly ISyndicationFeedRepository syndicationFeedRepository;
 
-        public EventAggregator(ISyndicationFeedRepository syndicationFeedRepository)
+        public AtomEntryCollection GetItems()
         {
-            this.syndicationFeedRepository = syndicationFeedRepository;
-        }
+            EventQuery query = new EventQuery();
+            CalendarService service = new CalendarService("Virtual ALT.NET calendar");
 
-        public IEnumerable<SyndicationItem> GetItems()
-        {
-            var feeds = new List<SyndicationItem>();
-            Blog blog = new Blog();
-            blog.Rss = @"http://www.google.com/calendar/feeds/9fgo89ah4shtm6pk7k5307aerg@group.calendar.google.com/public/basic";
+            query.Uri = new Uri(@"http://www.google.com/calendar/feeds/9fgo89ah4shtm6pk7k5307aerg@group.calendar.google.com/public/full");
+            query.StartTime = DateTime.Now;
+            query.EndTime = DateTime.Now.AddMonths(3);
+            query.ExtraParameters = "orderby=starttime&sortorder=ascending";
+            //query.FutureEvents = true;
+            //query.SortOrder = CalendarSortOrder.descending;
+            EventFeed calFeed = service.Query(query) as EventFeed;
 
-            feeds.AddRange(syndicationFeedRepository.GetFeed(blog).Items);
-            
-            return feeds;
+            return calFeed.Entries;
         }
     }
 } ;
