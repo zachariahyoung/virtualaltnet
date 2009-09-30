@@ -9,28 +9,23 @@
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <h2>VAN Feeds</h2>
-<div class="feed-content">
-
-    <p>
-        This is a format title! ( <a href="About.aspx">link</a> )<br /> 
-        <strong>By:</strong> <a href="#asdfasdf">Jeremy Miller</a> - <strong>When:</strong> 1/2/2008
-    </p><br /><br />
+<div class="feed-content">  
 
    <% 
        foreach (var item in ViewData.Model.Posts) {
-           string URL = item.Url;
-           string Title = item.Title;
-           Response.Write(string.Format("<p style=\"margin-bottom: 9px;\"><a href=\"{0}\"  class=\"title\">{1}</a><p>", URL, Title));
+           string url = item.Url;
+           string title = item.Title;
+           Response.Write(string.Format("<p style=\"margin-bottom: 9px;\"><a href=\"{0}\"  class=\"title\">{1}</a><p>", url, title));
        } %>
 </div>
 <h2>VAN Events</h2>
 <div class="feed-content">
           <% 
        foreach (var item in ViewData.Model.Events) {
-           string URL = item.Url;
-           string Title = item.Title;
-           string When = item.Date;
-           Response.Write(string.Format("<p><a href=\"{0}\"  class=\"title\">{1} {2}</a><p>", URL, Title, When));
+           string url = item.Url;
+           string title = item.Title;
+           string when = item.Date;
+           Response.Write(string.Format("<p><a href=\"{0}\"  class=\"title\">{1} {2}</a><p>", url, title, when));
        } %>
 
 

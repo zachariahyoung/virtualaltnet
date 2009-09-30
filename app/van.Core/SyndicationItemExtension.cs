@@ -30,7 +30,7 @@ namespace van.Core
                                    Url = item.AlternateUri.ToString(),
                                    Title = item.Title.Text,
                                    Date = item.Times[0].StartTime.ToShortDateString()
-                               });
+                               }).Take(cnt);
         }
         
     }
