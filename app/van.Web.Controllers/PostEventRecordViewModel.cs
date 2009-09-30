@@ -10,13 +10,13 @@ namespace van.Web.Controllers
 {
     public class PostEventRecordViewModel
     {
-        private PostEventRecordViewModel() { }
+        public IList<Recording> Recordings { get; internal set; }
+        public IEnumerable<PostDto> Posts { get; internal set; }
+        public IEnumerable<EventDto> Events { get; internal set; }
 
         public static PostEventRecordViewModel CreatePostEventRecordViewModel(IPostProvider postProvider, IEventProvider eventProvider, IRepository<Recording> recordingRepository)
         {
             PostEventRecordViewModel viewModel = new PostEventRecordViewModel();
-
-            //viewModel.Recordings = recordingRepository.GetAll();
 
             IEnumerable<SyndicationItem> posts = postProvider.GetItems();
 
@@ -24,14 +24,9 @@ namespace van.Web.Controllers
 
             AtomEntryCollection events = eventProvider.GetItems();
 
-            viewModel.Events = events.FindTopEvent(15);
+            viewModel.Events = events.FindTopEvent(10);
 
             return viewModel;
         }
-
-        public IList<Recording> Recordings { get; internal set; }
-        public IEnumerable<PostDto> Posts { get; internal set; }
-        public IEnumerable<EventDto> Events { get; internal set; }
-
     }
 }

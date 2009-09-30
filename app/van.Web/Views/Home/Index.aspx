@@ -22,7 +22,9 @@
            string Title = item.Title;
            Response.Write(string.Format("<p style=\"margin-bottom: 9px;\"><a href=\"{0}\"  class=\"title\">{1}</a><p>", URL, Title));
        } %>
-       <br />
+</div>
+<h2>VAN Events</h2>
+<div class="feed-content">
           <% 
        foreach (var item in ViewData.Model.Events) {
            string URL = item.Url;
