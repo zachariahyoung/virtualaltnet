@@ -71,7 +71,10 @@
     <Compile Include="..\..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="GoogleEventProvider2.cs" />
     <Compile Include="EventAggregator.cs" />
+    <Compile Include="GoogleEventProvider.cs" />
+    <Compile Include="IEventAggregator.cs" />
     <Compile Include="IEventProvider.cs" />
     <Compile Include="IPostProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -21,17 +21,6 @@ namespace van.Core
                        Content = ((System.ServiceModel.Syndication.TextSyndicationContent)item.Content).Text
                    }).Take(cnt);
         }
-
-        public static IEnumerable<EventDto> FindTopEvent(this AtomEntryCollection items, int cnt)
-        {
-            return (from item in items.OfType<EventEntry>()
-                    select new EventDto
-                               {
-                                   Url = item.AlternateUri.ToString(),
-                                   Title = item.Title.Text,
-                                   Date = item.Times[0].StartTime.ToShortDateString()
-                               }).Take(cnt);
-        }
         
     }
 }

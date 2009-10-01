@@ -14,19 +14,19 @@ namespace van.Web.Controllers
     [HandleError]
     public class HomeController : Controller
     {
-        public HomeController(IPostProvider postProvider, IEventProvider eventProvider, IRepository<Recording> recordingRepository)
+        public HomeController(IPostProvider postProvider, IEventAggregator eventAggregator, IRepository<Recording> recordingRepository)
         {
             Check.Require(postProvider != null, "postProvider may not be null");
 
             this.postProvider = postProvider;
-            this.eventProvider = eventProvider;
+            this.eventAggregator = eventAggregator;
             this.recordingRepository = recordingRepository;
         }
        
         [OutputCache(Duration=30, VaryByParam = "")]
         public ActionResult Index()
         {
-            PostEventRecordViewModel viewModel = PostEventRecordViewModel.CreatePostEventRecordViewModel(postProvider, eventProvider, recordingRepository);
+            PostEventRecordViewModel viewModel = PostEventRecordViewModel.CreatePostEventRecordViewModel(postProvider, eventAggregator, recordingRepository);
             
             return View(viewModel);
         }
@@ -64,7 +64,7 @@ namespace van.Web.Controllers
             return Redirect("http://www.ineta.org/");
         }
         private readonly IPostProvider postProvider;
-        private readonly IEventProvider eventProvider;
+        private readonly IEventAggregator eventAggregator;
         private readonly IRepository<Recording> recordingRepository;
     }
 }

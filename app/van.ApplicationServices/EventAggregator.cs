@@ -1,31 +1,38 @@
-using System;
-using Google.GData.Calendar;
+using System.Collections.Generic;
 using Google.GData.Client;
+using van.Core.Dto;
 
 namespace van.ApplicationServices
 {
     /// <summary>
     /// Class for EventAggregator
     /// </summary>
-    public class EventAggregator : IEventProvider
+    public class EventAggregator : IEventAggregator
     {
         /// <summary>
-        /// Method that gets the event
+        /// Sets _eventProviders
+        /// </summary>
+        private readonly IEventProvider[] _eventProviders;
+
+        /// <summary>
+        /// Method that gets the events
         /// </summary>
         /// <returns>Collection of Atom Entry</returns>
-        public AtomEntryCollection GetItems()
+        public EventAggregator(IEventProvider[] eventProviders)
         {
-            EventQuery query = new EventQuery();
-            CalendarService service = new CalendarService("Virtual ALT.NET calendar");
+            _eventProviders = eventProviders;
+        }
 
-            query.Uri = new Uri(@"http://www.google.com/calendar/feeds/9fgo89ah4shtm6pk7k5307aerg@group.calendar.google.com/public/full");
-            query.StartTime = DateTime.Now;
-            query.EndTime = DateTime.Now.AddMonths(3);
-            query.SingleEvents = true;
-            query.ExtraParameters = "orderby=starttime&sortorder=ascending";
-            EventFeed calFeed = service.Query(query);
+        public IEnumerable<EventDto> GetItems()
+        {
+            List<EventDto> eventDtos = new List<EventDto>();
+            
+            foreach (var provider in _eventProviders)
+            {
+                eventDtos.AddRange(provider.GetItems());
+            }
 
-            return calFeed.Entries;
+            return eventDtos;
         }
     }
 } 

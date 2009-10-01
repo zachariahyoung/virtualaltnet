@@ -1,4 +1,5 @@
-﻿using Castle.Windsor;
+﻿using Castle.MicroKernel.Resolvers.SpecializedResolvers;
+using Castle.Windsor;
 using SharpArch.Core.PersistenceSupport.NHibernate;
 using SharpArch.Data.NHibernate;
 using SharpArch.Core.PersistenceSupport;
@@ -6,9 +7,12 @@ using SharpArch.Web.Castle;
 using Castle.MicroKernel.Registration;
 using SharpArch.Core.CommonValidator;
 using SharpArch.Core.NHibernateValidator.CommonValidatorAdapter;
+using van.ApplicationServices;
 using van.Core.DataInterfaces;
 using van.Data;
 using van.Web.Controllers.Infrastructure;
+
+
 
 namespace van.Web.CastleWindsor
 {
@@ -42,10 +46,12 @@ namespace van.Web.CastleWindsor
         }
         private static void AddApplicationServicesTo(IWindsorContainer container)
         {
-            container.Register(
-                AllTypes.Pick()
-                .FromAssemblyNamed("van.ApplicationServices")
-                .WithService.FirstInterface());
+            container.Kernel.Resolver.AddSubResolver(new ArrayResolver(container.Kernel));
+            container.Register(Component.For<IPostProvider>().ImplementedBy<BlogPostAggregator>());
+            container.Register(Component.For<IEventAggregator>().ImplementedBy<EventAggregator>());
+            container.Register(Component.For<IEventProvider>().ImplementedBy<GoogleEventProvider>(),
+                               Component.For<IEventProvider>().ImplementedBy<GoogleEventProvider2>());
+
         }
         private static void AddGenericRepositoriesTo(IWindsorContainer container)
         {

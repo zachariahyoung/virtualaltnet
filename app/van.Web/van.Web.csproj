@@ -601,6 +601,10 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\van.ApplicationServices\van.ApplicationServices.csproj">
+      <Project>{646B01CE-E1D8-4EB1-A900-C0943A596D51}</Project>
+      <Name>van.ApplicationServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\van.Web.Controllers\van.Web.Controllers.csproj">
       <Project>{A0EA8E2D-82A8-4E07-9679-574337DD8440}</Project>
       <Name>van.Web.Controllers</Name>
