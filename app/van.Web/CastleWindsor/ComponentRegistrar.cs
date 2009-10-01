@@ -49,8 +49,7 @@ namespace van.Web.CastleWindsor
             container.Kernel.Resolver.AddSubResolver(new ArrayResolver(container.Kernel));
             container.Register(Component.For<IPostProvider>().ImplementedBy<BlogPostAggregator>());
             container.Register(Component.For<IEventAggregator>().ImplementedBy<EventAggregator>());
-            container.Register(Component.For<IEventProvider>().ImplementedBy<GoogleEventProvider>(),
-                               Component.For<IEventProvider>().ImplementedBy<GoogleEventProvider2>());
+            container.Register(Component.For<IEventProvider>().ImplementedBy<GoogleEventProvider>());
 
         }
         private static void AddGenericRepositoriesTo(IWindsorContainer container)
