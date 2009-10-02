@@ -33,7 +33,7 @@ namespace Tests.van.ApplicationServices
             var blog1Items = new SyndicationItem[] { new SyndicationItem(), new SyndicationItem(), };
             postRepo.Stub(x => x.GetFeed(blogs[1])).Return(new SyndicationFeed(blog1Items));
 
-            var posts = new BlogPostAggregator(blogRepo, postRepo).GetItems();
+            var posts = new BlogspotNewsProvider(blogRepo, postRepo).GetItems();
             Assert.AreEqual(3, posts.Count());
             //blog0Items.ForEach(x => Assert.That(posts.Contains(x)));
             //blog1Items.ForEach(x => Assert.That(posts.Contains(x)));
