@@ -116,15 +116,14 @@
 </div>--%>
 
 <!-- Start Footer content -->
-<div class="grid_12">
-    <div class="footer">
-        <div class="nav-footer">
-            <% Html.RenderPartial("Menu"); %>
-            <p class="copyright">
-                © 2009 Virtual Alt.Net</p>
-        </div>
+<div id="footer">
+    <div class="nav-footer">
+        <% Html.RenderPartial("Menu"); %>
+        <p class="copyright">
+            © 2009 Virtual Alt.Net</p>
     </div>
 </div>
+
     
     
     

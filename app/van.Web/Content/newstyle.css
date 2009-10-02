@@ -105,10 +105,11 @@ div#centerColumn h2 {
 }
 
 
-div#footer 
-{
-	background-color: #ccc; border-top: 1px solid  color: #CF9925; width: 100%; clear: both;} 	
-}
+div#footer  { background-color: #222; border-top: 1px solid  #CF9925; width: 98%; clear: both; color: #fff; padding: 6px 1%; font-size: .8em; height: 100px; }
+div#footer a { color:  #CF9925; }
+
+div#footer li { list-style: none; float: left; }
+div#footer li a { margin: 3px 9px; }
 
 
 /* clearfix */
