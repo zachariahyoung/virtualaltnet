@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ServiceModel.Syndication;
-using System.Web.Mvc;
-using MvcContrib.Filters;
+﻿using System.Web.Mvc;
 using SharpArch.Core;
-using SharpArch.Core.PersistenceSupport;
 using van.ApplicationServices;
-using van.Core.Dto;
-using van.Core;
 
 namespace van.Web.Controllers
 {
