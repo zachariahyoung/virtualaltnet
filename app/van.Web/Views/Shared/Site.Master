@@ -61,32 +61,27 @@
 </div>
 
 <div id="leftColumn"> 
-    <div class="box">
-        <h2>LINKS</h2>
-        <ul>
-            <li class="first"><a href="<%= Url.Action("Index","Van")%>" target="_blank">Join a meeting</a></li>
-                        <li class="third"><a href="<%= Url.Action("GoogleGroup","Home")%>" target="_blank">Google
-                Group</a></li>
-            <li class="fourth"><a href="<%= Url.Action("Twitter","Home")%>" target="_blank">Twitter</a></li>
-        </ul>    
-    </div>
-    <div class="box">
-      <h2>Upcoming Events</h2>
-      <ul>
-            <li><a href="#" title="Home">Home</a></li>
-            <li><a href="#" title="About">About</a></li>
-            <li><a href="#" title="Gallery">Gallery</a></li>
-            <li><a href="#" title="Contact">Contact</a></li>
-      </ul>
-    </div>
+    <p style="color: #CF9925;">Join a Recording</p>
     <div class="box">
         <h2>VAN Groups</h2>
         <ul>
+            <li><a href="http://virualaltnet.blogspot.com/2009/07/van-jeremy-miller-discusses.html">Virtual Alt.Net</a></li>
             <li><a href="http://europevan.blogspot.com/">European Van</a></li>
             <li><a href="http://europevan.blogspot.com/">Brown Bag</a></li>
             <li><a href="http://europevan.blogspot.com/">Spanish</a></li>
-            <li><a href="http://europevan.blogspot.com/">Australian</a></li>
+            <li><a href="http://ozalt.net/blog/">Australian</a></li>
+            <li><a href="http://www.c4mvc.net/Home/Events">Community For MVC.Net</a></li>
         </ul>
+    </div>
+    
+    <div class="box">
+        <h2>Socially VAN</h2>
+        <ul>
+            <li><a href="<%= Url.Action("Index","Van")%>" target="_blank">Join a meeting</a></li>
+                        <li class="third"><a href="<%= Url.Action("GoogleGroup","Home")%>" target="_blank">Google
+                Group</a></li>
+            <li><a href="<%= Url.Action("Twitter","Home")%>" target="_blank">Twitter</a></li>
+        </ul>    
     </div>
     
         <div class="box">

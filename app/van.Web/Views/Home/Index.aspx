@@ -8,9 +8,9 @@
 </asp:Content>
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <h2>VAN Feeds</h2>
+    <h2>Aggregated VAN Group News</h2>
 <div class="center-box">  
-
+<%--http://feeds2.feedburner.com/VirtualAltnet--%>
    <% 
        foreach (var item in ViewData.Model.Posts) {
            string url = item.Url;

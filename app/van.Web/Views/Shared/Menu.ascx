@@ -17,5 +17,5 @@
     <li class="fourth <%=Html.CurrentAction("Index", "Recording") %>">
         <%= Html.ActionLink<RecordingsController>(x=>x.Index(), "Recordings") %></li>
         
-    <li class="fifth"><a href="<%= Url.Action("Blog","Home")%>" target="_blank">Blog</a></li>
+    
 </ul>
