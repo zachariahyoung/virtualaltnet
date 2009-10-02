@@ -9,17 +9,17 @@
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <h2>VAN Feeds</h2>
-<div class="feed-content">  
+<div class="center-box">  
 
    <% 
        foreach (var item in ViewData.Model.Posts) {
            string url = item.Url;
            string title = item.Title;
-           Response.Write(string.Format("<p style=\"margin-bottom: 9px;\"><a href=\"{0}\"  class=\"title\">{1}</a><p>", url, title));
+           Response.Write(string.Format("<p><a href=\"{0}\"  class=\"title\">{1}</a><p>", url, title));
        } %>
 </div>
 <h2>VAN Events</h2>
-<div class="feed-content">
+<div class="center-box">
           <% 
        foreach (var item in ViewData.Model.Events) {
            string url = item.Url;

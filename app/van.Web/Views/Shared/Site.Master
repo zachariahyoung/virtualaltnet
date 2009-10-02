@@ -44,8 +44,20 @@
 
 
 <div id="header" class="clearfix">
-    <img src="<%= ResolveUrl("~") %>Content/NewImages/logo.png" />
+    <div id="topbanner">
+        <div id="logo" class="clearfix">
+            <a href="http://www.virtualaltnet.com/">Virtual Alt.Net</a> 
+        </div>
+        
+        <div id="smelly">
+            Virtual Alt.Net is a group of individuals holding virtuals meetings all around the world
+            to learn and grow with other developers while not having to smell them.
+        </div>
+    </div>
+    
     <% Html.RenderPartial("Menu"); %>    
+    
+    
 </div>
 
 <div id="leftColumn"> 
@@ -76,26 +88,32 @@
             <li><a href="http://europevan.blogspot.com/">Australian</a></li>
         </ul>
     </div>
+    
+        <div class="box">
+         <h2>PARTNERS</h2>                
+        <span id="Span1"><a href="<%=Url.Action("DiscountAspNet","Home") %>" target="_blank">
+            <img src="<%= ResolveUrl("~") %>Content/images/dasp_logo4.jpg" alt="DiscountAsp.Net" />
+        </a></span>
+        <span id="Span2"><a href="<%=Url.Action("Ineta","Home") %>" target="_blank">
+            <img src="http://www.ineta.org/OfficialLogo.ashx?ugid=1" alt="Official INETA Logo"
+                width="114px" height="70px" />
+        </a></span>
+        <span id="Span3"><a href="http://www.lostechies.com" target="_blank">
+            <img src="<%= ResolveUrl("~") %>Content/NewImages/LosTechiesLogo.png" alt="LosTechies.com" />
+        </a></span>
+        <span id="Span4"><a href="http://www.codebetter.com/" target="_blank">
+            <img src="<%= ResolveUrl("~") %>Content/NewImages/CodeBetterLogo.png" alt="Codebetter.com" />
+        </a></span>
+    </div>
 </div>
 
 <div id="centerColumn">
     <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
 </div>
 
-<div id="rightColumn">
-    <div class="box">
-         <h2>PARTNERS</h2>                
-        <span id="Span1"><a href="<%=Url.Action("DiscountAspNet","Home") %>" target="_blank">
-            <img src="<%= ResolveUrl("~") %>Content/images/dasp_logo4.jpg" alt="DiscountAsp.Net" />
-        </a></span><span id="Span2"><a href="<%=Url.Action("Ineta","Home") %>" target="_blank">
-            <img src="http://www.ineta.org/OfficialLogo.ashx?ugid=1" alt="Official INETA Logo"
-                width="114px" height="70px" />
-        </a></span>
-        
-        lostechies.com
-        codebetter.com
-    </div>
-</div>
+<%--<div id="rightColumn">
+
+</div>--%>
 
 <!-- Start Footer content -->
 <div class="grid_12">
@@ -115,7 +133,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#header').corner();
-        $('#centerColumn').corner();
+        $('.center-box').corner();
         $('.box').corner();
     });
 
