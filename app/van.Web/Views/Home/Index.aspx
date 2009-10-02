@@ -12,7 +12,7 @@
 <div class="center-box">  
 <%--http://feeds2.feedburner.com/VirtualAltnet--%>
    <% 
-       foreach (var item in ViewData.Model.Posts) {
+       foreach (var item in ViewData.Model.News) {
            string url = item.Url;
            string title = item.Title;
            Response.Write(string.Format("<p><a href=\"{0}\"  class=\"title\">{1}</a><p>", url, title));
