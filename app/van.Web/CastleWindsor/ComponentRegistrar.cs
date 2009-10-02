@@ -46,9 +46,10 @@ namespace van.Web.CastleWindsor
         }
         private static void AddApplicationServicesTo(IWindsorContainer container)
         {
+            
             container.Kernel.Resolver.AddSubResolver(new ArrayResolver(container.Kernel));
-            container.Register(Component.For<IPostProvider>().ImplementedBy<BlogPostAggregator>());
-            container.Register(Component.For<IEventAggregator>().ImplementedBy<EventAggregator>());
+            container.Register(Component.For<IAggregator>().ImplementedBy<Aggregator>());
+            container.Register(Component.For<INewsProvider>().ImplementedBy<BlogspotNewsProvider>());
             container.Register(Component.For<IEventProvider>().ImplementedBy<GoogleEventProvider>());
 
         }
