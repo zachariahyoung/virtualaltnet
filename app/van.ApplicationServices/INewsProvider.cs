@@ -6,6 +6,6 @@ namespace van.ApplicationServices
 {
     public interface INewsProvider
     {
-        IEnumerable<NewsDto> GetItems();
+        NewsDto[] GetItems();
     }
 }

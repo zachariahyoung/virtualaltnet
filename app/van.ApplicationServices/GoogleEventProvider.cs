@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Google.GData.Calendar;
-using Google.GData.Client;
 using van.Core.Dto;
 
 namespace van.ApplicationServices
 {
     public class GoogleEventProvider : IEventProvider
     {
-        public IEnumerable<EventDto> GetItems()
+        public EventDto[] GetItems()
         {
             EventQuery query = new EventQuery();
             CalendarService service = new CalendarService("Virtual ALT.NET calendar");
@@ -20,15 +18,20 @@ namespace van.ApplicationServices
             query.EndTime = DateTime.Now.AddMonths(3);
             query.SingleEvents = true;
             query.ExtraParameters = "orderby=starttime&sortorder=ascending";
-            EventFeed calFeed = service.Query(query);
-            
-            IEnumerable<EventDto> eventDtos = this.GetEventDtos(calFeed.Entries.OfType<EventEntry>());
 
-            return eventDtos;
-
+            try
+            {
+                EventFeed calFeed = service.Query(query);
+                
+                return this.GetEventDtos(calFeed.Entries.OfType<EventEntry>());
+            }
+            catch (Exception e)
+            {
+                return new EventDto[0];
+            }
         }
 
-        private IEnumerable<EventDto> GetEventDtos(IEnumerable<EventEntry> eventEntries)
+        private EventDto[] GetEventDtos(IEnumerable<EventEntry> eventEntries)
         {
             return (from item in eventEntries
                     select new EventDto
@@ -36,7 +39,7 @@ namespace van.ApplicationServices
                                    Url = item.AlternateUri.ToString(),
                                    Title = item.Title.Text,
                                    Date = item.Times[0].StartTime.ToShortDateString()
-                               }).Take(10);
+                               }).Take(10).ToArray();
         }
     }
 }

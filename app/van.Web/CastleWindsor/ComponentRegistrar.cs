@@ -12,8 +12,6 @@ using van.Core.DataInterfaces;
 using van.Data;
 using van.Web.Controllers.Infrastructure;
 
-
-
 namespace van.Web.CastleWindsor
 {
     public class ComponentRegistrar

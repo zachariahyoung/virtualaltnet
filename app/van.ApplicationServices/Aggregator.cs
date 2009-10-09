@@ -25,7 +25,7 @@ namespace van.ApplicationServices
             _newsProviders = newsProviders;
         }
 
-        public IEnumerable<EventDto> GetEvents()
+        public EventDto[] GetEvents()
         {
             List<EventDto> eventDtos = new List<EventDto>();
             
@@ -34,10 +34,10 @@ namespace van.ApplicationServices
                 eventDtos.AddRange(provider.GetItems());
             }
 
-            return eventDtos;
+            return eventDtos.ToArray();
         }
 
-        public IEnumerable<NewsDto> GetNews()
+        public NewsDto[] GetNews()
         {
             List<NewsDto> eventDtos = new List<NewsDto>();
 
@@ -46,7 +46,7 @@ namespace van.ApplicationServices
                 eventDtos.AddRange(provider.GetItems());
             }
 
-            return eventDtos;
+            return eventDtos.ToArray();
         }
 
     }

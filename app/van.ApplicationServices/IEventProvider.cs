@@ -7,6 +7,6 @@ namespace van.ApplicationServices
 {
     public interface IEventProvider
     {
-        IEnumerable<EventDto> GetItems();
+        EventDto[] GetItems();
     }
 }

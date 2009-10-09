@@ -22,25 +22,30 @@ namespace van.ApplicationServices
             this.syndicationFeedRepository = syndicationFeedRepository;
         }
 
-        #region INewsProvider Members
-
-        public IEnumerable<NewsDto> GetItems()
+        public NewsDto[] GetItems()
         {
-            IList<Blog> query = blogRepository.GetAll();
-
             var feeds = new List<SyndicationItem>();
 
-            foreach (Blog blog in query)
+            try
             {
-                feeds.AddRange(syndicationFeedRepository.GetFeed(blog).Items);
+                IList<Blog> query = blogRepository.GetAll();
+
+                foreach (Blog blog in query)
+                {
+                    feeds.AddRange(syndicationFeedRepository.GetFeed(blog).Items);
+                }
+
+                return this.GetNewsDtos(feeds);
+            }
+            catch (Exception)
+            {
+                
+                return new NewsDto[0];
             }
 
-            IEnumerable<NewsDto> eventDtos = this.GetNewsDtos(feeds);
-
-            return eventDtos;
         }
 
-        private IEnumerable<NewsDto> GetNewsDtos(IEnumerable<SyndicationItem> items)
+        private NewsDto[] GetNewsDtos(IEnumerable<SyndicationItem> items)
         {
             return (from item in items
                     orderby item.PublishDate descending
@@ -50,9 +55,8 @@ namespace van.ApplicationServices
                         Title = item.Title.Text,
                         Date = item.PublishDate.Date.ToShortDateString(),
                         Content = ((System.ServiceModel.Syndication.TextSyndicationContent)item.Content).Text
-                    }).Take(10);
+                    }).Take(10).ToArray();
         }
-
-        #endregion
+        
     }
 }

@@ -5,8 +5,8 @@ namespace van.ApplicationServices
 {
     public interface IAggregator
     {
-        IEnumerable<EventDto> GetEvents();
-        IEnumerable<NewsDto> GetNews();
+        EventDto[] GetEvents();
+        NewsDto[] GetNews();
 
     }
 }
