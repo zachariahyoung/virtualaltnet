@@ -19,3 +19,12 @@
         
     
 </ul>
+
+<div id="menuIcons">
+    <a href="http://twitter.com/virtualaltnet" alt="Follow Us On Twitter">
+        <img src="<%= ResolveUrl("~") %>Content/NewImages/TwitterIcon.png" />
+    </a>
+        <a href="http://twitter.com/virtualaltnet" alt="Feed me! Feed me!">
+        <img src="<%= ResolveUrl("~") %>Content/NewImages/RssIcon.png" />
+    </a>
+</div>

@@ -10,16 +10,22 @@ a { color:#044497; text-decoration:none; }
 a:visited { text-decoration:none; }
 a:hover { text-decoration:none; color: #0B70F9; }
 
+div.meetingLink a {color: #fc0; text-decoration:none; font-weight: bold; font-size: 1em; }
+
 strong { font-weight: bold; }
+
+div.nostyleBox 
+{
+	padding: 0px 6px 0px 6px; 
+	margin-bottom: 10px; }	
+
 
 div.box, div.center-box
 {
 	background: #fff url(/Content/NewImages/box-bg.jpg) no-repeat bottom right; 
 	font-size:.9em; 
 	padding: 6px 6px 18px 6px; 
-	margin-bottom: 12px; }
-	
- 
+	margin-bottom: 12px; } 
 
 div.box ul { margin-top: 12px; }	
 
@@ -52,29 +58,29 @@ blockquote p { margin:.2em; }
 div#header { margin:2em 2em 0 2em;  border:1px solid #eeeeee; height: 101px;
           background: #fff url('/Content/NewImages/box-bg.jpg') no-repeat bottom right;        }
 
-div#header img { margin: 4px 4px; }
-
-div#header ul { border-top: 1px solid #ccc; margin: 0; }
+div#header ul { border-top: 1px solid #ccc; margin: 0; padding-left: 110px; }
 div#header ul li { float: left;  list-style: none; border-right: 1px solid #ccc; border-right: 1px solid #fff; margin: 0 0; padding: 0 0;}
-div#header ul li a { display: block; padding: 8px 8px; font-weight: bold; height: 25px;  } 
+div#header ul li a { display: block; padding: 12px 8px 0 8px; font-weight: bold; height: 28px;  } 
 div#header ul li a:hover { background-color: #fff; } 
 
 div#header div#topbanner { height: 60px; }
 
-div#header #logo{ background: #fff url(/Content/NewImages/logo.png) no-repeat top left; height: 18px; width: 151px; padding-top: 29px; float: left;
-                  margin: 6px 0 0 6px; }
-                  
-div#header #logo a { color: #CF9925;  font-weight: bold; font-size: .7em; margin: 0 0 0 58px; }
+div#header img#logo { margin: 3px 0 0 12px; }
+
+
+div#menuIcons  {	margin-top: 4px; }
+div#menuIcons img { margin: 4px 4px; }
 
 div#smelly { width: 600px; font-size: .75em; 
-             float: right; margin: 14px 20px 0 0; background: #fff url(/Content/NewImages/smallWorld.png) no-repeat top left;
-             height: 40px; padding-left: 41px; float: right;}
+             float: right; margin: 0px 20px 0 0; background: #fff url(/Content/NewImages/smallWorld.png) no-repeat top left;
+             height: 46px; padding: 14px 0 0 41px; float: right;
+             background-position: 3px 11px; }
 
 div#leftColumn {
 	position:absolute;
 	left:32px;
 	width:320px;
-	top:192px;
+	top:162px;
 	margin:0; }
 
 div#centerColumn {

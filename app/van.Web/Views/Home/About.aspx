@@ -4,7 +4,7 @@
 <meta name="keywords" content="Alt.Net, VAN, Virtual ALT.NET, Virtual ALT.NET About" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-<h2 class="first">About Virtual ALT.NET</h1>
+<h2 class="first">About Virtual ALT.NET</h2>
 <div class="center-box">  
 <p>Virtual ALT.NET (VAN) is the online gathering place of the <a href="http://altnetpedia.com/">ALT.NET</a> community. Through conversations, presentations, pair programming and dojos, we strive to improve, explore, and challenge the way we create software. Using net conferencing technology such as Skype and LiveMeeting, we hold regular meetings, open to anyone, usually taking the form of a presentation or an <a href="http://en.wikipedia.org/wiki/Open_Space_Technology">Open Space Technology</a>-style conversation.</p>
 <br />
