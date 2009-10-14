@@ -6,8 +6,8 @@
 
 
 <ul>
-	<li class="first <%=Html.CurrentAction("Index", "Home") %>">
-		<%= Html.ActionLink<HomeController>(x=>x.Index(), "Home") %></li>
+    <li class="first <%=Html.CurrentAction("Index", "Home") %>">
+		<%= Html.ActionLink<HomeController>(x => x.Index(), "Virtual Alt.Net", new { id = "homeLink" })%></li>
 		
 	<li class="second <%=Html.CurrentAction("Calendar", "Calendar") %>">
 		<%= Html.ActionLink<HomeController>(x => x.Calendar(), "Calendar")%></li>

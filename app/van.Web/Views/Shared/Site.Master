@@ -47,15 +47,16 @@
     
     
     <div id="topbanner">   
-        
+          <%--//smelly has to be first --%>
+         <div id="smelly">
+            Virtual Alt.Net is a group of individuals holding virtuals meetings all around the world
+            to learn and grow with other developers while not having to smell them.
+        </div>
         <a href="http://www.virtualaltnet.com/">
             <img src="<%= ResolveUrl("~") %>Content/NewImages/NewLogo.png" alt="DiscountAsp.Net" id="logo" />
         </a>
                 
-        <div id="smelly">
-            Virtual Alt.Net is a group of individuals holding virtuals meetings all around the world
-            to learn and grow with other developers while not having to smell them.
-        </div>
+
     </div>
     
     <% Html.RenderPartial("Menu"); %>    
@@ -63,7 +64,7 @@
     
 </div>
 
-<div id="leftColumn"> 
+<div id="leftColumn" class="clearfix"> 
     <div class="nostyleBox meetingLink">
     <a href="/Van/" alt="Join a Meeting in Progress">
         Join a Meeting
@@ -114,14 +115,7 @@
 
 <div id="centerColumn">
     <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
-</div>
-
-<%--<div id="rightColumn">
-
-</div>--%>
-
-<!-- Start Footer content -->
-<div id="footer">
+    <div id="footer-box">
     <div class="nav-footer">
         <% Html.RenderPartial("Menu"); %>
         <p class="copyright">
@@ -129,16 +123,14 @@
     </div>
 </div>
 
-    
-    
-    
-
+</div>
 
 <script type="text/javascript">
     $(document).ready(function() {
         $('#header').corner();
         $('.center-box').corner();
         $('.box').corner();
+        $('#footer-box').corner();
     });
 
 </script>
@@ -154,5 +146,7 @@
         var pageTracker = _gat._getTracker("UA-3010739-6");
         pageTracker._trackPageview();
     } catch (err) { }</script>
+    <div id="push"></div>
+    </div>
 </body>
 </html>
