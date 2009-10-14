@@ -69,7 +69,7 @@ div#header { margin:2em 2em 0 2em;  border:1px solid #eeeeee; height: 101px;
           background: #fff url('/Content/NewImages/box-bg.jpg') no-repeat bottom right;        }
 
 
-div#menuIcons  {	margin-top: 4px; }
+div#menuIcons  { margin-top: 4px; }
 div#menuIcons img { margin: 4px 4px; }
 
 div#smelly { width: 550px; font-size: .75em; 
@@ -109,7 +109,6 @@ div#centerColumn h2 {
 	letter-spacing:.1em;
 	color: #fc0;
 }
-
 
 div#footer-box  { clear: both; background-color: #222; border: 1px solid  #CF9925; width: 98%; clear: both; color: #fff; padding: 6px 1%; font-size: .8em; height: 100px; }
 div#footer-box a { color:  #CF9925; }
