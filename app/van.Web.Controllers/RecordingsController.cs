@@ -32,8 +32,12 @@ namespace van.Web.Controllers
 
         [Transaction]
         public ActionResult Show(int id) {
-            Recording recording = recordingRepository.Get(id);
-            return View(recording);
+            var model = new RecordingViewModel
+                            {
+                                SingleRecording = recordingRepository.Get(id)
+                            };
+            
+            return View(model);
         }
         
         [RequiresAuthentication]
