@@ -8,7 +8,9 @@
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <link rel="shortcut icon" href="<%= ResolveUrl("~") %>Content/images/favicon.ico" />
-<%--    <%= Html.IncludeMsJs("jquery-1.3.2", "MicrosoftAjax", "MicrosoftMvcAjax")%>
+
+    <%= Html.IncludeMsJs("jquery-1.3.2", "MicrosoftAjax", "MicrosoftMvcAjax")%>
+
     <!-- ExtJS related JavaScript -->
     <%= Html.IncludeExtAdapterJs("ext-jquery-adapter")%>
     <%= Html.IncludeExtAllJs("ext-all")%>
@@ -22,7 +24,7 @@
     Ext.BLANK_IMAGE_URL = SharpJs.RootUrl + 'Scripts/ext-3.0-rc1.1/resources/images/default/s.gif';
     Ext.GRID_WIDTH = 680;
     Ext.GRID_HEIGHT = 600;
-    </script>--%>
+    </script>
 
 	<asp:ContentPlaceHolder ID="ResourceFilesPlaceHolder" runat="server"></asp:ContentPlaceHolder>
 

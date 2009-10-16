@@ -24,6 +24,6 @@
 
     <p id="dynamicMessage" class="page-message" style="display:none"></p>
 
-    <div id="divRecordingsGrid"></div>
+    <div class="center-box" id="divRecordingsGrid"></div>
    
 </asp:Content>

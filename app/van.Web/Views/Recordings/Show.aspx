@@ -6,7 +6,7 @@
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <h1>Recording Details</h1>
 
-    <form class="wufoo">
+    <form >
 		<ul>
 				<li>
 				<label class="desc">Title:</label>
