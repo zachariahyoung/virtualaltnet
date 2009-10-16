@@ -2,6 +2,7 @@
     Title="Virtual ALT.NET" Inherits="System.Web.Mvc.ViewPage<van.Web.Controllers.PostEventRecordViewModel>" %>
 <%@ Import Namespace="van.Core.Dto"%>
 <%@ Import Namespace="System.ServiceModel.Syndication"%>
+<asp:Content ID="Content2" ContentPlaceHolderID="ResourceFilesPlaceHolder" runat="server"></asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="_headContentPlaceHolder" runat="server">
 <meta name="description" content="Virtual ALT.NET (VAN) is the online gathering place of the ALT.NET community. " />
 <meta name="keywords" content="Alt.Net, VAN, Virtual ALT.NET, Virtual ALT.NET Home" />

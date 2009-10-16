@@ -1,6 +1,7 @@
-﻿<%@ Page Language="C#"
- MasterPageFile="~/Views/Shared/Site.Master"  Title="Virtual ALT.NET Calendar" %>
- 
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Title="Virtual ALT.NET Calendar" 
+ Inherits="System.Web.Mvc.ViewPage<van.Core.BaseViewModel>"
+%>
+ <asp:Content ID="Content3" ContentPlaceHolderID="ResourceFilesPlaceHolder" runat="server"></asp:Content>
  <asp:Content ID="Content1" ContentPlaceHolderID="_headContentPlaceHolder" runat="server">
 <meta name="description" content="Virtual ALT.NET (VAN) is the online gathering place of the ALT.NET community.  This page contains the calendar." />
 <meta name="keywords" content="Alt.Net, VAN, Virtual ALT.NET, Virtual ALT.NET Calendar" />

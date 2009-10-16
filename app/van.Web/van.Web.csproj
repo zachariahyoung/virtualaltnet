@@ -618,6 +618,10 @@
       <Project>{018D1C14-6A49-4525-A8C7-A747BBFBFA27}</Project>
       <Name>van.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\van.Web.Core\van.Web.Core.csproj">
+      <Project>{B8191849-4994-4F2F-A27D-39BF30FA9E5A}</Project>
+      <Name>van.Web.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\960\CSS\960.css" />

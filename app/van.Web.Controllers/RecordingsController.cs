@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using SharpArch.Web.NHibernate;
 using SharpArch.Core;
 using van.Web.Controllers.Infrastructure;
+using van.Web.Core;
 
 namespace van.Web.Controllers
 {
@@ -20,9 +21,13 @@ namespace van.Web.Controllers
         }
 
         [Transaction]
+		  [ResourceFilter(1)]
         public ActionResult Index() {
-            IList<Recording> recordings = recordingRepository.GetAll();
-            return View(recordings);
+	        	var model = new RecordingViewModel
+        	            	{
+        	            		Recordings = recordingRepository.GetAll()
+        	            	};
+            return View(model);
         }
 
         [Transaction]

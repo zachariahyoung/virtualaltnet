@@ -8,7 +8,7 @@ using van.Core.Dto;
 
 namespace van.Web.Controllers
 {
-    public class PostEventRecordViewModel
+    public class PostEventRecordViewModel : BaseViewModel
     {
         public IEnumerable<NewsDto> News { get; internal set; }
         public IEnumerable<EventDto> Events { get; internal set; }

@@ -92,6 +92,8 @@
     <Compile Include="DataInterfaces\ISyndicationFeedRepository.cs" />
     <Compile Include="Dto\EventDto.cs" />
     <Compile Include="Dto\NewsDto.cs" />
+    <Compile Include="BaseViewModel.cs" />
+    <Compile Include="IResource.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="DataInterfaces\IAccountRepository.cs" />
     <Compile Include="DataInterfaces\IUserRepository.cs" />

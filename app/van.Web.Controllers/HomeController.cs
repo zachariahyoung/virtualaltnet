@@ -1,6 +1,8 @@
 ﻿using System.Web.Mvc;
 using SharpArch.Core;
 using van.ApplicationServices;
+using van.Core;
+using van.Web.Core;
 
 namespace van.Web.Controllers
 {
@@ -16,6 +18,7 @@ namespace van.Web.Controllers
         }
 
         [OutputCache(Duration = 30, VaryByParam = "")]
+		  [ResourceFilter(1)]
         public ActionResult Index()
         {
             PostEventRecordViewModel viewModel = PostEventRecordViewModel.CreatePostEventRecordViewModel(aggregator);
@@ -23,14 +26,16 @@ namespace van.Web.Controllers
             return View(viewModel);
         }
 
+		  [ResourceFilter(1)]
         public ActionResult Calendar()
         {
-            return View();
+			  return View(new BaseViewModel());
         }
 
+		  [ResourceFilter(1)]
         public ActionResult About()
         {
-            return View();
+            return View(new BaseViewModel());
         }
 
         public RedirectResult Blog()

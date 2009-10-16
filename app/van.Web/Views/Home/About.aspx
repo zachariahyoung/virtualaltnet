@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true"  Title="Virtual ALT.NET About" %>
+<asp:Content ID="Content3" ContentPlaceHolderID="ResourceFilesPlaceHolder" runat="server"></asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="_headContentPlaceHolder" runat="server">
 <meta name="description" content="Virtual ALT.NET (VAN) is the online gathering place of the ALT.NET community.  This page contains the about information." />
 <meta name="keywords" content="Alt.Net, VAN, Virtual ALT.NET, Virtual ALT.NET About" />

@@ -1,7 +1,8 @@
 <%@ Page Title="User Details" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
 	Inherits="System.Web.Mvc.ViewPage<van.Core.User>" %>
 <%@ Import Namespace="van.Web.Controllers" %>
-
+<asp:Content ID="Content1" ContentPlaceHolderID="ResourceFilesPlaceHolder" runat="server"></asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="_headContentPlaceHolder" runat="server"></asp:Content>
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
     <h1>User Details</h1>
