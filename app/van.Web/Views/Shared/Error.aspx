@@ -7,3 +7,4 @@
         OMG, What have you done???  You broke the application...YOU broke it!!!
     </div>
 </asp:Content>
+<asp:Content ID="Scripts" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server" />

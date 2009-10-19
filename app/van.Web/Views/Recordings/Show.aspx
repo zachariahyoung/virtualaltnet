@@ -6,7 +6,7 @@
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <h1>Recording Details</h1>
 
-    <form >
+    <div class="center-box">
 		<ul>
 				<li>
 				<label class="desc">Title:</label>
@@ -57,5 +57,6 @@
                     "window.location.href = '" + Html.BuildUrlFromExpression<RecordingsController>(c => c.Index()) + "';") %>
             </li>
 		</ul>
-	</form>
+	</div>
 </asp:Content>
+<asp:Content ID="Scripts" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server" />

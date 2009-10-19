@@ -40,3 +40,4 @@
 
     <p><%= Html.ActionLink<UsersController>(c => c.Create(), "Create New User") %></p>
 </asp:Content>
+<asp:Content ID="Scripts" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server" />

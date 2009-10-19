@@ -13,3 +13,4 @@
     
     <p>You do not have access to this section of the site. Speak to the administrators of this site to gain access.</p>
 </asp:Content>
+<asp:Content ID="Scripts" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server" />

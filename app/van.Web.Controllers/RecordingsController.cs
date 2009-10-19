@@ -1,7 +1,6 @@
 using System.Web.Mvc;
 using van.Core;
 using SharpArch.Core.PersistenceSupport;
-using System.Collections.Generic;
 using SharpArch.Web.NHibernate;
 using SharpArch.Core;
 using van.Web.Controllers.Infrastructure;
@@ -21,7 +20,7 @@ namespace van.Web.Controllers
         }
 
         [Transaction]
-		  [ResourceFilter(1)]
+		  [ResourceFilter(2)]
         public ActionResult Index() {
 	        	var model = new RecordingViewModel
         	            	{
@@ -30,8 +29,9 @@ namespace van.Web.Controllers
             return View(model);
         }
 
-        [Transaction]
-        public ActionResult Show(int id) {
+       [Transaction]
+       [ResourceFilter(1)] 
+		 public ActionResult Show(int id) {
             var model = new RecordingViewModel
                             {
                                 SingleRecording = recordingRepository.Get(id)
@@ -72,30 +72,31 @@ namespace van.Web.Controllers
             viewModel.Recording = recordingRepository.Get(id);
             return View(viewModel);
         }
-        [RequiresAuthentication]
-        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
-        [ValidateAntiForgeryToken]
-        [Transaction]
-        [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Edit(Recording recording) {
-            Recording recordingToUpdate = recordingRepository.Get(recording.Id);
-            TransferFormValuesTo(recordingToUpdate, recording);
+		  [RequiresAuthentication]
+		  [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+		  [ValidateAntiForgeryToken]
+		  [Transaction]
+		  [AcceptVerbs(HttpVerbs.Post)]
+		  public ActionResult Edit(Recording recording)
+		  {
+		  	Recording recordingToUpdate = recordingRepository.Get(recording.Id);
+		  	TransferFormValuesTo(recordingToUpdate, recording);
 
-            if (ViewData.ModelState.IsValid && recording.IsValid()) {
-                TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
-					"The recording was successfully updated.";
-                return RedirectToAction("Index");
-            }
-            else {
-                recordingRepository.DbContext.RollbackTransaction();
+		  	if (ViewData.ModelState.IsValid && recording.IsValid())
+		  	{
+		  		TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] =
+		  			"The recording was successfully updated.";
+		  		return RedirectToAction("Index");
+		  	}
 
-				RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
-				viewModel.Recording = recording;
-				return View(viewModel);
-            }
-        }
+		  	recordingRepository.DbContext.RollbackTransaction();
 
-        private void TransferFormValuesTo(Recording recordingToUpdate, Recording recordingFromForm) {
+		  	RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
+		  	viewModel.Recording = recording;
+		  	return View(viewModel);
+		  }
+
+    	private void TransferFormValuesTo(Recording recordingToUpdate, Recording recordingFromForm) {
 			recordingToUpdate.Title = recordingFromForm.Title;
 			recordingToUpdate.Url = recordingFromForm.Url;
 			recordingToUpdate.Date = recordingFromForm.Date;

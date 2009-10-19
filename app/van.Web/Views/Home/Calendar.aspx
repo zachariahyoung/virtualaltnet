@@ -30,3 +30,4 @@
 style="border: 0" width="540" height="600" frameborder="0" scrolling="no" ></iframe>
 
 </asp:Content>
+<asp:Content ID="Scripts" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server" />

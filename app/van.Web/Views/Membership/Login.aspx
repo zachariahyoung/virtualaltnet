@@ -32,3 +32,4 @@
     </fieldset>
     <% } %>
 </asp:Content>
+<asp:Content ID="Scripts" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server" />
