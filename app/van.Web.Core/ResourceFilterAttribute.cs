@@ -32,9 +32,7 @@ namespace van.Web.Core
 			if (viewResult == null)
 				return;
 
-			var model = viewResult.ViewData.Model as BaseViewModel;
-			if (model == null)
-				return;
+			var model = viewResult.ViewData.Model as BaseViewModel ?? new BaseViewModel();
 
 			PopulateBaseViewModel(model);
       }

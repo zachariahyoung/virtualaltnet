@@ -1,7 +1,9 @@
 ﻿using System.Web.Mvc;
 using Microsoft.Practices.ServiceLocation;
 using SharpArch.Web.NHibernate;
+using van.Core;
 using van.Web.Controllers.Infrastructure;
+using van.Web.Core;
 
 namespace van.Web.Controllers {
     
@@ -24,14 +26,16 @@ namespace van.Web.Controllers {
                    ServiceLocator.Current.GetInstance<IMembershipProvider>()) { }
 
         [Transaction]
+		  [ResourceFilter(1)] 
         public ActionResult Login()
         {
             return View("Login");
         }
 
+		  [ResourceFilter(1)] 
         public ActionResult Denied()
         {
-            return View("Denied");
+			  return View("Denied");
         }
         [Transaction]
         public ActionResult Authenticate(string userName, string password, string rememberMe, string returnUrl)

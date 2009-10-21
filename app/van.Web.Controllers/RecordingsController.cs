@@ -67,6 +67,7 @@ namespace van.Web.Controllers
         [RequiresAuthentication]
         [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
+		  [ResourceFilter(2)]
         public ActionResult Edit(int id) {
             RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
             viewModel.Recording = recordingRepository.Get(id);
@@ -139,7 +140,7 @@ namespace van.Web.Controllers
 		/// <summary>
 		/// Holds data to be passed to the Recording form for creates and edits
 		/// </summary>
-        public class RecordingFormViewModel
+		  public class RecordingFormViewModel : BaseViewModel
         {
             private RecordingFormViewModel() { }
 
