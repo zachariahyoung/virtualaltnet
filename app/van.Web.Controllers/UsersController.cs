@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using SharpArch.Web.NHibernate;
 using SharpArch.Core;
 using van.Web.Controllers.Infrastructure;
+using van.Web.Core;
 
 namespace van.Web.Controllers
 {
@@ -19,20 +20,35 @@ namespace van.Web.Controllers
         [RequiresAuthentication]
         [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
+        [ResourceFilter(1)]
         public ActionResult Index() {
             IList<User> users = userRepository.GetAll();
-            return View(users);
+
+            var model = new UsersViewModel()
+                            {
+                                Users = users
+                            };
+
+            return View(model);
         }
         [RequiresAuthentication]
         [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
+        [ResourceFilter(1)]
         public ActionResult Show(int id) {
             User user = userRepository.Get(id);
-            return View(user);
+
+            var model = new UsersViewModel()
+                            {
+                                SingleUser = user
+                            };
+
+            return View(model);
         }
 
         [RequiresAuthentication]
         [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+        [ResourceFilter(1)]
         public ActionResult Create() {
             UserFormViewModel viewModel = UserFormViewModel.CreateUserFormViewModel();
             return View(viewModel);
@@ -43,6 +59,7 @@ namespace van.Web.Controllers
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
+        [ResourceFilter(1)]
         public ActionResult Create(User user) {
             if (ViewData.ModelState.IsValid && user.IsValid()) {
                 userRepository.SaveOrUpdate(user);
@@ -60,6 +77,7 @@ namespace van.Web.Controllers
         [RequiresAuthentication]
         [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
+        [ResourceFilter(1)]
         public ActionResult Edit(int id) {
             UserFormViewModel viewModel = UserFormViewModel.CreateUserFormViewModel();
             viewModel.User = userRepository.Get(id);
@@ -71,6 +89,7 @@ namespace van.Web.Controllers
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
+        [ResourceFilter(1)]
         public ActionResult Edit(User user) {
             User userToUpdate = userRepository.Get(user.Id);
             TransferFormValuesTo(userToUpdate, user);
@@ -97,6 +116,7 @@ namespace van.Web.Controllers
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
+        [ResourceFilter(1)]
         public ActionResult Delete(int id) {
             string resultMessage = "The user was successfully deleted.";
             User userToDelete = userRepository.Get(id);
@@ -124,7 +144,7 @@ namespace van.Web.Controllers
 		/// <summary>
 		/// Holds data to be passed to the User form for creates and edits
 		/// </summary>
-        public class UserFormViewModel
+        public class UserFormViewModel : BaseViewModel
         {
             private UserFormViewModel() { }
 

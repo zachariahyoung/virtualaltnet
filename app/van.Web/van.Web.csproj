@@ -177,25 +177,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Images\ad.gif" />
-    <Content Include="Content\Images\bg-button.png" />
-    <Content Include="Content\Images\bg-column-left.png" />
-    <Content Include="Content\Images\bg-column-right.png" />
-    <Content Include="Content\Images\bg-input.png" />
-    <Content Include="Content\Images\bg-poster-photo.jpg" />
-    <Content Include="Content\Images\bg-poster-tile.jpg" />
-    <Content Include="Content\Images\bg-poster.jpg" />
-    <Content Include="Content\Images\bullet.png" />
-    <Content Include="Content\Images\dasp.gif" />
-    <Content Include="Content\Images\dasp_logo4.jpg" />
-    <Content Include="Content\Images\favicon.ico" />
-    <Content Include="Content\Images\ReadMe.txt" />
-    <Content Include="Content\Images\sharp_arch.jpg" />
-    <Content Include="Content\Images\sharp_arch_small.gif" />
-    <Content Include="Content\Images\VAN-1.png" />
-    <Content Include="Content\Images\VAN-3.jpg" />
-    <Content Include="Content\Images\VAN-4.png" />
-    <Content Include="Content\print-styles.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="NHibernate.config">
@@ -590,7 +571,6 @@
     <Content Include="Views\Users\Show.aspx" />
     <Content Include="Views\Users\UserForm.ascx" />
     <Content Include="Web.config" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\jquery-1.3.2.js" />
     <Content Include="Scripts\jquery-1.3.2.min.js" />
     <Content Include="Scripts\MicrosoftAjax.js" />
@@ -624,25 +604,23 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\960\CSS\960.css" />
-    <Content Include="Content\960\CSS\custom.css" />
-    <Content Include="Content\960\CSS\reset.css" />
-    <Content Include="Content\960\CSS\text.css" />
-    <Content Include="Content\NewImages\bg.jpg" />
-    <Content Include="Content\NewImages\box-bg.jpg" />
-    <Content Include="Content\NewImages\CodeBetterLogo.png" />
-    <Content Include="Content\NewImages\GoogleGroups.png" />
-    <Content Include="Content\NewImages\largeWorld.png" />
-    <Content Include="Content\NewImages\logo.png" />
-    <Content Include="Content\NewImages\LosTechiesLogo.png" />
-    <Content Include="Content\NewImages\NewLogo.png" />
-    <Content Include="Content\NewImages\RssIcon.png" />
-    <Content Include="Content\NewImages\smallWorld.png" />
-    <Content Include="Content\NewImages\tiny-world.gif" />
-    <Content Include="Content\NewImages\TwitterIcon.png" />
-    <Content Include="Content\NewImages\virtualaltnet.png" />
-    <Content Include="Content\NewImages\world.png" />
-    <Content Include="Content\newstyle.css" />
+    <Content Include="Content\Images\bg-input.png" />
+    <Content Include="Content\Images\bg.jpg" />
+    <Content Include="Content\Images\box-bg.jpg" />
+    <Content Include="Content\Images\CodeBetterLogo.png" />
+    <Content Include="Content\Images\dasp_logo4.jpg" />
+    <Content Include="Content\Images\GoogleGroups.png" />
+    <Content Include="Content\Images\largeWorld.png" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\LosTechiesLogo.png" />
+    <Content Include="Content\Images\NewLogo.png" />
+    <Content Include="Content\Images\RssIcon.png" />
+    <Content Include="Content\Images\smallWorld.png" />
+    <Content Include="Content\Images\tiny-world.gif" />
+    <Content Include="Content\Images\TwitterIcon.png" />
+    <Content Include="Content\Images\virtualaltnet.png" />
+    <Content Include="Content\Images\world.png" />
+    <Content Include="Content\style.css" />
     <Content Include="log4net.config" />
     <None Include="Scripts\ext-3.0-rc1.1\resources\images\default\form\clear-trigger.psd" />
     <None Include="Scripts\ext-3.0-rc1.1\resources\images\default\form\date-trigger.psd" />

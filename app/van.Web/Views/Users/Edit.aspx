@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="_headContentPlaceHolder" runat="server"></asp:Content>
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
-	<h1>Edit User</h1>
+	<h2>Edit User</h2>
 
 	<% Html.RenderPartial("UserForm", ViewData); %>
 

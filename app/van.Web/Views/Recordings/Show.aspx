@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ResourceFilesPlaceHolder" runat="server"></asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="_headContentPlaceHolder" runat="server"/>
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <h1>Recording Details</h1>
+    <h2>Recording Details</h2>
 
     <div class="center-box">
 		<ul>

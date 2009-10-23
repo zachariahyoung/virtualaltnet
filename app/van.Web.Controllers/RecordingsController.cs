@@ -42,6 +42,7 @@ namespace van.Web.Controllers
         
         [RequiresAuthentication]
         [RequiresAuthorization (RoleToCheckFor="Administrator")]
+       [ResourceFilter(1)] 
         public ActionResult Create() {
             RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
             return View(viewModel);
@@ -51,6 +52,7 @@ namespace van.Web.Controllers
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
+        [ResourceFilter(1)] 
         public ActionResult Create(Recording recording) {
             if (ViewData.ModelState.IsValid && recording.IsValid()) {
                 recordingRepository.SaveOrUpdate(recording);
@@ -67,7 +69,7 @@ namespace van.Web.Controllers
         [RequiresAuthentication]
         [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
-		  [ResourceFilter(2)]
+		  [ResourceFilter(1)]
         public ActionResult Edit(int id) {
             RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
             viewModel.Recording = recordingRepository.Get(id);
@@ -78,6 +80,7 @@ namespace van.Web.Controllers
 		  [ValidateAntiForgeryToken]
 		  [Transaction]
 		  [AcceptVerbs(HttpVerbs.Post)]
+        [ResourceFilter(1)]
 		  public ActionResult Edit(Recording recording)
 		  {
 		  	Recording recordingToUpdate = recordingRepository.Get(recording.Id);

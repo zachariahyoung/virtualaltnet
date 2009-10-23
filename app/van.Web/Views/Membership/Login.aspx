@@ -5,8 +5,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="_headContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <h1>
-        Login</h1>
+    <h2> Login</h2>
+    <div class="center-box">
     <% if( ViewData["ErrorMessage"] != null ){ %>
     <p>
         <% =ViewData["ErrorMessage"] %></p>
@@ -31,5 +31,6 @@
         <% =Html.Hidden( "returnUrl", Request.QueryString["ReturnUrl"] ) %>
     </fieldset>
     <% } %>
+    </div>
 </asp:Content>
 <asp:Content ID="Scripts" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server" />

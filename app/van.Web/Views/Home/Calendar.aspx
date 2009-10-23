@@ -8,7 +8,8 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-<br />
+<h2>Calendar of Upcoming Events</h2>
+<div class="center-box">
     <table>
         <tr>
             <td>
@@ -25,9 +26,9 @@
             </td>
         </tr>
     </table>
-<br />
-<iframe src="http://www.google.com/calendar/embed?src=9fgo89ah4shtm6pk7k5307aerg%40group.calendar.google.com&ctz=America/Chicago" 
-style="border: 0" width="540" height="600" frameborder="0" scrolling="no" ></iframe>
 
+<iframe src="http://www.google.com/calendar/embed?src=9fgo89ah4shtm6pk7k5307aerg%40group.calendar.google.com&ctz=America/Chicago" 
+style="border: 0" width="640" height="600" frameborder="0" scrolling="no" ></iframe>
+</div>
 </asp:Content>
 <asp:Content ID="Scripts" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server" />

@@ -22,7 +22,7 @@ namespace van.Web.Core
 		{
 			if (Model == null)
 				throw new NullReferenceException("Invalid model");
-
+		    
 			_resourceControl = FindControl(HEADER);
 
 			AddToHeader(Model.CSS, CSSFormat);

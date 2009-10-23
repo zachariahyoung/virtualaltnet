@@ -9,7 +9,7 @@
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
-	<h1>Create Recording</h1>
+	<h2>Create Recording</h2>
 
 	<% Html.RenderPartial("RecordingForm", ViewData); %>
 

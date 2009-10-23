@@ -35,9 +35,10 @@ namespace van.Web.Controllers {
 		  [ResourceFilter(1)] 
         public ActionResult Denied()
         {
-			  return View("Denied");
+            return View("Denied");
         }
         [Transaction]
+        [ResourceFilter(1)] 
         public ActionResult Authenticate(string userName, string password, string rememberMe, string returnUrl)
         {
 

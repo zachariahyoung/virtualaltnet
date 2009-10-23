@@ -20,9 +20,9 @@
 
 <div id="menuIcons">
     <a href="http://twitter.com/virtualaltnet" alt="Follow Us On Twitter">
-        <img src="<%= ResolveUrl("~") %>Content/NewImages/TwitterIcon.png" />
+        <img src="<%= ResolveUrl("~") %>Content/Images/TwitterIcon.png" />
     </a>
         <a href="http://feeds2.feedburner.com/VirtualAltnet" alt="Feed me! Feed me!">
-        <img src="<%= ResolveUrl("~") %>Content/NewImages/RssIcon.png" />
+        <img src="<%= ResolveUrl("~") %>Content/Images/RssIcon.png" />
     </a>
 </div>

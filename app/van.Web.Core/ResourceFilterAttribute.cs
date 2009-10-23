@@ -19,23 +19,24 @@ namespace van.Web.Core
 
 		public IContentFilesManager ContentFilesManager { get; set; }
 
-		/// <summary>
-		/// Called after the action method executes.
-		/// </summary>
-		/// <param name="filterContext">The filter context.</param>
-      public override void OnActionExecuted(ActionExecutedContext filterContext)
-      {
-			if (ContentFilesManager == null)
-				ContentFilesManager = new ContentFilesManager(new AppSettings());
 
-         var viewResult = filterContext.Result as ViewResult;
-			if (viewResult == null)
-				return;
+        /// <summary>
+        /// Called after the action method execute.
+        /// </summary>
+        /// <param name="filterContext">The filter context.</param>
+        public override void OnActionExecuted(ActionExecutedContext filterContext)
+        {
+            if (ContentFilesManager == null)
+                ContentFilesManager = new ContentFilesManager(new AppSettings());
 
-			var model = viewResult.ViewData.Model as BaseViewModel ?? new BaseViewModel();
+            var model = filterContext.Controller.ViewData.Model ?? new BaseViewModel();
 
-			PopulateBaseViewModel(model);
-      }
+            PopulateBaseViewModel((BaseViewModel)model);
+
+            filterContext.Controller.ViewData.Model = model;
+
+            base.OnActionExecuted(filterContext);
+        }
 
 		/// <summary>
 		/// Populates the base view model.

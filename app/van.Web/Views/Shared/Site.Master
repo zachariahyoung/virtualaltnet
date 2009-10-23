@@ -23,8 +23,7 @@
 				world to learn and grow with other developers while not having to smell them.
 			</div>
 			<a href="http://www.virtualaltnet.com/">
-				<img src="<%= ResolveUrl("~") %>Content/NewImages/NewLogo.png" alt="DiscountAsp.Net"
-					id="logo" />
+				<img src="<%= ResolveUrl("~") %>Content/Images/NewLogo.png" alt="Virtual Alt.Net" id="logo" />
 			</a>
 		</div>
 		<% Html.RenderPartial("Menu"); %>
@@ -40,7 +39,7 @@
 				<li><a href="http://virualaltnet.blogspot.com/2009/07/van-jeremy-miller-discusses.html">
 					Virtual Alt.Net</a></li>
 				<li><a href="http://europevan.blogspot.com/">European Van</a></li>
-				<li><a href="http://europevan.blogspot.com/">Brown Bag</a></li>
+				<%--<li><a href="http://europevan.blogspot.com/">Brown Bag</a></li>--%>
 				<li><a href="http://altnet-hispano.pbworks.com">Spanish</a></li>
 				<li><a href="http://ozalt.net/blog/">Australian</a></li>
 				<li><a href="http://www.c4mvc.net/Home/Events">Community For MVC.Net</a></li>
@@ -50,7 +49,7 @@
 			<h2>
 				Socially VAN</h2>
 			<a href="http://localhost:50633/Home/GoogleGroup" alt="Feed me! Feed me!">
-				<img src="<%= ResolveUrl("~") %>Content/NewImages/GoogleGroups.png" />
+				<img src="<%= ResolveUrl("~") %>Content/Images/GoogleGroups.png" />
 			</a>
 			<div>
 				<a href="http://feeds2.feedburner.com/VirtualAltnet">
@@ -62,14 +61,14 @@
 			<h2>
 				PARTNERS</h2>
 			<span id="Span1"><a href="<%=Url.Action("DiscountAspNet","Home") %>" target="_blank">
-				<img src="<%= ResolveUrl("~") %>Content/images/dasp_logo4.jpg" alt="DiscountAsp.Net" />
+				<img src="<%= ResolveUrl("~") %>Content/Images/dasp_logo4.jpg" alt="DiscountAsp.Net" />
 			</a></span><span id="Span2"><a href="<%=Url.Action("Ineta","Home") %>" target="_blank">
 				<img src="http://www.ineta.org/OfficialLogo.ashx?ugid=1" alt="Official INETA Logo"
 					width="114px" height="70px" />
 			</a></span><span id="Span3"><a href="http://www.lostechies.com" target="_blank">
-				<img src="<%= ResolveUrl("~") %>Content/NewImages/LosTechiesLogo.png" alt="LosTechies.com" />
+				<img src="<%= ResolveUrl("~") %>Content/Images/LosTechiesLogo.png" alt="LosTechies.com" />
 			</a></span><span id="Span4"><a href="http://www.codebetter.com/" target="_blank">
-				<img src="<%= ResolveUrl("~") %>Content/NewImages/CodeBetterLogo.png" alt="Codebetter.com" />
+				<img src="<%= ResolveUrl("~") %>Content/Images/CodeBetterLogo.png" alt="Codebetter.com" />
 			</a></span>
 		</div>
 	</div>
