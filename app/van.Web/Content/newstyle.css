@@ -126,3 +126,85 @@ div#footer-box li a { margin: 3px 9px; }
 * html .clearfix { height: 1%;}
 .clearfix {display: block;}
 /* End hide from IE-mac */
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 
+	 FORMS
+	 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+fieldset {
+	padding:10px 20px;
+	margin:15px 0;
+	position:relative;
+	}
+
+fieldset fieldset {
+	margin:10px 0;
+	width:90%;
+	}
+	
+legend {
+	font-weight:bold;
+	font-size:1em;
+	padding:10px;
+	color:#000;
+	margin:0 0 10px 30px;
+	font-family:"trebuchet MS", verdana, sans-serif;
+	}
+
+fieldset fieldset legend {
+	font-size:.8em;
+	}
+	
+.input-box {
+	display:block;
+	margin-bottom:5px;
+	vertical-align:top;
+	padding:2px;
+	color:#666666;
+	font-size:.8em;
+	border:1px solid #82b26e;
+	background:url(images/bg-input.png) no-repeat;
+	}
+
+label {
+	font-weight:bold;
+	font-size:.7em;
+	font-weight:bold;
+	display:block;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+
+.checkbox {	
+	margin:12px 0;
+	padding:4px 0 2px 3px;
+	border:1px dotted #585858;
+	width:95%;
+	}
+	
+.checkbox input {	
+	margin-right:6px;
+	margin-bottom:2px;
+	}
+
+.forgot-password {
+	margin:2px 0;
+	font-size:.65em;
+	}
+	
+input.button {
+	color:#FFF;
+	background:#317f0c url(images/bg-button.png) repeat-x;
+	border:2px groove #FFF;
+	font-size:.7em;
+	font-weight:bold;
+	padding:0 5px 2px 5px;
+	cursor:pointer;
+	}
+	
+input.button-big {
+	padding:6px 20px;
+	}
+	
