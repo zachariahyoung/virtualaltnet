@@ -143,7 +143,9 @@
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -623,8 +625,28 @@
     <Content Include="Content\Images\virtualaltnet.png" />
     <Content Include="Content\Images\world.png" />
     <Content Include="Content\Images\xml.gif" />
+    <Content Include="Content\NewImages\bg-input.png" />
+    <Content Include="Content\NewImages\bg.jpg" />
+    <Content Include="Content\NewImages\box-bg.jpg" />
+    <Content Include="Content\NewImages\CodeBetterLogo.png" />
+    <Content Include="Content\NewImages\dasp_logo4.jpg" />
+    <Content Include="Content\NewImages\GoogleGroups.png" />
+    <Content Include="Content\NewImages\html.gif" />
+    <Content Include="Content\NewImages\ical.gif" />
+    <Content Include="Content\NewImages\largeWorld.png" />
+    <Content Include="Content\NewImages\logo.png" />
+    <Content Include="Content\NewImages\LosTechiesLogo.png" />
+    <Content Include="Content\NewImages\NewLogo.png" />
+    <Content Include="Content\NewImages\RssIcon.png" />
+    <Content Include="Content\NewImages\smallWorld.png" />
+    <Content Include="Content\NewImages\tiny-world.gif" />
+    <Content Include="Content\NewImages\TwitterIcon.png" />
+    <Content Include="Content\NewImages\virtualaltnet.png" />
+    <Content Include="Content\NewImages\world.png" />
+    <Content Include="Content\NewImages\xml.gif" />
     <Content Include="Content\style.css" />
     <Content Include="log4net.config" />
+    <Content Include="Scripts\jquery.corners.js" />
     <None Include="Scripts\ext-3.0-rc1.1\resources\images\default\form\clear-trigger.psd" />
     <None Include="Scripts\ext-3.0-rc1.1\resources\images\default\form\date-trigger.psd" />
     <None Include="Scripts\ext-3.0-rc1.1\resources\images\default\form\search-trigger.psd" />

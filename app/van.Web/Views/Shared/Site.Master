@@ -36,7 +36,7 @@
 			<h2>
 				VAN Groups</h2>
 			<ul>
-				<li><a href="http://virualaltnet.blogspot.com/2009/07/van-jeremy-miller-discusses.html">
+				<li><a href="http://virualaltnet.blogspot.com/">
 					Virtual Alt.Net</a></li>
 				<li><a href="http://europevan.blogspot.com/">European Van</a></li>
 				<%--<li><a href="http://europevan.blogspot.com/">Brown Bag</a></li>--%>
@@ -48,7 +48,7 @@
 		<div class="box">
 			<h2>
 				Socially VAN</h2>
-			<a href="http://localhost:50633/Home/GoogleGroup" alt="Feed me! Feed me!">
+			<a href="http://groups.google.com/group/virtualaltnet" alt="Feed me! Feed me!">
 				<img src="<%= ResolveUrl("~") %>Content/Images/GoogleGroups.png" />
 			</a>
 			<div>
