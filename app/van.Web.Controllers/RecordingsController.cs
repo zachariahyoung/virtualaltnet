@@ -1,10 +1,10 @@
 using System.Web.Mvc;
 using van.Core;
 using SharpArch.Core.PersistenceSupport;
-using System.Collections.Generic;
 using SharpArch.Web.NHibernate;
 using SharpArch.Core;
 using van.Web.Controllers.Infrastructure;
+using van.Web.Core;
 
 namespace van.Web.Controllers
 {
@@ -20,19 +20,29 @@ namespace van.Web.Controllers
         }
 
         [Transaction]
+		  [ResourceFilter(2)]
         public ActionResult Index() {
-            IList<Recording> recordings = recordingRepository.GetAll();
-            return View(recordings);
+	        	var model = new RecordingViewModel
+        	            	{
+        	            		Recordings = recordingRepository.GetAll()
+        	            	};
+            return View(model);
         }
 
-        [Transaction]
-        public ActionResult Show(int id) {
-            Recording recording = recordingRepository.Get(id);
-            return View(recording);
+       [Transaction]
+       [ResourceFilter(1)] 
+		 public ActionResult Show(int id) {
+            var model = new RecordingViewModel
+                            {
+                                SingleRecording = recordingRepository.Get(id)
+                            };
+            
+            return View(model);
         }
         
         [RequiresAuthentication]
         [RequiresAuthorization (RoleToCheckFor="Administrator")]
+       [ResourceFilter(1)] 
         public ActionResult Create() {
             RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
             return View(viewModel);
@@ -42,6 +52,7 @@ namespace van.Web.Controllers
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
+        [ResourceFilter(1)] 
         public ActionResult Create(Recording recording) {
             if (ViewData.ModelState.IsValid && recording.IsValid()) {
                 recordingRepository.SaveOrUpdate(recording);
@@ -58,35 +69,38 @@ namespace van.Web.Controllers
         [RequiresAuthentication]
         [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
+		  [ResourceFilter(1)]
         public ActionResult Edit(int id) {
             RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
             viewModel.Recording = recordingRepository.Get(id);
             return View(viewModel);
         }
-        [RequiresAuthentication]
-        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
-        [ValidateAntiForgeryToken]
-        [Transaction]
-        [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Edit(Recording recording) {
-            Recording recordingToUpdate = recordingRepository.Get(recording.Id);
-            TransferFormValuesTo(recordingToUpdate, recording);
+		  [RequiresAuthentication]
+		  [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+		  [ValidateAntiForgeryToken]
+		  [Transaction]
+		  [AcceptVerbs(HttpVerbs.Post)]
+        [ResourceFilter(1)]
+		  public ActionResult Edit(Recording recording)
+		  {
+		  	Recording recordingToUpdate = recordingRepository.Get(recording.Id);
+		  	TransferFormValuesTo(recordingToUpdate, recording);
 
-            if (ViewData.ModelState.IsValid && recording.IsValid()) {
-                TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
-					"The recording was successfully updated.";
-                return RedirectToAction("Index");
-            }
-            else {
-                recordingRepository.DbContext.RollbackTransaction();
+		  	if (ViewData.ModelState.IsValid && recording.IsValid())
+		  	{
+		  		TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] =
+		  			"The recording was successfully updated.";
+		  		return RedirectToAction("Index");
+		  	}
 
-				RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
-				viewModel.Recording = recording;
-				return View(viewModel);
-            }
-        }
+		  	recordingRepository.DbContext.RollbackTransaction();
 
-        private void TransferFormValuesTo(Recording recordingToUpdate, Recording recordingFromForm) {
+		  	RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
+		  	viewModel.Recording = recording;
+		  	return View(viewModel);
+		  }
+
+    	private void TransferFormValuesTo(Recording recordingToUpdate, Recording recordingFromForm) {
 			recordingToUpdate.Title = recordingFromForm.Title;
 			recordingToUpdate.Url = recordingFromForm.Url;
 			recordingToUpdate.Date = recordingFromForm.Date;
@@ -129,7 +143,7 @@ namespace van.Web.Controllers
 		/// <summary>
 		/// Holds data to be passed to the Recording form for creates and edits
 		/// </summary>
-        public class RecordingFormViewModel
+		  public class RecordingFormViewModel : BaseViewModel
         {
             private RecordingFormViewModel() { }
 

@@ -1,44 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ServiceModel.Syndication;
-using System.Web.Mvc;
-using MvcContrib.Filters;
+﻿using System.Web.Mvc;
 using SharpArch.Core;
 using van.ApplicationServices;
-using van.Core.Dto;
 using van.Core;
+using van.Web.Core;
 
 namespace van.Web.Controllers
 {
     [HandleError]
     public class HomeController : Controller
     {
-        public HomeController(IPostProvider postProvider)
+        public HomeController(IAggregator aggregator)
         {
-            Check.Require(postProvider != null, "postProvider may not be null");
+            Check.Require(aggregator != null, "aggregator may not be null");
 
-            this.postProvider = postProvider;
+            this.aggregator = aggregator;
+
         }
-       
-        [OutputCache(Duration=30, VaryByParam = "")]
+
+        [OutputCache(Duration = 30, VaryByParam = "")]
+		  [ResourceFilter(1)]
         public ActionResult Index()
         {
+            PostEventRecordViewModel viewModel = PostEventRecordViewModel.CreatePostEventRecordViewModel(aggregator);
 
-            IEnumerable<SyndicationItem> items = postProvider.GetItems();
-
-            IEnumerable<PostDto> posts = items.FindItemsTop(15);
-
-            return View(posts);
+            return View(viewModel);
         }
 
+		  [ResourceFilter(1)]
         public ActionResult Calendar()
         {
-            return View();
+			  return View(new BaseViewModel());
         }
 
+		  [ResourceFilter(1)]
         public ActionResult About()
         {
-            return View();
+            return View(new BaseViewModel());
         }
 
         public RedirectResult Blog()
@@ -63,6 +60,6 @@ namespace van.Web.Controllers
         {
             return Redirect("http://www.ineta.org/");
         }
-        private readonly IPostProvider postProvider;
+        private readonly IAggregator aggregator;
     }
 }

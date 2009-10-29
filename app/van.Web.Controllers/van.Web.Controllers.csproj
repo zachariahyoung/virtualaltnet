@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Google.GData.Client, Version=1.4.2.26447, Culture=neutral, PublicKeyToken=04a59ca9b0273830, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Google.GData.Client.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
@@ -79,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControllerEnums.cs" />
+    <Compile Include="UsersViewModel.cs" />
     <Compile Include="HomeController.cs" />
     <Compile Include="..\..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
@@ -90,9 +95,11 @@
     <Compile Include="Infrastructure\RequiresAuthenticationAttribute.cs" />
     <Compile Include="MembershipController.cs" />
     <Compile Include="Infrastructure\MembershipProvider.cs" />
+    <Compile Include="PostEventRecordViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecordingsController.cs" />
     <Compile Include="Infrastructure\RequiresAuthorizationAttribute.cs" />
+    <Compile Include="RecordingViewModel.cs" />
     <Compile Include="RouteRegistrar.cs" />
     <Compile Include="VanController.cs" />
     <Compile Include="UsersController.cs" />
@@ -105,6 +112,10 @@
     <ProjectReference Include="..\van.ApplicationServices\van.ApplicationServices.csproj">
       <Project>{646B01CE-E1D8-4EB1-A900-C0943A596D51}</Project>
       <Name>van.ApplicationServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\van.Web.Core\van.Web.Core.csproj">
+      <Project>{B8191849-4994-4F2F-A27D-39BF30FA9E5A}</Project>
+      <Name>van.Web.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

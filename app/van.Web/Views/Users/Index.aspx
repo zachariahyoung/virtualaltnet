@@ -1,12 +1,13 @@
 <%@ Page Title="Users" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
-	Inherits="System.Web.Mvc.ViewPage<IEnumerable<van.Core.User>>" %>
+	Inherits="System.Web.Mvc.ViewPage<UsersViewModel>" %>
 <%@ Import Namespace="van.Core" %>
 <%@ Import Namespace="van.Web.Controllers" %>
  
-
+<asp:Content ID="Content1" ContentPlaceHolderID="ResourceFilesPlaceHolder" runat="server"></asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="_headContentPlaceHolder" runat="server"></asp:Content>
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <h1>Users</h1>
-
+    <h2>Users</h2>
+    <div class="center-box">
     <% if (ViewContext.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] != null) { %>
         <p id="pageMessage"><%= ViewContext.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()]%></p>
     <% } %>
@@ -21,7 +22,7 @@
         </thead>
 
 		<%
-		foreach (User user in ViewData.Model) { %>
+		foreach (User user in Model.Users) { %>
 			<tr>
 				<td><%= user.UserName %></td>
 				<td><%= user.Password %></td>
@@ -38,4 +39,6 @@
     </table>
 
     <p><%= Html.ActionLink<UsersController>(c => c.Create(), "Create New User") %></p>
+    </div>
 </asp:Content>
+<asp:Content ID="Scripts" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server" />
