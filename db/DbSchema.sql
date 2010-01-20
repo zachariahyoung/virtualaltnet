@@ -3,27 +3,13 @@
 alter table Roles  drop constraint FK1A2E670F582CE0D1
 
 
-    if exists (select * from dbo.sysobjects where id = object_id(N'Users') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Users
-
-    if exists (select * from dbo.sysobjects where id = object_id(N'Roles') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Roles
-
     if exists (select * from dbo.sysobjects where id = object_id(N'Recordings') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Recordings
 
     if exists (select * from dbo.sysobjects where id = object_id(N'Blogs') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Blogs
 
-    create table Users (
-        Id INT IDENTITY NOT NULL,
-       UserName NVARCHAR(255) null,
-       Password NVARCHAR(255) null,
-       primary key (Id)
-    )
+    if exists (select * from dbo.sysobjects where id = object_id(N'Users') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Users
 
-    create table Roles (
-        Id INT IDENTITY NOT NULL,
-       RoleName NVARCHAR(255) null,
-       UserFk INT null,
-       primary key (Id)
-    )
+    if exists (select * from dbo.sysobjects where id = object_id(N'Roles') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Roles
 
     create table Recordings (
         Id INT IDENTITY NOT NULL,
@@ -43,6 +29,20 @@ alter table Roles  drop constraint FK1A2E670F582CE0D1
        Name NVARCHAR(255) null,
        Url NVARCHAR(255) null,
        Rss NVARCHAR(255) null,
+       primary key (Id)
+    )
+
+    create table Users (
+        Id INT IDENTITY NOT NULL,
+       UserName NVARCHAR(255) null,
+       Password NVARCHAR(255) null,
+       primary key (Id)
+    )
+
+    create table Roles (
+        Id INT IDENTITY NOT NULL,
+       RoleName NVARCHAR(255) null,
+       UserFk INT null,
        primary key (Id)
     )
 

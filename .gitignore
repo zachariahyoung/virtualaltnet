@@ -1,0 +1,42 @@
+#ignore outputs of project
+build*/
+CommonAssemblyInfo.cs
+#ignore thumbnails created by windows
+Thumbs.db
+Desktop.ini
+#Ignore files build by Visual Studio
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+[Oo]bj/
+*.lib
+*.sbr
+
+
+
+#Ignore Resharper files
+*resharper.user
+*.sln.cache
+_ReSharper.*/
+AssemblyInfo.cs
+*.user
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+*.ini
