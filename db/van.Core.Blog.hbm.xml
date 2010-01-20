@@ -1,0 +1,16 @@
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" default-access="">
+  <class name="van.Core.Blog, van.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="Blogs" xmlns="urn:nhibernate-mapping-2.2">
+    <id name="Id" type="Int32" unsaved-value="0" column="Id">
+      <generator class="identity" />
+    </id>
+    <property name="Name" type="String">
+      <column name="Name" />
+    </property>
+    <property name="Url" type="String">
+      <column name="Url" />
+    </property>
+    <property name="Rss" type="String">
+      <column name="Rss" />
+    </property>
+  </class>
+</hibernate-mapping>
