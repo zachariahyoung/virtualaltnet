@@ -25,7 +25,7 @@ namespace van.ApplicationServices
                 
                 return this.GetEventDtos(calFeed.Entries.OfType<EventEntry>());
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return new EventDto[0];
             }
