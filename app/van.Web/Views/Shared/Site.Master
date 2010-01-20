@@ -19,8 +19,8 @@
 		<div id="topbanner">
 			<%--//smelly has to be first --%>
 			<div id="smelly">
-				Virtual Alt.Net is a group of individuals holding virtuals meetings all around the
-				world to learn and grow with other developers while not having to smell them.
+				Virtual Alt.Net is a group of individuals holding virtual meetings all around the
+				world to learn and grow with fellow developers while not having to smell them.
 			</div>
 			<a href="http://www.virtualaltnet.com/">
 				<img src="<%= ResolveUrl("~") %>Content/Images/NewLogo.png" alt="Virtual Alt.Net" id="logo" />
