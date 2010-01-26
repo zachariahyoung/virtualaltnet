@@ -60,27 +60,36 @@
     <Compile Include="..\..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScaffoldingGeneratorCommand.cs">
+    <Compile Include="EntityScaffoldingDetails.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
+      <DependentUpon>EntityScaffoldingDetails.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates\ScaffoldingGenerator.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScaffoldingGenerator.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="EntityScaffoldingDetails.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EntityScaffoldingDetails.cs</LastGenOutput>
     </None>
     <None Include="ScaffoldingGeneratorCommand.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ScaffoldingGeneratorCommand.cs</LastGenOutput>
+      <LastGenOutput>ScaffoldingGeneratorCommand.txt</LastGenOutput>
     </None>
     <None Include="Templates\BaseTemplate.tt">
+    </None>
+    <None Include="Templates\ScaffoldingGenerator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ScaffoldingGenerator.cs</LastGenOutput>
     </None>
     <None Include="Templates\Web\Controllers\ControllerTemplate.tt">
     </None>
     <None Include="Templates\Core\DomainObjectTemplate.tt">
-    </None>
-    <None Include="Templates\ScaffoldingGenerator.tt">
     </None>
     <None Include="Templates\Tests\Web\Controllers\ControllerTestsTemplate.tt">
     </None>
@@ -99,6 +108,13 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ScaffoldingGeneratorCommand.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

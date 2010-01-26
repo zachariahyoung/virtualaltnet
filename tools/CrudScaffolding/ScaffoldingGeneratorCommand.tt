@@ -1,0 +1,50 @@
+﻿<#@ template language="C#" hostspecific="True" debug="True" #>
+<#@ import namespace="System.Collections.Specialized" #>
+<#@ output extension="txt" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="./Templates/ScaffoldingGenerator.tt" #> 
+<#@ include file="EntityScaffoldingDetails.tt" #> 
+
+<#
+///////////////////////////////////////////////////
+// Set your domain object details below and simply uncomment the last line (".Run()") and save this file to auto-generate the scaffolding
+
+/*
+ * Domain name should be PascalCaseSingular with no spaces.
+ * You may qualify the domain object with a namespace; a folder structure reflecting the namespace structure will be created (or verified).
+ * A log of created artifacts may be found in /Northwind/logs/CrudScaffolding.log
+ * Examples:  Product, Organization.Employee, Financial.Costs.LedgerEntry
+ */
+EntityScaffoldingDetails entityScaffoldingDetails =
+	new EntityScaffoldingDetails("Speaker");
+ 
+/*
+ * Property names should be PascalCase.
+ * Do NOT include a property for Id as it will be included automatically.
+ */
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("FirstName", "string", "Joe", "[NotNull, NotEmpty]", true) 
+);
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("LastName", "string", "Smith", "[NotNull, NotEmpty]", true)
+);
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("Email", "string", "JoeSmith@gmail.com", "[NotNull, NotEmpty]", true)
+);
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("Website", "string", "http://wwww.joesmith.com")
+);
+
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("Presentation", "Recording", null, "[NotNull]")
+);
+
+///////////////////////////////////////////////////
+
+// The first parameter should reflect the root directory of your solution
+ScaffoldingGenerator generator = new ScaffoldingGenerator(
+	@"F:\DataWork\VAN\", "van", entityScaffoldingDetails); 
+
+// Uncomment this line when you're ready for the scaffolding generator to fire
+generator.Run();
+#>
