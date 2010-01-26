@@ -171,9 +171,14 @@
   <ItemGroup>
     <Compile Include="van.ApplicationServices\BlogPostAggregatorTests.cs" />
     <Compile Include="van.Core\BlogTests.cs" />
+    <Compile Include="van.Core\CategoryTests.cs" />
     <Compile Include="van.Core\RecordingTests.cs" />
+    <Compile Include="van.Core\SpeakerTests.cs" />
+    <Compile Include="van.Core\UpcomingEventTests.cs" />
     <Compile Include="van.Core\UserTests.cs" />
+    <Compile Include="van.Core\VirtualGroupTests.cs" />
     <Compile Include="van.Data\NHibernateMaps\FluentMappingIntegrationTests.cs" />
+    <Compile Include="van.Web\Controllers\CategoriesControllerTests.cs" />
     <Compile Include="van.Web\Controllers\HomeControllerTests.cs" />
     <Compile Include="van.Web\Controllers\MembershipControllerTests.cs" />
     <Compile Include="van.Web\Controllers\RecordingsControllerTests.cs" />
@@ -187,7 +192,10 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceLocatorInitializer.cs" />
+    <Compile Include="van.Web\Controllers\SpeakersControllerTests.cs" />
+    <Compile Include="van.Web\Controllers\UpcomingEventsControllerTests.cs" />
     <Compile Include="van.Web\Controllers\UsersControllerTests.cs" />
+    <Compile Include="van.Web\Controllers\VirtualGroupsControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

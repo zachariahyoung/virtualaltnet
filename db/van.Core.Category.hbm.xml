@@ -1,0 +1,10 @@
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" default-access="">
+  <class name="van.Core.Category, van.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="Categories" xmlns="urn:nhibernate-mapping-2.2">
+    <id name="Id" type="Int32" unsaved-value="0" column="Id">
+      <generator class="identity" />
+    </id>
+    <property name="Description" type="String">
+      <column name="Description" />
+    </property>
+  </class>
+</hibernate-mapping>

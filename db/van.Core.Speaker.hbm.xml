@@ -1,0 +1,20 @@
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" default-access="">
+  <class name="van.Core.Speaker, van.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="Speakers" xmlns="urn:nhibernate-mapping-2.2">
+    <id name="Id" type="Int32" unsaved-value="0" column="Id">
+      <generator class="identity" />
+    </id>
+    <property name="FirstName" type="String">
+      <column name="FirstName" />
+    </property>
+    <property name="LastName" type="String">
+      <column name="LastName" />
+    </property>
+    <property name="Email" type="String">
+      <column name="Email" />
+    </property>
+    <property name="Website" type="String">
+      <column name="Website" />
+    </property>
+    <many-to-one name="Presentation" column="PresentationFk" />
+  </class>
+</hibernate-mapping>

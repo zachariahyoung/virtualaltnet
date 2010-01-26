@@ -1,0 +1,23 @@
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" default-access="">
+  <class name="van.Core.UpcomingEvent, van.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="UpcomingEvents" xmlns="urn:nhibernate-mapping-2.2">
+    <id name="Id" type="Int32" unsaved-value="0" column="Id">
+      <generator class="identity" />
+    </id>
+    <property name="Title" type="String">
+      <column name="Title" />
+    </property>
+    <property name="EventDate" type="DateTime">
+      <column name="EventDate" />
+    </property>
+    <property name="FullDescription" type="String">
+      <column name="FullDescription" />
+    </property>
+    <property name="ShortDescription" type="String">
+      <column name="ShortDescription" />
+    </property>
+    <property name="Approved" type="Boolean">
+      <column name="Approved" />
+    </property>
+    <many-to-one name="Presenter" column="PresenterFk" />
+  </class>
+</hibernate-mapping>

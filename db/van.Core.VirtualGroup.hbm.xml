@@ -1,0 +1,14 @@
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" default-access="">
+  <class name="van.Core.VirtualGroup, van.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="VirtualGroups" xmlns="urn:nhibernate-mapping-2.2">
+    <id name="Id" type="Int32" unsaved-value="0" column="Id">
+      <generator class="identity" />
+    </id>
+    <property name="GroupName" type="String">
+      <column name="GroupName" />
+    </property>
+    <property name="Website" type="String">
+      <column name="Website" />
+    </property>
+    <many-to-one name="Manager" column="ManagerFk" />
+  </class>
+</hibernate-mapping>

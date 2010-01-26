@@ -82,7 +82,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriesController.cs" />
     <Compile Include="ControllerEnums.cs" />
+    <Compile Include="SpeakersController.cs" />
+    <Compile Include="UpcomingEventsController.cs" />
     <Compile Include="UsersViewModel.cs" />
     <Compile Include="HomeController.cs" />
     <Compile Include="..\..\CommonAssemblyInfo.cs">
@@ -103,6 +106,7 @@
     <Compile Include="RouteRegistrar.cs" />
     <Compile Include="VanController.cs" />
     <Compile Include="UsersController.cs" />
+    <Compile Include="VirtualGroupsController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\van.Core\van.Core.csproj">
