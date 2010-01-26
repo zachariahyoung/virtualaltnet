@@ -1,12 +1,12 @@
-12:50:26 PM	Started adding generated files
-12:50:26 PM	Added file van.Core\SpeakerTests.cs to project ..\..\tests\van.Tests\van.Tests.csproj
-12:50:26 PM	Added file Speaker.cs to project F:\DataWork\VAN\app\van.Core\van.Core.csproj
-12:50:26 PM	Added file van.Web\Controllers\SpeakersControllerTests.cs to project ..\..\tests\van.Tests\van.Tests.csproj
-12:50:26 PM	Added file SpeakersController.cs to project F:\DataWork\VAN\app\van.Web.Controllers\van.Web.Controllers.csproj
-12:50:26 PM	Added directory F:\DataWork\VAN\app\van.Web\Views\Speakers\
-12:50:26 PM	Added file F:\DataWork\VAN\app\van.Web\Views\Speakers\SpeakerForm.ascx to project ..\..\app\van.Web\van.Web.csproj
-12:50:26 PM	Added file F:\DataWork\VAN\app\van.Web\Views\Speakers\Create.aspx to project ..\..\app\van.Web\van.Web.csproj
-12:50:26 PM	Added file F:\DataWork\VAN\app\van.Web\Views\Speakers\Edit.aspx to project ..\..\app\van.Web\van.Web.csproj
-12:50:26 PM	Added file F:\DataWork\VAN\app\van.Web\Views\Speakers\Index.aspx to project ..\..\app\van.Web\van.Web.csproj
-12:50:26 PM	Added file F:\DataWork\VAN\app\van.Web\Views\Speakers\Show.aspx to project ..\..\app\van.Web\van.Web.csproj
-12:50:26 PM	Finished adding generated files
+1:07:21 PM	Started adding generated files
+1:07:21 PM	Added file van.Core\CategoryTests.cs to project ..\..\tests\van.Tests\van.Tests.csproj
+1:07:21 PM	Added file Category.cs to project F:\DataWork\VAN\app\van.Core\van.Core.csproj
+1:07:21 PM	Added file van.Web\Controllers\CategoriesControllerTests.cs to project ..\..\tests\van.Tests\van.Tests.csproj
+1:07:21 PM	Added file CategoriesController.cs to project F:\DataWork\VAN\app\van.Web.Controllers\van.Web.Controllers.csproj
+1:07:21 PM	Added directory F:\DataWork\VAN\app\van.Web\Views\Categories\
+1:07:21 PM	Added file F:\DataWork\VAN\app\van.Web\Views\Categories\CategoryForm.ascx to project ..\..\app\van.Web\van.Web.csproj
+1:07:21 PM	Added file F:\DataWork\VAN\app\van.Web\Views\Categories\Create.aspx to project ..\..\app\van.Web\van.Web.csproj
+1:07:21 PM	Added file F:\DataWork\VAN\app\van.Web\Views\Categories\Edit.aspx to project ..\..\app\van.Web\van.Web.csproj
+1:07:21 PM	Added file F:\DataWork\VAN\app\van.Web\Views\Categories\Index.aspx to project ..\..\app\van.Web\van.Web.csproj
+1:07:21 PM	Added file F:\DataWork\VAN\app\van.Web\Views\Categories\Show.aspx to project ..\..\app\van.Web\van.Web.csproj
+1:07:21 PM	Finished adding generated files

@@ -16,27 +16,14 @@
  * Examples:  Product, Organization.Employee, Financial.Costs.LedgerEntry
  */
 EntityScaffoldingDetails entityScaffoldingDetails =
-	new EntityScaffoldingDetails("Speaker");
+	new EntityScaffoldingDetails("Category");
  
 /*
  * Property names should be PascalCase.
  * Do NOT include a property for Id as it will be included automatically.
  */
 entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("FirstName", "string", "Joe", "[NotNull, NotEmpty]", true) 
-);
-entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("LastName", "string", "Smith", "[NotNull, NotEmpty]", true)
-);
-entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("Email", "string", "JoeSmith@gmail.com", "[NotNull, NotEmpty]", true)
-);
-entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("Website", "string", "http://wwww.joesmith.com")
-);
-
-entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("Presentation", "Recording", null, "[NotNull]")
+	new EntityProperty("Description", "string", "Dependency Injection", "[NotNull, NotEmpty]", true) 
 );
 
 ///////////////////////////////////////////////////
@@ -46,5 +33,5 @@ ScaffoldingGenerator generator = new ScaffoldingGenerator(
 	@"F:\DataWork\VAN\", "van", entityScaffoldingDetails); 
 
 // Uncomment this line when you're ready for the scaffolding generator to fire
-generator.Run();
+//	generator.Run();
 #>
