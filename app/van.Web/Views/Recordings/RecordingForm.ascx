@@ -1,11 +1,11 @@
 <%@ Control Language="C#" AutoEventWireup="true"
-	Inherits="System.Web.Mvc.ViewUserControl<RecordingsController.RecordingFormViewModel>" %>
+	Inherits="System.Web.Mvc.ViewUserControl<van.Web.Controllers.RecordingsController.RecordingFormViewModel>" %>
 <%@ Import Namespace="van.Core" %>
 <%@ Import Namespace="van.Web.Controllers" %>
  
-<div class="center-box">
-<% if (ViewContext.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] != null) { %>
-    <p id="pageMessage" class="fade page-message"><%= ViewContext.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()]%></p>
+
+<% if (ViewContext.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()] != null) { %>
+    <p id="pageMessage" class="fade page-message"><%= ViewContext.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()]%></p>
 <% } %>
 
 <%= Html.ValidationSummary() %>
@@ -17,26 +17,6 @@
 
     <ul>
 		<li>
-			<label class="desc">Title</label>
-			<span>
-				<%= Html.TextBox("Recording.Title", 
-					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.Title : "")%>
-			    <label>
-			        <%= Html.ValidationMessage("Recording.Title")%>
-			    </label>
-			</span>
-		</li>
-		<li>
-			<label class="desc">Url</label>
-			<span>
-				<%= Html.TextBox("Recording.Url", 
-					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.Url : "")%>
-			    <label>
-			        <%= Html.ValidationMessage("Recording.Url")%>
-			    </label>
-			</span>
-		</li>
-		<li>
 			<label class="desc">Date</label>
 			<span>
 				<%= Html.TextBox("Recording.Date", 
@@ -47,51 +27,65 @@
 			</span>
 		</li>
 		<li>
-			<label class="desc">Duration</label>
+			<label class="desc">UploadedUrl</label>
 			<span>
-				<%= Html.TextBox("Recording.Duration", 
-					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.Duration : "")%>
+				<%= Html.TextBox("Recording.UploadedUrl", 
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.UploadedUrl.ToString() : "")%>
 			    <label>
-			        <%= Html.ValidationMessage("Recording.Duration")%>
+			        <%= Html.ValidationMessage("Recording.UploadedUrl")%>
 			    </label>
 			</span>
 		</li>
-        <li>
-            <label class="desc">Speaker</label>
-            <span>
-                <%= Html.TextBox("Recording.Speaker", 
-					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.Speaker : "")%>
-                <label>
-                    <%= Html.ValidationMessage("Recording.Speaker")%>
-                </label>
-            </span></li>
-        <li>
-            <label class="desc">User Group</label>
-            <span>
-                <%= Html.TextBox("Recording.UserGroup", 
-					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.UserGroup : "")%>
-                <label>
-                    <%= Html.ValidationMessage("Recording.UserGroup")%>
-                </label>
-            </span></li>
-        <li>
-            <label class="desc"> Live Meeting Url</label>
-            <span>
-                <%= Html.TextBox("Recording.LiveMeetingUrl",
-                                        (ViewData.Model.Recording != null) ? ViewData.Model.Recording.LiveMeetingUrl : "")%>
-                <label>
-                    <%= Html.ValidationMessage("Recording.LiveMeetingUrl")%>
-                </label>
-            </span></li>
-        <li>
-            <label class="desc">Description</label>
-            <span>
-                <%= Html.TextArea("Recording.Description",
-                                                            (ViewData.Model.Recording != null) ? ViewData.Model.Recording.Description : "")%>
-                <label>
-                    <%= Html.ValidationMessage("Recording.Description")%>
-                </label>
-            </span></li>
+		<li>
+			<label class="desc">StartTime</label>
+			<span>
+				<%= Html.TextBox("Recording.StartTime", 
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.StartTime.ToString() : "")%>
+			    <label>
+			        <%= Html.ValidationMessage("Recording.StartTime")%>
+			    </label>
+			</span>
+		</li>
+		<li>
+			<label class="desc">EndTime</label>
+			<span>
+				<%= Html.TextBox("Recording.EndTime", 
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.EndTime.ToString() : "")%>
+			    <label>
+			        <%= Html.ValidationMessage("Recording.EndTime")%>
+			    </label>
+			</span>
+		</li>
+		<li>
+			<label class="desc">UpcomingEvent</label>
+			<span>
+				<%= Html.TextBox("Recording.UpcomingEvent", 
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.UpcomingEvent.ToString() : "")%>
+			    <label>
+			        <%= Html.ValidationMessage("Recording.UpcomingEvent")%>
+			    </label>
+			</span>
+		</li>
+		<li>
+			<label class="desc">UserGroup</label>
+			<span>
+				<%= Html.TextBox("Recording.UserGroup", 
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.UserGroup.ToString() : "")%>
+			    <label>
+			        <%= Html.ValidationMessage("Recording.UserGroup")%>
+			    </label>
+			</span>
+		</li>
+		<li>
+			<label class="desc">Category</label>
+			<span>
+				<%= Html.TextBox("Recording.Category", 
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.Category.ToString() : "")%>
+			    <label>
+			        <%= Html.ValidationMessage("Recording.Category")%>
+			    </label>
+			</span>
+		</li>
 	    <li class="buttons">
             <%= Html.SubmitButton("btnSave", "Save Recording") %>
 	        <%= Html.Button("btnCancel", "Cancel", HtmlButtonType.Button, 
@@ -99,4 +93,3 @@
         </li>
     </ul>
 <% } %>
-</div>

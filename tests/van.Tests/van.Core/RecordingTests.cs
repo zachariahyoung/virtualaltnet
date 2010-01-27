@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using van.Core;
+using SharpArch.Testing;
 using SharpArch.Testing.NUnit;
 
 namespace Tests.van.Core
@@ -9,28 +10,13 @@ namespace Tests.van.Core
     {
         [Test]
         public void CanCompareRecordings() {
-        
-            var instance = new Recording
-            {
-                Title = "Van Recording",
-                Url = "www.virtualalt.con",
-                Speaker = "Zach Young",
-                UserGroup = "VAN",
-                LiveMeetingUrl = "www.snipr.com/virtualaltnet.com",
-                Description = "Zach talked on DDD"
-            };
+            Recording instance = new Recording();
+			instance.Date = DateTime.Parse("01/27/2010");
+			instance.UploadedUrl = "http://www.viddler.com/explore/virtualaltnet/videos/1";
 
-            var instanceToCompareTo = new Recording
-            {
-                Title = "Van Recording",
-                Url = "www.virtualalt.con",
-                Speaker = "Zach Young",
-                UserGroup = "VAN",
-                LiveMeetingUrl = "www.snipr.com/virtualaltnet.com",
-                Description = "Zach talked on DDD"
-            };
-
-            
+            Recording instanceToCompareTo = new Recording();
+			instanceToCompareTo.Date = DateTime.Parse("01/27/2010");
+			instanceToCompareTo.UploadedUrl = "http://www.viddler.com/explore/virtualaltnet/videos/1";
 
 			instance.ShouldEqual(instanceToCompareTo);
         }

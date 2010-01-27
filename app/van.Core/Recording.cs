@@ -1,5 +1,6 @@
 using Newtonsoft.Json.Converters;
 using NHibernate.Validator.Constraints;
+using SharpArch.Core.PersistenceSupport;
 using SharpArch.Core.DomainModel;
 using System;
 using Newtonsoft.Json;
@@ -8,35 +9,33 @@ namespace van.Core
 {
     public class Recording : Entity
     {
-        [DomainSignature]
-		[NotNull, NotEmpty]
+        public Recording() { }
+		
+		[DomainSignature]
+		[JsonConverter(typeof(JavaScriptDateTimeConverter))]
 		[JsonProperty]
-		public virtual string Title { get; set; }
+		public virtual DateTime Date { get; set; }
 
 		[DomainSignature]
 		[NotNull, NotEmpty]
 		[JsonProperty]
-		public virtual string Url { get; set; }
+		public virtual string UploadedUrl { get; set; }
 
+		[JsonConverter(typeof(JavaScriptDateTimeConverter))]
 		[JsonProperty]
-        [JsonConverter(typeof(JavaScriptDateTimeConverter))]
-        //[JsonConverter(typeof(IsoDateTimeConverter))]
-		public virtual DateTime Date { get; set; }
+		public virtual DateTime StartTime { get; set; }
 
+		[JsonConverter(typeof(JavaScriptDateTimeConverter))]
 		[JsonProperty]
-		public virtual string Duration { get; set; }
-        
-        [JsonProperty]
-        public virtual string Speaker { get; set; }
+		public virtual DateTime EndTime { get; set; }
 
         [JsonProperty]
-        public virtual string UserGroup { get; set; }
+		public virtual UpcomingEvent UpcomingEvent { get; set; }
 
         [JsonProperty]
-        public virtual string LiveMeetingUrl { get; set; }
+		public virtual VirtualGroup UserGroup { get; set; }
 
         [JsonProperty]
-        public virtual string Description { get; set; }
-
+		public virtual Category Category { get; set; }
     }
 }

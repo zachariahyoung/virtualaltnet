@@ -42,6 +42,7 @@ namespace Tests.van.Web.Controllers
 			
             (result.ViewData.Model as Recording).Id.ShouldEqual(1);
         }
+
         [Test]
         public void CanInitRecordingCreation() {
             ViewResult result = controller.Create().AssertViewRendered();
@@ -65,7 +66,7 @@ namespace Tests.van.Web.Controllers
             Recording recordingFromForm = CreateTransientRecording();
             RedirectToRouteResult redirectResult = controller.Create(recordingFromForm)
                 .AssertActionRedirect().ToAction("Index");
-            controller.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
+            controller.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
 				.ShouldContain("was successfully created");
         }
 
@@ -75,7 +76,7 @@ namespace Tests.van.Web.Controllers
             EntityIdSetter.SetIdOf<int>(recordingFromForm, 1);
             RedirectToRouteResult redirectResult = controller.Edit(recordingFromForm)
                 .AssertActionRedirect().ToAction("Index");
-            controller.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
+            controller.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
 				.ShouldContain("was successfully updated");
         }
 
@@ -93,38 +94,38 @@ namespace Tests.van.Web.Controllers
             RedirectToRouteResult redirectResult = controller.Delete(1)
                 .AssertActionRedirect().ToAction("Index");
             
-            controller.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
+            controller.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
 				.ShouldContain("was successfully deleted");
         }
 
 		#region Create Mock Recording Repository
 
-        private static IRepository<Recording> CreateMockRecordingRepository() {
+        private IRepository<Recording> CreateMockRecordingRepository() {
 
-            var mockedRepository = MockRepository.GenerateMock<IRepository<Recording>>();
+            IRepository<Recording> mockedRepository = MockRepository.GenerateMock<IRepository<Recording>>();
             mockedRepository.Expect(mr => mr.GetAll()).Return(CreateRecordings());
             mockedRepository.Expect(mr => mr.Get(1)).IgnoreArguments().Return(CreateRecording());
             mockedRepository.Expect(mr => mr.SaveOrUpdate(null)).IgnoreArguments().Return(CreateRecording());
             mockedRepository.Expect(mr => mr.Delete(null)).IgnoreArguments();
 
-			var mockedDbContext = MockRepository.GenerateStub<IDbContext>();
+			IDbContext mockedDbContext = MockRepository.GenerateStub<IDbContext>();
 			mockedDbContext.Stub(c => c.CommitChanges());
 			mockedRepository.Stub(mr => mr.DbContext).Return(mockedDbContext);
             
             return mockedRepository;
         }
 
-        private static Recording CreateRecording() {
-            var recording = CreateTransientRecording();
-            EntityIdSetter.SetIdOf(recording, 1);
+        private Recording CreateRecording() {
+            Recording recording = CreateTransientRecording();
+            EntityIdSetter.SetIdOf<int>(recording, 1);
             return recording;
         }
 
-        private static List<Recording> CreateRecordings() {
-            var recordings = new List<Recording>();
+        private List<Recording> CreateRecordings() {
+            List<Recording> recordings = new List<Recording>();
 
             // Create a number of domain object instances here and add them to the list
-            
+
             return recordings;
         }
         
@@ -133,18 +134,15 @@ namespace Tests.van.Web.Controllers
         /// <summary>
         /// Creates a valid, transient Recording; typical of something retrieved back from a form submission
         /// </summary>
-        private static Recording CreateTransientRecording() {
-            var recording = new Recording
-                                {
-                                          Title = "Van Recording",
-                                          Url = "Location of Recording",
-                                          Date = DateTime.Parse("1/1/1975 12:00:00 AM"),
-                                          Duration = null,
-                                          Description ="Some common description regarding contributor for the discussion etc.",
-                                          LiveMeetingUrl="http Live meeting location",
-                                          Speaker = "Jim Jacob",
-                                          UserGroup = "VAN"
-
+        private Recording CreateTransientRecording() {
+            Recording recording = new Recording() {
+				Date = DateTime.Parse("01/27/2010"),
+				UploadedUrl = "http://www.viddler.com/explore/virtualaltnet/videos/1",
+				StartTime = DateTime.Parse("09:00 PM"),
+				EndTime = DateTime.Parse("10:30 PM"),
+				UpcomingEvent = null,
+				UserGroup = null,
+				Category = null
             };
             
             return recording;
