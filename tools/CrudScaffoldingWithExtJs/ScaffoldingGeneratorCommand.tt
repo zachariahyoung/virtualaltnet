@@ -1,0 +1,54 @@
+﻿<#@ template language="C#" hostspecific="True" debug="True" #>
+<#@ import namespace="System.Collections.Specialized" #>
+<#@ output extension="txt" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="./Templates/ScaffoldingGenerator.tt" #> 
+<#@ include file="EntityScaffoldingDetails.tt" #> 
+
+<#
+///////////////////////////////////////////////////
+// Set your domain object details below and simply uncomment the last line (".Run()") and save this file to auto-generate the scaffolding
+
+/*
+ * Domain name should be PascalCaseSingular with no spaces.
+ * You may qualify the domain object with a namespace; a folder structure reflecting the namespace structure will be created (or verified).
+ * A log of created artifacts may be found in /YourProject/logs/CrudScaffolding.log
+ * Examples:  Product, Organization.Employee, Financial.Costs.LedgerEntry
+ */
+EntityScaffoldingDetails entityScaffoldingDetails =
+	new EntityScaffoldingDetails("Recording");
+ 
+/*
+ * Property names should be PascalCase.
+ * Do not include a property for Id as it will be included automatically.
+ */
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("Date", "DateTime", "01/27/2010", "[JsonConverter(typeof(JavaScriptDateTimeConverter))]", true) 
+);
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("UploadedUrl", "string", "http://www.viddler.com/explore/virtualaltnet/videos/1", "[JsonProperty, NotNull, NotEmpty]", true) 
+);
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("StartTime", "DateTime", "09:00 PM", "[JsonConverter(typeof(JavaScriptDateTimeConverter))]") 
+);
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("EndTime", "DateTime", "10:30 PM", "[JsonConverter(typeof(JavaScriptDateTimeConverter))]") 
+);
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("UpcomingEvent", "UpcomingEvent", null,"[JsonProperty]") 
+);
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("UserGroup", "VirtualGroup", null,"[JsonProperty]") 
+);
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("Category", "Category", null,"[JsonProperty]") 
+);
+///////////////////////////////////////////////////
+
+// The first parameter should reflect the root directory of your solution
+ScaffoldingGenerator generator = new ScaffoldingGenerator(
+	@"F:\DataWork\VAN\", "van", entityScaffoldingDetails); 
+
+// Uncomment this line when you're ready for the scaffolding generator to fire...be sure to recomment after it completes to avoid accidental generating!
+//generator.Run(); 
+#>

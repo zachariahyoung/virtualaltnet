@@ -1,12 +1,12 @@
-1:41:48 PM	Started adding generated files
-1:41:48 PM	Added file van.Core\UpcomingEventTests.cs to project ..\..\tests\van.Tests\van.Tests.csproj
-1:41:48 PM	Added file UpcomingEvent.cs to project F:\DataWork\VAN\app\van.Core\van.Core.csproj
-1:41:48 PM	Added file van.Web\Controllers\UpcomingEventsControllerTests.cs to project ..\..\tests\van.Tests\van.Tests.csproj
-1:41:48 PM	Added file UpcomingEventsController.cs to project F:\DataWork\VAN\app\van.Web.Controllers\van.Web.Controllers.csproj
-1:41:48 PM	Added directory F:\DataWork\VAN\app\van.Web\Views\UpcomingEvents\
-1:41:48 PM	Added file F:\DataWork\VAN\app\van.Web\Views\UpcomingEvents\UpcomingEventForm.ascx to project ..\..\app\van.Web\van.Web.csproj
-1:41:48 PM	Added file F:\DataWork\VAN\app\van.Web\Views\UpcomingEvents\Create.aspx to project ..\..\app\van.Web\van.Web.csproj
-1:41:48 PM	Added file F:\DataWork\VAN\app\van.Web\Views\UpcomingEvents\Edit.aspx to project ..\..\app\van.Web\van.Web.csproj
-1:41:48 PM	Added file F:\DataWork\VAN\app\van.Web\Views\UpcomingEvents\Index.aspx to project ..\..\app\van.Web\van.Web.csproj
-1:41:48 PM	Added file F:\DataWork\VAN\app\van.Web\Views\UpcomingEvents\Show.aspx to project ..\..\app\van.Web\van.Web.csproj
-1:41:48 PM	Finished adding generated files
+10:26:12 AM	Started adding generated files
+10:26:12 AM	Added file van.Core\RecordingTests.cs to project ..\..\tests\van.Tests\van.Tests.csproj
+10:26:12 AM	Added file Recording.cs to project F:\DataWork\VAN\app\van.Core\van.Core.csproj
+10:26:12 AM	Added file van.Web\Controllers\RecordingsControllerTests.cs to project ..\..\tests\van.Tests\van.Tests.csproj
+10:26:12 AM	Added file RecordingsController.cs to project F:\DataWork\VAN\app\van.Web.Controllers\van.Web.Controllers.csproj
+10:26:12 AM	Added directory F:\DataWork\VAN\app\van.Web\Views\Recordings\
+10:26:12 AM	Added file F:\DataWork\VAN\app\van.Web\Views\Recordings\RecordingForm.ascx to project ..\..\app\van.Web\van.Web.csproj
+10:26:12 AM	Added file F:\DataWork\VAN\app\van.Web\Views\Recordings\Create.aspx to project ..\..\app\van.Web\van.Web.csproj
+10:26:12 AM	Added file F:\DataWork\VAN\app\van.Web\Views\Recordings\Edit.aspx to project ..\..\app\van.Web\van.Web.csproj
+10:26:12 AM	Added file F:\DataWork\VAN\app\van.Web\Views\Recordings\Index.aspx to project ..\..\app\van.Web\van.Web.csproj
+10:26:12 AM	Added file F:\DataWork\VAN\app\van.Web\Views\Recordings\Show.aspx to project ..\..\app\van.Web\van.Web.csproj
+10:26:12 AM	Finished adding generated files
