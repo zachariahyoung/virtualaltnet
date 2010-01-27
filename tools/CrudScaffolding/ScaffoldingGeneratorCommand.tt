@@ -16,14 +16,29 @@
  * Examples:  Product, Organization.Employee, Financial.Costs.LedgerEntry
  */
 EntityScaffoldingDetails entityScaffoldingDetails =
-	new EntityScaffoldingDetails("Category");
+	new EntityScaffoldingDetails("UpcomingEvent");
  
 /*
  * Property names should be PascalCase.
  * Do NOT include a property for Id as it will be included automatically.
  */
 entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("Description", "string", "Dependency Injection", "[NotNull, NotEmpty]", true) 
+	new EntityProperty("Title", "string", "A night with Groucho Marx", "[NotNull, NotEmpty]", true) 
+);
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("EventDate", "DateTime", "01/26/2010", "[NotNull, NotEmpty]", true) 
+);
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("FullDescription", "string", "Long description that will form blog post entry.", "[NotNull, NotEmpty]") 
+);
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("ShortDescription", "string", "Short description that is used in summary view.", "[NotNull, NotEmpty]") 
+);
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("Presenter", "Speaker", "Zach Young", "[NotNull, NotEmpty]") 
+);
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("Approved", "bool", "false", "[NotNull, NotEmpty]") 
 );
 
 ///////////////////////////////////////////////////
