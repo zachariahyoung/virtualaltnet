@@ -15,8 +15,8 @@
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <h1>Recordings</h1>
 
-    <% if (ViewContext.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()] != null) { %>
-        <p id="pageMessage" class="fade page-message"><%= ViewContext.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()]%></p>
+    <% if (ViewContext.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] != null) { %>
+        <p id="pageMessage" class="fade page-message"><%= ViewContext.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()]%></p>
     <% } %>
 
     <p id="dynamicMessage" class="page-message" style="display:none"></p>

@@ -4,8 +4,8 @@
 <%@ Import Namespace="van.Web.Controllers" %>
  
 
-<% if (ViewContext.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()] != null) { %>
-    <p id="pageMessage" class="fade page-message"><%= ViewContext.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()]%></p>
+<% if (ViewContext.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] != null) { %>
+    <p id="pageMessage" class="fade page-message"><%= ViewContext.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()]%></p>
 <% } %>
 
 <%= Html.ValidationSummary() %>

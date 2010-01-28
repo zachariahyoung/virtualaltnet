@@ -10,6 +10,7 @@ using System.Text;
 using SharpArch.Web.CommonValidator;
 using SharpArch.Core;
 
+
 namespace van.Web.Controllers
 {
     [HandleError]
@@ -45,7 +46,7 @@ namespace van.Web.Controllers
             if (ViewData.ModelState.IsValid && recording.IsValid()) {
                 recordingRepository.SaveOrUpdate(recording);
 
-                TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
+                TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
 					"The recording was successfully created.";
                 return RedirectToAction("Index");
             }
@@ -70,7 +71,7 @@ namespace van.Web.Controllers
             TransferFormValuesTo(recordingToUpdate, recording);
 
             if (ViewData.ModelState.IsValid && recording.IsValid()) {
-                TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
+                TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
 					"The recording was successfully updated.";
                 return RedirectToAction("Index");
             }
@@ -116,7 +117,7 @@ namespace van.Web.Controllers
                 resultMessage = "The recording could not be found for deletion. It may already have been deleted.";
             }
 
-            TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()] = resultMessage;
+            TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = resultMessage;
             return RedirectToAction("Index");
         }
 

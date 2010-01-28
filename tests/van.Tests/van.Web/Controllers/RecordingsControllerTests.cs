@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Web.Mvc;
 using van.Core;
 using van.Web.Controllers;
+
  
 
 namespace Tests.van.Web.Controllers
@@ -66,7 +67,7 @@ namespace Tests.van.Web.Controllers
             Recording recordingFromForm = CreateTransientRecording();
             RedirectToRouteResult redirectResult = controller.Create(recordingFromForm)
                 .AssertActionRedirect().ToAction("Index");
-            controller.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
+            controller.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
 				.ShouldContain("was successfully created");
         }
 
@@ -76,7 +77,7 @@ namespace Tests.van.Web.Controllers
             EntityIdSetter.SetIdOf<int>(recordingFromForm, 1);
             RedirectToRouteResult redirectResult = controller.Edit(recordingFromForm)
                 .AssertActionRedirect().ToAction("Index");
-            controller.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
+            controller.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
 				.ShouldContain("was successfully updated");
         }
 
@@ -94,7 +95,7 @@ namespace Tests.van.Web.Controllers
             RedirectToRouteResult redirectResult = controller.Delete(1)
                 .AssertActionRedirect().ToAction("Index");
             
-            controller.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
+            controller.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
 				.ShouldContain("was successfully deleted");
         }
 
