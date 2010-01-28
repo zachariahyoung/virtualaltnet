@@ -79,7 +79,7 @@ namespace <#= AppendNamespaceHierarchyTo("Tests." + SolutionName + ".Web.Control
             <#= EntityScaffoldingDetails.EntityName #> <#= EntityScaffoldingDetails.EntityNameCamelCase #>FromForm = CreateTransient<#= EntityScaffoldingDetails.EntityName #>();
             RedirectToRouteResult redirectResult = controller.Create(<#= EntityScaffoldingDetails.EntityNameCamelCase #>FromForm)
                 .AssertActionRedirect().ToAction("Index");
-            controller.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
+            controller.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
 				.ShouldContain("was successfully created");
         }
 
@@ -89,7 +89,7 @@ namespace <#= AppendNamespaceHierarchyTo("Tests." + SolutionName + ".Web.Control
             EntityIdSetter.SetIdOf<int>(<#= EntityScaffoldingDetails.EntityNameCamelCase #>FromForm, 1);
             RedirectToRouteResult redirectResult = controller.Edit(<#= EntityScaffoldingDetails.EntityNameCamelCase #>FromForm)
                 .AssertActionRedirect().ToAction("Index");
-            controller.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
+            controller.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
 				.ShouldContain("was successfully updated");
         }
 
@@ -107,7 +107,7 @@ namespace <#= AppendNamespaceHierarchyTo("Tests." + SolutionName + ".Web.Control
             RedirectToRouteResult redirectResult = controller.Delete(1)
                 .AssertActionRedirect().ToAction("Index");
             
-            controller.TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
+            controller.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
 				.ShouldContain("was successfully deleted");
         }
 

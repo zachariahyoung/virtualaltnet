@@ -71,9 +71,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ScaffoldingGeneratorCommand.txt</LastGenOutput>
     </None>
-    <None Include="ScaffoldingGeneratorCommand.tt.log">
-      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
-    </None>
     <None Include="Templates\BaseTemplate.tt">
     </None>
     <None Include="Templates\Web\Controllers\ControllerTemplate.tt">

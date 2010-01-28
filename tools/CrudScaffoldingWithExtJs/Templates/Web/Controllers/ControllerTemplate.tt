@@ -56,7 +56,7 @@ namespace <#= AppendNamespaceHierarchyTo(SolutionName + ".Web.Controllers") #>
             if (ViewData.ModelState.IsValid && <#= EntityScaffoldingDetails.EntityNameCamelCase #>.IsValid()) {
                 <#= EntityScaffoldingDetails.EntityNameCamelCase #>Repository.SaveOrUpdate(<#= EntityScaffoldingDetails.EntityNameCamelCase #>);
 
-                TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
+                TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
 					"The <#= EntityScaffoldingDetails.EntityNameCamelCase #> was successfully created.";
                 return RedirectToAction("Index");
             }
@@ -81,7 +81,7 @@ namespace <#= AppendNamespaceHierarchyTo(SolutionName + ".Web.Controllers") #>
             TransferFormValuesTo(<#= EntityScaffoldingDetails.EntityNameCamelCase #>ToUpdate, <#= EntityScaffoldingDetails.EntityNameCamelCase #>);
 
             if (ViewData.ModelState.IsValid && <#= EntityScaffoldingDetails.EntityNameCamelCase #>.IsValid()) {
-                TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
+                TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
 					"The <#= EntityScaffoldingDetails.EntityNameCamelCase #> was successfully updated.";
                 return RedirectToAction("Index");
             }
@@ -129,7 +129,7 @@ namespace <#= AppendNamespaceHierarchyTo(SolutionName + ".Web.Controllers") #>
                 resultMessage = "The <#= EntityScaffoldingDetails.EntityNameCamelCase #> could not be found for deletion. It may already have been deleted.";
             }
 
-            TempData[ControllersEnums.GlobalViewDataProperty.PageMessage.ToString()] = resultMessage;
+            TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = resultMessage;
             return RedirectToAction("Index");
         }
 
