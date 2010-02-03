@@ -16,30 +16,34 @@
  * Examples:  Product, Organization.Employee, Financial.Costs.LedgerEntry
  */
 EntityScaffoldingDetails entityScaffoldingDetails =
-	new EntityScaffoldingDetails("UpcomingEvent");
+	new EntityScaffoldingDetails("User");
  
 /*
  * Property names should be PascalCase.
  * Do NOT include a property for Id as it will be included automatically.
  */
 entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("Title", "string", "A night with Groucho Marx", "[NotNull, NotEmpty]", true) 
+	new EntityProperty("UserName", "string", "ZPYoung", "[NotNull, NotEmpty]", true) 
 );
 entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("EventDate", "DateTime", "01/26/2010", "[NotNull, NotEmpty]", true) 
+	new EntityProperty("Password", "string", "password", "[NotNull, NotEmpty]", true) 
 );
 entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("FullDescription", "string", "Long description that will form blog post entry.", "[NotNull, NotEmpty]") 
+	new EntityProperty("First Name", "string", "Zach", "[NotNull, NotEmpty]") 
 );
 entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("ShortDescription", "string", "Short description that is used in summary view.", "[NotNull, NotEmpty]") 
+	new EntityProperty("Last Name", "string", "Young", "[NotNull, NotEmpty]") 
 );
 entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("Presenter", "Speaker", "Zach Young", "[NotNull, NotEmpty]") 
+	new EntityProperty("Website", "string", null) 
 );
 entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("Approved", "bool", "false", "[NotNull, NotEmpty]") 
+	new EntityProperty("Email", "string", null) 
 );
+entityScaffoldingDetails.EntityProperties.Add(
+	new EntityProperty("Roles", "Role", "Administrator", "[NotNull, NotEmpty]") 
+);
+
 
 ///////////////////////////////////////////////////
 
@@ -48,5 +52,5 @@ ScaffoldingGenerator generator = new ScaffoldingGenerator(
 	@"F:\DataWork\VAN\", "van", entityScaffoldingDetails); 
 
 // Uncomment this line when you're ready for the scaffolding generator to fire
-//	generator.Run();
+//generator.Run();
 #>

@@ -31,24 +31,36 @@ namespace <#= AppendNamespaceHierarchyTo(SolutionName + ".Web.Controllers") #>
 
             this.<#= EntityScaffoldingDetails.EntityNameCamelCase #>Repository = <#= EntityScaffoldingDetails.EntityNameCamelCase #>Repository;
         }
-
+        
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+        [ResourceFilter(1)]
         [Transaction]
         public ActionResult Index() {
             IList<<#= EntityScaffoldingDetails.EntityName #>> <#= EntityScaffoldingDetails.EntityNamePluralCamelCase #> = <#= EntityScaffoldingDetails.EntityNameCamelCase #>Repository.GetAll();
             return View(<#= EntityScaffoldingDetails.EntityNamePluralCamelCase #>);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+        [ResourceFilter(1)]
         [Transaction]
         public ActionResult Show(int id) {
             <#= EntityScaffoldingDetails.EntityName #> <#= EntityScaffoldingDetails.EntityNameCamelCase #> = <#= EntityScaffoldingDetails.EntityNameCamelCase #>Repository.Get(id);
             return View(<#= EntityScaffoldingDetails.EntityNameCamelCase #>);
         }
-
+        
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+        [ResourceFilter(1)]
         public ActionResult Create() {
             <#= EntityScaffoldingDetails.EntityName #>FormViewModel viewModel = <#= EntityScaffoldingDetails.EntityName #>FormViewModel.Create<#= EntityScaffoldingDetails.EntityName #>FormViewModel();
             return View(viewModel);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+        [ResourceFilter(1)]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
@@ -66,6 +78,9 @@ namespace <#= AppendNamespaceHierarchyTo(SolutionName + ".Web.Controllers") #>
             return View(viewModel);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+        [ResourceFilter(1)]
         [Transaction]
         public ActionResult Edit(int id) {
             <#= EntityScaffoldingDetails.EntityName #>FormViewModel viewModel = <#= EntityScaffoldingDetails.EntityName #>FormViewModel.Create<#= EntityScaffoldingDetails.EntityName #>FormViewModel();
@@ -73,6 +88,9 @@ namespace <#= AppendNamespaceHierarchyTo(SolutionName + ".Web.Controllers") #>
             return View(viewModel);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+        [ResourceFilter(1)]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
@@ -106,6 +124,9 @@ namespace <#= AppendNamespaceHierarchyTo(SolutionName + ".Web.Controllers") #>
 			#>
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+        [ResourceFilter(1)]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
