@@ -26,16 +26,26 @@ Desktop.ini
 [Dd]ebug*/
 [Oo]bj/
 *.sbr
-
-
+build_output 
+code_drop 
+bin 
+obj 
+_ReSharper*  
+*.suo 
+*~ 
+*.swp 
+*.bak 
+*.orig 
+*.log   
+TestResult.xml 
+submit.xml 
+SolutionVersion.cs
 
 #Ignore Resharper files
 *resharper.user
 *.sln.cache
 _ReSharper.*/
 AssemblyInfo.cs
-*.user
 [Rr]elease*/
-_ReSharper*/
 [Tt]est[Rr]esult*
 *.ini
