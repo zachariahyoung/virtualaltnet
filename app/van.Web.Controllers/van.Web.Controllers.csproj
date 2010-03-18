@@ -84,6 +84,7 @@
   <ItemGroup>
     <Compile Include="CategoriesController.cs" />
     <Compile Include="ControllerEnums.cs" />
+    <Compile Include="CategoriesViewModel.cs" />
     <Compile Include="RecordingsController.cs" />
     <Compile Include="SpeakersController.cs" />
     <Compile Include="UpcomingEventsController.cs" />

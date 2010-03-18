@@ -11,6 +11,6 @@ namespace van.Core
 		
 		[DomainSignature]
 		[NotNull, NotEmpty]
-		public virtual string Description { get; set; }
+        public virtual string Description { get; set; }
     }
 }

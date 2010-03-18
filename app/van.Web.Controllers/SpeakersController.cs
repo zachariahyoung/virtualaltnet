@@ -121,7 +121,7 @@ namespace van.Web.Controllers
 		/// <summary>
 		/// Holds data to be passed to the Speaker form for creates and edits
 		/// </summary>
-        public class SpeakerFormViewModel
+        public class SpeakerFormViewModel : BaseViewModel
         {
             private SpeakerFormViewModel() { }
 

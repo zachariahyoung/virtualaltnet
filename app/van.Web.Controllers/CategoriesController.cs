@@ -9,6 +9,8 @@ using NHibernate.Validator.Engine;
 using System.Text;
 using SharpArch.Web.CommonValidator;
 using SharpArch.Core;
+using van.Web.Controllers.Infrastructure;
+using van.Web.Core;
 
 namespace van.Web.Controllers
 {
@@ -21,18 +23,35 @@ namespace van.Web.Controllers
             this.categoryRepository = categoryRepository;
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
+        [ResourceFilter(1)]
         public ActionResult Index() {
             IList<Category> categories = categoryRepository.GetAll();
-            return View(categories);
+
+            var model = new CategoriesViewModel()
+            {
+                Categories = categories
+            };
+            return View(model);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
+        [ResourceFilter(1)]
         public ActionResult Show(int id) {
             Category category = categoryRepository.Get(id);
             return View(category);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+        [ValidateAntiForgeryToken]
+        [Transaction]
+        [AcceptVerbs(HttpVerbs.Post)]
+        [ResourceFilter(1)]
         public ActionResult Create() {
             CategoryFormViewModel viewModel = CategoryFormViewModel.CreateCategoryFormViewModel();
             return View(viewModel);
@@ -84,7 +103,7 @@ namespace van.Web.Controllers
         }
 
         private void TransferFormValuesTo(Category categoryToUpdate, Category categoryFromForm) {
-			categoryToUpdate.Description = categoryFromForm.Description;
+            categoryToUpdate.Description = categoryFromForm.Description;
         }
 
         [ValidateAntiForgeryToken]
@@ -117,7 +136,7 @@ namespace van.Web.Controllers
 		/// <summary>
 		/// Holds data to be passed to the Category form for creates and edits
 		/// </summary>
-        public class CategoryFormViewModel
+        public class CategoryFormViewModel : BaseViewModel
         {
             private CategoryFormViewModel() { }
 
