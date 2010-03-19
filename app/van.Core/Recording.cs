@@ -20,21 +20,12 @@ namespace van.Core
 		[JsonProperty]
 		public virtual string UploadedUrl { get; set; }
 
-		[JsonConverter(typeof(JavaScriptDateTimeConverter))]
-		[JsonProperty]
-		public virtual DateTime StartTime { get; set; }
-
-		[JsonConverter(typeof(JavaScriptDateTimeConverter))]
-		[JsonProperty]
-		public virtual DateTime EndTime { get; set; }
-
+        [DomainSignature]
+        [NotNull, NotEmpty]
         [JsonProperty]
-		public virtual UpcomingEvent UpcomingEvent { get; set; }
+        public virtual string LiveMeetingUrl { get; set; }
 
-        [JsonProperty]
-		public virtual VirtualGroup UserGroup { get; set; }
 
-        [JsonProperty]
-		public virtual Category Category { get; set; }
+        
     }
 }

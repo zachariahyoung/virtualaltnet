@@ -9,6 +9,8 @@ using NHibernate.Validator.Engine;
 using System.Text;
 using SharpArch.Web.CommonValidator;
 using SharpArch.Core;
+using van.Web.Controllers.Infrastructure;
+using van.Web.Core;
 
 namespace van.Web.Controllers
 {
@@ -21,7 +23,10 @@ namespace van.Web.Controllers
             this.speakerRepository = speakerRepository;
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
+        [ResourceFilter(1)]
         public ActionResult Index() {
             IList<Speaker> speakers = speakerRepository.GetAll();
             return View(speakers);
@@ -84,11 +89,11 @@ namespace van.Web.Controllers
         }
 
         private void TransferFormValuesTo(Speaker speakerToUpdate, Speaker speakerFromForm) {
-			speakerToUpdate.FirstName = speakerFromForm.FirstName;
-			speakerToUpdate.LastName = speakerFromForm.LastName;
+			speakerToUpdate.Name = speakerFromForm.Name;
 			speakerToUpdate.Email = speakerFromForm.Email;
 			speakerToUpdate.Website = speakerFromForm.Website;
-			speakerToUpdate.Presentation = speakerFromForm.Presentation;
+            speakerToUpdate.Bio = speakerFromForm.Bio;
+
         }
 
         [ValidateAntiForgeryToken]

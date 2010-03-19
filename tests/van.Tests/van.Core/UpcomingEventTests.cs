@@ -11,11 +11,11 @@ namespace Tests.van.Core
     {
         [Test]
         public void CanCompareUpcomingEvents() {
-            UpcomingEvent instance = new UpcomingEvent();
+            Event instance = new Event();
 			instance.Title = "A night with Groucho Marx";
 			instance.EventDate = DateTime.Parse("01/26/2010");
 
-            UpcomingEvent instanceToCompareTo = new UpcomingEvent();
+            Event instanceToCompareTo = new Event();
 			instanceToCompareTo.Title = "A night with Groucho Marx";
 			instanceToCompareTo.EventDate = DateTime.Parse("01/26/2010");
 

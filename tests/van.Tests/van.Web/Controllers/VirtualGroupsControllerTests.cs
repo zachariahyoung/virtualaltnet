@@ -19,7 +19,7 @@ namespace Tests.van.Web.Controllers
         [SetUp]
         public void SetUp() {
             ServiceLocatorInitializer.Init();
-            controller = new VirtualGroupsController(CreateMockVirtualGroupRepository());
+            controller = new GroupsController(CreateMockVirtualGroupRepository());
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Index().AssertViewRendered();
 
             result.ViewData.Model.ShouldNotBeNull();
-            (result.ViewData.Model as List<VirtualGroup>).Count.ShouldEqual(0);
+            (result.ViewData.Model as List<Group>).Count.ShouldEqual(0);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace Tests.van.Web.Controllers
 
 			result.ViewData.ShouldNotBeNull();
 			
-            (result.ViewData.Model as VirtualGroup).Id.ShouldEqual(1);
+            (result.ViewData.Model as Group).Id.ShouldEqual(1);
         }
 
         [Test]
@@ -48,22 +48,22 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Create().AssertViewRendered();
             
             result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(VirtualGroupsController.VirtualGroupFormViewModel));
-            (result.ViewData.Model as VirtualGroupsController.VirtualGroupFormViewModel).VirtualGroup.ShouldBeNull();
+            result.ViewData.Model.ShouldBeOfType(typeof(GroupsController.VirtualGroupFormViewModel));
+            (result.ViewData.Model as GroupsController.VirtualGroupFormViewModel).VirtualGroup.ShouldBeNull();
         }
 
         [Test]
         public void CanEnsureVirtualGroupCreationIsValid() {
-            VirtualGroup virtualGroupFromForm = new VirtualGroup();
+            Group virtualGroupFromForm = new Group();
             ViewResult result = controller.Create(virtualGroupFromForm).AssertViewRendered();
 
             result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(VirtualGroupsController.VirtualGroupFormViewModel));
+            result.ViewData.Model.ShouldBeOfType(typeof(GroupsController.VirtualGroupFormViewModel));
         }
 
         [Test]
         public void CanCreateVirtualGroup() {
-            VirtualGroup virtualGroupFromForm = CreateTransientVirtualGroup();
+            Group virtualGroupFromForm = CreateTransientVirtualGroup();
             RedirectToRouteResult redirectResult = controller.Create(virtualGroupFromForm)
                 .AssertActionRedirect().ToAction("Index");
             controller.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
@@ -72,7 +72,7 @@ namespace Tests.van.Web.Controllers
 
         [Test]
         public void CanUpdateVirtualGroup() {
-            VirtualGroup virtualGroupFromForm = CreateTransientVirtualGroup();
+            Group virtualGroupFromForm = CreateTransientVirtualGroup();
             EntityIdSetter.SetIdOf<int>(virtualGroupFromForm, 1);
             RedirectToRouteResult redirectResult = controller.Edit(virtualGroupFromForm)
                 .AssertActionRedirect().ToAction("Index");
@@ -85,8 +85,8 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Edit(1).AssertViewRendered();
 
 			result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(VirtualGroupsController.VirtualGroupFormViewModel));
-            (result.ViewData.Model as VirtualGroupsController.VirtualGroupFormViewModel).VirtualGroup.Id.ShouldEqual(1);
+            result.ViewData.Model.ShouldBeOfType(typeof(GroupsController.VirtualGroupFormViewModel));
+            (result.ViewData.Model as GroupsController.VirtualGroupFormViewModel).VirtualGroup.Id.ShouldEqual(1);
         }
 
         [Test]
@@ -100,9 +100,9 @@ namespace Tests.van.Web.Controllers
 
 		#region Create Mock VirtualGroup Repository
 
-        private IRepository<VirtualGroup> CreateMockVirtualGroupRepository() {
+        private IRepository<Group> CreateMockVirtualGroupRepository() {
 
-            IRepository<VirtualGroup> mockedRepository = MockRepository.GenerateMock<IRepository<VirtualGroup>>();
+            IRepository<Group> mockedRepository = MockRepository.GenerateMock<IRepository<Group>>();
             mockedRepository.Expect(mr => mr.GetAll()).Return(CreateVirtualGroups());
             mockedRepository.Expect(mr => mr.Get(1)).IgnoreArguments().Return(CreateVirtualGroup());
             mockedRepository.Expect(mr => mr.SaveOrUpdate(null)).IgnoreArguments().Return(CreateVirtualGroup());
@@ -115,14 +115,14 @@ namespace Tests.van.Web.Controllers
             return mockedRepository;
         }
 
-        private VirtualGroup CreateVirtualGroup() {
-            VirtualGroup virtualGroup = CreateTransientVirtualGroup();
+        private Group CreateVirtualGroup() {
+            Group virtualGroup = CreateTransientVirtualGroup();
             EntityIdSetter.SetIdOf<int>(virtualGroup, 1);
             return virtualGroup;
         }
 
-        private List<VirtualGroup> CreateVirtualGroups() {
-            List<VirtualGroup> virtualGroups = new List<VirtualGroup>();
+        private List<Group> CreateVirtualGroups() {
+            List<Group> virtualGroups = new List<Group>();
 
             // Create a number of domain object instances here and add them to the list
 
@@ -134,8 +134,8 @@ namespace Tests.van.Web.Controllers
         /// <summary>
         /// Creates a valid, transient VirtualGroup; typical of something retrieved back from a form submission
         /// </summary>
-        private VirtualGroup CreateTransientVirtualGroup() {
-            VirtualGroup virtualGroup = new VirtualGroup() {
+        private Group CreateTransientVirtualGroup() {
+            Group virtualGroup = new Group() {
 				GroupName = "VAN",
 				Website = "http://wwww.virtualaltnet.com",
 				Manager = null
@@ -144,6 +144,6 @@ namespace Tests.van.Web.Controllers
             return virtualGroup;
         }
 
-        private VirtualGroupsController controller;
+        private GroupsController controller;
     }
 }

@@ -10,10 +10,10 @@ namespace Tests.van.Core
     {
         [Test]
         public void CanCompareVirtualGroups() {
-            VirtualGroup instance = new VirtualGroup();
+            Group instance = new Group();
 			instance.GroupName = "VAN";
 
-            VirtualGroup instanceToCompareTo = new VirtualGroup();
+            Group instanceToCompareTo = new Group();
 			instanceToCompareTo.GroupName = "VAN";
 
 			instance.ShouldEqual(instanceToCompareTo);

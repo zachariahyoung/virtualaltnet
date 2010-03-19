@@ -19,7 +19,7 @@ namespace Tests.van.Web.Controllers
         [SetUp]
         public void SetUp() {
             ServiceLocatorInitializer.Init();
-            controller = new UpcomingEventsController(CreateMockUpcomingEventRepository());
+            controller = new EventsController(CreateMockUpcomingEventRepository());
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Index().AssertViewRendered();
 
             result.ViewData.Model.ShouldNotBeNull();
-            (result.ViewData.Model as List<UpcomingEvent>).Count.ShouldEqual(0);
+            (result.ViewData.Model as List<Event>).Count.ShouldEqual(0);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace Tests.van.Web.Controllers
 
 			result.ViewData.ShouldNotBeNull();
 			
-            (result.ViewData.Model as UpcomingEvent).Id.ShouldEqual(1);
+            (result.ViewData.Model as Event).Id.ShouldEqual(1);
         }
 
         [Test]
@@ -48,22 +48,22 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Create().AssertViewRendered();
             
             result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(UpcomingEventsController.UpcomingEventFormViewModel));
-            (result.ViewData.Model as UpcomingEventsController.UpcomingEventFormViewModel).UpcomingEvent.ShouldBeNull();
+            result.ViewData.Model.ShouldBeOfType(typeof(EventsController.UpcomingEventFormViewModel));
+            (result.ViewData.Model as EventsController.UpcomingEventFormViewModel).UpcomingEvent.ShouldBeNull();
         }
 
         [Test]
         public void CanEnsureUpcomingEventCreationIsValid() {
-            UpcomingEvent upcomingEventFromForm = new UpcomingEvent();
+            Event upcomingEventFromForm = new Event();
             ViewResult result = controller.Create(upcomingEventFromForm).AssertViewRendered();
 
             result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(UpcomingEventsController.UpcomingEventFormViewModel));
+            result.ViewData.Model.ShouldBeOfType(typeof(EventsController.UpcomingEventFormViewModel));
         }
 
         [Test]
         public void CanCreateUpcomingEvent() {
-            UpcomingEvent upcomingEventFromForm = CreateTransientUpcomingEvent();
+            Event upcomingEventFromForm = CreateTransientUpcomingEvent();
             RedirectToRouteResult redirectResult = controller.Create(upcomingEventFromForm)
                 .AssertActionRedirect().ToAction("Index");
             controller.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()].ToString()
@@ -72,7 +72,7 @@ namespace Tests.van.Web.Controllers
 
         [Test]
         public void CanUpdateUpcomingEvent() {
-            UpcomingEvent upcomingEventFromForm = CreateTransientUpcomingEvent();
+            Event upcomingEventFromForm = CreateTransientUpcomingEvent();
             EntityIdSetter.SetIdOf<int>(upcomingEventFromForm, 1);
             RedirectToRouteResult redirectResult = controller.Edit(upcomingEventFromForm)
                 .AssertActionRedirect().ToAction("Index");
@@ -85,8 +85,8 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Edit(1).AssertViewRendered();
 
 			result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(UpcomingEventsController.UpcomingEventFormViewModel));
-            (result.ViewData.Model as UpcomingEventsController.UpcomingEventFormViewModel).UpcomingEvent.Id.ShouldEqual(1);
+            result.ViewData.Model.ShouldBeOfType(typeof(EventsController.UpcomingEventFormViewModel));
+            (result.ViewData.Model as EventsController.UpcomingEventFormViewModel).UpcomingEvent.Id.ShouldEqual(1);
         }
 
         [Test]
@@ -100,9 +100,9 @@ namespace Tests.van.Web.Controllers
 
 		#region Create Mock UpcomingEvent Repository
 
-        private IRepository<UpcomingEvent> CreateMockUpcomingEventRepository() {
+        private IRepository<Event> CreateMockUpcomingEventRepository() {
 
-            IRepository<UpcomingEvent> mockedRepository = MockRepository.GenerateMock<IRepository<UpcomingEvent>>();
+            IRepository<Event> mockedRepository = MockRepository.GenerateMock<IRepository<Event>>();
             mockedRepository.Expect(mr => mr.GetAll()).Return(CreateUpcomingEvents());
             mockedRepository.Expect(mr => mr.Get(1)).IgnoreArguments().Return(CreateUpcomingEvent());
             mockedRepository.Expect(mr => mr.SaveOrUpdate(null)).IgnoreArguments().Return(CreateUpcomingEvent());
@@ -115,14 +115,14 @@ namespace Tests.van.Web.Controllers
             return mockedRepository;
         }
 
-        private UpcomingEvent CreateUpcomingEvent() {
-            UpcomingEvent upcomingEvent = CreateTransientUpcomingEvent();
+        private Event CreateUpcomingEvent() {
+            Event upcomingEvent = CreateTransientUpcomingEvent();
             EntityIdSetter.SetIdOf<int>(upcomingEvent, 1);
             return upcomingEvent;
         }
 
-        private List<UpcomingEvent> CreateUpcomingEvents() {
-            List<UpcomingEvent> upcomingEvents = new List<UpcomingEvent>();
+        private List<Event> CreateUpcomingEvents() {
+            List<Event> upcomingEvents = new List<Event>();
 
             // Create a number of domain object instances here and add them to the list
 
@@ -134,8 +134,8 @@ namespace Tests.van.Web.Controllers
         /// <summary>
         /// Creates a valid, transient UpcomingEvent; typical of something retrieved back from a form submission
         /// </summary>
-        private UpcomingEvent CreateTransientUpcomingEvent() {
-            UpcomingEvent upcomingEvent = new UpcomingEvent() {
+        private Event CreateTransientUpcomingEvent() {
+            Event upcomingEvent = new Event() {
 				Title = "A night with Groucho Marx",
 				EventDate = DateTime.Parse("01/26/2010"),
 				FullDescription = "Long description that will form blog post entry.",
@@ -147,6 +147,6 @@ namespace Tests.van.Web.Controllers
             return upcomingEvent;
         }
 
-        private UpcomingEventsController controller;
+        private EventsController controller;
     }
 }
