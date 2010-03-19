@@ -11,13 +11,12 @@ namespace Tests.van.Core
         [Test]
         public void CanCompareSpeakers() {
             Speaker instance = new Speaker();
-			instance.FirstName = "Joe";
-			instance.LastName = "Smith";
+			instance.Name = "Joe Smith";
+
 			instance.Email = "JoeSmith@gmail.com";
 
             Speaker instanceToCompareTo = new Speaker();
-			instanceToCompareTo.FirstName = "Joe";
-			instanceToCompareTo.LastName = "Smith";
+			instanceToCompareTo.Name = "Joe Smith";
 			instanceToCompareTo.Email = "JoeSmith@gmail.com";
 
 			instance.ShouldEqual(instanceToCompareTo);

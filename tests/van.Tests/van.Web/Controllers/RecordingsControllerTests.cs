@@ -139,11 +139,7 @@ namespace Tests.van.Web.Controllers
             Recording recording = new Recording() {
 				Date = DateTime.Parse("01/27/2010"),
 				UploadedUrl = "http://www.viddler.com/explore/virtualaltnet/videos/1",
-				StartTime = DateTime.Parse("09:00 PM"),
-				EndTime = DateTime.Parse("10:30 PM"),
-				UpcomingEvent = null,
-				UserGroup = null,
-				Category = null
+                LiveMeetingUrl = "http://www.viddler.com/explore/virtualaltnet/videos/1"
             };
             
             return recording;

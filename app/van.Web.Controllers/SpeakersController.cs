@@ -28,25 +28,44 @@ namespace van.Web.Controllers
         [Transaction]
         [ResourceFilter(1)]
         public ActionResult Index() {
-            IList<Speaker> speakers = speakerRepository.GetAll();
-            return View(speakers);
+
+            var model = new SpeakersViewModel()
+            {
+                Speakers = speakerRepository.GetAll()
+            };
+            return View(model);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
+        [ResourceFilter(1)]
         public ActionResult Show(int id) {
             Speaker speaker = speakerRepository.Get(id);
-            return View(speaker);
+
+            var model = new SpeakersViewModel()
+            {
+                SingleSpeaker = speaker
+            };
+            return View(model);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+        [ResourceFilter(1)]
         public ActionResult Create() {
             SpeakerFormViewModel viewModel = SpeakerFormViewModel.CreateSpeakerFormViewModel();
             return View(viewModel);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Create(Speaker speaker) {
+        [ResourceFilter(1)]
+        public ActionResult Create(Speaker speaker)
+        {
             if (ViewData.ModelState.IsValid && speaker.IsValid()) {
                 speakerRepository.SaveOrUpdate(speaker);
 
@@ -60,17 +79,25 @@ namespace van.Web.Controllers
             return View(viewModel);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
-        public ActionResult Edit(int id) {
+        [ResourceFilter(1)]
+        public ActionResult Edit(int id)
+        {
             SpeakerFormViewModel viewModel = SpeakerFormViewModel.CreateSpeakerFormViewModel();
             viewModel.Speaker = speakerRepository.Get(id);
             return View(viewModel);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Edit(Speaker speaker) {
+        [ResourceFilter(1)]
+        public ActionResult Edit(Speaker speaker)
+        {
             Speaker speakerToUpdate = speakerRepository.Get(speaker.Id);
             TransferFormValuesTo(speakerToUpdate, speaker);
 
@@ -96,10 +123,14 @@ namespace van.Web.Controllers
 
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Delete(int id) {
+        [ResourceFilter(1)]
+        public ActionResult Delete(int id)
+        {
             string resultMessage = "The speaker was successfully deleted.";
             Speaker speakerToDelete = speakerRepository.Get(id);
 

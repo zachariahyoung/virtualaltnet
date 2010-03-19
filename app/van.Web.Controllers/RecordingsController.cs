@@ -9,6 +9,8 @@ using NHibernate.Validator.Engine;
 using System.Text;
 using SharpArch.Web.CommonValidator;
 using SharpArch.Core;
+using van.Web.Controllers.Infrastructure;
+using van.Web.Core;
 
 
 namespace van.Web.Controllers
@@ -22,26 +24,48 @@ namespace van.Web.Controllers
             this.recordingRepository = recordingRepository;
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
+        [ResourceFilter(1)]
         public ActionResult Index() {
-            IList<Recording> recordings = recordingRepository.GetAll();
-            return View(recordings);
+
+            var model = new RecordingsViewModel()
+            {
+                Recordings = recordingRepository.GetAll()
+            };
+
+            return View(model);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
+        [ResourceFilter(1)]
         public ActionResult Show(int id) {
-            Recording recording = recordingRepository.Get(id);
-            return View(recording);
+
+            var model = new RecordingsViewModel()
+            {
+                SingleRecording = recordingRepository.Get(id)
+            };
+
+            return View(model);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+        [ResourceFilter(1)]
         public ActionResult Create() {
             RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
             return View(viewModel);
         }
-
+     
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
+        [ResourceFilter(1)]
         public ActionResult Create(Recording recording) {
             if (ViewData.ModelState.IsValid && recording.IsValid()) {
                 recordingRepository.SaveOrUpdate(recording);
@@ -56,16 +80,22 @@ namespace van.Web.Controllers
             return View(viewModel);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
+        [ResourceFilter(1)]
         public ActionResult Edit(int id) {
             RecordingFormViewModel viewModel = RecordingFormViewModel.CreateRecordingFormViewModel();
             viewModel.Recording = recordingRepository.Get(id);
             return View(viewModel);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
+        [ResourceFilter(1)]
         public ActionResult Edit(Recording recording) {
             Recording recordingToUpdate = recordingRepository.Get(recording.Id);
             TransferFormValuesTo(recordingToUpdate, recording);
@@ -87,16 +117,15 @@ namespace van.Web.Controllers
         private void TransferFormValuesTo(Recording recordingToUpdate, Recording recordingFromForm) {
 			recordingToUpdate.Date = recordingFromForm.Date;
 			recordingToUpdate.UploadedUrl = recordingFromForm.UploadedUrl;
-			recordingToUpdate.StartTime = recordingFromForm.StartTime;
-			recordingToUpdate.EndTime = recordingFromForm.EndTime;
-			recordingToUpdate.UpcomingEvent = recordingFromForm.UpcomingEvent;
-			recordingToUpdate.UserGroup = recordingFromForm.UserGroup;
-			recordingToUpdate.Category = recordingFromForm.Category;
+            recordingToUpdate.LiveMeetingUrl = recordingFromForm.LiveMeetingUrl;
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
+        [ResourceFilter(1)]
         public ActionResult Delete(int id) {
             string resultMessage = "The recording was successfully deleted.";
             Recording recordingToDelete = recordingRepository.Get(id);
@@ -124,7 +153,7 @@ namespace van.Web.Controllers
 		/// <summary>
 		/// Holds data to be passed to the Recording form for creates and edits
 		/// </summary>
-        public class RecordingFormViewModel
+        public class RecordingFormViewModel : BaseViewModel
         {
             private RecordingFormViewModel() { }
 

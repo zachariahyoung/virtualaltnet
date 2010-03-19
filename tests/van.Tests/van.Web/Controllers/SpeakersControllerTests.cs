@@ -136,11 +136,10 @@ namespace Tests.van.Web.Controllers
         /// </summary>
         private Speaker CreateTransientSpeaker() {
             Speaker speaker = new Speaker() {
-				FirstName = "Joe",
-				LastName = "Smith",
+				Name = "Joe Smith",
 				Email = "JoeSmith@gmail.com",
 				Website = "http://wwww.joesmith.com",
-				Presentation = null
+                Bio = "Hello World"
             };
             
             return speaker;

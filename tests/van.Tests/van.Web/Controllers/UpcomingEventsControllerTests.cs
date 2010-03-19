@@ -48,8 +48,8 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Create().AssertViewRendered();
             
             result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(EventsController.UpcomingEventFormViewModel));
-            (result.ViewData.Model as EventsController.UpcomingEventFormViewModel).UpcomingEvent.ShouldBeNull();
+            result.ViewData.Model.ShouldBeOfType(typeof(EventsController.EventFormViewModel));
+            (result.ViewData.Model as EventsController.EventFormViewModel).UpcomingEvent.ShouldBeNull();
         }
 
         [Test]
@@ -58,7 +58,7 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Create(upcomingEventFromForm).AssertViewRendered();
 
             result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(EventsController.UpcomingEventFormViewModel));
+            result.ViewData.Model.ShouldBeOfType(typeof(EventsController.EventFormViewModel));
         }
 
         [Test]
@@ -85,8 +85,8 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Edit(1).AssertViewRendered();
 
 			result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(EventsController.UpcomingEventFormViewModel));
-            (result.ViewData.Model as EventsController.UpcomingEventFormViewModel).UpcomingEvent.Id.ShouldEqual(1);
+            result.ViewData.Model.ShouldBeOfType(typeof(EventsController.EventFormViewModel));
+            (result.ViewData.Model as EventsController.EventFormViewModel).UpcomingEvent.Id.ShouldEqual(1);
         }
 
         [Test]
@@ -138,8 +138,7 @@ namespace Tests.van.Web.Controllers
             Event upcomingEvent = new Event() {
 				Title = "A night with Groucho Marx",
 				EventDate = DateTime.Parse("01/26/2010"),
-				FullDescription = "Long description that will form blog post entry.",
-				ShortDescription = "Short description that is used in summary view.",
+				Description = "Long description that will form blog post entry.",
 				Presenter = null,
 				Approved = false
             };

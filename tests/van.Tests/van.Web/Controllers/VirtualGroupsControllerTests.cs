@@ -48,8 +48,8 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Create().AssertViewRendered();
             
             result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(GroupsController.VirtualGroupFormViewModel));
-            (result.ViewData.Model as GroupsController.VirtualGroupFormViewModel).VirtualGroup.ShouldBeNull();
+            result.ViewData.Model.ShouldBeOfType(typeof(GroupsController.GroupFormViewModel));
+            (result.ViewData.Model as GroupsController.GroupFormViewModel).group.ShouldBeNull();
         }
 
         [Test]
@@ -58,7 +58,7 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Create(virtualGroupFromForm).AssertViewRendered();
 
             result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(GroupsController.VirtualGroupFormViewModel));
+            result.ViewData.Model.ShouldBeOfType(typeof(GroupsController.GroupFormViewModel));
         }
 
         [Test]
@@ -85,8 +85,8 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Edit(1).AssertViewRendered();
 
 			result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(GroupsController.VirtualGroupFormViewModel));
-            (result.ViewData.Model as GroupsController.VirtualGroupFormViewModel).VirtualGroup.Id.ShouldEqual(1);
+            result.ViewData.Model.ShouldBeOfType(typeof(GroupsController.GroupFormViewModel));
+            (result.ViewData.Model as GroupsController.GroupFormViewModel).group.Id.ShouldEqual(1);
         }
 
         [Test]
@@ -136,7 +136,7 @@ namespace Tests.van.Web.Controllers
         /// </summary>
         private Group CreateTransientVirtualGroup() {
             Group virtualGroup = new Group() {
-				GroupName = "VAN",
+				Name = "VAN",
 				Website = "http://wwww.virtualaltnet.com",
 				Manager = null
             };

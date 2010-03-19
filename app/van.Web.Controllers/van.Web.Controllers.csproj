@@ -82,12 +82,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoriesController.cs" />
     <Compile Include="ControllerEnums.cs" />
-    <Compile Include="CategoriesViewModel.cs" />
+    <Compile Include="EventsViewModel.cs" />
+    <Compile Include="SpeakersViewModel.cs" />
+    <Compile Include="GroupsViewModel.cs" />
     <Compile Include="RecordingsController.cs" />
     <Compile Include="SpeakersController.cs" />
-    <Compile Include="UpcomingEventsController.cs" />
+    <Compile Include="EventsController.cs" />
     <Compile Include="UsersViewModel.cs" />
     <Compile Include="HomeController.cs" />
     <Compile Include="..\..\CommonAssemblyInfo.cs">
@@ -103,11 +104,11 @@
     <Compile Include="PostEventRecordViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\RequiresAuthorizationAttribute.cs" />
-    <Compile Include="RecordingViewModel.cs" />
+    <Compile Include="RecordingsViewModel.cs" />
     <Compile Include="RouteRegistrar.cs" />
     <Compile Include="VanController.cs" />
     <Compile Include="UsersController.cs" />
-    <Compile Include="VirtualGroupsController.cs" />
+    <Compile Include="GroupsController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\van.Core\van.Core.csproj">

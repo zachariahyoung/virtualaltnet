@@ -26,7 +26,7 @@ namespace van.Core
 		[NotNull, NotEmpty]
 		public virtual Speaker Presenter { get; set; }
         
-        public virtual Speaker Recording { get; set; }
+        public virtual Recording Recording { get; set; }
 
         [JsonProperty]
         public virtual Group UserGroup { get; set; }

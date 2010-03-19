@@ -11,7 +11,11 @@ namespace van.Core
 		
 		[DomainSignature]
 		[NotNull, NotEmpty]
-		public virtual string GroupName { get; set; }
+		public virtual string Name { get; set; }
+
+        [DomainSignature]
+        [NotNull, NotEmpty]
+        public virtual string ShortName { get; set; }
 
 		public virtual string Website { get; set; }
 

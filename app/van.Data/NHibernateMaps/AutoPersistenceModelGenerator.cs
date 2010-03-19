@@ -22,7 +22,6 @@ namespace van.Data.NHibernateMaps
                 .WithSetup(GetSetup())
                 .UseOverridesFromAssemblyOf<AutoPersistenceModelGenerator>();
                 
-
             return mappings;
         }
 

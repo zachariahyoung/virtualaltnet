@@ -17,30 +17,30 @@ namespace van.Web.Controllers
 
             this.userRepository = userRepository;
         }
+
         [RequiresAuthentication]
         [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
         [ResourceFilter(1)]
         public ActionResult Index() {
-            IList<User> users = userRepository.GetAll();
 
             var model = new UsersViewModel()
-                            {
-                                Users = users
-                            };
+            {
+                Users = userRepository.GetAll()
+            };
 
             return View(model);
         }
+
         [RequiresAuthentication]
         [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
         [ResourceFilter(1)]
         public ActionResult Show(int id) {
-            User user = userRepository.Get(id);
 
             var model = new UsersViewModel()
                             {
-                                SingleUser = user
+                                SingleUser = userRepository.Get(id)
                             };
 
             return View(model);

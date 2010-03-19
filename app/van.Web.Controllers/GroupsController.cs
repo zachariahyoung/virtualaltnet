@@ -17,10 +17,10 @@ namespace van.Web.Controllers
     [HandleError]
     public class GroupsController : Controller
     {
-        public GroupsController(IRepository<Group> virtualGroupRepository) {
-            Check.Require(virtualGroupRepository != null, "virtualGroupRepository may not be null");
+        public GroupsController(IRepository<Group> groupRepository) {
+            Check.Require(groupRepository != null, "groupRepository may not be null");
 
-            this.virtualGroupRepository = virtualGroupRepository;
+            this.groupRepository = groupRepository;
         }
 
         [RequiresAuthentication]
@@ -28,99 +28,124 @@ namespace van.Web.Controllers
         [Transaction]
         [ResourceFilter(1)]
         public ActionResult Index() {
-            IList<Group> groups = virtualGroupRepository.GetAll();
 
             var model = new GroupsViewModel()
             {
-                Groups = groups
+                Groups = groupRepository.GetAll()
             };
 
             return View(model);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
+        [ResourceFilter(1)]
         public ActionResult Show(int id) {
-            Group virtualGroup = virtualGroupRepository.Get(id);
-            return View(virtualGroup);
+
+            var model = new GroupsViewModel()
+            {
+                SingleGroup = groupRepository.Get(id)
+            };
+            return View(model);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+        [ResourceFilter(1)]
         public ActionResult Create() {
-            VirtualGroupFormViewModel viewModel = VirtualGroupFormViewModel.CreateVirtualGroupFormViewModel();
+            GroupFormViewModel viewModel = GroupFormViewModel.CreateGroupFormViewModel();
             return View(viewModel);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Create(Group virtualGroup) {
-            if (ViewData.ModelState.IsValid && virtualGroup.IsValid()) {
-                virtualGroupRepository.SaveOrUpdate(virtualGroup);
+        [ResourceFilter(1)]
+        public ActionResult Create(Group group)
+        {
+            if (ViewData.ModelState.IsValid && group.IsValid()) {
+                groupRepository.SaveOrUpdate(group);
 
                 TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
-					"The virtualGroup was successfully created.";
+					"The group was successfully created.";
                 return RedirectToAction("Index");
             }
 
-            VirtualGroupFormViewModel viewModel = VirtualGroupFormViewModel.CreateVirtualGroupFormViewModel();
-            viewModel.VirtualGroup = virtualGroup;
+            GroupFormViewModel viewModel = GroupFormViewModel.CreateGroupFormViewModel();
+            viewModel.group = group;
             return View(viewModel);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
+        [ResourceFilter(1)]
         public ActionResult Edit(int id) {
-            VirtualGroupFormViewModel viewModel = VirtualGroupFormViewModel.CreateVirtualGroupFormViewModel();
-            viewModel.VirtualGroup = virtualGroupRepository.Get(id);
+            GroupFormViewModel viewModel = GroupFormViewModel.CreateGroupFormViewModel();
+            viewModel.group = groupRepository.Get(id);
             return View(viewModel);
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Edit(Group virtualGroup) {
-            Group virtualGroupToUpdate = virtualGroupRepository.Get(virtualGroup.Id);
-            TransferFormValuesTo(virtualGroupToUpdate, virtualGroup);
+        [ResourceFilter(1)]
+        public ActionResult Edit(Group group)
+        {
+            Group groupToUpdate = groupRepository.Get(group.Id);
+            TransferFormValuesTo(groupToUpdate, group);
 
-            if (ViewData.ModelState.IsValid && virtualGroup.IsValid()) {
+            if (ViewData.ModelState.IsValid && group.IsValid()) {
                 TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
-					"The virtualGroup was successfully updated.";
+					"The group was successfully updated.";
                 return RedirectToAction("Index");
             }
             else {
-                virtualGroupRepository.DbContext.RollbackTransaction();
+                groupRepository.DbContext.RollbackTransaction();
 
-				VirtualGroupFormViewModel viewModel = VirtualGroupFormViewModel.CreateVirtualGroupFormViewModel();
-				viewModel.VirtualGroup = virtualGroup;
+				GroupFormViewModel viewModel = GroupFormViewModel.CreateGroupFormViewModel();
+				viewModel.group = group;
 				return View(viewModel);
             }
         }
 
-        private void TransferFormValuesTo(Group virtualGroupToUpdate, Group virtualGroupFromForm) {
-			virtualGroupToUpdate.GroupName = virtualGroupFromForm.GroupName;
-			virtualGroupToUpdate.Website = virtualGroupFromForm.Website;
-			virtualGroupToUpdate.Manager = virtualGroupFromForm.Manager;
+        private void TransferFormValuesTo(Group groupToUpdate, Group groupFromForm) {
+			groupToUpdate.Name = groupFromForm.Name;
+            groupToUpdate.ShortName = groupFromForm.ShortName;
+			groupToUpdate.Website = groupFromForm.Website;
+			groupToUpdate.Manager = groupFromForm.Manager;
         }
 
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ValidateAntiForgeryToken]
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Delete(int id) {
-            string resultMessage = "The virtualGroup was successfully deleted.";
-            Group virtualGroupToDelete = virtualGroupRepository.Get(id);
+        [ResourceFilter(1)]
+        public ActionResult Delete(int id)
+        {
+            string resultMessage = "The Group was successfully deleted.";
+            Group groupToDelete = groupRepository.Get(id);
 
-            if (virtualGroupToDelete != null) {
-                virtualGroupRepository.Delete(virtualGroupToDelete);
+            if (groupToDelete != null) {
+                groupRepository.Delete(groupToDelete);
 
                 try {
-                    virtualGroupRepository.DbContext.CommitChanges();
+                    groupRepository.DbContext.CommitChanges();
                 }
                 catch {
-                    resultMessage = "A problem was encountered preventing the virtualGroup from being deleted. " +
-						"Another item likely depends on this virtualGroup.";
-                    virtualGroupRepository.DbContext.RollbackTransaction();
+                    resultMessage = "A problem was encountered preventing the Group from being deleted. " +
+						"Another item likely depends on this Group.";
+                    groupRepository.DbContext.RollbackTransaction();
                 }
             }
             else {
-                resultMessage = "The virtualGroup could not be found for deletion. It may already have been deleted.";
+                resultMessage = "The Group could not be found for deletion. It may already have been deleted.";
             }
 
             TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = resultMessage;
@@ -128,25 +153,25 @@ namespace van.Web.Controllers
         }
 
 		/// <summary>
-		/// Holds data to be passed to the VirtualGroup form for creates and edits
+		/// Holds data to be passed to the group form for creates and edits
 		/// </summary>
-        public class VirtualGroupFormViewModel
+        public class GroupFormViewModel : BaseViewModel
         {
-            private VirtualGroupFormViewModel() { }
+            private GroupFormViewModel() { }
 
 			/// <summary>
 			/// Creation method for creating the view model. Services may be passed to the creation 
 			/// method to instantiate items such as lists for drop down boxes.
 			/// </summary>
-            public static VirtualGroupFormViewModel CreateVirtualGroupFormViewModel() {
-                VirtualGroupFormViewModel viewModel = new VirtualGroupFormViewModel();
+            public static GroupFormViewModel CreateGroupFormViewModel() {
+                GroupFormViewModel viewModel = new GroupFormViewModel();
                 
                 return viewModel;
             }
 
-            public Group VirtualGroup { get; internal set; }
+            public Group group { get; internal set; }
         }
 
-        private readonly IRepository<Group> virtualGroupRepository;
+        private readonly IRepository<Group> groupRepository;
     }
 }
