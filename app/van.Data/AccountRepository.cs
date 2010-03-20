@@ -5,7 +5,7 @@ using van.Core;
 using van.Core.DataInterfaces;
 
 namespace van.Data {
-    public class AccountRepository : Repository<Role>,IAccountRepository {
+    public class AccountRepository : Repository<Role>, IAccountRepository {
         #region Implementation of IAccountRepository
 
         public string GetRoleForUser(string userName)

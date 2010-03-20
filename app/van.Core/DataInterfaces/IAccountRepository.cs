@@ -1,6 +1,9 @@
-﻿namespace van.Core.DataInterfaces {
+﻿using SharpArch.Core.PersistenceSupport;
 
-   public interface IAccountRepository {
+namespace van.Core.DataInterfaces {
+
+    public interface IAccountRepository : IRepository<Role>
+    {
        string GetRoleForUser(string username);
     }
 }
