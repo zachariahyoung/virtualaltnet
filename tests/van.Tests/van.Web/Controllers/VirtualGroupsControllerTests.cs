@@ -19,7 +19,7 @@ namespace Tests.van.Web.Controllers
         [SetUp]
         public void SetUp() {
             ServiceLocatorInitializer.Init();
-            controller = new GroupsController(CreateMockVirtualGroupRepository());
+            controller = new GroupsController(CreateMockVirtualGroupRepository(), CreateMockUserRepository());
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Tests.van.Web.Controllers
             
             result.ViewData.Model.ShouldNotBeNull();
             result.ViewData.Model.ShouldBeOfType(typeof(GroupsController.GroupFormViewModel));
-            (result.ViewData.Model as GroupsController.GroupFormViewModel).group.ShouldBeNull();
+            (result.ViewData.Model as GroupsController.GroupFormViewModel).Group.ShouldBeNull();
         }
 
         [Test]
@@ -86,7 +86,7 @@ namespace Tests.van.Web.Controllers
 
 			result.ViewData.Model.ShouldNotBeNull();
             result.ViewData.Model.ShouldBeOfType(typeof(GroupsController.GroupFormViewModel));
-            (result.ViewData.Model as GroupsController.GroupFormViewModel).group.Id.ShouldEqual(1);
+            (result.ViewData.Model as GroupsController.GroupFormViewModel).Group.Id.ShouldEqual(1);
         }
 
         [Test]
@@ -115,10 +115,33 @@ namespace Tests.van.Web.Controllers
             return mockedRepository;
         }
 
+        private IRepository<User> CreateMockUserRepository()
+        {
+
+            IRepository<User> mockedRepository = MockRepository.GenerateMock<IRepository<User>>();
+            mockedRepository.Expect(mr => mr.GetAll()).Return(CreateUsers());
+            mockedRepository.Expect(mr => mr.Get(1)).IgnoreArguments().Return(CreateUser());
+            mockedRepository.Expect(mr => mr.SaveOrUpdate(null)).IgnoreArguments().Return(CreateUser());
+            mockedRepository.Expect(mr => mr.Delete(null)).IgnoreArguments();
+
+            IDbContext mockedDbContext = MockRepository.GenerateStub<IDbContext>();
+            mockedDbContext.Stub(c => c.CommitChanges());
+            mockedRepository.Stub(mr => mr.DbContext).Return(mockedDbContext);
+
+            return mockedRepository;
+        }
+
         private Group CreateVirtualGroup() {
             Group virtualGroup = CreateTransientVirtualGroup();
             EntityIdSetter.SetIdOf<int>(virtualGroup, 1);
             return virtualGroup;
+        }
+
+        private User CreateUser()
+        {
+            User user = CreateTransientUser();
+            EntityIdSetter.SetIdOf<int>(user, 1);
+            return user;
         }
 
         private List<Group> CreateVirtualGroups() {
@@ -128,7 +151,16 @@ namespace Tests.van.Web.Controllers
 
             return virtualGroups;
         }
-        
+
+        private List<User> CreateUsers()
+        {
+            List<User> user = new List<User>();
+
+            // Create a number of domain object instances here and add them to the list
+
+            return user;
+        }
+
         #endregion
 
         /// <summary>
@@ -142,6 +174,17 @@ namespace Tests.van.Web.Controllers
             };
             
             return virtualGroup;
+        }
+
+        private User CreateTransientUser()
+        {
+            User user = new User()
+            {
+                UserName = "VAN",
+
+            };
+
+            return user;
         }
 
         private GroupsController controller;

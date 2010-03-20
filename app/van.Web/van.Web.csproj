@@ -79,6 +79,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\MvcContrib.Castle.dll</HintPath>
     </Reference>
+    <Reference Include="MvcContrib.FluentHtml, Version=1.0.0.960, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\MvcContrib.FluentHtml.dll</HintPath>
+    </Reference>
     <Reference Include="NHibernate, Version=2.1.0.1001, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\NHibernate.dll</HintPath>
@@ -642,11 +646,6 @@
     <Content Include="Content\style.css" />
     <Content Include="log4net.config" />
     <Content Include="Scripts\jquery.corners.js" />
-    <Content Include="Views\Categories\CategoryForm.ascx" />
-    <Content Include="Views\Categories\Create.aspx" />
-    <Content Include="Views\Categories\Edit.aspx" />
-    <Content Include="Views\Categories\Index.aspx" />
-    <Content Include="Views\Categories\Show.aspx" />
     <Content Include="Views\Recordings\Create.aspx" />
     <Content Include="Views\Recordings\Edit.aspx" />
     <Content Include="Views\Recordings\Index.aspx" />
@@ -657,16 +656,16 @@
     <Content Include="Views\Speakers\Index.aspx" />
     <Content Include="Views\Speakers\Show.aspx" />
     <Content Include="Views\Speakers\SpeakerForm.ascx" />
-    <Content Include="Views\UpcomingEvents\Create.aspx" />
-    <Content Include="Views\UpcomingEvents\Edit.aspx" />
-    <Content Include="Views\UpcomingEvents\Index.aspx" />
-    <Content Include="Views\UpcomingEvents\Show.aspx" />
-    <Content Include="Views\UpcomingEvents\UpcomingEventForm.ascx" />
-    <Content Include="Views\VirtualGroups\Create.aspx" />
-    <Content Include="Views\VirtualGroups\Edit.aspx" />
-    <Content Include="Views\VirtualGroups\Index.aspx" />
-    <Content Include="Views\VirtualGroups\Show.aspx" />
-    <Content Include="Views\VirtualGroups\VirtualGroupForm.ascx" />
+    <Content Include="Views\Events\Create.aspx" />
+    <Content Include="Views\Events\Edit.aspx" />
+    <Content Include="Views\Events\Index.aspx" />
+    <Content Include="Views\Events\Show.aspx" />
+    <Content Include="Views\Events\UpcomingEventForm.ascx" />
+    <Content Include="Views\Groups\Create.aspx" />
+    <Content Include="Views\Groups\Edit.aspx" />
+    <Content Include="Views\Groups\Index.aspx" />
+    <Content Include="Views\Groups\Show.aspx" />
+    <Content Include="Views\Groups\GroupForm.ascx" />
     <None Include="Scripts\ext-3.0-rc1.1\resources\images\default\form\clear-trigger.psd" />
     <None Include="Scripts\ext-3.0-rc1.1\resources\images\default\form\date-trigger.psd" />
     <None Include="Scripts\ext-3.0-rc1.1\resources\images\default\form\search-trigger.psd" />

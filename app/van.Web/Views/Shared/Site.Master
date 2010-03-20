@@ -48,7 +48,7 @@
 		<div class="box">
 			<h2>
 				Socially VAN</h2>
-			<a href="http://groups.google.com/group/virtualaltnet" alt="Feed me! Feed me!">
+			<a href="http://groups.google.com/Group/virtualaltnet" alt="Feed me! Feed me!">
 				<img src="<%= ResolveUrl("~") %>Content/Images/GoogleGroups.png" />
 			</a>
 			<div>

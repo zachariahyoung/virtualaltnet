@@ -1,10 +1,12 @@
-<%@ Page Title="Create VirtualGroup" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
-	Inherits="System.Web.Mvc.ViewPage<van.Web.Controllers.VirtualGroupsController.VirtualGroupFormViewModel>" %>
-
+<%@ Page Title="Create Group" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
+	Inherits="System.Web.Mvc.ViewPage<van.Web.Controllers.GroupsController.GroupFormViewModel>" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ResourceFilesPlaceHolder" runat="server"></asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="_headContentPlaceHolder" runat="server"></asp:Content>
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
-	<h1>Create VirtualGroup</h1>
+	<h2>Create Group</h2>
 
-	<% Html.RenderPartial("VirtualGroupForm", ViewData); %>
+	<% Html.RenderPartial("GroupForm", ViewData); %>
 
 </asp:Content>
+<asp:Content ID="Scripts" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server" />

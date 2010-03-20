@@ -45,7 +45,7 @@ namespace van.Web.Controllers
 
         public RedirectResult GoogleGroup()
         {
-            return Redirect("http://groups.google.com/group/virtualaltnet");
+            return Redirect("http://groups.google.com/Group/virtualaltnet");
         }
 
         public RedirectResult Twitter()

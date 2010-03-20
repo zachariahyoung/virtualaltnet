@@ -17,10 +17,12 @@ namespace van.Web.Controllers
     [HandleError]
     public class GroupsController : Controller
     {
-        public GroupsController(IRepository<Group> groupRepository) {
+        public GroupsController(IRepository<Group> groupRepository, IRepository<User> userRepository)
+        {
             Check.Require(groupRepository != null, "groupRepository may not be null");
 
             this.groupRepository = groupRepository;
+            this.userRepository = userRepository;
         }
 
         [RequiresAuthentication]
@@ -55,6 +57,7 @@ namespace van.Web.Controllers
         [ResourceFilter(1)]
         public ActionResult Create() {
             GroupFormViewModel viewModel = GroupFormViewModel.CreateGroupFormViewModel();
+            viewModel.Users = userRepository.GetAll();
             return View(viewModel);
         }
 
@@ -70,12 +73,12 @@ namespace van.Web.Controllers
                 groupRepository.SaveOrUpdate(group);
 
                 TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
-					"The group was successfully created.";
+					"The Group was successfully created.";
                 return RedirectToAction("Index");
             }
 
             GroupFormViewModel viewModel = GroupFormViewModel.CreateGroupFormViewModel();
-            viewModel.group = group;
+            viewModel.Group = group;
             return View(viewModel);
         }
 
@@ -85,7 +88,7 @@ namespace van.Web.Controllers
         [ResourceFilter(1)]
         public ActionResult Edit(int id) {
             GroupFormViewModel viewModel = GroupFormViewModel.CreateGroupFormViewModel();
-            viewModel.group = groupRepository.Get(id);
+            viewModel.Group = groupRepository.Get(id);
             return View(viewModel);
         }
 
@@ -102,14 +105,14 @@ namespace van.Web.Controllers
 
             if (ViewData.ModelState.IsValid && group.IsValid()) {
                 TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
-					"The group was successfully updated.";
+					"The Group was successfully updated.";
                 return RedirectToAction("Index");
             }
             else {
                 groupRepository.DbContext.RollbackTransaction();
 
 				GroupFormViewModel viewModel = GroupFormViewModel.CreateGroupFormViewModel();
-				viewModel.group = group;
+				viewModel.Group = group;
 				return View(viewModel);
             }
         }
@@ -153,7 +156,7 @@ namespace van.Web.Controllers
         }
 
 		/// <summary>
-		/// Holds data to be passed to the group form for creates and edits
+		/// Holds data to be passed to the Group form for creates and edits
 		/// </summary>
         public class GroupFormViewModel : BaseViewModel
         {
@@ -169,9 +172,12 @@ namespace van.Web.Controllers
                 return viewModel;
             }
 
-            public Group group { get; internal set; }
+            public Group Group { get; internal set; }
+            public IEnumerable<User> Users { get; set; }
         }
 
         private readonly IRepository<Group> groupRepository;
+        private readonly IRepository<User> userRepository;
+        
     }
 }

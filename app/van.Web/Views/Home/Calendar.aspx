@@ -13,11 +13,11 @@
     <table>
         <tr>
             <td>
-                <a href="http://www.google.com/calendar/feeds/9fgo89ah4shtm6pk7k5307aerg@group.calendar.google.com/public/basic">
+                <a href="http://www.google.com/calendar/feeds/9fgo89ah4shtm6pk7k5307aerg@Group.calendar.google.com/public/basic">
                     <img src="<%= ResolveUrl("~") %>Content/Images/xml.gif"  alt="Virtual Alt.Net Calendar XML"/></a>
             </td>
             <td>
-                <a href="http://www.google.com/calendar/ical/9fgo89ah4shtm6pk7k5307aerg@group.calendar.google.com/public/basic.ics">
+                <a href="http://www.google.com/calendar/ical/9fgo89ah4shtm6pk7k5307aerg@Group.calendar.google.com/public/basic.ics">
                     <img src="<%= ResolveUrl("~") %>Content/Images/ical.gif"  alt="Virtual Alt.Net Calendar XML"/></a>
             </td>
             <td>

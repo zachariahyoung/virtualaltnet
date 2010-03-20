@@ -4,6 +4,47 @@
         <name>MvcContrib.FluentHtml</name>
     </assembly>
     <members>
+        <member name="T:MvcContrib.FluentHtml.Behaviors.IBehavior`1">
+            <summary>
+            Generic implementation of behavior for an <see cref="T:MvcContrib.FluentHtml.Behaviors.IBehaviorMarker"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:MvcContrib.FluentHtml.Behaviors.IBehavior`1.Execute(`0)">
+            <summary>
+            Perform behavior modification on an object.
+            </summary>
+            <param name="behavee">The object to modify based on the behavior.</param>
+        </member>
+        <member name="T:MvcContrib.FluentHtml.Behaviors.BehaviorMarkerExtensions">
+            <summary>
+            Extensions for IBehaviorMarker
+            </summary>
+        </member>
+        <member name="M:MvcContrib.FluentHtml.Behaviors.BehaviorMarkerExtensions.ApplyTo``1(System.Collections.Generic.IEnumerable{MvcContrib.FluentHtml.Behaviors.IBehaviorMarker},``0)">
+            <summary>
+            Apply behaviors to an object.
+            </summary>
+            <param name="behaviors">The behaviors to apply.</param>
+            <param name="target">The target element to apply behaviors to.</param>
+        </member>
+        <member name="M:MvcContrib.FluentHtml.Behaviors.BehaviorMarkerExtensions.ApplyTo``1(MvcContrib.FluentHtml.Behaviors.IBehaviorMarker,``0)">
+            <summary>
+            Apply behavior to an object.
+            </summary>
+            <param name="behavior">The behavior to apply.</param>
+            <param name="target">The target element to apply behavior to.</param>
+        </member>
+        <member name="T:MvcContrib.FluentHtml.Behaviors.IBehaviorsContainer">
+            <summary>
+            Contract for any class implementing a list of custom behaviors.
+            </summary>
+        </member>
+        <member name="P:MvcContrib.FluentHtml.Behaviors.IBehaviorsContainer.Behaviors">
+            <summary>
+            The collection of <see cref="T:MvcContrib.FluentHtml.Behaviors.IBehaviorMarker"/> objects.
+            </summary>
+        </member>
         <member name="T:MvcContrib.FluentHtml.Behaviors.IModelStateHandler">
             <summary>
             Used internally by the ValidationBehavior to handle ModelState values for a particular element type.
@@ -466,6 +507,12 @@
             </summary>
             <param name="value">The value of the inner text.</param>
         </member>
+        <member name="M:MvcContrib.FluentHtml.Elements.LiteralBase`1.Html(System.String)">
+            <summary>
+            Set the inner HTML of the span element.
+            </summary>
+            <param name="value">The HTML.</param>
+        </member>
         <member name="M:MvcContrib.FluentHtml.Elements.LiteralBase`1.Format(System.String)">
             <summary>
             Specify a format string to be applied to the value.  The format string can be either a
@@ -620,6 +667,35 @@
             Set the 'size' attribute.
             </summary>
             <param name="value">The value of the 'size' attribute.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvcContrib.FluentHtml.Elements.SelectBase`1.FirstOption(MvcContrib.FluentHtml.Elements.Option)">
+            <summary>
+            Uses the specified open as the first option in the select.
+            </summary>
+            <param name="firstOption">The first option</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvcContrib.FluentHtml.Elements.SelectBase`1.FirstOption(System.String)">
+            <summary>
+            Specifies the text for the first option. The value for the first option will be an empty string.
+            </summary>
+            <param name="text">The text for the first option</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvcContrib.FluentHtml.Elements.SelectBase`1.FirstOption(System.String,System.String)">
+            <summary>
+            Specifies the value and text for the first option.
+            </summary>
+            <param name="value">The value for the first option. If ommitted, will default to an empty string.</param>
+            <param name="text">The text for the first option. If ommitted, will the default to an empty string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MvcContrib.FluentHtml.Elements.SelectBase`1.HideFirstOptionWhen(System.Boolean)">
+            <summary>
+            Hides the first option when the value passed in is true. 
+            </summary>
+            <param name="hideFirstOption">True to hide the first option, otherwise false.</param>
             <returns></returns>
         </member>
         <member name="M:MvcContrib.FluentHtml.Elements.MultiSelect.#ctor(System.String)">
@@ -1134,6 +1210,27 @@
             </summary>
             <param name="view">The view.</param>
             <param name="text">Value of the 'value' and 'name' attributes.  Also used to derive the 'id' attribute.</param>
+        </member>
+        <member name="M:MvcContrib.FluentHtml.ViewModelContainerExtensions.RenderPartial``2(MvcContrib.FluentHtml.IViewModelContainer{``0},System.String,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Web.Mvc.ViewDataDictionary)">
+            <summary>
+            Renders a partial
+            </summary>
+            <typeparam name="T">The type of the ViewModel.</typeparam>
+            <typeparam name="TPartialViewModel">The type of model of the partial.</typeparam>
+            <param name="view">The view.</param>
+            <param name="partialViewName">The name of the partial to render.</param>
+            <param name="modelExpression">Expression of the model for the partial.</param>
+            <param name="viewData">View data for the partial. (If the view data has a Model, it will be replaced by the model as specified in the expression parameter, if it is not null.)</param>
+        </member>
+        <member name="M:MvcContrib.FluentHtml.ViewModelContainerExtensions.RenderPartial``2(MvcContrib.FluentHtml.IViewModelContainer{``0},System.String,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Renders a partial
+            </summary>
+            <typeparam name="T">The type of the ViewModel.</typeparam>
+            <typeparam name="TPartialViewModel">The type of model of the partial.</typeparam>
+            <param name="view">The view.</param>
+            <param name="partialViewName">The name of the partial to render.</param>
+            <param name="modelExpression">Expression of the model for the partial.</param>
         </member>
     </members>
 </doc>
