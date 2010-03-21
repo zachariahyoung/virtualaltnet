@@ -1,5 +1,5 @@
 <%@ Page Title="Groups" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
-	Inherits="System.Web.Mvc.ViewPage<GroupsViewModel>" %>
+	Inherits="System.Web.Mvc.ViewPage<van.ApplicationServices.ViewModels.GroupFormViewModel>" %>
 <%@ Import Namespace="van.Core" %>
 <%@ Import Namespace="van.Web.Controllers" %>
  
@@ -16,8 +16,6 @@
         <thead>
             <tr>
 			    <th>Name</th>
-   			    <th>Short Name</th>
-			    <th>Website</th>
 			    <th>Manager</th>
 			    <th colspan="3">Action</th>
             </tr>
@@ -27,9 +25,7 @@
 		foreach (van.Core.Group group in Model.Groups) { %>
 			<tr>
 				<td><%= group.Name%></td>
-				<td><%= group.ShortName%></td>
-				<td><%= group.Website%></td>
-				<td><%= group.Manager.UserName %></td>
+				<td><%= group.Manager.Name %></td>
 				<td><%=Html.ActionLink<GroupsController>(c => c.Show(group.Id), "Details ")%></td>
 				<td><%=Html.ActionLink<GroupsController>(c => c.Edit(group.Id), "Edit")%></td>
 				<td>

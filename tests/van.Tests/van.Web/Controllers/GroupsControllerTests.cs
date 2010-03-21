@@ -7,6 +7,9 @@ using SharpArch.Testing;
 using SharpArch.Testing.NUnit;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using van.ApplicationServices;
+using van.ApplicationServices.ManagementService;
+using van.ApplicationServices.ViewModels;
 using van.Core;
 using van.Web.Controllers;
  
@@ -14,12 +17,12 @@ using van.Web.Controllers;
 namespace Tests.van.Web.Controllers
 {
     [TestFixture]
-    public class VirtualGroupsControllerTests
+    public class GroupsControllerTests
     {
         [SetUp]
         public void SetUp() {
             ServiceLocatorInitializer.Init();
-            controller = new GroupsController(CreateMockVirtualGroupRepository(), CreateMockUserRepository());
+            controller = new GroupsController(CreateMockVirtualGroupRepository());
         }
 
         /// <summary>
@@ -48,8 +51,8 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Create().AssertViewRendered();
             
             result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(GroupsController.GroupFormViewModel));
-            (result.ViewData.Model as GroupsController.GroupFormViewModel).Group.ShouldBeNull();
+            result.ViewData.Model.ShouldBeOfType(typeof(GroupFormViewModel));
+            (result.ViewData.Model as GroupFormViewModel).Group.ShouldBeNull();
         }
 
         [Test]
@@ -58,7 +61,7 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Create(virtualGroupFromForm).AssertViewRendered();
 
             result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(GroupsController.GroupFormViewModel));
+            result.ViewData.Model.ShouldBeOfType(typeof(GroupFormViewModel));
         }
 
         [Test]
@@ -85,8 +88,8 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Edit(1).AssertViewRendered();
 
 			result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(GroupsController.GroupFormViewModel));
-            (result.ViewData.Model as GroupsController.GroupFormViewModel).Group.Id.ShouldEqual(1);
+            result.ViewData.Model.ShouldBeOfType(typeof(GroupFormViewModel));
+            (result.ViewData.Model as GroupFormViewModel).Group.Id.ShouldEqual(1);
         }
 
         [Test]
@@ -100,17 +103,16 @@ namespace Tests.van.Web.Controllers
 
 		#region Create Mock VirtualGroup Repository
 
-        private IRepository<Group> CreateMockVirtualGroupRepository() {
+        private IGroupManagementService CreateMockVirtualGroupRepository()
+        {
 
-            IRepository<Group> mockedRepository = MockRepository.GenerateMock<IRepository<Group>>();
+            IGroupManagementService mockedRepository = MockRepository.GenerateMock<IGroupManagementService>();
             mockedRepository.Expect(mr => mr.GetAll()).Return(CreateVirtualGroups());
             mockedRepository.Expect(mr => mr.Get(1)).IgnoreArguments().Return(CreateVirtualGroup());
-            mockedRepository.Expect(mr => mr.SaveOrUpdate(null)).IgnoreArguments().Return(CreateVirtualGroup());
-            mockedRepository.Expect(mr => mr.Delete(null)).IgnoreArguments();
 
 			IDbContext mockedDbContext = MockRepository.GenerateStub<IDbContext>();
 			mockedDbContext.Stub(c => c.CommitChanges());
-			mockedRepository.Stub(mr => mr.DbContext).Return(mockedDbContext);
+			
             
             return mockedRepository;
         }
@@ -169,7 +171,7 @@ namespace Tests.van.Web.Controllers
         private Group CreateTransientVirtualGroup() {
             Group virtualGroup = new Group() {
 				Name = "VAN",
-				Website = "http://wwww.virtualaltnet.com",
+				Blog = "http://wwww.virtualaltnet.com",
 				Manager = null
             };
             

@@ -5,7 +5,7 @@ using van.ApplicationServices.ViewModels;
 using van.Core;
 using van.Core.DataInterfaces;
 
-namespace van.ApplicationServices
+namespace van.ApplicationServices.ManagementService
 {
     public class UserManagementService : IUserManagementService
     {
@@ -15,16 +15,12 @@ namespace van.ApplicationServices
             this.userRepository = userRepository;
         }
 
-        public UserFormViewModel Get(int id)
-        {
-            UserFormViewModel model = new UserFormViewModel { User = userRepository.Get(id) };
-            return model;
-            
+        public User Get(int id){            
+            return userRepository.Get(id);            
         }
 
-        public UserFormViewModel GetAll() {
-            UserFormViewModel model = new UserFormViewModel { Users = userRepository.GetAll() };
-            return model;
+        public IList<User> GetAll(){
+            return userRepository.GetAll();
         }
         
         public UserFormViewModel CreateFormViewModel()
@@ -42,7 +38,13 @@ namespace van.ApplicationServices
             User user = userRepository.Get(userId);
             return CreateFormViewModelFor(user);
         }
-        
+
+        public UserFormViewModel GetUsers(){
+            UserFormViewModel viewModel = new UserFormViewModel();
+            viewModel.Users = userRepository.GetAll();
+            return viewModel;
+        }
+    
         public ActionConfirmation SaveOrUpdate(User user){
             if (user.IsValid())
             {

@@ -42,10 +42,10 @@
 		<li>
 			<label for="Speaker_Website">Website:</label>
 			<div>
-				<%= Html.TextBox("Speaker.Website", 
+				<%= Html.TextBox("Speaker.Blog", 
 					(ViewData.Model.Speaker != null) ? ViewData.Model.Speaker.Website.ToString() : "")%>
 			</div>
-			<%= Html.ValidationMessage("Speaker.Website")%>
+			<%= Html.ValidationMessage("Speaker.Blog")%>
 		</li>
 		<li>
 			<label for="Speaker_Presentation">Presentation:</label>

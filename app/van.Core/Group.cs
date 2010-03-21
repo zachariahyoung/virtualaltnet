@@ -10,14 +10,16 @@ namespace van.Core
         public Group() { }
 		
 		[DomainSignature]
-		[NotNull, NotEmpty]
+        [NotNull, NotEmpty(Message = "Name must be provided")]
 		public virtual string Name { get; set; }
 
         [DomainSignature]
-        [NotNull, NotEmpty]
+        [NotNull, NotEmpty(Message = "ShortName must be provided")]
         public virtual string ShortName { get; set; }
 
-		public virtual string Website { get; set; }
+		public virtual string Blog { get; set; }
+
+        public virtual string Rss { get; set; }
 
 		[NotNull]
 		public virtual User Manager { get; set; }

@@ -656,11 +656,6 @@
     <Content Include="Views\Speakers\Index.aspx" />
     <Content Include="Views\Speakers\Show.aspx" />
     <Content Include="Views\Speakers\SpeakerForm.ascx" />
-    <Content Include="Views\Events\Create.aspx" />
-    <Content Include="Views\Events\Edit.aspx" />
-    <Content Include="Views\Events\Index.aspx" />
-    <Content Include="Views\Events\Show.aspx" />
-    <Content Include="Views\Events\UpcomingEventForm.ascx" />
     <Content Include="Views\Groups\Create.aspx" />
     <Content Include="Views\Groups\Edit.aspx" />
     <Content Include="Views\Groups\Index.aspx" />

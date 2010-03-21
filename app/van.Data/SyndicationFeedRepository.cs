@@ -9,9 +9,9 @@ namespace van.Data
 
     public class SyndicationFeedRepository : ISyndicationFeedRepository
     {
-        public SyndicationFeed GetFeed(Blog blog)
+        public SyndicationFeed GetFeed(Group group)
         {
-            using (XmlReader reader = XmlReader.Create(blog.Rss))
+            using (XmlReader reader = XmlReader.Create(group.Rss))
             {
                 try
                 {

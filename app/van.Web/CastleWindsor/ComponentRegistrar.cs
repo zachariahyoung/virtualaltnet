@@ -8,6 +8,7 @@ using Castle.MicroKernel.Registration;
 using SharpArch.Core.CommonValidator;
 using SharpArch.Core.NHibernateValidator.CommonValidatorAdapter;
 using van.ApplicationServices;
+using van.ApplicationServices.ManagementService;
 using van.Core.DataInterfaces;
 using van.Data;
 using van.Web.Controllers.Infrastructure;
@@ -21,6 +22,7 @@ namespace van.Web.CastleWindsor
             AddGenericRepositoriesTo(container);
             AddCustomRepositoriesTo(container);
             AddApplicationServicesTo(container);
+            AddManageServicesTo(container);
             container.AddComponent("validator",
                 typeof(IValidator), typeof(Validator));
             container.AddComponent("authenticationProvider",
@@ -41,11 +43,15 @@ namespace van.Web.CastleWindsor
             container.Register(Component.For<IAggregator>().ImplementedBy<Aggregator>());
             container.Register(Component.For<INewsProvider>().ImplementedBy<BlogspotNewsProvider>());
             container.Register(Component.For<IEventProvider>().ImplementedBy<GoogleEventProvider>());
-
-            container.Register(Component.For<IUserManagementService>().ImplementedBy<UserManagementService>());
-
-
         }
+
+        private static void AddManageServicesTo(IWindsorContainer container)
+        {
+            container.Register(Component.For<IUserManagementService>().ImplementedBy<UserManagementService>());
+            container.Register(Component.For<IGroupManagementService>().ImplementedBy<GroupManagementService>());
+        }
+
+
         private static void AddCustomRepositoriesTo(IWindsorContainer container){
             container.Register(
                 AllTypes.Pick()

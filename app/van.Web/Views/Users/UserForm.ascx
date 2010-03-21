@@ -15,6 +15,24 @@
     <%= Html.Hidden("User.Id", (ViewData.Model.User != null) ? ViewData.Model.User.Id : 0)%>
 
     <ul>
+  		<li>
+			<label for="User_Name">Name:</label>
+			<div>
+				<%= Html.TextBox("User.Name", 
+					(ViewData.Model.User != null) ? ViewData.Model.User.Name.ToString() : "")%>
+			</div>
+			<%= Html.ValidationMessage("User.Name")%>
+		</li>
+
+  		<li>
+			<label for="User_Email">Email:</label>
+			<div>
+				<%= Html.TextBox("User.Email", 
+					(ViewData.Model.User != null) ? ViewData.Model.User.Email.ToString() : "")%>
+			</div>
+			<%= Html.ValidationMessage("User.Email")%>
+		</li>
+
 		<li>
 			<label for="User_UserName">UserName:</label>
 			<div>

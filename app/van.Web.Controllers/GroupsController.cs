@@ -1,4 +1,7 @@
 using System.Web.Mvc;
+using van.ApplicationServices;
+using van.ApplicationServices.ManagementService;
+using van.ApplicationServices.ViewModels;
 using van.Core;
 using SharpArch.Core.PersistenceSupport;
 using SharpArch.Core.DomainModel;
@@ -17,25 +20,20 @@ namespace van.Web.Controllers
     [HandleError]
     public class GroupsController : Controller
     {
-        public GroupsController(IRepository<Group> groupRepository, IRepository<User> userRepository)
+        public GroupsController(IGroupManagementService groupManagementService) {
+            Check.Require(groupManagementService != null, "groupManagementService may not be null");
+
+            this.groupManagementService = groupManagementService;
+            
+        }
+
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+        [Transaction]
+        [ResourceFilter(1)]
+        public ActionResult Index()
         {
-            Check.Require(groupRepository != null, "groupRepository may not be null");
-
-            this.groupRepository = groupRepository;
-            this.userRepository = userRepository;
-        }
-
-        [RequiresAuthentication]
-        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
-        [Transaction]
-        [ResourceFilter(1)]
-        public ActionResult Index() {
-
-            var model = new GroupsViewModel()
-            {
-                Groups = groupRepository.GetAll()
-            };
-
+            GroupFormViewModel model = groupManagementService.GetGroups();
             return View(model);
         }
 
@@ -43,21 +41,18 @@ namespace van.Web.Controllers
         [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
         [ResourceFilter(1)]
-        public ActionResult Show(int id) {
-
-            var model = new GroupsViewModel()
-            {
-                SingleGroup = groupRepository.Get(id)
-            };
+        public ActionResult Show(int id)
+        {
+            GroupFormViewModel model = groupManagementService.CreateFormViewModelFor(id);
             return View(model);
         }
 
         [RequiresAuthentication]
         [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ResourceFilter(1)]
-        public ActionResult Create() {
-            GroupFormViewModel viewModel = GroupFormViewModel.CreateGroupFormViewModel();
-            viewModel.Users = userRepository.GetAll();
+        public ActionResult Create()
+        {
+            GroupFormViewModel viewModel = groupManagementService.CreateFormViewModel();
             return View(viewModel);
         }
 
@@ -69,16 +64,18 @@ namespace van.Web.Controllers
         [ResourceFilter(1)]
         public ActionResult Create(Group group)
         {
-            if (ViewData.ModelState.IsValid && group.IsValid()) {
-                groupRepository.SaveOrUpdate(group);
+            if (ViewData.ModelState.IsValid)
+            {
+                ActionConfirmation saveOrUpdateConfirmation = groupManagementService.SaveOrUpdate(group);
 
-                TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
-					"The Group was successfully created.";
-                return RedirectToAction("Index");
+                if (saveOrUpdateConfirmation.WasSuccessful)
+                {
+                    TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = saveOrUpdateConfirmation.Message;
+                    return RedirectToAction("Index");
+                }
             }
 
-            GroupFormViewModel viewModel = GroupFormViewModel.CreateGroupFormViewModel();
-            viewModel.Group = group;
+            GroupFormViewModel viewModel = groupManagementService.CreateFormViewModelFor(group);
             return View(viewModel);
         }
 
@@ -86,9 +83,10 @@ namespace van.Web.Controllers
         [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
         [ResourceFilter(1)]
-        public ActionResult Edit(int id) {
-            GroupFormViewModel viewModel = GroupFormViewModel.CreateGroupFormViewModel();
-            viewModel.Group = groupRepository.Get(id);
+        public ActionResult Edit(int id)
+        {
+            GroupFormViewModel viewModel = groupManagementService.CreateFormViewModelFor(id);
+
             return View(viewModel);
         }
 
@@ -100,28 +98,19 @@ namespace van.Web.Controllers
         [ResourceFilter(1)]
         public ActionResult Edit(Group group)
         {
-            Group groupToUpdate = groupRepository.Get(group.Id);
-            TransferFormValuesTo(groupToUpdate, group);
+            if (ViewData.ModelState.IsValid)
+            {
+                ActionConfirmation updateConfirmation = groupManagementService.UpdateWith(group);
 
-            if (ViewData.ModelState.IsValid && group.IsValid()) {
-                TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
-					"The Group was successfully updated.";
-                return RedirectToAction("Index");
+                if (updateConfirmation.WasSuccessful)
+                {
+                    TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = updateConfirmation.Message;
+                    return RedirectToAction("Index");
+                }
             }
-            else {
-                groupRepository.DbContext.RollbackTransaction();
 
-				GroupFormViewModel viewModel = GroupFormViewModel.CreateGroupFormViewModel();
-				viewModel.Group = group;
-				return View(viewModel);
-            }
-        }
-
-        private void TransferFormValuesTo(Group groupToUpdate, Group groupFromForm) {
-			groupToUpdate.Name = groupFromForm.Name;
-            groupToUpdate.ShortName = groupFromForm.ShortName;
-			groupToUpdate.Website = groupFromForm.Website;
-			groupToUpdate.Manager = groupFromForm.Manager;
+            GroupFormViewModel viewModel = groupManagementService.CreateFormViewModelFor(group);
+            return View(viewModel);
         }
 
         [RequiresAuthentication]
@@ -132,52 +121,13 @@ namespace van.Web.Controllers
         [ResourceFilter(1)]
         public ActionResult Delete(int id)
         {
-            string resultMessage = "The Group was successfully deleted.";
-            Group groupToDelete = groupRepository.Get(id);
-
-            if (groupToDelete != null) {
-                groupRepository.Delete(groupToDelete);
-
-                try {
-                    groupRepository.DbContext.CommitChanges();
-                }
-                catch {
-                    resultMessage = "A problem was encountered preventing the Group from being deleted. " +
-						"Another item likely depends on this Group.";
-                    groupRepository.DbContext.RollbackTransaction();
-                }
-            }
-            else {
-                resultMessage = "The Group could not be found for deletion. It may already have been deleted.";
-            }
-
-            TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = resultMessage;
+            ActionConfirmation deleteConfirmation = groupManagementService.Delete(id);
+            TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = deleteConfirmation.Message;
             return RedirectToAction("Index");
+
         }
 
-		/// <summary>
-		/// Holds data to be passed to the Group form for creates and edits
-		/// </summary>
-        public class GroupFormViewModel : BaseViewModel
-        {
-            private GroupFormViewModel() { }
-
-			/// <summary>
-			/// Creation method for creating the view model. Services may be passed to the creation 
-			/// method to instantiate items such as lists for drop down boxes.
-			/// </summary>
-            public static GroupFormViewModel CreateGroupFormViewModel() {
-                GroupFormViewModel viewModel = new GroupFormViewModel();
-                
-                return viewModel;
-            }
-
-            public Group Group { get; internal set; }
-            public IEnumerable<User> Users { get; set; }
-        }
-
-        private readonly IRepository<Group> groupRepository;
-        private readonly IRepository<User> userRepository;
+        private readonly IGroupManagementService groupManagementService;        
         
     }
 }

@@ -1,5 +1,6 @@
 using System.Web.Mvc;
 using van.ApplicationServices;
+using van.ApplicationServices.ManagementService;
 using van.ApplicationServices.ViewModels;
 using van.Core;
 using SharpArch.Core.PersistenceSupport;
@@ -26,7 +27,7 @@ namespace van.Web.Controllers
         [Transaction]
         [ResourceFilter(1)]
         public ActionResult Index() {
-            UserFormViewModel model = userManagementService.GetAll();       
+            UserFormViewModel model = userManagementService.GetUsers();       
             return View(model);
         }
 
@@ -35,7 +36,7 @@ namespace van.Web.Controllers
         [Transaction]
         [ResourceFilter(1)]
         public ActionResult Show(int id) {
-            UserFormViewModel model = userManagementService.Get(id);   
+            UserFormViewModel model = userManagementService.CreateFormViewModelFor(id);   
             return View(model);
         }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Xml;
 using SharpArch.Core.PersistenceSupport;
+using van.ApplicationServices.ManagementService;
 using van.Core;
 
 
@@ -13,12 +14,12 @@ namespace van.ApplicationServices
 {
     public class BlogspotNewsProvider : INewsProvider
     {
-        private readonly IRepository<Blog> blogRepository;
+        private readonly IGroupManagementService groupManagementService;
         private readonly ISyndicationFeedRepository syndicationFeedRepository;
 
-        public BlogspotNewsProvider(IRepository<Blog> blogRepository, ISyndicationFeedRepository syndicationFeedRepository)
+        public BlogspotNewsProvider(IGroupManagementService groupManagementService, ISyndicationFeedRepository syndicationFeedRepository)
         {
-            this.blogRepository = blogRepository;
+            this.groupManagementService = groupManagementService;
             this.syndicationFeedRepository = syndicationFeedRepository;
         }
 
@@ -28,11 +29,11 @@ namespace van.ApplicationServices
 
             try
             {
-                IList<Blog> query = blogRepository.GetAll();
+                IList<Group> query = groupManagementService.GetAll();
 
-                foreach (Blog blog in query)
+                foreach (Group group in query)
                 {
-                    feeds.AddRange(syndicationFeedRepository.GetFeed(blog).Items);
+                    feeds.AddRange(syndicationFeedRepository.GetFeed(group).Items);
                 }
 
                 return this.GetNewsDtos(feeds);

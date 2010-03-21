@@ -7,6 +7,7 @@ using SharpArch.Testing.NUnit;
 using System.Collections.Generic;
 using System.Web.Mvc;
 using van.ApplicationServices;
+using van.ApplicationServices.ManagementService;
 using van.ApplicationServices.ViewModels;
 using van.Core;
 using van.Web.Controllers;
@@ -125,27 +126,24 @@ namespace Tests.van.Web.Controllers
             return mockedRepository;
         }
 
-        private UserFormViewModel CreateUser()
+        private User CreateUser()
         {
             User user = CreateTransientUser();
             EntityIdSetter.SetIdOf<int>(user, 1);
-            UserFormViewModel model = new UserFormViewModel();
-            model.User = user;
-            return model;
+            
+            return user;
         }
 
-        private UserFormViewModel CreateUsers()
+        private List<User> CreateUsers()
         {
             var users = new List<User>();
             var user = new User {UserName = "JohnL", Password = "123456"};
             var user1 = new User { UserName = "JohnLeg", Password = "1234567" };
             users.Add(user);
             users.Add(user1);
-            UserFormViewModel model = new UserFormViewModel();
-            model.Users = users;
 
             // Create a number of domain object instances here and add them to the list
-            return model;
+            return users;
         }
         
         #endregion

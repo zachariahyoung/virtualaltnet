@@ -15,8 +15,9 @@
     <table>
         <thead>
             <tr>
+                <th>Name</th>
 			    <th>UserName</th>
-			    <th>Password</th>
+			    <th>Email</th>
 			    <th colspan="3">Action</th>
             </tr>
         </thead>
@@ -24,8 +25,9 @@
 		<%
 		foreach (User user in Model.Users) { %>
 			<tr>
-				<td><%= user.UserName %></td>
-				<td><%= user.Password %></td>
+				<td><%= user.Name %></td>
+				<td><%= user.UserName%></td>
+				<td><%= user.Email %></td>
 				<td><%=Html.ActionLink<UsersController>( c => c.Show( user.Id ), "Details ") %></td>
 				<td><%=Html.ActionLink<UsersController>( c => c.Edit( user.Id ), "Edit") %></td>
 				<td>

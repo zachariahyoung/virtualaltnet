@@ -1,9 +1,9 @@
 <%@ Control Language="C#" AutoEventWireup="true"
-	Inherits="System.Web.Mvc.ViewUserControl<GroupsController.GroupFormViewModel>" %>
+	Inherits="System.Web.Mvc.ViewUserControl<van.ApplicationServices.ViewModels.GroupFormViewModel>" %>
 <%@ Import Namespace="van.Core" %>
 <%@ Import Namespace="van.Web.Controllers" %>
  
-
+<div class="center-box">
 <% if (ViewContext.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] != null) { %>
     <p id="pageMessage"><%= ViewContext.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()]%></p>
 <% } %>
@@ -16,7 +16,7 @@
 
     <ul>
 		<li>
-			<label for="VirtualGroup_GroupName">GroupName:</label>
+			<label for="Group_Name">Name:</label>
 			<div>
 				<%= Html.TextBox("Group.Name", 
 					(ViewData.Model.Group != null) ? ViewData.Model.Group.Name.ToString() : "")%>
@@ -24,29 +24,38 @@
 			<%= Html.ValidationMessage("Group.Name")%>
 		</li>
 		
-				<li>
-			<label for="VirtualGroup_ShortName">ShortName:</label>
+		<li>
+			<label for="Group_ShortName">Short Name:</label>
 			<div>
 				<%= Html.TextBox("Group.ShortName",
                (ViewData.Model.Group != null) ? ViewData.Model.Group.ShortName.ToString() : "")%>
 			</div>
 			<%= Html.ValidationMessage("Group.ShortName")%>
 		</li>
+		<li>
+			<label for="Group_Blog">Blog:</label>
+			<div>
+				<%= Html.TextBox("Group.Blog", 
+					(ViewData.Model.Group != null) ? ViewData.Model.Group.Blog.ToString() : "")%>
+			</div>
+			<%= Html.ValidationMessage("Group.Blog")%>
+		</li>
+		
+    	<li>
+			<label for="Group_Rss">Rss:</label>
+			<div>
+				<%= Html.TextBox("Group.Rss",
+               (ViewData.Model.Group != null) ? ViewData.Model.Group.Rss.ToString() : "")%>
+			</div>
+			<%= Html.ValidationMessage("Group.Rss")%>
+		</li>
 
 		<li>
-			<label for="VirtualGroup_Website">Website:</label>
-			<div>
-				<%= Html.TextBox("Group.Website", 
-					(ViewData.Model.Group != null) ? ViewData.Model.Group.Website.ToString() : "")%>
-			</div>
-			<%= Html.ValidationMessage("Group.Website")%>
-		</li>
-		<li>
-			<label for="VirtualGroup_Manager">Manager:</label>
+			<label for="Group_Manager">Manager:</label>
 			<div>
 				<%= this.Select("Group.Manager")
-		                .FirstOption("0", "-- Select Product Category --")
-                        .Options<User>(Model.Users, user => user.Id, user => user.UserName)
+		                .FirstOption("0", "-- Select Manager Category --")
+                        .Options<User>(Model.Users, user => user.Id, user => user.Name)
 				        .Selected(
                           ViewData.Model.Group != null && ViewData.Model.Group.Manager != null
                                      ? ViewData.Model.Group.Manager.Id
@@ -62,3 +71,4 @@
         </li>
     </ul>
 <% } %>
+</div>

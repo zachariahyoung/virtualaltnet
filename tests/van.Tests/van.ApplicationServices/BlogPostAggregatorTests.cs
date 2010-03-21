@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using Rhino.Mocks;
+using van.ApplicationServices.ManagementService;
 using van.Core;
 using SharpArch.Core.PersistenceSupport;
 using System.ServiceModel.Syndication;
@@ -10,9 +11,9 @@ namespace Tests.van.ApplicationServices
     [TestFixture]
     public class BlogPostAggregatorTests
     {
-        public Blog GetBlog(int id)
+        public Group GetGroup(int id)
         {
-            var b = new Blog();
+            var b = new Group();
             SharpArch.Testing.EntityIdSetter.SetIdOf(b, id);
             return b;
         }
@@ -20,11 +21,11 @@ namespace Tests.van.ApplicationServices
         [Test]
         public void Will_aggregate_posts_from_multiple_blogs()
         {
-            var blogs = new Blog[]
+            var blogs = new Group[]
                             {
-                                GetBlog(1), GetBlog(3),
+                                GetGroup(1), GetGroup(3),
                             };
-            var blogRepo = MockRepository.GenerateStub<IRepository<Blog>>();
+            var blogRepo = MockRepository.GenerateStub<IGroupManagementService>();
             blogRepo.Stub(x => x.GetAll()).Return(blogs);
             var postRepo = MockRepository.GenerateStub<ISyndicationFeedRepository>();
             

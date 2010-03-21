@@ -8,13 +8,18 @@
     <h2>User Details</h2>
     <div class="center-box">
     <ul>
+   		<li>
+			<label for="User_Name">Name:</label>
+            <span id="Span1"><%= Server.HtmlEncode(Model.User.Name) %></span>
+		</li>
+		<li>
+			<label for="User_EmailName">Email:</label>
+            <span id="Span2"><%= Server.HtmlEncode(Model.User.Email) %></span>
+		</li>
+
 		<li>
 			<label for="User_UserName">UserName:</label>
             <span id="User_UserName"><%= Server.HtmlEncode(Model.User.UserName) %></span>
-		</li>
-		<li>
-			<label for="User_Password">Password:</label>
-            <span id="User_Password"><%= Server.HtmlEncode(Model.User.UserName)%></span>
 		</li>
 	    <li class="buttons">
             <%= Html.Button("btnBack", "Back", HtmlButtonType.Button, 

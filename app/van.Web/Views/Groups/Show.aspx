@@ -1,5 +1,5 @@
-<%@ Page Title="VirtualGroup Details" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
-	Inherits="System.Web.Mvc.ViewPage<GroupsViewModel>" %>
+<%@ Page Title="Group Details" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
+	Inherits="System.Web.Mvc.ViewPage<van.ApplicationServices.ViewModels.GroupFormViewModel>" %>
 <%@ Import Namespace="van.Web.Controllers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ResourceFilesPlaceHolder" runat="server"></asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="_headContentPlaceHolder" runat="server"></asp:Content>
@@ -9,21 +9,25 @@
 <div class="center-box">
     <ul>
 		<li>
-			<label for="VirtualGroup_Name">Name:</label>
-            <span id="VirtualGroup_GroupName"><%= Server.HtmlEncode(Model.SingleGroup.Name.ToString())%></span>
+			<label for="Group_Name">Name:</label>
+            <span id="Group_Name"><%= Server.HtmlEncode(Model.Group.Name.ToString())%></span>
 		</li>
-				<li>
-			<label for="VirtualGroup_GroupName">Short Name:</label>
-            <span id="Span1"><%= Server.HtmlEncode(Model.SingleGroup.ShortName.ToString())%></span>
+		<li>
+			<label for="Group_ShortName">Short Name:</label>
+            <span id="Group_ShortName"><%= Server.HtmlEncode(Model.Group.ShortName.ToString())%></span>
+		</li>
+		<li>
+			<label for="Group_Blog">Blog:</label>
+            <span id="Group_Blog"><%= Server.HtmlEncode(Model.Group.Blog.ToString())%></span>
+		</li>
+		<li>
+			<label for="Group_Rss">Rss:</label>
+            <span id="Group_Rss"><%= Server.HtmlEncode(Model.Group.Rss.ToString())%></span>
 		</li>
 
 		<li>
-			<label for="VirtualGroup_Website">Website:</label>
-            <span id="VirtualGroup_Website"><%= Server.HtmlEncode(Model.SingleGroup.Website.ToString())%></span>
-		</li>
-		<li>
-			<label for="VirtualGroup_Manager">Manager:</label>
-            <span id="VirtualGroup_Manager"><%= Server.HtmlEncode(Model.SingleGroup.Manager.UserName.ToString())%></span>
+			<label for="Group_Manager">Manager:</label>
+            <span id="Group_Manager"><%= Server.HtmlEncode(Model.Group.Manager.Name.ToString())%></span>
 		</li>
 	    <li class="buttons">
             <%= Html.Button("btnBack", "Back", HtmlButtonType.Button, 

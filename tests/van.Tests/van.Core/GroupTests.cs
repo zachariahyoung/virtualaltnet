@@ -6,7 +6,7 @@ using SharpArch.Testing.NUnit;
 namespace Tests.van.Core
 {
 	[TestFixture]
-    public class VirtualGroupTests
+    public class GroupTests
     {
         [Test]
         public void CanCompareVirtualGroups() {

@@ -5,6 +5,6 @@ namespace van.Core
 {
     public interface ISyndicationFeedRepository
     {
-        SyndicationFeed GetFeed(Blog blog);
+        SyndicationFeed GetFeed(Group group);
     }
 }

@@ -83,12 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControllerEnums.cs" />
-    <Compile Include="EventsViewModel.cs" />
     <Compile Include="SpeakersViewModel.cs" />
-    <Compile Include="GroupsViewModel.cs" />
     <Compile Include="RecordingsController.cs" />
     <Compile Include="SpeakersController.cs" />
-    <Compile Include="EventsController.cs" />
     <Compile Include="HomeController.cs" />
     <Compile Include="..\..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
