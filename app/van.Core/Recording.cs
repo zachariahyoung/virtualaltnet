@@ -8,24 +8,35 @@ namespace van.Core
 {
     public class Recording : Entity
     {
-        public Recording() { }
-		
-		[DomainSignature]
-		[JsonConverter(typeof(JavaScriptDateTimeConverter))]
+        [DomainSignature]
+		[NotNull, NotEmpty]
 		[JsonProperty]
-		public virtual DateTime Date { get; set; }
+		public virtual string Title { get; set; }
 
 		[DomainSignature]
 		[NotNull, NotEmpty]
 		[JsonProperty]
-		public virtual string UploadedUrl { get; set; }
+		public virtual string Url { get; set; }
 
-        [DomainSignature]
-        [NotNull, NotEmpty]
+		[JsonProperty]
+        [JsonConverter(typeof(JavaScriptDateTimeConverter))]
+        //[JsonConverter(typeof(IsoDateTimeConverter))]
+		public virtual DateTime Date { get; set; }
+
+		[JsonProperty]
+		public virtual string Duration { get; set; }
+        
+        [JsonProperty]
+        public virtual string Speaker { get; set; }
+
+        [JsonProperty]
+        public virtual string UserGroup { get; set; }
+
         [JsonProperty]
         public virtual string LiveMeetingUrl { get; set; }
 
+        [JsonProperty]
+        public virtual string Description { get; set; }
 
-        
     }
 }

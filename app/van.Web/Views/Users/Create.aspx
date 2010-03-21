@@ -1,5 +1,5 @@
 <%@ Page Title="Create User" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
-	Inherits="System.Web.Mvc.ViewPage<van.Web.Controllers.UsersController.UserFormViewModel>" %>
+	Inherits="System.Web.Mvc.ViewPage<van.ApplicationServices.ViewModels.UserFormViewModel>" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ResourceFilesPlaceHolder" runat="server"></asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="_headContentPlaceHolder" runat="server"></asp:Content>
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">

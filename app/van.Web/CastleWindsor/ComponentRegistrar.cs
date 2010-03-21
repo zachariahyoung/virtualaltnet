@@ -35,24 +35,24 @@ namespace van.Web.CastleWindsor
                                    typeof(IMembershipProvider), typeof(MembershipProvider));
         }
 
-        private static void AddCustomRepositoriesTo(IWindsorContainer container)
-        {
-            container.Register(
-                AllTypes.Pick()
-                .FromAssemblyNamed("van.Data")
-                .WithService.FirstNonGenericCoreInterface("van.Core"));
-        }
         private static void AddApplicationServicesTo(IWindsorContainer container)
         {
-            
             container.Kernel.Resolver.AddSubResolver(new ArrayResolver(container.Kernel));
             container.Register(Component.For<IAggregator>().ImplementedBy<Aggregator>());
             container.Register(Component.For<INewsProvider>().ImplementedBy<BlogspotNewsProvider>());
             container.Register(Component.For<IEventProvider>().ImplementedBy<GoogleEventProvider>());
 
+            container.Register(Component.For<IUserManagementService>().ImplementedBy<UserManagementService>());
+
+
         }
-        private static void AddGenericRepositoriesTo(IWindsorContainer container)
-        {
+        private static void AddCustomRepositoriesTo(IWindsorContainer container){
+            container.Register(
+                AllTypes.Pick()
+                .FromAssemblyNamed("van.Data")
+                .WithService.FirstNonGenericCoreInterface("van.Core"));
+        }
+        private static void AddGenericRepositoriesTo(IWindsorContainer container){
             container.AddComponent("entityDuplicateChecker",
                 typeof(IEntityDuplicateChecker), typeof(EntityDuplicateChecker));
             container.AddComponent("repositoryType",

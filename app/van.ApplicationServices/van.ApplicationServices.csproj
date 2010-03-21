@@ -76,8 +76,11 @@
     <Compile Include="IAggregator.cs" />
     <Compile Include="IEventProvider.cs" />
     <Compile Include="INewsProvider.cs" />
+    <Compile Include="IUserManagementService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BlogspotNewsProvider.cs" />
+    <Compile Include="UserManagementService.cs" />
+    <Compile Include="ViewModels\UserFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\van.Core\van.Core.csproj">

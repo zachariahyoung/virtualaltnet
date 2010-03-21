@@ -28,11 +28,6 @@ namespace van.Web
         protected void Application_Start()
         {
             log4net.Config.XmlConfigurator.Configure();
-           //const string pathToLog4NetConfig = @"C:\Dev\OSS\virtualaltnet\app\van.Web\log4net.config";
-            NHibernateProfiler.Initialize();
-            
-           // log4net.Config.XmlConfigurator.Configure(new FileInfo
-           //     (ConfigurationManager.AppSettings["log4net-config-file"])); 
             
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new AreaViewEngine());

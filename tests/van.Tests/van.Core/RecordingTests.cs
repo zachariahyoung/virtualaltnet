@@ -14,13 +14,13 @@ namespace Tests.van.Core
             var instance = new Recording
                                {
                                    Date = DateTime.Parse("01/27/2010"),
-                                   UploadedUrl = "http://www.viddler.com/explore/virtualaltnet/videos/1"
+                                   Url = "http://www.viddler.com/explore/virtualaltnet/videos/1"
                                };
 
             var instanceToCompareTo = new Recording
                                           {
                                               Date = DateTime.Parse("01/27/2010"),
-                                              UploadedUrl = "http://www.viddler.com/explore/virtualaltnet/videos/1"
+                                              Url = "http://www.viddler.com/explore/virtualaltnet/videos/1"
                                           };
 
             instance.ShouldEqual(instanceToCompareTo);

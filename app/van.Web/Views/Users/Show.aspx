@@ -1,5 +1,5 @@
 <%@ Page Title="User Details" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
-	Inherits="System.Web.Mvc.ViewPage<UsersViewModel>" %>
+	Inherits="System.Web.Mvc.ViewPage<van.ApplicationServices.ViewModels.UserFormViewModel>" %>
 <%@ Import Namespace="van.Web.Controllers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ResourceFilesPlaceHolder" runat="server"></asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="_headContentPlaceHolder" runat="server"></asp:Content>
@@ -10,11 +10,11 @@
     <ul>
 		<li>
 			<label for="User_UserName">UserName:</label>
-            <span id="User_UserName"><%= Server.HtmlEncode(Model.SingleUser.UserName) %></span>
+            <span id="User_UserName"><%= Server.HtmlEncode(Model.User.UserName) %></span>
 		</li>
 		<li>
 			<label for="User_Password">Password:</label>
-            <span id="User_Password"><%= Server.HtmlEncode(Model.SingleUser.UserName)%></span>
+            <span id="User_Password"><%= Server.HtmlEncode(Model.User.UserName)%></span>
 		</li>
 	    <li class="buttons">
             <%= Html.Button("btnBack", "Back", HtmlButtonType.Button, 

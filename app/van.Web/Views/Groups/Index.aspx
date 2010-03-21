@@ -27,6 +27,7 @@
 		foreach (van.Core.Group group in Model.Groups) { %>
 			<tr>
 				<td><%= group.Name%></td>
+				<td><%= group.ShortName%></td>
 				<td><%= group.Website%></td>
 				<td><%= group.Manager.UserName %></td>
 				<td><%=Html.ActionLink<GroupsController>(c => c.Show(group.Id), "Details ")%></td>

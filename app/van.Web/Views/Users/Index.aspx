@@ -1,5 +1,5 @@
 <%@ Page Title="Users" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
-	Inherits="System.Web.Mvc.ViewPage<UsersViewModel>" %>
+	Inherits="System.Web.Mvc.ViewPage<van.ApplicationServices.ViewModels.UserFormViewModel>" %>
 <%@ Import Namespace="van.Core" %>
 <%@ Import Namespace="van.Web.Controllers" %>
  

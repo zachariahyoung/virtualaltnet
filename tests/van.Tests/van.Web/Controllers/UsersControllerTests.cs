@@ -6,6 +6,8 @@ using SharpArch.Testing;
 using SharpArch.Testing.NUnit;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using van.ApplicationServices;
+using van.ApplicationServices.ViewModels;
 using van.Core;
 using van.Web.Controllers;
  
@@ -46,8 +48,8 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Create().AssertViewRendered();
             
             result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(UsersController.UserFormViewModel));
-            (result.ViewData.Model as UsersController.UserFormViewModel).User.ShouldBeNull();
+            result.ViewData.Model.ShouldBeOfType(typeof(UserFormViewModel));
+            (result.ViewData.Model as UserFormViewModel).User.ShouldBeNull();
         }
 
       //  [Test]
@@ -93,8 +95,8 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Edit(1).AssertViewRendered();
 
 			result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(UsersController.UserFormViewModel));
-            (result.ViewData.Model as UsersController.UserFormViewModel).User.Id.ShouldEqual(1);
+            result.ViewData.Model.ShouldBeOfType(typeof(UserFormViewModel));
+            (result.ViewData.Model as UserFormViewModel).User.Id.ShouldEqual(1);
         }
 
         [Test]
@@ -108,35 +110,42 @@ namespace Tests.van.Web.Controllers
 
 		#region Create Mock User Repository
 
-        private IRepository<User> CreateMockUserRepository() {
+        private IUserManagementService CreateMockUserRepository()
+        {
 
-            var mockedRepository = MockRepository.GenerateMock<IRepository<User>>();
+            var mockedRepository = MockRepository.GenerateMock<IUserManagementService>();
             mockedRepository.Expect(mr => mr.GetAll()).Return(CreateUsers());
             mockedRepository.Expect(mr => mr.Get(1)).IgnoreArguments().Return(CreateUser());
-            mockedRepository.Expect(mr => mr.SaveOrUpdate(null)).IgnoreArguments().Return(CreateUser());
-            mockedRepository.Expect(mr => mr.Delete(null)).IgnoreArguments();
+            
 
 			IDbContext mockedDbContext = MockRepository.GenerateStub<IDbContext>();
 			mockedDbContext.Stub(c => c.CommitChanges());
-			mockedRepository.Stub(mr => mr.DbContext).Return(mockedDbContext);
+			
             
             return mockedRepository;
         }
 
-        private User CreateUser() {
+        private UserFormViewModel CreateUser()
+        {
             User user = CreateTransientUser();
             EntityIdSetter.SetIdOf<int>(user, 1);
-            return user;
+            UserFormViewModel model = new UserFormViewModel();
+            model.User = user;
+            return model;
         }
 
-        private List<User> CreateUsers() {
+        private UserFormViewModel CreateUsers()
+        {
             var users = new List<User>();
             var user = new User {UserName = "JohnL", Password = "123456"};
             var user1 = new User { UserName = "JohnLeg", Password = "1234567" };
             users.Add(user);
             users.Add(user1);
+            UserFormViewModel model = new UserFormViewModel();
+            model.Users = users;
+
             // Create a number of domain object instances here and add them to the list
-            return users;
+            return model;
         }
         
         #endregion

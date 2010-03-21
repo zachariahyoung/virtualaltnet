@@ -138,7 +138,7 @@ namespace Tests.van.Web.Controllers
         private Recording CreateTransientRecording() {
             Recording recording = new Recording() {
 				Date = DateTime.Parse("01/27/2010"),
-				UploadedUrl = "http://www.viddler.com/explore/virtualaltnet/videos/1",
+                Url = "http://www.viddler.com/explore/virtualaltnet/videos/1",
                 LiveMeetingUrl = "http://www.viddler.com/explore/virtualaltnet/videos/1"
             };
             
