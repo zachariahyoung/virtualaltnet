@@ -1,6 +1,6 @@
 <%@ Page Title="Create Recording" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" 
     AutoEventWireup="true" 
-    Inherits="System.Web.Mvc.ViewPage<van.Web.Controllers.RecordingsController.RecordingFormViewModel>" 
+    Inherits="System.Web.Mvc.ViewPage<van.ApplicationServices.ViewModels.RecordingFormViewModel>" 
 %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ResourceFilesPlaceHolder" runat="server"></asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="_headContentPlaceHolder" runat="server">

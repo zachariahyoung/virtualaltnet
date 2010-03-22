@@ -7,6 +7,8 @@ using SharpArch.Testing;
 using SharpArch.Testing.NUnit;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using van.ApplicationServices.ManagementService;
+using van.ApplicationServices.ViewModels;
 using van.Core;
 using van.Web.Controllers;
 
@@ -49,8 +51,8 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Create().AssertViewRendered();
             
             result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(RecordingsController.RecordingFormViewModel));
-            (result.ViewData.Model as RecordingsController.RecordingFormViewModel).Recording.ShouldBeNull();
+            result.ViewData.Model.ShouldBeOfType(typeof(RecordingFormViewModel));
+            (result.ViewData.Model as RecordingFormViewModel).Recording.ShouldBeNull();
         }
 
         [Test]
@@ -59,7 +61,7 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Create(recordingFromForm).AssertViewRendered();
 
             result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(RecordingsController.RecordingFormViewModel));
+            result.ViewData.Model.ShouldBeOfType(typeof(RecordingFormViewModel));
         }
 
         [Test]
@@ -86,8 +88,8 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Edit(1).AssertViewRendered();
 
 			result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(RecordingsController.RecordingFormViewModel));
-            (result.ViewData.Model as RecordingsController.RecordingFormViewModel).Recording.Id.ShouldEqual(1);
+            result.ViewData.Model.ShouldBeOfType(typeof(RecordingFormViewModel));
+            (result.ViewData.Model as RecordingFormViewModel).Recording.Id.ShouldEqual(1);
         }
 
         [Test]
@@ -101,17 +103,15 @@ namespace Tests.van.Web.Controllers
 
 		#region Create Mock Recording Repository
 
-        private IRepository<Recording> CreateMockRecordingRepository() {
+        private IRecordingManagementService CreateMockRecordingRepository()
+        {
 
-            IRepository<Recording> mockedRepository = MockRepository.GenerateMock<IRepository<Recording>>();
+            IRecordingManagementService mockedRepository = MockRepository.GenerateMock<IRecordingManagementService>();
             mockedRepository.Expect(mr => mr.GetAll()).Return(CreateRecordings());
             mockedRepository.Expect(mr => mr.Get(1)).IgnoreArguments().Return(CreateRecording());
-            mockedRepository.Expect(mr => mr.SaveOrUpdate(null)).IgnoreArguments().Return(CreateRecording());
-            mockedRepository.Expect(mr => mr.Delete(null)).IgnoreArguments();
 
 			IDbContext mockedDbContext = MockRepository.GenerateStub<IDbContext>();
 			mockedDbContext.Stub(c => c.CommitChanges());
-			mockedRepository.Stub(mr => mr.DbContext).Return(mockedDbContext);
             
             return mockedRepository;
         }

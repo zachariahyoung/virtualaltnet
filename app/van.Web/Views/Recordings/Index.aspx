@@ -1,5 +1,5 @@
 <%@ Page  Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" Title="Virtual ALT.NET Recordings"
-	Inherits="System.Web.Mvc.ViewPage<RecordingsViewModel>" %>
+	Inherits="System.Web.Mvc.ViewPage<van.ApplicationServices.ViewModels.RecordingFormViewModel>" %>
 <%@ Import Namespace="van.Core" %>
 <%@ Import Namespace="van.Web.Controllers" %>
 <%@ Import Namespace="van.Web.Extensions"%>

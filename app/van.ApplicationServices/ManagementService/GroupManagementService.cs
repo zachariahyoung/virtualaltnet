@@ -11,49 +11,44 @@ namespace van.ApplicationServices.ManagementService
         public GroupManagementService(IGroupRepository groupRepository, IUserManagementService userManagementService)
         {
             Check.Require(groupRepository != null, "groupRepository may not be null");
+            Check.Require(userManagementService != null, "userManagementService may not be null");
+
             this.groupRepository = groupRepository;
             this.userManagementService = userManagementService;
         }
 
-        public Group Get(int id)
-        {            
+        public Group Get(int id) {            
             return groupRepository.Get(id);            
         }
 
-        public IList<Group> GetAll()
-        {
+        public IList<Group> GetAll() {
             return groupRepository.GetAll();
         }
 
-        public GroupFormViewModel CreateFormViewModel()
-        {
+        public GroupFormViewModel CreateFormViewModel() {
             GroupFormViewModel model = new GroupFormViewModel();
             model.Users = userManagementService.GetAll();
             return model;
         }
 
-        public GroupFormViewModel CreateFormViewModelFor(Group group)
-        {
+        public GroupFormViewModel CreateFormViewModelFor(Group group) {
             GroupFormViewModel viewModel = CreateFormViewModel();
             viewModel.Group = group;
             return viewModel;
         }
 
-        public GroupFormViewModel CreateFormViewModelFor(int groupId)
-        {
+        public GroupFormViewModel CreateFormViewModelFor(int groupId) {
             Group group = groupRepository.Get(groupId);
             return CreateFormViewModelFor(group);
         }
 
-        public GroupFormViewModel GetGroups()
-        {
+        public GroupFormViewModel GetGroups() {
             GroupFormViewModel viewModel = new GroupFormViewModel();
             viewModel.Groups = groupRepository.GetAll();
             return viewModel;
         }
 
-        public ActionConfirmation SaveOrUpdate(Group group)
-        {
+        public ActionConfirmation SaveOrUpdate(Group group) {
             if (group.IsValid())
             {
                 groupRepository.SaveOrUpdate(group);
@@ -71,12 +66,10 @@ namespace van.ApplicationServices.ManagementService
                 return ActionConfirmation.CreateFailureConfirmation(
                     "The group could not be saved due to missing or invalid information.");
             }
-
             
         }
 
-        public ActionConfirmation UpdateWith(Group groupFromForm)
-        {
+        public ActionConfirmation UpdateWith(Group groupFromForm) {
             Group groupToUpdate = groupRepository.Get(groupFromForm.Id);
             TransferFormValuesTo(groupToUpdate, groupFromForm);
 
@@ -97,8 +90,7 @@ namespace van.ApplicationServices.ManagementService
             }
         }
 
-        public ActionConfirmation Delete(int id)
-        {
+        public ActionConfirmation Delete(int id) {
             Group groupToDelete = groupRepository.Get(id);
 
             if (groupToDelete != null)

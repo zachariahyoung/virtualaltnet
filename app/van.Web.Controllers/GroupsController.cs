@@ -50,8 +50,7 @@ namespace van.Web.Controllers
         [RequiresAuthentication]
         [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ResourceFilter(1)]
-        public ActionResult Create()
-        {
+        public ActionResult Create() {
             GroupFormViewModel viewModel = groupManagementService.CreateFormViewModel();
             return View(viewModel);
         }
@@ -62,8 +61,7 @@ namespace van.Web.Controllers
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
         [ResourceFilter(1)]
-        public ActionResult Create(Group group)
-        {
+        public ActionResult Create(Group group) {
             if (ViewData.ModelState.IsValid)
             {
                 ActionConfirmation saveOrUpdateConfirmation = groupManagementService.SaveOrUpdate(group);
@@ -83,10 +81,8 @@ namespace van.Web.Controllers
         [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
         [ResourceFilter(1)]
-        public ActionResult Edit(int id)
-        {
+        public ActionResult Edit(int id) {
             GroupFormViewModel viewModel = groupManagementService.CreateFormViewModelFor(id);
-
             return View(viewModel);
         }
 
@@ -96,8 +92,7 @@ namespace van.Web.Controllers
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
         [ResourceFilter(1)]
-        public ActionResult Edit(Group group)
-        {
+        public ActionResult Edit(Group group) {
             if (ViewData.ModelState.IsValid)
             {
                 ActionConfirmation updateConfirmation = groupManagementService.UpdateWith(group);
@@ -119,12 +114,10 @@ namespace van.Web.Controllers
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
         [ResourceFilter(1)]
-        public ActionResult Delete(int id)
-        {
+        public ActionResult Delete(int id) {
             ActionConfirmation deleteConfirmation = groupManagementService.Delete(id);
             TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = deleteConfirmation.Message;
             return RedirectToAction("Index");
-
         }
 
         private readonly IGroupManagementService groupManagementService;        

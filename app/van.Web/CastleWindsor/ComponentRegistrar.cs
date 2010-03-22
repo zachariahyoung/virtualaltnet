@@ -50,6 +50,7 @@ namespace van.Web.CastleWindsor
             container.Register(Component.For<IUserManagementService>().ImplementedBy<UserManagementService>());
             container.Register(Component.For<IGroupManagementService>().ImplementedBy<GroupManagementService>());
             container.Register(Component.For<ISpeakerManagementService>().ImplementedBy<SpeakerManagementService>());
+            container.Register(Component.For<IRecordingManagementService>().ImplementedBy<RecordingManagementService>());
         }
 
         private static void AddCustomRepositoriesTo(IWindsorContainer container){

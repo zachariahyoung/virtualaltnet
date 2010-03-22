@@ -99,9 +99,13 @@
     <Compile Include="NHibernateMaps\Conventions\PrimaryKeyConvention.cs" />
     <Compile Include="NHibernateMaps\Conventions\ReferenceConvention.cs" />
     <Compile Include="NHibernateMaps\Conventions\TableNameConvention.cs" />
+    <Compile Include="RecordingRepository.cs" />
     <Compile Include="SpeakerRepository.cs" />
     <Compile Include="SyndicationFeedRepository.cs" />
     <Compile Include="UserRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NamedQueries\GetRecordingSummaries.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

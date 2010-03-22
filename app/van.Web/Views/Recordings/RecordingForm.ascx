@@ -1,5 +1,5 @@
 <%@ Control Language="C#" AutoEventWireup="true"
-	Inherits="System.Web.Mvc.ViewUserControl<RecordingsController.RecordingFormViewModel>" %>
+	Inherits="System.Web.Mvc.ViewUserControl<van.ApplicationServices.ViewModels.RecordingFormViewModel>" %>
 <%@ Import Namespace="van.Core" %>
 <%@ Import Namespace="van.Web.Controllers" %>
  
@@ -56,24 +56,33 @@
 			    </label>
 			</span>
 		</li>
-        <li>
+         <li>
             <label class="desc">Speaker</label>
-            <span>
-                <%= Html.TextBox("Recording.Speaker", 
-					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.Speaker : "")%>
-                <label>
-                    <%= Html.ValidationMessage("Recording.Speaker")%>
-                </label>
-            </span></li>
-        <li>
-            <label class="desc">User Group</label>
-            <span>
-                <%= Html.TextBox("Recording.UserGroup", 
-					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.UserGroup : "")%>
-                <label>
-                    <%= Html.ValidationMessage("Recording.UserGroup")%>
-                </label>
-            </span></li>
+			<div>
+				<%= this.Select("Recording.Speaker")
+		                .FirstOption("0", "-- Select Speaker --")
+                        .Options<Speaker>(ViewData.Model.Speakers, speaker => speaker.Id, speaker => speaker.Name)
+				        .Selected(
+                             ViewData.Model.Recording != null && ViewData.Model.Recording.Speaker != null
+                                                    ? ViewData.Model.Recording.Speaker.Id
+				                : 0) %>
+			</div>
+			<%= Html.ValidationMessage("Recording.Speaker")%>        </li>
+
+
+                     <li>
+            <label class="desc">Group</label>
+			<div>
+				<%= this.Select("Recording.Group")
+		                .FirstOption("0", "-- Select Group --")
+                        .Options<van.Core.Group>(ViewData.Model.Groups, group => group.Id, group => group.ShortName)
+				        .Selected(
+                           ViewData.Model.Recording != null && ViewData.Model.Recording.Group != null
+                               ? ViewData.Model.Recording.Group.Id
+				               : 0) %>
+			</div>
+			<%= Html.ValidationMessage("Recording.Group")%>        </li>
+
         <li>
             <label class="desc"> Live Meeting Url</label>
             <span>

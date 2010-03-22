@@ -90,11 +90,13 @@
     </Compile>
     <Compile Include="ActionConfirmation.cs" />
     <Compile Include="DataInterfaces\IGroupRepository.cs" />
+    <Compile Include="DataInterfaces\IRecordingRepository.cs" />
     <Compile Include="DataInterfaces\ISpeakerRepository.cs" />
     <Compile Include="DataInterfaces\ISyndicationFeedRepository.cs" />
     <Compile Include="Dto\EventDto.cs" />
     <Compile Include="Dto\NewsDto.cs" />
     <Compile Include="BaseViewModel.cs" />
+    <Compile Include="Dto\RecordingDto.cs" />
     <Compile Include="IResource.cs" />
     <Compile Include="Recording.cs" />
     <Compile Include="Role.cs" />

@@ -6,7 +6,7 @@ using van.Core.DataInterfaces;
 
 namespace van.Data
 {
-    public class UserRepository : Repository<User>, IUserRepository{
+    public class UserRepository : Repository<User>, IUserRepository {
 
         public User GetByUserName(string userName)
         {
