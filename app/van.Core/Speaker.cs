@@ -11,12 +11,8 @@ namespace van.Core
 		[NotNull, NotEmpty]
 		public virtual string Name { get; set; }       
         
-        [DomainSignature]
-		[NotNull, NotEmpty]
-		public virtual string Email { get; set; }       
+        public virtual string Email { get; set; }       
 
-        [DomainSignature]
-        [NotNull, NotEmpty]
         public virtual string Bio { get; set; }
 
         public virtual string Website { get; set; }

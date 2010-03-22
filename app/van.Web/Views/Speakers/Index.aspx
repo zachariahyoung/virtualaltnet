@@ -1,12 +1,13 @@
 <%@ Page Title="Speakers" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
-	Inherits="System.Web.Mvc.ViewPage<IEnumerable<van.Core.Speaker>>" %>
+	Inherits="System.Web.Mvc.ViewPage<van.ApplicationServices.ViewModels.SpeakerFormViewModel>" %>
 <%@ Import Namespace="van.Core" %>
 <%@ Import Namespace="van.Web.Controllers" %>
  
-
+<asp:Content ID="Content1" ContentPlaceHolderID="ResourceFilesPlaceHolder" runat="server"></asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="_headContentPlaceHolder" runat="server"></asp:Content>
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <h1>Speakers</h1>
-
+    <h2>Speakers</h2>
+    <div class="center-box">
     <% if (ViewContext.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] != null) { %>
         <p id="pageMessage"><%= ViewContext.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()]%></p>
     <% } %>
@@ -24,13 +25,12 @@
         </thead>
 
 		<%
-		foreach (Speaker speaker in ViewData.Model) { %>
+		foreach (Speaker speaker in Model.Speakers) { %>
 			<tr>
-				<td><%= speaker.FirstName %></td>
-				<td><%= speaker.LastName %></td>
+				<td><%= speaker.Name %></td>
 				<td><%= speaker.Email %></td>
 				<td><%= speaker.Website %></td>
-				<td><%= speaker.Presentation %></td>
+
 				<td><%=Html.ActionLink<SpeakersController>( c => c.Show( speaker.Id ), "Details ") %></td>
 				<td><%=Html.ActionLink<SpeakersController>( c => c.Edit( speaker.Id ), "Edit") %></td>
 				<td>
@@ -44,4 +44,6 @@
     </table>
 
     <p><%= Html.ActionLink<SpeakersController>(c => c.Create(), "Create New Speaker") %></p>
+    </div>
 </asp:Content>
+<asp:Content ID="Scripts" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server" />

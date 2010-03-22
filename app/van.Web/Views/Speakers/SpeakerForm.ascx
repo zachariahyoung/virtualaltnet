@@ -1,9 +1,9 @@
 <%@ Control Language="C#" AutoEventWireup="true"
-	Inherits="System.Web.Mvc.ViewUserControl<van.Web.Controllers.SpeakersController.SpeakerFormViewModel>" %>
+	Inherits="System.Web.Mvc.ViewUserControl<van.ApplicationServices.ViewModels.SpeakerFormViewModel>" %>
 <%@ Import Namespace="van.Core" %>
 <%@ Import Namespace="van.Web.Controllers" %>
  
-
+<div class="center-box">
 <% if (ViewContext.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] != null) { %>
     <p id="pageMessage"><%= ViewContext.TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()]%></p>
 <% } %>
@@ -16,20 +16,12 @@
 
     <ul>
 		<li>
-			<label for="Speaker_FirstName">FirstName:</label>
+			<label for="Speaker_Name">Name:</label>
 			<div>
-				<%= Html.TextBox("Speaker.FirstName", 
-					(ViewData.Model.Speaker != null) ? ViewData.Model.Speaker.FirstName.ToString() : "")%>
+				<%= Html.TextBox("Speaker.Name", 
+					(ViewData.Model.Speaker != null) ? ViewData.Model.Speaker.Name.ToString() : "")%>
 			</div>
-			<%= Html.ValidationMessage("Speaker.FirstName")%>
-		</li>
-		<li>
-			<label for="Speaker_LastName">LastName:</label>
-			<div>
-				<%= Html.TextBox("Speaker.LastName", 
-					(ViewData.Model.Speaker != null) ? ViewData.Model.Speaker.LastName.ToString() : "")%>
-			</div>
-			<%= Html.ValidationMessage("Speaker.LastName")%>
+			<%= Html.ValidationMessage("Speaker.Name")%>
 		</li>
 		<li>
 			<label for="Speaker_Email">Email:</label>
@@ -40,21 +32,22 @@
 			<%= Html.ValidationMessage("Speaker.Email")%>
 		</li>
 		<li>
-			<label for="Speaker_Website">Website:</label>
+			<label for="Speaker_Bio">Bio:</label>
 			<div>
-				<%= Html.TextBox("Speaker.Blog", 
-					(ViewData.Model.Speaker != null) ? ViewData.Model.Speaker.Website.ToString() : "")%>
+				<%= Html.TextBox("Speaker.Bio",
+                    (ViewData.Model.Speaker != null) ? ViewData.Model.Speaker.Bio.ToString() : "")%>
 			</div>
-			<%= Html.ValidationMessage("Speaker.Blog")%>
+			<%= Html.ValidationMessage("Speaker.Bio")%>
 		</li>
 		<li>
-			<label for="Speaker_Presentation">Presentation:</label>
+			<label for="Speaker_Website">Website:</label>
 			<div>
-				<%= Html.TextBox("Speaker.Presentation", 
-					(ViewData.Model.Speaker != null) ? ViewData.Model.Speaker.Presentation.ToString() : "")%>
+				<%= Html.TextBox("Speaker.Website", 
+					(ViewData.Model.Speaker != null) ? ViewData.Model.Speaker.Website.ToString() : "")%>
 			</div>
-			<%= Html.ValidationMessage("Speaker.Presentation")%>
+			<%= Html.ValidationMessage("Speaker.Website")%>
 		</li>
+
 	    <li>
             <%= Html.SubmitButton("btnSave", "Save Speaker") %>
 	        <%= Html.Button("btnCancel", "Cancel", HtmlButtonType.Button, 
@@ -62,3 +55,4 @@
         </li>
     </ul>
 <% } %>
+</div>

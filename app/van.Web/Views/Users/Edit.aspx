@@ -5,8 +5,8 @@
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
 	<h2>Edit User</h2>
-<div class="center-box">
+
 	<% Html.RenderPartial("UserForm", ViewData); %>
-</div>
+
 </asp:Content>
 <asp:Content ID="Scripts" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server" />

@@ -7,6 +7,8 @@ using SharpArch.Testing;
 using SharpArch.Testing.NUnit;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using van.ApplicationServices.ManagementService;
+using van.ApplicationServices.ViewModels;
 using van.Core;
 using van.Web.Controllers;
  
@@ -48,8 +50,8 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Create().AssertViewRendered();
             
             result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(SpeakersController.SpeakerFormViewModel));
-            (result.ViewData.Model as SpeakersController.SpeakerFormViewModel).Speaker.ShouldBeNull();
+            result.ViewData.Model.ShouldBeOfType(typeof(SpeakerFormViewModel));
+            (result.ViewData.Model as SpeakerFormViewModel).Speaker.ShouldBeNull();
         }
 
         [Test]
@@ -58,7 +60,7 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Create(speakerFromForm).AssertViewRendered();
 
             result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(SpeakersController.SpeakerFormViewModel));
+            result.ViewData.Model.ShouldBeOfType(typeof(SpeakerFormViewModel));
         }
 
         [Test]
@@ -85,8 +87,8 @@ namespace Tests.van.Web.Controllers
             ViewResult result = controller.Edit(1).AssertViewRendered();
 
 			result.ViewData.Model.ShouldNotBeNull();
-            result.ViewData.Model.ShouldBeOfType(typeof(SpeakersController.SpeakerFormViewModel));
-            (result.ViewData.Model as SpeakersController.SpeakerFormViewModel).Speaker.Id.ShouldEqual(1);
+            result.ViewData.Model.ShouldBeOfType(typeof(SpeakerFormViewModel));
+            (result.ViewData.Model as SpeakerFormViewModel).Speaker.Id.ShouldEqual(1);
         }
 
         [Test]
@@ -100,18 +102,16 @@ namespace Tests.van.Web.Controllers
 
 		#region Create Mock Speaker Repository
 
-        private IRepository<Speaker> CreateMockSpeakerRepository() {
+        private ISpeakerManagementService CreateMockSpeakerRepository()
+        {
 
-            IRepository<Speaker> mockedRepository = MockRepository.GenerateMock<IRepository<Speaker>>();
+            ISpeakerManagementService mockedRepository = MockRepository.GenerateMock<ISpeakerManagementService>();
             mockedRepository.Expect(mr => mr.GetAll()).Return(CreateSpeakers());
             mockedRepository.Expect(mr => mr.Get(1)).IgnoreArguments().Return(CreateSpeaker());
-            mockedRepository.Expect(mr => mr.SaveOrUpdate(null)).IgnoreArguments().Return(CreateSpeaker());
-            mockedRepository.Expect(mr => mr.Delete(null)).IgnoreArguments();
-
+            
 			IDbContext mockedDbContext = MockRepository.GenerateStub<IDbContext>();
 			mockedDbContext.Stub(c => c.CommitChanges());
-			mockedRepository.Stub(mr => mr.DbContext).Return(mockedDbContext);
-            
+			            
             return mockedRepository;
         }
 

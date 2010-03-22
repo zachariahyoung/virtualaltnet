@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using SharpArch.Core;
 using van.ApplicationServices;
+using van.ApplicationServices.ViewModels;
 using van.Core;
 using van.Web.Core;
 
@@ -21,7 +22,7 @@ namespace van.Web.Controllers
 		  [ResourceFilter(1)]
         public ActionResult Index()
         {
-            PostEventRecordViewModel viewModel = PostEventRecordViewModel.CreatePostEventRecordViewModel(aggregator);
+            EventNewsFormViewModel viewModel = aggregator.GetEventNews();
 
             return View(viewModel);
         }

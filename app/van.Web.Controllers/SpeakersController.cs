@@ -1,4 +1,6 @@
 using System.Web.Mvc;
+using van.ApplicationServices.ManagementService;
+using van.ApplicationServices.ViewModels;
 using van.Core;
 using SharpArch.Core.PersistenceSupport;
 using SharpArch.Core.DomainModel;
@@ -17,10 +19,10 @@ namespace van.Web.Controllers
     [HandleError]
     public class SpeakersController : Controller
     {
-        public SpeakersController(IRepository<Speaker> speakerRepository) {
-            Check.Require(speakerRepository != null, "speakerRepository may not be null");
+        public SpeakersController(ISpeakerManagementService speakerManagementService) {
+            Check.Require(speakerManagementService != null, "speakerManagementService may not be null");
 
-            this.speakerRepository = speakerRepository;
+            this.speakerManagementService = speakerManagementService;
         }
 
         [RequiresAuthentication]
@@ -28,25 +30,14 @@ namespace van.Web.Controllers
         [Transaction]
         [ResourceFilter(1)]
         public ActionResult Index() {
-
-            var model = new SpeakersViewModel()
-            {
-                Speakers = speakerRepository.GetAll()
-            };
+            SpeakerFormViewModel model = speakerManagementService.GetSpeakers();
             return View(model);
         }
 
-        [RequiresAuthentication]
-        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [Transaction]
         [ResourceFilter(1)]
         public ActionResult Show(int id) {
-            Speaker speaker = speakerRepository.Get(id);
-
-            var model = new SpeakersViewModel()
-            {
-                SingleSpeaker = speaker
-            };
+            SpeakerFormViewModel model = speakerManagementService.CreateFormViewModelFor(id);
             return View(model);
         }
 
@@ -54,7 +45,7 @@ namespace van.Web.Controllers
         [RequiresAuthorization(RoleToCheckFor = "Administrator")]
         [ResourceFilter(1)]
         public ActionResult Create() {
-            SpeakerFormViewModel viewModel = SpeakerFormViewModel.CreateSpeakerFormViewModel();
+            SpeakerFormViewModel viewModel = speakerManagementService.CreateFormViewModel();
             return View(viewModel);
         }
 
@@ -64,116 +55,66 @@ namespace van.Web.Controllers
         [Transaction]
         [AcceptVerbs(HttpVerbs.Post)]
         [ResourceFilter(1)]
-        public ActionResult Create(Speaker speaker)
-        {
-            if (ViewData.ModelState.IsValid && speaker.IsValid()) {
-                speakerRepository.SaveOrUpdate(speaker);
+        public ActionResult Create(Speaker speaker) {
+            if (ViewData.ModelState.IsValid)
+            {
+                ActionConfirmation saveOrUpdateConfirmation = speakerManagementService.SaveOrUpdate(speaker);
 
-                TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
-					"The speaker was successfully created.";
-                return RedirectToAction("Index");
-            }
-
-            SpeakerFormViewModel viewModel = SpeakerFormViewModel.CreateSpeakerFormViewModel();
-            viewModel.Speaker = speaker;
-            return View(viewModel);
-        }
-
-        [RequiresAuthentication]
-        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
-        [Transaction]
-        [ResourceFilter(1)]
-        public ActionResult Edit(int id)
-        {
-            SpeakerFormViewModel viewModel = SpeakerFormViewModel.CreateSpeakerFormViewModel();
-            viewModel.Speaker = speakerRepository.Get(id);
-            return View(viewModel);
-        }
-
-        [RequiresAuthentication]
-        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
-        [ValidateAntiForgeryToken]
-        [Transaction]
-        [AcceptVerbs(HttpVerbs.Post)]
-        [ResourceFilter(1)]
-        public ActionResult Edit(Speaker speaker)
-        {
-            Speaker speakerToUpdate = speakerRepository.Get(speaker.Id);
-            TransferFormValuesTo(speakerToUpdate, speaker);
-
-            if (ViewData.ModelState.IsValid && speaker.IsValid()) {
-                TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = 
-					"The speaker was successfully updated.";
-                return RedirectToAction("Index");
-            }
-            else {
-                speakerRepository.DbContext.RollbackTransaction();
-
-				SpeakerFormViewModel viewModel = SpeakerFormViewModel.CreateSpeakerFormViewModel();
-				viewModel.Speaker = speaker;
-				return View(viewModel);
-            }
-        }
-
-        private void TransferFormValuesTo(Speaker speakerToUpdate, Speaker speakerFromForm) {
-			speakerToUpdate.Name = speakerFromForm.Name;
-			speakerToUpdate.Email = speakerFromForm.Email;
-			speakerToUpdate.Website = speakerFromForm.Website;
-            speakerToUpdate.Bio = speakerFromForm.Bio;
-
-        }
-
-        [RequiresAuthentication]
-        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
-        [ValidateAntiForgeryToken]
-        [Transaction]
-        [AcceptVerbs(HttpVerbs.Post)]
-        [ResourceFilter(1)]
-        public ActionResult Delete(int id)
-        {
-            string resultMessage = "The speaker was successfully deleted.";
-            Speaker speakerToDelete = speakerRepository.Get(id);
-
-            if (speakerToDelete != null) {
-                speakerRepository.Delete(speakerToDelete);
-
-                try {
-                    speakerRepository.DbContext.CommitChanges();
-                }
-                catch {
-                    resultMessage = "A problem was encountered preventing the speaker from being deleted. " +
-						"Another item likely depends on this speaker.";
-                    speakerRepository.DbContext.RollbackTransaction();
+                if (saveOrUpdateConfirmation.WasSuccessful)
+                {
+                    TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = saveOrUpdateConfirmation.Message;
+                    return RedirectToAction("Index");
                 }
             }
-            else {
-                resultMessage = "The speaker could not be found for deletion. It may already have been deleted.";
+
+            SpeakerFormViewModel viewModel = speakerManagementService.CreateFormViewModelFor(speaker);
+            return View(viewModel);
+        }
+
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+        [Transaction]
+        [ResourceFilter(1)]
+        public ActionResult Edit(int id) {
+            SpeakerFormViewModel viewModel = speakerManagementService.CreateFormViewModelFor(id);
+
+            return View(viewModel);
+        }
+
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+        [ValidateAntiForgeryToken]
+        [Transaction]
+        [AcceptVerbs(HttpVerbs.Post)]
+        [ResourceFilter(1)]
+        public ActionResult Edit(Speaker speaker) {
+            if (ViewData.ModelState.IsValid)
+            {
+                ActionConfirmation updateConfirmation = speakerManagementService.UpdateWith(speaker);
+
+                if (updateConfirmation.WasSuccessful)
+                {
+                    TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = updateConfirmation.Message;
+                    return RedirectToAction("Index");
+                }
             }
 
-            TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = resultMessage;
+            SpeakerFormViewModel viewModel = speakerManagementService.CreateFormViewModelFor(speaker);
+            return View(viewModel);
+        }
+
+        [RequiresAuthentication]
+        [RequiresAuthorization(RoleToCheckFor = "Administrator")]
+        [ValidateAntiForgeryToken]
+        [Transaction]
+        [AcceptVerbs(HttpVerbs.Post)]
+        [ResourceFilter(1)]
+        public ActionResult Delete(int id) {
+            ActionConfirmation deleteConfirmation = speakerManagementService.Delete(id);
+            TempData[ControllerEnums.GlobalViewDataProperty.PageMessage.ToString()] = deleteConfirmation.Message;
             return RedirectToAction("Index");
         }
 
-		/// <summary>
-		/// Holds data to be passed to the Speaker form for creates and edits
-		/// </summary>
-        public class SpeakerFormViewModel : BaseViewModel
-        {
-            private SpeakerFormViewModel() { }
-
-			/// <summary>
-			/// Creation method for creating the view model. Services may be passed to the creation 
-			/// method to instantiate items such as lists for drop down boxes.
-			/// </summary>
-            public static SpeakerFormViewModel CreateSpeakerFormViewModel() {
-                SpeakerFormViewModel viewModel = new SpeakerFormViewModel();
-                
-                return viewModel;
-            }
-
-            public Speaker Speaker { get; internal set; }
-        }
-
-        private readonly IRepository<Speaker> speakerRepository;
+        private readonly ISpeakerManagementService speakerManagementService;
     }
 }

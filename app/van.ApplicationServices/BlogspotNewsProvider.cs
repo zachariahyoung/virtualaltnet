@@ -33,7 +33,11 @@ namespace van.ApplicationServices
 
                 foreach (Group group in query)
                 {
-                    feeds.AddRange(syndicationFeedRepository.GetFeed(group).Items);
+                    if (!group.Rss.Equals(""))
+                    {
+                        feeds.AddRange(syndicationFeedRepository.GetFeed(group).Items);                        
+                    }
+
                 }
 
                 return this.GetNewsDtos(feeds);

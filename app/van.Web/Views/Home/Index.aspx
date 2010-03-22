@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true"
-    Title="Virtual ALT.NET" Inherits="System.Web.Mvc.ViewPage<van.Web.Controllers.PostEventRecordViewModel>" %>
+    Title="Virtual ALT.NET" Inherits="System.Web.Mvc.ViewPage<van.ApplicationServices.ViewModels.EventNewsFormViewModel>" %>
 <%@ Import Namespace="van.Core.Dto"%>
 <%@ Import Namespace="System.ServiceModel.Syndication"%>
 <asp:Content ID="Content2" ContentPlaceHolderID="ResourceFilesPlaceHolder" runat="server"></asp:Content>

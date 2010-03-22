@@ -9,9 +9,9 @@ namespace van.ApplicationServices.ManagementService
         IList<User> GetAll();
         UserFormViewModel CreateFormViewModel();
         UserFormViewModel CreateFormViewModelFor(int userId);
-        UserFormViewModel CreateFormViewModelFor(User product);
+        UserFormViewModel CreateFormViewModelFor(User user);
         UserFormViewModel GetUsers();
-        ActionConfirmation SaveOrUpdate(User product);
+        ActionConfirmation SaveOrUpdate(User user);
         ActionConfirmation UpdateWith(User userFromForm);
         ActionConfirmation Delete(int id);
     }

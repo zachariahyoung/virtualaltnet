@@ -99,6 +99,7 @@
     <Compile Include="NHibernateMaps\Conventions\PrimaryKeyConvention.cs" />
     <Compile Include="NHibernateMaps\Conventions\ReferenceConvention.cs" />
     <Compile Include="NHibernateMaps\Conventions\TableNameConvention.cs" />
+    <Compile Include="SpeakerRepository.cs" />
     <Compile Include="SyndicationFeedRepository.cs" />
     <Compile Include="UserRepository.cs" />
   </ItemGroup>

@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using Google.GData.Client;
+using van.ApplicationServices.ViewModels;
 using van.Core.Dto;
 
 namespace van.ApplicationServices
@@ -49,5 +51,15 @@ namespace van.ApplicationServices
             return eventDtos.ToArray();
         }
 
+        public EventNewsFormViewModel GetEventNews()
+        {
+            EventNewsFormViewModel viewModel = new EventNewsFormViewModel();
+
+            viewModel.News = this.GetNews();
+
+            viewModel.Events = this.GetEvents();
+
+            return viewModel;
+        }
     }
 } 

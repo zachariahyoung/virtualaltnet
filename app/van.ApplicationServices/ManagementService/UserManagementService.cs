@@ -23,8 +23,8 @@ namespace van.ApplicationServices.ManagementService
             return userRepository.GetAll();
         }
         
-        public UserFormViewModel CreateFormViewModel()
-        {   UserFormViewModel model = new UserFormViewModel();
+        public UserFormViewModel CreateFormViewModel() {
+            UserFormViewModel model = new UserFormViewModel();
             return model;
         }
 
@@ -45,7 +45,7 @@ namespace van.ApplicationServices.ManagementService
             return viewModel;
         }
     
-        public ActionConfirmation SaveOrUpdate(User user){
+        public ActionConfirmation SaveOrUpdate(User user) {
             if (user.IsValid())
             {
                 userRepository.SaveOrUpdate(user);
@@ -63,7 +63,6 @@ namespace van.ApplicationServices.ManagementService
                 return ActionConfirmation.CreateFailureConfirmation(
                     "The user could not be saved due to missing or invalid information.");
             }
-
             
         }
 
@@ -89,8 +88,7 @@ namespace van.ApplicationServices.ManagementService
             }
         }
 
-        public ActionConfirmation Delete(int id)
-        {
+        public ActionConfirmation Delete(int id) {
             User userToDelete = userRepository.Get(id);
 
             if (userToDelete != null)
