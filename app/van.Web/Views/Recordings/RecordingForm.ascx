@@ -29,8 +29,8 @@
 		<li>
 			<label class="desc">Url</label>
 			<span>
-				<%= Html.TextBox("Recording.Url", 
-					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.Url : "")%>
+				<%= Html.TextBox("Recording.Url",
+                   (ViewData.Model.Recording != null) ? ViewData.Model.Recording.Url : "http://www.viddler.com/explore/virtualaltnet/videos/")%>
 			    <label>
 			        <%= Html.ValidationMessage("Recording.Url")%>
 			    </label>
@@ -87,7 +87,7 @@
             <label class="desc"> Live Meeting Url</label>
             <span>
                 <%= Html.TextBox("Recording.LiveMeetingUrl",
-                                        (ViewData.Model.Recording != null) ? ViewData.Model.Recording.LiveMeetingUrl : "")%>
+                                                            (ViewData.Model.Recording != null) ? ViewData.Model.Recording.LiveMeetingUrl : "https://www323.livemeeting.com/cc/usergroups/view?id=van-")%>
                 <label>
                     <%= Html.ValidationMessage("Recording.LiveMeetingUrl")%>
                 </label>

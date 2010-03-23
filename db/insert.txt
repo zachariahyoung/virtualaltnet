@@ -1,0 +1,225 @@
+
+USE [SQL2008_634252_van]
+GO 
+
+SET DATEFORMAT ymd
+GO 
+
+SET NOCOUNT ON
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Fluent NHibernate', 'http://www.zachariahyoung.com/zy/post/2008/08/Screencast-on-Fluent-NHibernate-with-Chad-Myers.aspx', '20080820 12:00:00', '1:27', 'Chad Myers', 'VAN', NULL, 'On August 21, I hosted a LiveMeeting event with Chad Myers to talk about Fluent NHibernate.  Fluent NHibernate is a API that eliminates the messy XML files.  It will create the mapping files and configuration file.  In this demo, Chad will convert the Nhibernate Made Simple project on Code Project to use the Fluent NHibernate.  ')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('SVN', 'http://www.zachariahyoung.com/zy/post/2009/01/ALTNET-conference---111208.aspx', '20081112 00:00:00', '2:14', 'Chad Myers', 'VAN', NULL, 'Zach and Chad talk about SVN.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('ALT.NET Virtual Conference', 'http://www.zachariahyoung.com/zy/post/2009/01/ALTNET-Virtual-Conference---111908.aspx', '20081119 00:00:00', '2:33', 'Sean Chambers', 'VAN', NULL, 'Sean Chambers talking about some of his project')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('DDD', 'http://www.zachariahyoung.com/zy/post/2009/01/ALTNET-Virtual-Conference-on-Lean---12308.aspx', '20081230 12:35:00', '1:18', 'Chad Myers', 'VAN', NULL, NULL)
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('FIT', 'http://www.zachariahyoung.com/zy/post/2009/01/VAN-Meeting---12-10-08.aspx', '20081210 00:00:00', '1:02', 'Jeremy Miller', 'VAN', NULL, NULL)
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('VB discussion on twitter', 'http://www.zachariahyoung.com/zy/post/2009/01/VAN-Meeting---1-07-09.aspx', '20090107 00:00:00', '2:32', 'Chad Myers', 'VAN', NULL, NULL)
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Open Talk about ALT.NET stuff', 'http://www.zachariahyoung.com/zy/post/2009/01/VAN-Meeting---1-14-08.aspx', '20090114 00:00:00', '2:00', 'Chad Myers', 'VAN', NULL, 'StructureMap - a Dependency Injection framework  fluentmigrator - Migrations tool for .NET Framework  topshelf -.net service host  masstransit - A Service Bus Implementation for .NET  NHibernate for .NET ')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('GIT', 'http://www.zachariahyoung.com/zy/post/2009/01/VAN-Meeting-for-1-21-2008-on-GIT.aspx', '20090121 00:00:00', '2:06', 'Aaron Jensen', 'VAN', NULL, NULL)
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('VAN Meeting', 'http://www.zachariahyoung.com/zy/post/2009/02/VAN-Meeting-for-1-28-2008.aspx', '20090128 00:00:00', '1:37', 'Chad Myers', 'VAN', NULL, NULL)
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Oz VAN kicked', 'http://www.viddler.com/explore/rbanks/videos/1/', '20090203 00:00:00', '1:46', 'Richard Banks', 'Oz VAN', NULL, 'We started out with a bit of an intro by those who were there, and then let the conversation lead off to wherever it felt like it, covering things such as software craftsmanship, attitudes to development, AOP and other things.
+
+If you couldn''t make it, don''t panic - we recorded it just for you!  So, feel free to view it and help others by tagging the sections you think are interesting.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('MEF', 'http://www.zachariahyoung.com/zy/post/2009/02/VAN-Meeting-for-2-4-2008-on-MEF.aspx', '20090204 00:00:00', '1:04', 'Glenn Block', 'VAN', NULL, 'The Managed Extensibility Framework (MEF) is a new library in .NET that enables greater reuse of applications and components. Using MEF, .NET applications can make the shift from being statically compiled to dynamically composed. If you are building extensible applications, extensible frameworks and application extensions, then MEF is for you.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('DDD', 'http://www.zachariahyoung.com/zy/post/2009/02/VAN-Meeting-for-2-9-09-with-Greg-Young.aspx', '20090209 00:00:00', '1:29', 'Greg Young', 'E-VAN', NULL, 'Greg Young is kind enough to share some of his wisdom regarding Domain-Driven Design. Everyone who believes that he’s geek enough is free to attend, even if you’re not living in Europe.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('TDD', 'http://www.zachariahyoung.com/zy/post/2009/02/VAN-Meeting-for-2-11-09-with-Jimmy-Bogard.aspx', '20090211 00:00:00', '1:55', 'Jimmy Bogard', 'VAN', NULL, NULL)
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('NHibernate Profiler', 'http://zachariahyoung.com/zy/post/2009/02/VAN-Meeting-NHibernate-Profiler-with-Oren-Eini-on-21809.aspx', '20090218 00:00:00', '2:01', 'Oren Eini', 'VAN', NULL, 'NHibernate Profiler is now finally available for Public Beta. It is a real-time visual debugger allowing a development team to gain valuable insight and perspective into their practice of using NHibernate. The product is architected with input coming from many top industry leaders within the NHibernate community. Alerts are presented in a concise code-review manner indicating patterns of misuse by your application. To streamline your efforts to correct the misuse, we provide links to the problematic code section that triggered the alert ')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('REST and OpenRasta', 'http://www.zachariahyoung.com/zy/post/2009/03/VAN-Meeting-for-2-25-09-with-Sebastien-Lambla.aspx', '20090225 00:00:00', '1:32', 'Sebastien Lambla', 'E-VAN', NULL, 'Great demo on REST and the OpenRasta framework by Sebastien Lambla last night. If you missed it, you can now watch the recording.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('ALT.NET Stuff', 'http://www.viddler.com/explore/virtualaltnet/videos/17/', '20090225 00:00:00', '1:34', 'John Leger', 'VAN', NULL, NULL)
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Autumn of Agile', 'http://www.viddler.com/explore/virtualaltnet/videos/18/', '20090304 00:00:00', '1:48', 'Stephen A. Bohlen', 'VAN', NULL, NULL)
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('FlyWheel', 'http://www.viddler.com/explore/virtualaltnet/videos/20/', '20090311 00:00:00', '0:44', 'Eric Hexter', 'VAN', NULL, NULL)
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('ALT.NET Stuff', 'http://www.viddler.com/explore/virtualaltnet/videos/21', '20090318 00:00:00', '2:09', ' Chad Myers', 'VAN', NULL, NULL)
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('TeamCity', 'http://www.viddler.com/explore/virtualaltnet/videos/22/', '20090325 00:00:00', '1:57', 'Yegor Yarko and John Leger', 'VAN', NULL, NULL)
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('TeamCity', 'http://www.viddler.com/explore/virtualaltnet/videos/23/', '20090401 00:00:00', '1:38', 'Yegor Yarko', 'VAN', NULL, NULL)
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Nant and Psake', 'http://www.viddler.com/explore/virtualaltnet/videos/24', '20090408 00:00:00', '2:04', 'James Kovacs', 'VAN', NULL, 'James talks about Psake an automated build tool using powershell.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('S#arp Architecture', 'http://www.viddler.com/explore/virtualaltnet/videos/25/', '20090422 00:00:00', '2:02', 'Billy Mccafferty', 'VAN', NULL, 'Billy talks about ')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/Virtualaltnet/videos/26/', '20090423 00:00:00', '00:56', 'Claudio Lassala', 'BBM', NULL, 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Working on VAN site', 'http://www.viddler.com/explore/virtualaltnet/videos/27/', '20090429 00:00:00', '01:56', 'Zach Young', 'VAN', NULL, NULL)
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('FubuMVC', 'http://www.viddler.com/explore/virtualaltnet/videos/29/', '20090506 00:00:00', '1:44', 'Mark Nijhof', 'VAN', NULL, NULL)
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/30/', '20090507 00:00:00', '0:19', 'Claudio Lassala', 'BBM', NULL, 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/31/', '20090514 00:00:00', '0:39', 'Claudio Lassala', 'BBM', NULL, 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Visual Studio Add-Ins and ReSharper', 'http://www.viddler.com/explore/rbanks/videos/8/21.232/', '20090525 00:00:00', '1:07', 'Richard Banks', 'Oz VAN', NULL, 'This time Richard Banks (@rbanks54) shows what he uses on his Visual Studio setup to help make himself more productive and efficient when coding.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/32/', '20090521 00:00:00', '0:54', 'Claudio Lassala', 'BBM', NULL, 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Git Silverlight3 and RIA', 'http://www.viddler.com/explore/rbanks/videos/2/', '20090323 00:00:00', '1:41', 'Paul Batum', 'Oz VAN', NULL, 'The chat this week featured Paul Batum doing a run through of Git on Windows (pointing to the MindMelder code base as well) and also a quick walkthrough by Miguel Madero of the Silverlight 3 RIA apps released at Mix09 last week.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('BDD', 'http://www.viddler.com/explore/rbanks/videos/3/', '20090330 00:00:00', '1:42', 'Richard Banks', 'Oz VAN', NULL, 'This week we talked about BDD, from an introduction and talk through of the concept onto a worked example and finally on to some of the BDD tooling that is available out there.
+
+The video resolution should be a lot better this week as well, however if you have problems please leave a message on the mailing list so we can try and improve it for next time.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES (' Database Deployment', 'http://www.viddler.com/explore/rbanks/videos/4/', '20090420 00:00:00', '1:41', 'Richard Banks', 'Oz VAN', NULL, 'The topic for the evening was database deployments and covered tools such as Visual Studio database edition (aka DataDude) and Ruby based options')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES (' NGourd', 'http://www.viddler.com/explore/rbanks/videos/5/', '20090511 00:00:00', '0:18', ' Michael Minutillo', 'Oz VAN', NULL, 'On NGourd, a BDD framework for C#, presented by Michael Minutillo')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES (' Powershell', 'http://www.viddler.com/explore/rbanks/videos/6/', '20090511 00:00:00', '1:01', 'Jason Stangroome', 'Oz VAN', NULL, 'The first is a session on Powershell presented by Jason Stangroome.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('SOA ', 'http://www.viddler.com/explore/virtualaltnet/videos/34/', '20090601 00:00:00', '1:29', 'Udi Dahan', 'E-VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-1', 'Udi Dahan did a mind blowing talk on SOA as well as on scalable and maintainable architectures. If you missed this great session, then you can watch the recording.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Castle Project 	MonoRail', 'http://www.viddler.com/explore/virtualaltnet/videos/35/', '20090603 00:00:00', '28:36', 'Ryan Svihla ', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-2', 'MonoRail differs from the standard WebForms way of development as it enforces separation of concerns; controllers just handle application flow, models represent the data, and the view is just concerned about presentation logic. Consequently, you write less code and end up with a more maintainable application. ')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/36/', '20090604 00:00:00', '2:56', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-3', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Introduction to DDD ', 'http://www.viddler.com/explore/virtualaltnet/videos/37/', '20090610 00:00:00', '1:40', 'Stephen A. Bohlen', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-4', 'This session will introduce the concepts, approaches, and
+considerations that DDD brings to the table.  We will define the
+concepts, understand the terminology, and explore the role that DDD
+plays in developing a software solution.  In the follow-on discussion,
+we will be able to discuss issues such as "when is DDD appropriate for
+a software solution?" and "is it possible to use just *some* of the
+DDD concepts effectively without applying them all at once?". ')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/38/', '20090611 00:00:00', '39', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-5', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Implementing DDD patterns and artifacts in .NET ', 'http://www.viddler.com/explore/virtualaltnet/videos/39/', '20090617 00:00:00', '2:20', 'Stephen A. Bohlen', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-6', 'Despite the fact that DDD is foremost about patterns where the role of
+the actual code plays a very distant second, some of the patterns and
+principles that DDD espouses can lead to some uncommon implementations
+in code.  Building on the prior week''s session where we explore some
+of the concepts of DDD, in this session we will look at several
+different common patterns for implementing DDD constructs in .NET code
+including Repostories, Entities, Value Objects, Services and more as
+well as dig into a discussion about how they all relate and
+interoperate together while respecting the values and principles of
+DDD. ')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('IoC and Dip through Castle Windsor ', 'http://www.viddler.com/explore/virtualaltnet/videos/40/', '20090701 00:00:00', '1:00', 'Ryan Svihla', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-7', 'Ever wonder what acronyms like IoC and Dip mean? If you know what they mean do you wonder why anyone would use them in code?  This talk aims to deal primarily with those two questions through the use of Castle Windsor IoC container.  Intermediate level C# material with a couple of more advanced demos at the end for fun and pleasure.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/41/', '20090702 00:00:00', '0:56', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-8', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('REST', 'http://www.viddler.com/explore/virtualaltnet/videos/42/', '20090706 00:00:00', '1:27', 'Alan Dean', 'E-VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-9', 'Alan is a real authority on REST and he''s got a great talk ready so this is a great chance to find out more about REST.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Web Development with Castle', 'http://www.viddler.com/explore/virtualaltnet/videos/43', '20090708 00:00:00', NULL, 'Ryan Svihla', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-10', 'Have a look at the first popular MVC .Net based web framework. Also will be covering persistence with ActiveRecord, and view templates using Brail. Bonus, will demo a plug-in framework for building CMS like applications.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Job Productivity', 'http://www.viddler.com/explore/virtualaltnet/videos/44', '20090715 00:00:00', NULL, 'Jean Paul Sylvain Boodhoo', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-11', 'Lets discuss elements of our jobs...environments..and even personalities which can prevent us from achieving levels of productivity that we strive for but all to often fail to meet. I hope to offer suggestions that can remove the brakes and add the much needed nitrous oxide that can propel us forward.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/45/', '20090716 00:00:00', '0:48', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-12', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('REST', 'http://www.viddler.com/explore/virtualaltnet/videos/46', '20090720 00:00:00', '1:18', 'Jim Webber', 'E-VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-13', 'As part of our series of session REST we''ve been lucky enough to get Ian Robinson and Jim Webber to agree to appear on the E-VAN on the 20th and we''re looking for your input to help shape their session. The more views/questions the better so add them as comments or e-mail them to us and we''ll aggregate them for Ian/Jim.
+
+As you may know they are writing a book on REST, along with Savas Parastatidis and have also written one of the best articles on REST that you''ll find. However there are a range of other related topics that are worth discussing including MEST, Guerilla SOA, ESB''s, consumer driven contracts, and business service design so feel free to submit as many questions as you can on these or any other topics by adding comments to the blog entry. ')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/47', '20090723 00:00:00', '0:45', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-14', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/48', '20090730 00:00:00', '0:56', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-15', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Screen Activation Lifecycle', 'http://www.viddler.com/explore/virtualaltnet/videos/49/', '20090805 00:00:00', '1:00', 'Jeremy Miller', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-16', 'Jeremy talked about Screen Activation Lifecycle.  ')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Separated Presentation', 'http://www.viddler.com/explore/virtualaltnet/videos/53/', '20090812 00:00:00', '1:12', 'Jeremy Miller', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-17', 'Separated Presentation patterns. You know, what are your options, why are they different, and when would you choose one or another for a particular scenario. Model View Presenter variants and Presentation Model ')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Experiences from JP BoodHoo''s BootCamp Favorite', 'http://www.viddler.com/explore/rbanks/videos/12/', '20090817 00:00:00', '1:03', 'JP BoodHoo', 'Oz VAN', NULL, 'Thoughts and experiences from JP BoodHoo''s bootcamp.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('The myth of developer productivity', 'http://www.viddler.com/explore/virtualaltnet/videos/54/', '20090819 00:00:00', '1:22', 'Scott Bellware', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-18', 'An evening with Scott Bellware discussing the myth of developer productivity.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/56/', '20090820 00:00:00', '0:54', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-19', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/57', '20090827 00:00:00', '0:44', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-20', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/58', '20090903 00:00:00', '0:50', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-21', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('The S in SOLID', 'http://www.viddler.com/explore/virtualaltnet/videos/59', '20090909 00:00:00', '0:43', 'Claudio Lassala', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-22', 'Claudio discusses Single Responsibility Principle.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/60', '20090910 00:00:00', '1:07', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-24', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Teoría ORM', 'http://www.viddler.com/explore/virtualaltnet/videos/61', '20090912 00:00:00', '2:16', 'Fabio Maulo', 'VAN Hispano', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-25', 'La comunidad ALT.NET Hispano (http://altnethispano.org) realizará un evento virtual con el tema Teoría ORM (Object-Relational Mapping), a cargo de Fabio Maulo (Team Leader de NHibernate).
+
+Fecha: Sábado 19 de septiembre a las 18:00 hrs. Hora Internacional (GMT/UTC), con una duración aproximada de 2 horas. 
+
+Lugar: Para atender la reunión deben usar el enlace http://snipr.com/virtualaltnet el cual les demandará el uso del programa Microsoft Office Live Meeting 2007 Client.
+
+Los temas que trataremos son:
+- Conceptos básicos de ORM 
+- Técnicas de POID 
+- Técnicas de mapeo de herencia 
+- Técnicas de mapeo asociaciones/agregaciones 
+- Implementaciones de Concurrencia 
+- Uso de StoredProcedure/Triggers 
+- Características destacadas de un PersistentLayer 
+
+Pueden plantear sus comentarios e inquietudes sobre el tema de la reunión en:
+http://groups.google.com/group/altnet-hispano/t/7fc6f796954bccea
+
+Para mayor información sobre cómo atender la reunión consulten la página:
+http://altnet-hispano.pbworks.com/Descripcion-de-Reuniones
+
+Pueden vincular éste Google Calendar al tuyo, o bien descargar el iCal de este evento en particular para importarlo a Outlook u otro calendario:
+http://altnet-hispano.pbworks.com/f/VAN20090919.ics
+')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Influence Strategies', 'http://www.viddler.com/explore/rbanks/videos/13/', '20090914 00:00:00', '0:50', 'Richard Banks', 'Oz Van', NULL, 'Australia Virtual Alt.Net - 14 Sep 09 - Influence Strategies')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('The S in SOLID', 'http://www.viddler.com/explore/Virtualaltnet/videos/62', '20090916 00:00:00', '1:27', 'Claudio Lassala', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-26', 'Claudio discusses Single Responsibility Principle.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Taking about Design', 'http://www.viddler.com/explore/virtualaltnet/videos/63/', '20090916 00:00:00', '23:31', 'Ryan Svihla', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-27', NULL)
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/64', '20091001 00:00:00', '56:57', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-28', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('The Xsights Architecture', 'http://www.viddler.com/explore/virtualaltnet/videos/65/', '20091005 00:00:00', '1:22', 'Arnon Rotem-Gal-Oz ', 'E-VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-29', 'This time, Arnon Rotem-Gal-Oz will enlighten us with a presentation about the xsights architecture, talking about a real-world SOA architecture as well as balancing up-front design and evolving an architecture, etc. Definitely check out his blog, which also contains a number of insightful papers on SOA and architecture in general. Arnon is also the author of an upcoming book on SOA Patterns, which both Colin and myself really enjoyed reading.  ')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('The D in Solid', 'http://www.viddler.com/explore/virtualaltnet/videos/66', '20091007 00:00:00', '1:45', 'Claudio Lassala', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-30', 'Claudio Lassala presents a series on the SOLID Principles - Oct 7: DIP (Dependency Inversion Principle)')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/67/', '20091008 00:00:00', '57:01', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-31', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES (' Connascence in .NET Favorite', 'http://www.viddler.com/explore/rbanks/videos/14/', '20091012 00:00:00', '48:04', 'Richard Banks', 'Oz VAN', NULL, 'Connascence in .NET Favorite')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('DDD with David Laribee', 'http://www.viddler.com/explore/virtualaltnet/videos/68', '20091014 00:00:00', '37:36', 'David Laribee ', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-32', 'An evening of Questions and Sharing of group opinions regarding DDD pragmatic concepts facilitated by David Laribee Oct 14, 2009')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/69/', '20091015 00:00:00', '38:03', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-33', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Building NH Profiler', 'http://www.viddler.com/explore/virtualaltnet/videos/75', '20091021 00:00:00', '1:00', 'Ayende Rahien', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-34', 'VAN: Lessons learned building NH Profiler with Ayende Rahien, Christopher Bennage and Rob Eisenberg Oct 21, 2009')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/70/', '20091022 00:00:00', '52:43', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-35', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Building NH Profiler', 'http://www.viddler.com/explore/virtualaltnet/videos/75', '20091028 00:00:00', '1:09', 'Ayende Rahien', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-36', 'Lessons learned building NH Profiler with Ayende Rahien, Christopher Bennage and Rob Eisenberg')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('S#arp Architecture Revisited ', 'http://www.viddler.com/explore/virtualaltnet/videos/73/', '20091104 00:00:00', '1:39', 'Billy McCafferty', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-38', 'S#arp Architecture Revisited – Billy McCafferty joins us once again to discuss Advanced Techniques and various other matters associated with SA')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/74', '20091105 00:00:00', '0:55', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-39', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Iintroduction to NHibernate and Fluent NHibernate.', 'http://www.viddler.com/explore/virtualaltnet/videos/81/', '20091111 00:00:00', '1:47', 'Gabriel Schenker', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-40', 'Bio ---- After receiving my Ph.D. of Physics at the Federal Institute of Technologies in Zurich, Switzerland, I worked for some time in building physics, and subsequently moved to behavioral science. Among other things, I was involved in training expert examiners of different industries in how to write and take exams that are fair and really test the relevant aspects of their profession. In 1996, I started as an independent consultant, mentor, trainer and developer. In 2001, a partner and I founded a small software company. We have been writing customer specific software for all kinds of industries as well as for the government. Since March 2009, I have been working as a senior software architect for TOPAZ Technologies in Austin, TX. I moved to Austin in October 2009. I have been working on the .NET platform in my professional work since 2000. I am the author of the NHibernate FAQ blog and am a member of "Los Techies". I have also published several articles on DotNetSlackers about NHibernate and Fluent NHibernate. Topic ------- I will present an introduction to NHibernate and Fluent NHibernate. This introduction will not only discuss NHibernate in isolation but show its usage embedded in a realistic yet simple WPF application. All aspects of how to setup, run and extend such an application will be discussed. An important focus will be put on the differences between testing and running the application. ')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Introduction to NHibernate and Fluent NHibernate Part 2', 'http://www.viddler.com/explore/virtualaltnet/videos/82/', '20091118 00:00:00', '1:28', 'Gabriel Schenker', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-42', ' After receiving my Ph.D. of Physics at the Federal Institute of Technologies in Zurich, Switzerland, I worked for some time in building physics, and subsequently moved to behavioral science. Among other things, I was involved in training expert examiners of different industries in how to write and take exams that are fair and really test the relevant aspects of their profession. In 1996, I started as an independent consultant, mentor, trainer and developer. In 2001, a partner and I founded a small software company. We have been writing customer specific software for all kinds of industries as well as for the government. Since March 2009, I have been working as a senior software architect for TOPAZ Technologies in Austin, TX. I moved to Austin in October 2009. I have been working on the .NET platform in my professional work since 2000. I am the author of the NHibernate FAQ blog and am a member of "Los Techies". I have also published several articles on DotNetSlackers about NHibernate and Fluent NHibernate. Topic ------- I will present an introduction to NHibernate and Fluent NHibernate. This introduction will not only discuss NHibernate in isolation but show its usage embedded in a realistic yet simple WPF application. All aspects of how to setup, run and extend such an application will be discussed. An important focus will be put on the differences between testing and running the application. ')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Command Query Responsibility Segregatio', 'http://www.viddler.com/explore/virtualaltnet/videos/87', '20091118 00:00:00', '1:55', 'Mark Nijhof', 'E-VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-41', 'We just couldn''t resist to get Mark Nijhof back after he announced his CQRS sample application on the DDD user group. The sample application that he developed is completely based on DDD à la Greg Young. The great thing about Mark''s initiative is that the DDD/CQRS/SOA principles evangelized by Greg and Udi become more concrete and accessible to a wider audience of architects and developers. Therefore, the focus of this session is to take a deep dive into the code as Mark did before during his FubuMVC presentation.')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/84/', '20091119 00:00:00', '1:04', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-43', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/83', '20091203 00:00:00', '1:01', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-44', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/85/', '20091210 00:00:00', '0:37', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-45', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/86/', '20091217 00:00:00', '1:04', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-46', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/88', '20100107 00:00:00', '1:14', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-47', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/90', '20100114 00:00:00', '1:00', 'Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-48', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES ('Virtual BBM', 'http://www.viddler.com/explore/virtualaltnet/videos/89/', '20100121 00:00:00', '0:48', ' Claudio Lassala', 'BBM', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-49', 'Lunch and learn with fellow developers hosted by Claudio Lassala. Starts at Noon to 1pm Central')
+
+INSERT INTO [dbo].[Recordings] ([Title], [Url], [Date], [Duration], [Speaker], [UserGroup], [LiveMeetingUrl], [Description]) VALUES (' You Can''t Dance the Lambda', 'http://www.viddler.com/explore/virtualaltnet/videos/91/', '20100127 00:00:00', '1:38', 'George Mauer', 'VAN', 'https://www323.livemeeting.com/cc/usergroups/view?id=van-50', 'You Can''t Dance the Lambda is a discussion on the lambda feature of .NET 3.5, why I use it all the time and for everything and so should you. The discussion starts by defining lambdas and demonstrating why they are nothing but syntactic sugar over concepts that .NET programmers have been familiar with for years. It continues by demonstrating a variety of patterns which use lambdas to abstract away repetitive code, increase extensibility, and write more intention-revealing and robust applications.')
+

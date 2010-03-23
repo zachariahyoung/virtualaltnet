@@ -129,7 +129,7 @@ namespace van.ApplicationServices.ManagementService
             }
         }
 
-        private void TransferFormValuesTo(Recording recordingToUpdate, Recording recordingFromForm)
+        private void TransferFormValuesTo(Recording recordingToUpdate, Recording recordingFromForm)                 
         {
             recordingToUpdate.Title = recordingFromForm.Title;
             recordingToUpdate.Url = recordingFromForm.Url;

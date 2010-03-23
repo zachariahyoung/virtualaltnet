@@ -26,6 +26,9 @@ namespace van.Core
 
         public virtual string LiveMeetingUrl { get; set; }
 
+        [NotNull, NotEmpty]
+        public virtual int Status { get; set; }
+
         public virtual string Description { get; set; }
 
     }
