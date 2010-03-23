@@ -30,7 +30,7 @@
 			<label class="desc">Url</label>
 			<span>
 				<%= Html.TextBox("Recording.Url",
-                   (ViewData.Model.Recording != null) ? ViewData.Model.Recording.Url : "http://www.viddler.com/explore/virtualaltnet/videos/")%>
+                                       (ViewData.Model.Recording != null) ? ViewData.Model.Recording.Url : "http://www.viddler.com/explore/virtualaltnet/videos/", new { style = "width:500px" })%>
 			    <label>
 			        <%= Html.ValidationMessage("Recording.Url")%>
 			    </label>
@@ -66,6 +66,7 @@
                              ViewData.Model.Recording != null && ViewData.Model.Recording.Speaker != null
                                                     ? ViewData.Model.Recording.Speaker.Id
 				                : 0) %>
+				                <%= Html.ActionLink<SpeakersController>(c => c.Create(), "Create New Speaker") %></p>
 			</div>
 			<%= Html.ValidationMessage("Recording.Speaker")%>        </li>
 
@@ -87,7 +88,7 @@
             <label class="desc"> Live Meeting Url</label>
             <span>
                 <%= Html.TextBox("Recording.LiveMeetingUrl",
-                                                            (ViewData.Model.Recording != null) ? ViewData.Model.Recording.LiveMeetingUrl : "https://www323.livemeeting.com/cc/usergroups/view?id=van-")%>
+                                                            (ViewData.Model.Recording != null) ? ViewData.Model.Recording.LiveMeetingUrl : "https://www323.livemeeting.com/cc/usergroups/view?id=van-",new { style="width:500px" }) %>
                 <label>
                     <%= Html.ValidationMessage("Recording.LiveMeetingUrl")%>
                 </label>
@@ -95,12 +96,21 @@
         <li>
             <label class="desc">Description</label>
             <span>
-                <%= Html.TextArea("Recording.Description",
-                                                            (ViewData.Model.Recording != null) ? ViewData.Model.Recording.Description : "")%>
+                <%= Html.TextArea("Recording.Description", (ViewData.Model.Recording != null) ? ViewData.Model.Recording.Description : "", new { style = "width:1000px" })%>
                 <label>
                     <%= Html.ValidationMessage("Recording.Description")%>
                 </label>
             </span></li>
+            <li>
+			<label class="desc">Status</label>
+			<span>
+				<%= Html.TextBox("Recording.Status", 
+					(ViewData.Model.Recording != null) ? ViewData.Model.Recording.Duration : "1")%>
+			    <label>
+			        <%= Html.ValidationMessage("Recording.Status")%>
+			    </label>
+			</span>
+		</li>
 	    <li class="buttons">
             <%= Html.SubmitButton("btnSave", "Save Recording") %>
 	        <%= Html.Button("btnCancel", "Cancel", HtmlButtonType.Button, 

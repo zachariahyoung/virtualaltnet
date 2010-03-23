@@ -15,11 +15,9 @@
     <table>
         <thead>
             <tr>
-			    <th>FirstName</th>
-			    <th>LastName</th>
+			    <th>Name</th>			    
 			    <th>Email</th>
 			    <th>Website</th>
-			    <th>Presentation</th>
 			    <th colspan="3">Action</th>
             </tr>
         </thead>

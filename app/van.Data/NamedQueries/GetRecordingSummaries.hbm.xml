@@ -10,5 +10,6 @@
     from dbo.Recordings, dbo.Groups, dbo.Speakers
     where Recordings.speakerfk = Speakers.id
     and Recordings.groupfk = Groups.id
+    and status = 2
   </sql-query>
 </hibernate-mapping>
