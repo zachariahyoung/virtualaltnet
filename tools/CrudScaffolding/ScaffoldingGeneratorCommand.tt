@@ -16,32 +16,14 @@
  * Examples:  Product, Organization.Employee, Financial.Costs.LedgerEntry
  */
 EntityScaffoldingDetails entityScaffoldingDetails =
-	new EntityScaffoldingDetails("User");
+	new EntityScaffoldingDetails("Status");
  
 /*
  * Property names should be PascalCase.
  * Do NOT include a property for Id as it will be included automatically.
  */
 entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("UserName", "string", "ZPYoung", "[NotNull, NotEmpty]", true) 
-);
-entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("Password", "string", "password", "[NotNull, NotEmpty]", true) 
-);
-entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("First Name", "string", "Zach", "[NotNull, NotEmpty]") 
-);
-entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("Last Name", "string", "Young", "[NotNull, NotEmpty]") 
-);
-entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("Website", "string", null) 
-);
-entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("Email", "string", null) 
-);
-entityScaffoldingDetails.EntityProperties.Add(
-	new EntityProperty("Roles", "Role", "Administrator", "[NotNull, NotEmpty]") 
+	new EntityProperty("Name", "string", "Active", "[NotNull, NotEmpty]", true) 
 );
 
 
@@ -49,7 +31,7 @@ entityScaffoldingDetails.EntityProperties.Add(
 
 // The first parameter should reflect the root directory of your solution
 ScaffoldingGenerator generator = new ScaffoldingGenerator(
-	@"F:\DataWork\VAN\", "van", entityScaffoldingDetails); 
+	@"C:\Users\zach\Documents\Visual Studio 2008\Projects\van\", "van", entityScaffoldingDetails); 
 
 // Uncomment this line when you're ready for the scaffolding generator to fire
 //generator.Run();

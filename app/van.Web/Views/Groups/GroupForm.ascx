@@ -1,3 +1,4 @@
+
 <%@ Control Language="C#" AutoEventWireup="true"
 	Inherits="System.Web.Mvc.ViewUserControl<van.ApplicationServices.ViewModels.GroupFormViewModel>" %>
 <%@ Import Namespace="van.Core" %>
@@ -64,6 +65,41 @@
 			</div>
 			<%= Html.ValidationMessage("Group.Manager")%>
 		</li>
+				<li>
+			<label for="Group_Name">Description:</label>
+			<div>
+				<%= Html.TextBox("Group.Description",
+                                        (ViewData.Model.Group != null) ? ViewData.Model.Group.Description.ToString() : "")%>
+			</div>
+			<%= Html.ValidationMessage("Group.Description")%>
+		</li>
+				<li>
+			<label for="Group_Name">Start Time:</label>
+			<div>
+				<%= Html.TextBox("Group.StartTime",
+                                        (ViewData.Model.Group != null) ? ViewData.Model.Group.StartTime.ToString() : "")%>
+			</div>
+			<%= Html.ValidationMessage("Group.StartTime")%>
+		</li>
+				<li>
+			<label for="Group_Name">End Time:</label>
+			<div>
+				<%= Html.TextBox("Group.EndTime",
+                                        (ViewData.Model.Group != null) ? ViewData.Model.Group.EndTime.ToString() : "")%>
+			</div>
+			<%= Html.ValidationMessage("Group.EndTime")%>
+		</li>
+						<li>
+			<label for="Group_Name">Time Zone:</label>
+			<div>
+				<%= Html.TextBox("Group.TimeZone",
+                                       (ViewData.Model.Group != null) ? ViewData.Model.Group.TimeZone.ToString() : "")%>
+			</div>
+			<%= Html.ValidationMessage("Group.TimeZone")%>
+		</li>
+
+
+
 	    <li>
             <%= Html.SubmitButton("btnSave", "Save Group") %>
 	        <%= Html.Button("btnCancel", "Cancel", HtmlButtonType.Button, 

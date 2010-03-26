@@ -20,5 +20,17 @@ namespace van.Data
             return query.List<RecordingDto>();
 
         }
+
+        public IList<RecordingDto> GetEventSummaries()
+        {
+            ISession session = SharpArch.Data.NHibernate.NHibernateSession.Current;
+
+            IQuery query = session.GetNamedQuery("GetEventSummaries")
+                .SetResultTransformer(Transformers.AliasToBean<RecordingDto>());
+
+            return query.List<RecordingDto>();
+
+        }
+
     }
 }

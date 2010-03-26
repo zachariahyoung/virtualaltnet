@@ -11,6 +11,7 @@ namespace van.ApplicationServices.ManagementService
         RecordingFormViewModel CreateFormViewModelFor(int recordingId);
         RecordingFormViewModel CreateFormViewModelFor(Recording recording);
         RecordingFormViewModel GetRecordings();
+        RecordingFormViewModel GetEvents();
         ActionConfirmation SaveOrUpdate(Recording recording);
         ActionConfirmation UpdateWith(Recording recordingFromForm);
         ActionConfirmation Delete(int id);

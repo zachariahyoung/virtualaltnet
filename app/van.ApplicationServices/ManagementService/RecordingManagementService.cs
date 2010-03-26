@@ -9,14 +9,16 @@ namespace van.ApplicationServices.ManagementService
 {
     public class RecordingManagementService : IRecordingManagementService {
 
-        public RecordingManagementService(IRecordingRepository recordingRepository, IGroupManagementService groupManagementService, ISpeakerManagementService speakerManagementService) {
+        public RecordingManagementService(IRecordingRepository recordingRepository, IGroupManagementService groupManagementService, ISpeakerManagementService speakerManagementService, IStatusManagementService statusManagementService) {
             Check.Require(recordingRepository != null, "recordingRepository may not be null");
             Check.Require(groupManagementService != null, "groupManagementService may not be null");
             Check.Require(speakerManagementService != null, "speakerManagementService may not be null");
+            Check.Require(statusManagementService != null, "statusManagementService may not be null");
 
             this.recordingRepository = recordingRepository;
             this.groupManagementService = groupManagementService;
             this.speakerManagementService = speakerManagementService;
+            this.statusManagementService = statusManagementService;
             
         }
 
@@ -32,6 +34,7 @@ namespace van.ApplicationServices.ManagementService
             RecordingFormViewModel model = new RecordingFormViewModel();
             model.Groups = groupManagementService.GetAll();
             model.Speakers = speakerManagementService.GetAll();
+            model.Statuses = statusManagementService.GetAll();
             return model;
 
         }
@@ -54,6 +57,12 @@ namespace van.ApplicationServices.ManagementService
             viewModel.Recordings = recordingRepository.GetRecordingSummaries();
             return viewModel;
 
+        }
+
+        public RecordingFormViewModel GetEvents() {
+            RecordingFormViewModel viewModel = new RecordingFormViewModel();
+            viewModel.Recordings = recordingRepository.GetEventSummaries();
+            return viewModel;
         }
 
         public ActionConfirmation SaveOrUpdate(Recording recording) {
@@ -144,5 +153,6 @@ namespace van.ApplicationServices.ManagementService
         IRecordingRepository recordingRepository;
         IGroupManagementService groupManagementService;
         ISpeakerManagementService speakerManagementService;
+        IStatusManagementService statusManagementService;
     }
 }

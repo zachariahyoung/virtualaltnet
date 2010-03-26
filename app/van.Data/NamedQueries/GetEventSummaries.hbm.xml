@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
-  <sql-query name="GetRecordingSummaries">
+  <sql-query name="GetEventSummaries">
     select Recordings.id,
     title,
     speakers.name as Speaker,
@@ -10,6 +10,6 @@
     from dbo.Recordings, dbo.Groups, dbo.Speakers
     where Recordings.speakerfk = Speakers.id
     and Recordings.groupfk = Groups.id
-    and statusfk = 2
+    and statusfk = 1
   </sql-query>
 </hibernate-mapping>

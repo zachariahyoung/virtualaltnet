@@ -21,6 +21,14 @@ namespace van.Core
 
         public virtual string Rss { get; set; }
 
+        public virtual string Description { get; set; }
+
+        public virtual string StartTime { get; set; }
+
+        public virtual string EndTime { get; set; }
+
+        public virtual string TimeZone { get; set; }
+
 		[NotNull]
 		public virtual User Manager { get; set; }
     }

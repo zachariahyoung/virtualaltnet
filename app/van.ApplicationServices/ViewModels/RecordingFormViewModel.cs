@@ -14,5 +14,7 @@ namespace van.ApplicationServices.ViewModels
 
         public IList<Group> Groups { get; set; }
 
+        public IList<Status> Statuses { get; set; }
+
     }
 }

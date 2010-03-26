@@ -1,12 +1,12 @@
-10:26:12 AM	Started adding generated files
-10:26:12 AM	Added file van.Core\RecordingTests.cs to project ..\..\tests\van.Tests\van.Tests.csproj
-10:26:12 AM	Added file Recording.cs to project F:\DataWork\VAN\app\van.Core\van.Core.csproj
-10:26:12 AM	Added file van.Web\Controllers\RecordingsControllerTests.cs to project ..\..\tests\van.Tests\van.Tests.csproj
-10:26:12 AM	Added file RecordingsController.cs to project F:\DataWork\VAN\app\van.Web.Controllers\van.Web.Controllers.csproj
-10:26:12 AM	Added directory F:\DataWork\VAN\app\van.Web\Views\Recordings\
-10:26:12 AM	Added file F:\DataWork\VAN\app\van.Web\Views\Recordings\RecordingForm.ascx to project ..\..\app\van.Web\van.Web.csproj
-10:26:12 AM	Added file F:\DataWork\VAN\app\van.Web\Views\Recordings\Create.aspx to project ..\..\app\van.Web\van.Web.csproj
-10:26:12 AM	Added file F:\DataWork\VAN\app\van.Web\Views\Recordings\Edit.aspx to project ..\..\app\van.Web\van.Web.csproj
-10:26:12 AM	Added file F:\DataWork\VAN\app\van.Web\Views\Recordings\Index.aspx to project ..\..\app\van.Web\van.Web.csproj
-10:26:12 AM	Added file F:\DataWork\VAN\app\van.Web\Views\Recordings\Show.aspx to project ..\..\app\van.Web\van.Web.csproj
-10:26:12 AM	Finished adding generated files
+8:34:12 PM	Started adding generated files
+8:34:12 PM	Added file van.Core\StatusTests.cs to project ..\..\tests\van.Tests\van.Tests.csproj
+8:34:12 PM	File already exists C:\Users\zach\Documents\Visual Studio 2008\Projects\van\app\van.Core\Status.cs
+8:34:12 PM	Added file van.Web\Controllers\StatusesControllerTests.cs to project ..\..\tests\van.Tests\van.Tests.csproj
+8:34:12 PM	Added file StatusesController.cs to project C:\Users\zach\Documents\Visual Studio 2008\Projects\van\app\van.Web.Controllers\van.Web.Controllers.csproj
+8:34:12 PM	Added directory C:\Users\zach\Documents\Visual Studio 2008\Projects\van\app\van.Web\Views\Statuses\
+8:34:12 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\van\app\van.Web\Views\Statuses\StatusForm.ascx to project ..\..\app\van.Web\van.Web.csproj
+8:34:12 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\van\app\van.Web\Views\Statuses\Create.aspx to project ..\..\app\van.Web\van.Web.csproj
+8:34:12 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\van\app\van.Web\Views\Statuses\Edit.aspx to project ..\..\app\van.Web\van.Web.csproj
+8:34:12 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\van\app\van.Web\Views\Statuses\Index.aspx to project ..\..\app\van.Web\van.Web.csproj
+8:34:12 PM	Added file C:\Users\zach\Documents\Visual Studio 2008\Projects\van\app\van.Web\Views\Statuses\Show.aspx to project ..\..\app\van.Web\van.Web.csproj
+8:34:12 PM	Finished adding generated files

@@ -7,19 +7,18 @@ using van.Core.DataInterfaces;
 
 namespace van.ApplicationServices.ManagementService
 {
-    public class UserManagementService : IUserManagementService
-    {
+    public class UserManagementService : IUserManagementService {
         
         public UserManagementService(IUserRepository userRepository){
             Check.Require(userRepository != null, "userRepository may not be null");
             this.userRepository = userRepository;
         }
 
-        public User Get(int id){            
+        public User Get(int id) {            
             return userRepository.Get(id);            
-        }
+        } 
 
-        public IList<User> GetAll(){
+        public IList<User> GetAll() {
             return userRepository.GetAll();
         }
         
@@ -66,8 +65,7 @@ namespace van.ApplicationServices.ManagementService
             
         }
 
-        public ActionConfirmation UpdateWith(User userFromForm)
-        {
+        public ActionConfirmation UpdateWith(User userFromForm) {
             User userToUpdate = userRepository.Get(userFromForm.Id);
             TransferFormValuesTo(userToUpdate, userFromForm);
 

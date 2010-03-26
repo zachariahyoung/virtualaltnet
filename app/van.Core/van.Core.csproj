@@ -92,6 +92,7 @@
     <Compile Include="DataInterfaces\IGroupRepository.cs" />
     <Compile Include="DataInterfaces\IRecordingRepository.cs" />
     <Compile Include="DataInterfaces\ISpeakerRepository.cs" />
+    <Compile Include="DataInterfaces\IStatusRepository.cs" />
     <Compile Include="DataInterfaces\ISyndicationFeedRepository.cs" />
     <Compile Include="Dto\EventDto.cs" />
     <Compile Include="Dto\NewsDto.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="DataInterfaces\IAccountRepository.cs" />
     <Compile Include="DataInterfaces\IUserRepository.cs" />
     <Compile Include="Speaker.cs" />
+    <Compile Include="Status.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Group.cs" />

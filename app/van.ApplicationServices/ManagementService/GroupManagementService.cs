@@ -127,6 +127,10 @@ namespace van.ApplicationServices.ManagementService
             groupToUpdate.Blog = groupFromForm.Blog;
             groupToUpdate.Rss = groupFromForm.Rss;
             groupToUpdate.Manager = groupFromForm.Manager;
+            groupToUpdate.Description = groupFromForm.Description;
+            groupToUpdate.StartTime = groupFromForm.StartTime;
+            groupToUpdate.EndTime = groupFromForm.EndTime;
+            groupToUpdate.TimeZone = groupFromForm.TimeZone;
         }
 
         IGroupRepository groupRepository;

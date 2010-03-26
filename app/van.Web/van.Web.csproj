@@ -646,6 +646,7 @@
     <Content Include="Content\style.css" />
     <Content Include="log4net.config" />
     <Content Include="Scripts\jquery.corners.js" />
+    <Content Include="Views\Recordings\Events.aspx" />
     <Content Include="Views\Recordings\Create.aspx" />
     <Content Include="Views\Recordings\Edit.aspx" />
     <Content Include="Views\Recordings\Index.aspx" />
@@ -661,6 +662,11 @@
     <Content Include="Views\Groups\Index.aspx" />
     <Content Include="Views\Groups\Show.aspx" />
     <Content Include="Views\Groups\GroupForm.ascx" />
+    <Content Include="Views\Statuses\Create.aspx" />
+    <Content Include="Views\Statuses\Edit.aspx" />
+    <Content Include="Views\Statuses\Index.aspx" />
+    <Content Include="Views\Statuses\Show.aspx" />
+    <Content Include="Views\Statuses\StatusForm.ascx" />
     <None Include="Scripts\ext-3.0-rc1.1\resources\images\default\form\clear-trigger.psd" />
     <None Include="Scripts\ext-3.0-rc1.1\resources\images\default\form\date-trigger.psd" />
     <None Include="Scripts\ext-3.0-rc1.1\resources\images\default\form\search-trigger.psd" />

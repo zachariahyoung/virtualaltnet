@@ -7,5 +7,6 @@ namespace van.Core.DataInterfaces
     public interface IRecordingRepository : IRepository<Recording>
     {
         IList<RecordingDto> GetRecordingSummaries();
+        IList<RecordingDto> GetEventSummaries();
     }
 }

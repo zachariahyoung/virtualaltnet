@@ -9,27 +9,33 @@ namespace van.Core
     public class Recording : Entity
     {
         [DomainSignature]
-		[NotNull, NotEmpty]
+        [NotNull, NotEmpty(Message = "Title must be provided")]
 		public virtual string Title { get; set; }
 
-		[DomainSignature]
-		[NotNull, NotEmpty]
-		public virtual string Url { get; set; }
-		
-		public virtual DateTime Date { get; set; }
-		
-		public virtual string Duration { get; set; }
-                
+        [NotNull, NotEmpty(Message = "Description must be provided")]
+        public virtual string Description { get; set; }
+
+        [NotNull]
+        public virtual DateTime Date { get; set; }
+
+        [NotNull]
         public virtual Speaker Speaker { get; set; }
 
+        [NotNull]
         public virtual Group Group { get; set; }
 
-        public virtual string LiveMeetingUrl { get; set; }
+        [NotNull, NotEmpty(Message = "Url must be provided")]
+		public virtual string Url { get; set; }
 
-        [NotNull, NotEmpty]
-        public virtual int Status { get; set; }
+        [NotNull, NotEmpty(Message = "LiveMeetingUrl must be provided")]
+        public virtual string LiveMeetingUrl { get; set; }      
 
-        public virtual string Description { get; set; }
+        [NotNull, NotEmpty(Message = "Duration must be provided")]
+		public virtual string Duration { get; set; }
+
+        [NotNull]
+        public virtual Status Status { get; set; }
+
 
     }
 }

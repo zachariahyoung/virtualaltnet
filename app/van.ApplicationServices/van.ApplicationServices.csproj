@@ -80,9 +80,11 @@
     <Compile Include="INewsProvider.cs" />
     <Compile Include="ManagementService\IRecordingManagementService.cs" />
     <Compile Include="ManagementService\ISpeakerManagementService.cs" />
+    <Compile Include="ManagementService\IStatusManagementService.cs" />
     <Compile Include="ManagementService\IUserManagementService.cs" />
     <Compile Include="ManagementService\RecordingManagementService.cs" />
     <Compile Include="ManagementService\SpeakerManagementService.cs" />
+    <Compile Include="ManagementService\StatusManagementService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BlogspotNewsProvider.cs" />
     <Compile Include="ManagementService\UserManagementService.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="ViewModels\EventNewsFormViewModel.cs" />
     <Compile Include="ViewModels\RecordingFormViewModel.cs" />
     <Compile Include="ViewModels\SpeakerFormViewModel.cs" />
+    <Compile Include="ViewModels\StatusFormViewModel.cs" />
     <Compile Include="ViewModels\UserFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
